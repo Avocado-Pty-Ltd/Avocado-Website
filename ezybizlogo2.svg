@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="225.09079mm"
+   height="208.09047mm"
+   viewBox="0 0 225.09079 208.09047"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <rect
+       x="82.377533"
+       y="164.75507"
+       width="679.22607"
+       height="439.86493"
+       id="rect1" />
+  </defs>
+  <text
+     xml:space="preserve"
+     id="text1"
+     style="font-size:85.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#ff0000;fill-opacity:0"
+     transform="matrix(0.25244057,0,0,0.25244057,-8.9811748,-6.4086617)"><tspan
+       x="82.376953"
+       y="242.60801"
+       id="tspan4">y</tspan></text>
+  <g
+     id="layer1"
+     transform="translate(0.15181303,-1.0265221)">
+    <rect
+       style="fill:#0084f0;fill-opacity:1;fill-rule:nonzero;stroke:#0084f0;stroke-width:3.30298;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8"
+       width="219.26881"
+       height="97.923294"
+       x="1.4996769"
+       y="2.6780121" />
+  </g>
+  <g
+     id="layer2"
+     transform="translate(0.15181303,-1.0265221)">
+    <text
+       xml:space="preserve"
+       style="font-size:120.171px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.947;stroke-dasharray:none;stroke-opacity:1"
+       x="-3.7057214"
+       y="94.002022"
+       id="text2"
+       transform="scale(0.9842048,1.0160487)"><tspan
+         id="tspan2"
+         style="font-weight:bold;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.947;stroke-dasharray:none;stroke-opacity:1"
+         x="-3.7057214"
+         y="94.002022">Ezy</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:144.162px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:1.68939"
+       x="-13.392323"
+       y="204.85304"
+       id="text3"
+       transform="scale(0.97960972,1.0208147)"><tspan
+         id="tspan3"
+         style="font-weight:bold;fill:#0084f0;fill-opacity:1;stroke-width:1.68939"
+         x="-13.392323"
+         y="204.85304">Biz</tspan></text>
+  </g>
+</svg>
