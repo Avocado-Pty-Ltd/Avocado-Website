@@ -1,0 +1,3020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Firebase Analytics -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDtvPl1WNd3-mzdAo_HvOyKcN2KdJThY2E",
+        authDomain: "ezybiz-e06b6.firebaseapp.com",
+        projectId: "ezybiz-e06b6",
+        storageBucket: "ezybiz-e06b6.firebasestorage.app",
+        messagingSenderId: "344431214322",
+        appId: "1:344431214322:web:e517e19d3cc2245412da6b",
+        measurementId: "G-6YES9LPFKD"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <title>EzyBiz for Plumbers | Stop Losing Jobs to Missed Calls</title>
+    <meta name="description" content="Virtual receptionist for plumbers. Book 3-5 extra jobs per month. One saved $400 emergency call pays for 10 months. Join 20+ Australian plumbers.">
+    <link rel="icon" type="image/png" href="ezybizlogo2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* EzyBiz Brand Colors - ELECTRIC BLUE */
+            --ezybiz-blue: #0047FF; /* International Klein Blue / Electric Blue */
+            --ezybiz-blue-light: #3b82f6;
+            --ezybiz-blue-dark: #0033cc;
+            --ezybiz-blue-deeper: #002299;
+
+            /* Accent - Mapped to Blue */
+            --accent-green: #0047FF;
+            --accent-green-light: #60a5fa;
+            --accent-green-dark: #0033cc;
+
+            /* Navy & Dark - Cooler tones */
+            --navy-950: #020617;
+            --navy-900: #0f172a; /* Keep dark navy for text contrast */
+            --navy-800: #1e293b;
+            --navy-700: #334155;
+            --navy-600: #475569;
+
+            /* Light backgrounds */
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+
+            /* Text */
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-tertiary: #94a3b8;
+            --text-white: #ffffff;
+
+            /* Gradients - REMOVED / FLATTENED */
+            --gradient-hero: #0047FF; /* Solid Blue Hero */
+            --gradient-blue: #0047FF;
+            --gradient-green: #0047FF;
+            --gradient-blue-green: #0047FF;
+            --gradient-cta: #0047FF;
+            --gradient-glow: none;
+            --gradient-glow-green: none;
+
+            /* Effects - REMOVED */
+            --shadow-sm: none;
+            --shadow-md: none;
+            --shadow-lg: none;
+            --shadow-xl: none;
+            --shadow-2xl: none;
+            --shadow-blue: none;
+            --shadow-green: none;
+            --shadow-card: none;
+
+            /* Glass - REMOVED */
+            --glass-bg: #ffffff;
+            --glass-border: #e2e8f0;
+            --glass-blur: 0;
+
+            /* Transitions */
+            --transition-fast: 0.1s ease;
+            --transition-base: 0.2s ease;
+            --transition-smooth: 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--slate-50);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        /* Typography */
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--navy-900);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ============================================
+           HEADER / NAVIGATION
+        ============================================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            transition: all var(--transition-base);
+        }
+
+        header.scrolled {
+            background: white;
+            border-bottom: 2px solid var(--navy-900);
+            padding: 1rem 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-white);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+
+        header.scrolled .nav-links a {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover {
+            color: var(--ezybiz-blue-light);
+        }
+
+        header.scrolled .nav-links a:hover {
+            color: var(--ezybiz-blue);
+        }
+
+        .nav-cta {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            padding: 0.75rem 1.75rem;
+            background: var(--ezybiz-blue);
+            color: white;
+            border: 2px solid var(--ezybiz-blue);
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+
+        .nav-cta:hover {
+            background: white;
+            color: var(--ezybiz-blue);
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--navy-900);
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: white;
+            margin: 6px 0;
+            transition: var(--transition-base);
+        }
+
+        header.scrolled .mobile-menu-btn span {
+            background: var(--navy-900);
+        }
+
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            background: var(--ezybiz-blue);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0 6rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-glow);
+            pointer-events: none;
+        }
+
+        /* Animated grid background */
+        .hero-grid {
+            display: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            max-width: 560px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--ezybiz-blue);
+            margin-bottom: 2rem;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+        }
+
+        .hero-badge::before {
+            display: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            background: none;
+            -webkit-text-fill-color: initial;
+            color: white;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 4px;
+            text-decoration-color: rgba(255,255,255,0.5);
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: white;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        ul.hero-description {
+            padding-left: 1.5rem;
+        }
+        ul.hero-description li {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1.5rem;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border: 2px solid white;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+            color: var(--ezybiz-blue);
+        }
+
+        .store-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+            background: white;
+        }
+
+        .store-btn-small, .store-btn-large {
+             color: var(--ezybiz-blue);
+        }
+
+        .store-btn svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .store-btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .store-btn-small {
+            font-size: 0.6875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .store-btn-large {
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-trust-avatars {
+            display: flex;
+        }
+
+        .hero-trust-avatars span {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--ezybiz-blue);
+            margin-left: -12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            color: var(--ezybiz-blue);
+            font-weight: 800;
+        }
+
+        .hero-trust-text {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .hero-trust-text strong {
+            color: white;
+        }
+
+        .hero-trust-avatars span:first-child {
+            margin-left: 0;
+        }
+
+        .hero-trust-text {
+            font-size: 0.875rem;
+            color: var(--slate-300);
+        }
+
+        .hero-trust-text strong {
+            color: white;
+        }
+
+        /* Phone Mockup */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* iPhone Device Mockup */
+        .iphone-mockup {
+            position: relative;
+            width: 280px;
+            margin: 0 auto;
+        }
+
+        .iphone-frame {
+            position: relative;
+            background: #1a1a1a;
+            border-radius: 44px;
+            padding: 12px;
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 25px 80px -20px rgba(0, 0, 0, 0.8),
+                0 0 100px rgba(33, 150, 243, 0.3);
+        }
+
+        .iphone-screen {
+            border-radius: 36px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .iphone-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== PHONE STACK - Symmetric Fan Layout (5 phones) ===== */
+        .phone-stack {
+            position: relative;
+            width: 490px;
+            height: 434px;
+            margin: 0 auto;
+            perspective: 1200px;
+            transform: scale(0.7);
+            transform-origin: center center;
+        }
+
+        .phone-stack::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(ellipse at center,
+                rgba(0, 71, 255, 0.5) 0%,
+                rgba(0, 71, 255, 0.2) 30%,
+                rgba(0, 71, 255, 0.05) 50%,
+                transparent 70%);
+            z-index: 0;
+            filter: blur(40px);
+            pointer-events: none;
+        }
+
+        .phone-stack .iphone-mockup {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -140px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+        }
+
+        /* Far-left phone (Home) - angled far left */
+        .phone-stack .phone-far-back {
+            transform: translateX(-180px) translateY(40px) rotate(-24deg);
+            z-index: 0;
+            filter: brightness(0.75);
+        }
+
+        .phone-stack .phone-far-back .iphone-frame {
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.06),
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(0, 71, 255, 0.1);
+        }
+
+        /* Left phone (Messages) - angled left */
+        .phone-stack .phone-back {
+            transform: translateX(-90px) translateY(20px) rotate(-12deg);
+            z-index: 1;
+            filter: brightness(0.88);
+        }
+
+        .phone-stack .phone-back .iphone-frame {
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.08),
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(0, 71, 255, 0.15);
+        }
+
+        /* Center phone (Call Details) - front and center */
+        .phone-stack .phone-front {
+            transform: translateX(0) translateY(0) rotate(0deg);
+            z-index: 3;
+        }
+
+        .phone-stack .phone-front .iphone-frame {
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.12),
+                0 25px 50px -10px rgba(0, 0, 0, 0.5),
+                0 0 100px rgba(0, 71, 255, 0.3);
+        }
+
+        /* Right phone (Contacts) - angled right */
+        .phone-stack .phone-middle {
+            transform: translateX(90px) translateY(20px) rotate(12deg);
+            z-index: 1;
+            filter: brightness(0.88);
+        }
+
+        .phone-stack .phone-middle .iphone-frame {
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(0, 71, 255, 0.15);
+        }
+
+        /* Far-right phone (History) - angled far right */
+        .phone-stack .phone-far-front {
+            transform: translateX(180px) translateY(40px) rotate(24deg);
+            z-index: 0;
+            filter: brightness(0.75);
+        }
+
+        .phone-stack .phone-far-front .iphone-frame {
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.06),
+                0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(0, 71, 255, 0.1);
+        }
+
+        .phone-stack .iphone-mockup:hover {
+            transform: translateX(0) translateY(-30px) rotate(0deg) scale(1.08);
+            z-index: 10;
+            filter: brightness(1);
+        }
+
+        .phone-stack .iphone-mockup:hover .iphone-frame {
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.15),
+                0 35px 70px -20px rgba(0, 0, 0, 0.6),
+                0 0 100px rgba(0, 71, 255, 0.4);
+        }
+
+        /* Staggered entrance animation (5 phones) */
+        .phone-stack .phone-far-back {
+            animation: phoneEnterFarBack 0.8s ease-out 0.05s both;
+        }
+
+        .phone-stack .phone-back {
+            animation: phoneEnterBack 0.8s ease-out 0.15s both;
+        }
+
+        .phone-stack .phone-front {
+            animation: phoneEnterFront 0.8s ease-out 0.25s both;
+        }
+
+        .phone-stack .phone-middle {
+            animation: phoneEnterMiddle 0.8s ease-out 0.35s both;
+        }
+
+        .phone-stack .phone-far-front {
+            animation: phoneEnterFarFront 0.8s ease-out 0.45s both;
+        }
+
+        @keyframes phoneEnterFarBack {
+            from {
+                opacity: 0;
+                transform: translateX(-220px) translateY(100px) rotate(-35deg) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-180px) translateY(40px) rotate(-24deg) scale(1);
+            }
+        }
+
+        @keyframes phoneEnterBack {
+            from {
+                opacity: 0;
+                transform: translateX(-150px) translateY(80px) rotate(-25deg) scale(0.85);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-90px) translateY(20px) rotate(-12deg) scale(1);
+            }
+        }
+
+        @keyframes phoneEnterFront {
+            from {
+                opacity: 0;
+                transform: translateX(0) translateY(80px) rotate(0deg) scale(0.85);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes phoneEnterMiddle {
+            from {
+                opacity: 0;
+                transform: translateX(150px) translateY(80px) rotate(25deg) scale(0.85);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(90px) translateY(20px) rotate(12deg) scale(1);
+            }
+        }
+
+        @keyframes phoneEnterFarFront {
+            from {
+                opacity: 0;
+                transform: translateX(220px) translateY(100px) rotate(35deg) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(180px) translateY(40px) rotate(24deg) scale(1);
+            }
+        }
+
+        .phone-stack-container {
+            position: relative;
+        }
+
+        .phone-stack-container .floating-badges {
+            position: absolute;
+            inset: -60px;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-badge-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(0, 71, 255, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-badge-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: white;
+        }
+
+        .floating-badge-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .floating-badge-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .floating-badge-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-calls {
+            top: 20px;
+            left: 0;
+            animation-delay: 0.6s;
+        }
+
+        .badge-time {
+            bottom: 60px;
+            left: 10px;
+            animation-delay: 0.8s;
+        }
+
+        .badge-rating {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            animation-delay: 1s;
+        }
+
+        .badge-rating .floating-badge-icon {
+            background: rgba(251, 191, 36, 0.3);
+        }
+
+        .badge-rating .floating-badge-icon svg {
+            fill: white;
+            stroke: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* ============================================
+           SOCIAL PROOF STRIP
+        ============================================ */
+        .social-proof {
+            background: white;
+            border-bottom: 1px solid var(--slate-200);
+            padding: 2.5rem 0;
+        }
+
+        .social-proof-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--ezybiz-blue);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ============================================
+           FEATURES SECTION
+        ============================================ */
+        .features {
+            padding: 7rem 0;
+            background: var(--slate-50);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all var(--transition-fast);
+            border: 2px solid var(--navy-900);
+            position: relative;
+        }
+
+        .feature-card::before {
+            display: none;
+        }
+
+        .feature-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 var(--navy-900);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--slate-100);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: all var(--transition-fast);
+            border: 2px solid var(--navy-900);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--ezybiz-blue);
+            color: white;
+        }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--ezybiz-blue);
+            transition: color var(--transition-fast);
+        }
+
+        .feature-card:hover .feature-icon svg {
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           PHONE ADVANTAGE
+        ============================================ */
+        .phone-advantage {
+            padding: 5rem 0;
+            background: var(--slate-50);
+        }
+
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .advantage-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all var(--transition-fast);
+            border: 2px solid var(--navy-900);
+            text-align: center;
+        }
+
+        .advantage-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 var(--navy-900);
+        }
+
+        .advantage-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--ezybiz-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            border: 2px solid var(--navy-900);
+        }
+
+        .advantage-icon svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .advantage-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .advantage-card p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           HOW IT WORKS
+        ============================================ */
+        .how-it-works {
+            padding: 7rem 0;
+            background: white;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: calc(16.66% + 1rem);
+            right: calc(16.66% + 1rem);
+            height: 4px;
+            background: var(--navy-900);
+            z-index: 0;
+            border-bottom: 2px dashed white;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border: 4px solid var(--navy-900);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            transition: all var(--transition-fast);
+            z-index: 1;
+        }
+
+        .step-card:hover .step-number {
+            background: var(--ezybiz-blue);
+            transform: scale(1.05);
+            box-shadow: 6px 6px 0 var(--navy-900);
+        }
+
+        .step-number span {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--ezybiz-blue);
+            transition: color var(--transition-fast);
+        }
+
+        .step-card:hover .step-number span {
+            color: white;
+        }
+
+        .step-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .step-card p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           PRICING SECTION
+        ============================================ */
+        .pricing {
+            padding: 7rem 0;
+            background: var(--slate-50);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 2px solid var(--navy-900);
+            transition: all var(--transition-fast);
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 var(--navy-900);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--ezybiz-blue);
+            transform: scale(1.05);
+            box-shadow: 8px 8px 0 var(--ezybiz-blue);
+            background: white;
+            padding-top: 3.5rem;
+        }
+
+        .pricing-card.featured h3,
+        .pricing-card.featured .price-amount,
+        .pricing-card.featured .price-period,
+        .pricing-card.featured .pricing-features li {
+            color: var(--navy-900) !important;
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translate(-4px, -4px);
+            box-shadow: 12px 12px 0 var(--ezybiz-blue);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--ezybiz-blue);
+            color: white;
+            font-family: 'Sora', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 800;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            border: 2px solid var(--navy-900);
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .pricing-card .price {
+            margin-bottom: 1.5rem;
+        }
+
+        .price-amount {
+            font-family: 'Sora', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.625rem 0;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--slate-100);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features svg {
+            width: 18px;
+            height: 18px;
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            font-family: 'Sora', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            background: white;
+            color: var(--navy-900);
+            border: 2px solid var(--navy-900);
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+        }
+
+        .pricing-cta:hover {
+            background: var(--ezybiz-blue);
+            color: white;
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--navy-900);
+        }
+
+        .pricing-card.featured .pricing-cta {
+            background: var(--ezybiz-blue);
+            color: white;
+            border-color: var(--navy-900);
+        }
+
+        .pricing-card.featured .pricing-cta:hover {
+            background: var(--navy-900);
+            color: white;
+            box-shadow: 4px 4px 0 var(--ezybiz-blue);
+        }
+
+        /* Pricing Comparison */
+        .pricing-comparison {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .comparison-card {
+            background: white;
+            border: 2px solid var(--navy-900);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .comparison-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--navy-900);
+        }
+
+        .comparison-card h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--ezybiz-blue);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .comparison-card li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-card strong {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 640px) {
+            .pricing-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================
+           TESTIMONIALS
+        ============================================ */
+        .testimonials {
+            padding: 7rem 0;
+            background: var(--navy-900);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-glow);
+            pointer-events: none;
+        }
+
+        .testimonials .section-label {
+            color: var(--accent-green-light);
+        }
+
+        .testimonials .section-title {
+            color: white;
+        }
+
+        .testimonials .section-subtitle {
+            color: var(--slate-300);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 2px solid var(--navy-900);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all var(--transition-fast);
+        }
+
+        .testimonial-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 var(--ezybiz-blue);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-stars svg {
+            width: 18px;
+            height: 18px;
+            color: #fbbf24;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 1.125rem;
+            color: var(--navy-900);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--ezybiz-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            color: var(--navy-900);
+            font-weight: 800;
+        }
+
+        .testimonial-info p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           FAQ SECTION
+        ============================================ */
+        .faq {
+            padding: 7rem 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 2px solid var(--navy-900);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            background: white;
+            padding: 0 1.5rem;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-question h3 {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: color var(--transition-fast);
+        }
+
+        .faq-question:hover h3 {
+            color: var(--accent-green);
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--text-tertiary);
+            transition: transform var(--transition-base);
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            color: var(--accent-green);
+        }
+
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows var(--transition-base);
+        }
+
+        .faq-item.open .faq-answer {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-answer-inner {
+            overflow: hidden;
+        }
+
+        .faq-answer p {
+            padding: 0 0 1.5rem 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           FINAL CTA
+        ============================================ */
+        .final-cta {
+            padding: 7rem 0;
+            background: var(--ezybiz-blue);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--navy-900);
+            border-bottom: 4px solid var(--navy-900);
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 900;
+        }
+
+        .final-cta p {
+            font-size: 1.25rem;
+            color: white;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            font-weight: 600;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .final-cta .hero-ctas {
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .developed-by {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .developed-by a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            transition: opacity var(--transition-fast);
+        }
+
+        .developed-by a:hover {
+            opacity: 0.8;
+        }
+
+        .developed-by img {
+            height: 20px;
+            width: auto;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer {
+            background: var(--navy-900);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            color: var(--slate-300);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.8125rem;
+            color: var(--slate-300);
+        }
+
+        .footer-avocado {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8125rem;
+            color: var(--slate-300);
+        }
+
+        .footer-avocado a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            color: white;
+            text-decoration: none;
+            transition: opacity var(--transition-fast);
+        }
+
+        .footer-avocado a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-avocado img {
+            height: 16px;
+            width: auto;
+        }
+
+        /* ============================================
+           BUSINESS SCENARIOS - "YOUR DAY TRANSFORMED"
+        ============================================ */
+        .scenarios {
+            padding: 7rem 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scenarios::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--navy-900);
+        }
+
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .scenario-card {
+            background: var(--slate-50);
+            border: 3px solid var(--navy-900);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all var(--transition-fast);
+            position: relative;
+        }
+
+        .scenario-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 var(--navy-900);
+        }
+
+        .scenario-header {
+            padding: 1.5rem 2rem;
+            background: var(--navy-900);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .scenario-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--ezybiz-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .scenario-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .scenario-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+        }
+
+        .scenario-subtitle {
+            font-size: 0.875rem;
+            color: var(--slate-300);
+            margin-top: 0.25rem;
+        }
+
+        .scenario-content {
+            padding: 2rem;
+        }
+
+        .scenario-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .scenario-before,
+        .scenario-after {
+            padding: 1.25rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .scenario-before {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+        }
+
+        .scenario-after {
+            background: #eff6ff;
+            border: 2px solid #bfdbfe;
+        }
+
+        .scenario-label {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.6875rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .scenario-before .scenario-label {
+            color: #dc2626;
+        }
+
+        .scenario-after .scenario-label {
+            color: var(--ezybiz-blue);
+        }
+
+        .scenario-label svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .scenario-text {
+            font-size: 0.9375rem;
+            color: var(--navy-900);
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .scenario-outcome {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed var(--slate-200);
+        }
+
+        .outcome-stat {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .outcome-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--ezybiz-blue);
+            line-height: 1;
+        }
+
+        .outcome-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        /* Bottom stats banner */
+        .scenarios-stats {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--ezybiz-blue);
+            border: 3px solid var(--navy-900);
+            border-radius: 16px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .scenarios-stat {
+            text-align: center;
+        }
+
+        .scenarios-stat-value {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .scenarios-stat-label {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        /* ============================================
+           SCROLL ANIMATIONS
+        ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-ctas {
+                justify-content: center;
+            }
+
+            .hero-trust {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .phone-mockup {
+                width: 240px;
+                height: 500px;
+            }
+
+            .floating-card {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .steps-container::before {
+                display: none;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--navy-900);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem;
+                color: #ffffff !important;
+            }
+
+            header.scrolled .nav-links {
+                background: #ffffff;
+                border-top: 1px solid #e2e8f0;
+            }
+
+            header.scrolled .nav-links a {
+                color: var(--navy-900) !important;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 3rem 0 1rem;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            ul.hero-description {
+                text-align: left;
+                padding-left: 2rem;
+            }
+
+            .phone-stack {
+                width: 420px;
+                height: 580px;
+            }
+
+            /* Hide outer phones on mobile, show 3 center phones */
+            .phone-stack .phone-far-back,
+            .phone-stack .phone-far-front {
+                display: none;
+            }
+
+            .phone-stack .phone-back {
+                transform: translateX(-70px) translateY(15px) rotate(-10deg);
+            }
+
+            .phone-stack .phone-front {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+
+            .phone-stack .phone-middle {
+                transform: translateX(70px) translateY(15px) rotate(10deg);
+            }
+
+            .phone-stack .iphone-mockup {
+                margin-left: -110px;
+            }
+
+            .iphone-mockup {
+                width: 300px;
+            }
+
+            .floating-badges {
+                display: none;
+            }
+
+            .store-btn {
+                padding: 0.75rem 1rem;
+            }
+
+            .store-btn svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-proof-inner {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .phone-stack {
+                width: 280px;
+                height: 400px;
+            }
+
+            .iphone-mockup {
+                width: 200px;
+            }
+
+            .phone-stack .iphone-mockup {
+                margin-left: -100px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .store-btn {
+                justify-content: center;
+            }
+
+            .hero-trust {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+
+        /* Scenarios responsive */
+        @media (max-width: 1024px) {
+            .scenarios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .scenario-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .scenarios-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .scenario-header {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .scenario-content {
+                padding: 1.5rem;
+            }
+
+            .outcome-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="nav-inner">
+                <a href="#" class="logo">
+                    <img src="ezybizlogo2.png" alt="EzyBiz">
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="ezybiz-guide.html">User Guide</a></li>
+                </ul>
+                <a href="#download" class="nav-cta">Download App</a>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">Trusted by 20+ Australian Plumbers • $50K+ in Jobs Booked</div>
+                    <h1>Stop Losing <span>$3,000+</span> Jobs to Missed Calls</h1>
+                    <ul class="hero-description">
+                        <li>Book 3-5 extra jobs per month without hiring anyone</li>
+                        <li>One saved $400 emergency call pays for 10 months of EzyBiz</li>
+                        <li>Your virtual assistant answers while you're under sinks, on roofs, or at your kid's footy</li>
+                        <li>90% less phone tag — customers book themselves in</li>
+                        <li>Take over the call at any time.</li>
+                        <li>Your competitors' missed calls become your jobs</li>
+                        <li>80% of spam calls filtered—only real plumbing jobs interrupt you</li>
+                    </ul>
+                    <div class="hero-ctas">
+                        <a href="https://apps.apple.com/app/id6756286463" target="_blank" class="store-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            <div class="store-btn-text">
+                                <span class="store-btn-small">Download on the</span>
+                                <span class="store-btn-large">App Store</span>
+                            </div>
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.avocado.ezybiz" target="_blank" class="store-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                            <div class="store-btn-text">
+                                <span class="store-btn-small">Get it on</span>
+                                <span class="store-btn-large">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.875rem; margin-top: 0.75rem;">No card required • Set up in 5 minutes • Cancel anytime</p>
+                    <div class="hero-trust">
+                        <p class="hero-trust-text" style="font-style: italic;">"Caught 4 jobs last month I would've missed. Each one was $300-500."<br><strong>— James P., Melbourne</strong></p>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-stack-container">
+                        <div class="phone-stack">
+                            <!-- Far-left: Call Details Screen -->
+                            <div class="iphone-mockup phone-far-back">
+                                <div class="iphone-frame">
+                                    <div class="iphone-screen">
+                                        <img src="ezybiz-app-call-details.png" alt="EzyBiz Call Details - Summary & Transcript">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Left: Messages Screen -->
+                            <div class="iphone-mockup phone-back">
+                                <div class="iphone-frame">
+                                    <div class="iphone-screen">
+                                        <img src="ezybiz-app-messages.jpeg" alt="EzyBiz Messages - Business Communications">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Center: Home/Dashboard Screen -->
+                            <div class="iphone-mockup phone-front">
+                                <div class="iphone-frame">
+                                    <div class="iphone-screen">
+                                        <img src="ezybiz-app-home.jpeg" alt="EzyBiz Dashboard - Business Overview">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Contacts Screen -->
+                            <div class="iphone-mockup phone-middle">
+                                <div class="iphone-frame">
+                                    <div class="iphone-screen">
+                                        <img src="ezybiz-app-contacts.jpeg" alt="EzyBiz Contacts - Business Contact Management">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Far-right: History Screen -->
+                            <div class="iphone-mockup phone-far-front">
+                                <div class="iphone-frame">
+                                    <div class="iphone-screen">
+                                        <img src="ezybiz-app-history.jpeg" alt="EzyBiz Call History - Track All Business Calls">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Stat Badges -->
+                        <div class="floating-badges">
+                            <div class="floating-badge badge-calls">
+                                <div class="floating-badge-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div class="floating-badge-content">
+                                    <span class="floating-badge-value">142</span>
+                                    <span class="floating-badge-label">Calls Handled</span>
+                                </div>
+                            </div>
+                            <div class="floating-badge badge-time">
+                                <div class="floating-badge-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+                                <div class="floating-badge-content">
+                                    <span class="floating-badge-value">12hrs</span>
+                                    <span class="floating-badge-label">Time Saved</span>
+                                </div>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="social-proof-inner">
+                <div class="stat-item reveal">
+                    <div class="stat-number">$50K+</div>
+                    <div class="stat-label">Jobs Booked Through EzyBiz</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-1">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Australian Plumbers</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-2">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Emergency Coverage</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-3">
+                    <div class="stat-number">3-5</div>
+                    <div class="stat-label">Extra Jobs/Month Average</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Phone Matters -->
+    <section class="phone-advantage">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">The Phone Advantage</span>
+                <h2 class="section-title">Why the businesses that answer, win</h2>
+                <p class="section-subtitle">In a world of emails and chatbots, a phone call still closes the deal.</p>
+            </div>
+            <div class="advantage-grid">
+                <div class="advantage-card reveal reveal-delay-1">
+                    <div class="advantage-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                    </div>
+                    <h3>Callers are ready to buy</h3>
+                    <p>When someone picks up the phone, they're serious. Phone leads convert 10-15x higher than web forms.</p>
+                </div>
+                <div class="advantage-card reveal reveal-delay-2">
+                    <div class="advantage-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+                    </div>
+                    <h3>Voice builds instant trust</h3>
+                    <p>A real conversation in seconds does what emails take days to achieve. Your customer feels looked after.</p>
+                </div>
+                <div class="advantage-card reveal reveal-delay-3">
+                    <div class="advantage-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3>Speed wins the job</h3>
+                    <p>78% of customers buy from whoever responds first. Miss the call, miss the job.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Scenarios - Your Day Transformed -->
+    <section class="scenarios">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">A Plumber's Day</span>
+                <h2 class="section-title">Your Day, Transformed</h2>
+                <p class="section-subtitle">See how EzyBiz changes the game for plumbers just like you.</p>
+            </div>
+
+            <div class="scenarios-grid">
+                <!-- Scenario 1: Under a Sink -->
+                <div class="scenario-card reveal reveal-delay-1">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="scenario-title">Under a Sink</h3>
+                            <p class="scenario-subtitle">Hands full of pipe fittings</p>
+                        </div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-comparison">
+                            <div class="scenario-before">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Without EzyBiz
+                                </div>
+                                <p class="scenario-text">Phone rings, can't answer with wet hands. Customer calls another plumber. $400 blocked drain job gone.</p>
+                            </div>
+                            <div class="scenario-after">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    With EzyBiz
+                                </div>
+                                <p class="scenario-text">Your virtual assistant answers, captures the blocked drain emergency, gets their address. You get the job when you surface.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-outcome">
+                            <div class="outcome-stat">
+                                <span class="outcome-number">100%</span>
+                                <span class="outcome-label">of calls answered,<br>even with wet hands</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario 2: Emergency Callout -->
+                <div class="scenario-card reveal reveal-delay-2">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="scenario-title">11pm Burst Pipe Call</h3>
+                            <p class="scenario-subtitle">Emergency callout while you're sleeping</p>
+                        </div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-comparison">
+                            <div class="scenario-before">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Without EzyBiz
+                                </div>
+                                <p class="scenario-text">Miss the call sleeping, customer finds someone else. $800 emergency job gone to your competitor.</p>
+                            </div>
+                            <div class="scenario-after">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    With EzyBiz
+                                </div>
+                                <p class="scenario-text">Your virtual assistant answers, captures urgency, wakes you with notification for genuine emergencies. You take the $800 job.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-outcome">
+                            <div class="outcome-stat">
+                                <span class="outcome-number">$800+</span>
+                                <span class="outcome-label">emergency jobs<br>you'd otherwise miss</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario 3: Appointment Booking -->
+                <div class="scenario-card reveal reveal-delay-3">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="scenario-title">Booking Quote Appointments</h3>
+                            <p class="scenario-subtitle">Customer wants you to look at their hot water</p>
+                        </div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-comparison">
+                            <div class="scenario-before">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Without EzyBiz
+                                </div>
+                                <p class="scenario-text">3 days of missed calls and texts trying to find a time. Customer gives up and calls another plumber.</p>
+                            </div>
+                            <div class="scenario-after">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    With EzyBiz
+                                </div>
+                                <p class="scenario-text">Your virtual assistant offers your available time slots. Customer picks Thursday 2pm. Appointment confirmed instantly while you work.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-outcome">
+                            <div class="outcome-stat">
+                                <span class="outcome-number">Zero</span>
+                                <span class="outcome-label">phone tag required<br>appointments book themselves</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario 4: Price Enquiries -->
+                <div class="scenario-card reveal reveal-delay-4">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="scenario-title">Price Enquiries</h3>
+                            <p class="scenario-subtitle">"How much for a hot water install?"</p>
+                        </div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-comparison">
+                            <div class="scenario-before">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Without EzyBiz
+                                </div>
+                                <p class="scenario-text">Drop everything to quote or lose them. Constant interruptions all day answering the same questions.</p>
+                            </div>
+                            <div class="scenario-after">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    With EzyBiz
+                                </div>
+                                <p class="scenario-text">Your virtual assistant provides ballpark pricing from your rates, captures their details for follow-up. You stay focused on the job.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-outcome">
+                            <div class="outcome-stat">
+                                <span class="outcome-number">Auto</span>
+                                <span class="outcome-label">price ranges given<br>based on your rates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario 5: Saturday Morning -->
+                <div class="scenario-card reveal reveal-delay-5">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="scenario-title">Saturday Morning</h3>
+                            <p class="scenario-subtitle">Blocked toilet call during family time</p>
+                        </div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-comparison">
+                            <div class="scenario-before">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Without EzyBiz
+                                </div>
+                                <p class="scenario-text">Family time interrupted or business lost. Answer and work all weekend, or ignore and miss the job.</p>
+                            </div>
+                            <div class="scenario-after">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    With EzyBiz
+                                </div>
+                                <p class="scenario-text">Your virtual assistant handles it, books Monday unless truly urgent. Family time protected, job still secured.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-outcome">
+                            <div class="outcome-stat">
+                                <span class="outcome-number">24/7</span>
+                                <span class="outcome-label">professional coverage<br>without sacrificing weekends</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario 6: Multiple Quote Requests -->
+                <div class="scenario-card reveal reveal-delay-6">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="scenario-title">Multiple Quote Requests</h3>
+                            <p class="scenario-subtitle">Busy week, 5 calls you can't take</p>
+                        </div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-comparison">
+                            <div class="scenario-before">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Without EzyBiz
+                                </div>
+                                <p class="scenario-text">Can't remember who wanted what. Calls blur together. "Was it the kitchen or bathroom leak?"</p>
+                            </div>
+                            <div class="scenario-after">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    With EzyBiz
+                                </div>
+                                <p class="scenario-text">Each enquiry logged with address, issue type, and when they need it done. Follow up prepared.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-outcome">
+                            <div class="outcome-stat">
+                                <span class="outcome-number">Every</span>
+                                <span class="outcome-label">job detail captured<br>ready for follow-up</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario 7: Call Transcripts -->
+                <div class="scenario-card reveal reveal-delay-7">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="scenario-title">Reviewing Job Details</h3>
+                            <p class="scenario-subtitle">What exactly did they say was leaking?</p>
+                        </div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-comparison">
+                            <div class="scenario-before">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Without EzyBiz
+                                </div>
+                                <p class="scenario-text">Memory only. Was it under the sink or in the ceiling? Hot water or cold? Show up with wrong parts.</p>
+                            </div>
+                            <div class="scenario-after">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    With EzyBiz
+                                </div>
+                                <p class="scenario-text">Every call transcribed. Read exactly what they described on the drive over. Show up prepared with the right gear.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-outcome">
+                            <div class="outcome-stat">
+                                <span class="outcome-number">100%</span>
+                                <span class="outcome-label">of calls transcribed<br>never forget job details</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario 8: Spam Filtering -->
+                <div class="scenario-card reveal reveal-delay-8">
+                    <div class="scenario-header">
+                        <div class="scenario-icon">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="scenario-title">Telemarketer Interruption</h3>
+                            <p class="scenario-subtitle">Third spam call today while fitting a tap</p>
+                        </div>
+                    </div>
+                    <div class="scenario-content">
+                        <div class="scenario-comparison">
+                            <div class="scenario-before">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    Without EzyBiz
+                                </div>
+                                <p class="scenario-text">Answer phone covered in grease, it's another solar panel sales pitch. Waste 30 seconds, lose focus on the job.</p>
+                            </div>
+                            <div class="scenario-after">
+                                <div class="scenario-label">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    With EzyBiz
+                                </div>
+                                <p class="scenario-text">Your virtual assistant detects it's spam and handles it. You can review blocked calls anytime, but real plumbing jobs always get through to you.</p>
+                            </div>
+                        </div>
+                        <div class="scenario-outcome">
+                            <div class="outcome-stat">
+                                <span class="outcome-number">80%</span>
+                                <span class="outcome-label">fewer interruptions<br>from spam calls</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom stats -->
+            <div class="scenarios-stats reveal">
+                <div class="scenarios-stat">
+                    <div class="scenarios-stat-value">$50K+</div>
+                    <div class="scenarios-stat-label">Saved vs hiring a receptionist</div>
+                </div>
+                <div class="scenarios-stat">
+                    <div class="scenarios-stat-value">12+ hrs</div>
+                    <div class="scenarios-stat-label">Time saved per week</div>
+                </div>
+                <div class="scenarios-stat">
+                    <div class="scenarios-stat-value">0</div>
+                    <div class="scenarios-stat-label">Missed opportunities</div>
+                </div>
+                <div class="scenarios-stat">
+                    <div class="scenarios-stat-value">100%</div>
+                    <div class="scenarios-stat-label">Work-life balance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">What You Get</span>
+                <h2 class="section-title">Everything working plumbers asked for</h2>
+                <p class="section-subtitle">Built by asking real plumbers what they actually need to run their business.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3>Never miss a $400+ job to voicemail again</h3>
+                    <p>Your customers always reach someone professional, even when you're under a sink or driving. No more losing emergency jobs to competitors.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    </div>
+                    <h3>Your real business number (no personal mobile exposed)</h3>
+                    <p>Customers call your business line, not your personal mobile. Every call answered professionally. Takes 5 minutes to activate.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    </div>
+                    <h3>See job details before picking up—take high-value calls first</h3>
+                    <p>Read the job type, address, and urgency before you jump in. Take the $800 burst pipe, let routine enquiries auto-confirm.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-4">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3>Read customer's exact words while you drive to the job</h3>
+                    <p>Full transcript of every call. No more "sorry, what was your address again?" on arrival.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-5">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                    </div>
+                    <h3>Get alerted for big jobs, ignore routine enquiries</h3>
+                    <p>Emergency burst pipes ping you immediately. Routine maintenance bookings get handled without interrupting your work.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-6">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h3>Your virtual assistant learns your pricing—callers think they talked to your staff</h3>
+                    <p>Tell it your services, callout fees, and service areas once. Customers swear they spoke to a real person.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-7">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+                    </div>
+                    <h3>Jobs auto-book into your calendar (zero phone tag)</h3>
+                    <p>Tell your virtual assistant your availability once. Customers book themselves. You get details via SMS—just show up.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-8">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+                    </div>
+                    <h3>Block 80% of telemarketers—only real jobs interrupt you</h3>
+                    <p>Tired of robocalls when you're elbow-deep in a drain? Your virtual assistant filters spam. Only real plumbing jobs get through.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-9">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+                    </div>
+                    <h3>Burst pipe at 2am? Your virtual assistant wakes you for genuine emergencies only</h3>
+                    <p>Your virtual assistant recognises urgent situations and routes them immediately. Routine calls wait until morning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Get Started</span>
+                <h2 class="section-title">Be answering calls professionally in 5 minutes</h2>
+                <p class="section-subtitle">Three steps. No tech skills needed. No contracts.</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-card reveal reveal-delay-1">
+                    <div class="step-number"><span>1</span></div>
+                    <h3>Pick your number</h3>
+                    <p>Choose a local number your customers will recognise. Sydney, Melbourne, Brisbane - wherever you work.</p>
+                </div>
+                <div class="step-card reveal reveal-delay-2">
+                    <div class="step-number"><span>2</span></div>
+                    <h3>Tell it about your business</h3>
+                    <p>Takes 2 minutes. Just answer a few questions about what you do, when you work, and what you charge.</p>
+                </div>
+                <div class="step-card reveal reveal-delay-3">
+                    <div class="step-number"><span>3</span></div>
+                    <h3>Start winning more jobs</h3>
+                    <p>That's it. Every call gets answered. You take over the important ones. Life gets easier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Pricing</span>
+                <h2 class="section-title">Plans that pay for themselves</h2>
+                <p class="section-subtitle">One extra job pays for your whole year.</p>
+            </div>
+            <div class="pricing-grid" style="display: flex; justify-content: center;">
+                <div class="pricing-card featured reveal" style="text-align: center;">
+                    <div class="pricing-badge">Limited Time</div>
+                    <h3>Introductory Offer</h3>
+                    <div class="price">
+                        <span class="price-amount">$39.99</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <p style="color: inherit; opacity: 0.9; margin-bottom: 2rem;">100 mins/month included • Top up anytime</p>
+                    <a href="#" class="pricing-cta">Get Started</a>
+                </div>
+            </div>
+            <div class="pricing-comparison reveal">
+                <div class="comparison-card">
+                    <h4>Your Break-Even Math</h4>
+                    <ul>
+                        <li><strong>1 missed job</strong> = ~$400 lost revenue</li>
+                        <li><strong>1 saved job</strong> = pays for 10 months of EzyBiz</li>
+                        <li><strong>Most plumbers</strong> catch 2-3 extra jobs/month = $800-1,200 profit</li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h4>Compared To Alternatives</h4>
+                    <ul>
+                        <li>Ruby Receptionist: <strong>$165-295/month</strong> (plus per-call fees)</li>
+                        <li>AnswerConnect: <strong>$325+/month</strong></li>
+                        <li>Hiring a receptionist: <strong>$4,000+/month</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What Plumbers Say</h2>
+                <p class="section-subtitle">Join Australian plumbers already using EzyBiz.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="testimonial-stars">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>"Caught 4 emergency jobs last month I would've completely missed. Each one was $300-500. This thing pays for itself before you finish reading this."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MP</div>
+                        <div class="testimonial-info">
+                            <h4>Mike Peterson</h4>
+                            <p>Peterson Plumbing, Sydney</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="testimonial-stars">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>"One burst pipe call at 11pm paid for 6 months of this. Used to lose half my calls when I was under a house—now every blocked drain gets captured. Can't believe I waited this long."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DT</div>
+                        <div class="testimonial-info">
+                            <h4>Dave Thompson</h4>
+                            <p>Thompson Drains, Melbourne</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal reveal-delay-3">
+                    <div class="testimonial-stars">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <blockquote>"My wife used to take calls. Now she's much happier and I'm catching an extra $2-3K per month in jobs I would've missed. Customers think I've got a proper office with full-time staff."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SM</div>
+                        <div class="testimonial-info">
+                            <h4>Steve Martinez</h4>
+                            <p>Martinez Hot Water, Brisbane</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Got questions? We've got answers.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <h3>How does it know what to say to my customers?</h3>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>During setup, you'll provide information about your business including services, pricing, operating hours, and common customer questions. The Virtual Receptionist uses this to have natural, informed conversations with your callers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-1">
+                    <button class="faq-question">
+                        <h3>Can I take over if it's someone important?</h3>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Yes! When Virtual Receptionist is handling a call, you receive a notification. Press the transfer button to join the call instantly. The Virtual Receptionist gracefully exits while your customer stays on the line - they experience a seamless handoff.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-2">
+                    <button class="faq-question">
+                        <h3>What about calls at 10pm?</h3>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>EzyBiz works 24/7. The Virtual Receptionist knows your business hours and informs callers accordingly, but still handles enquiries, takes messages, and can notify you of urgent calls even outside hours.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-3">
+                    <button class="faq-question">
+                        <h3>Is my data secure?</h3>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Absolutely. All calls and data are encrypted end-to-end. We use enterprise-grade security infrastructure with Firebase and Google Cloud Platform. Your business information is never shared with third parties.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-4">
+                    <button class="faq-question">
+                        <h3>What if I already have a business number?</h3>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Currently, EzyBiz provides new Australian business numbers. Number porting from other providers is on our roadmap. You can forward your existing number to your EzyBiz number in the meantime.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-5">
+                    <button class="faq-question">
+                        <h3>What if I get more calls than expected?</h3>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>We'll notify you when you're approaching your limit. You can upgrade your plan anytime, or additional minutes are available at a per-minute rate. We never cut off service mid-call.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-6">
+                    <button class="faq-question">
+                        <h3>Is this a white-labelled app you're reselling?</h3>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Absolutely not. We're a technology company that walks the walk—we develop all our software in-house in Melbourne, Australia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal reveal-delay-7">
+                    <button class="faq-question">
+                        <h3>Can I port my existing number?</h3>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>EzyBiz uses mobile phone numbers to allow for texting and calls. Porting your existing number is possible, please contact <a href="mailto:hello@avocadodigital.com.au">hello@avocadodigital.com.au</a> for assistance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="download">
+        <div class="container">
+            <div class="final-cta-content reveal">
+                <h2>Ready to stop losing $400+ jobs to voicemail?</h2>
+                <p>Join 20+ Australian plumbers. Set up in 5 minutes. No card required for your free trial.</p>
+                <div class="hero-ctas">
+                    <a href="https://apps.apple.com/app/id6756286463" target="_blank" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        <div class="store-btn-text">
+                            <span class="store-btn-small">Download on the</span>
+                            <span class="store-btn-large">App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.avocado.ezybiz" target="_blank" class="store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                        <div class="store-btn-text">
+                            <span class="store-btn-small">Get it on</span>
+                            <span class="store-btn-large">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="developed-by">
+                    Developed by <a href="index.html"><img src="avocado-logo-wordmark.png" alt="Avocado"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#" class="footer-logo">
+                    <img src="ezybizlogo2.png" alt="EzyBiz">
+                </a>
+                <ul class="footer-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="ezybiz-guide.html">User Guide</a></li>
+                    <li><a href="ezybiz.html">EzyBiz Home</a></li>
+                    <li><a href="ezybiz-privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="ezybiz-terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="ezybiz-delete-account.html">Delete Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Avocado Pty Ltd. All rights reserved.</p>
+                <div class="footer-avocado">
+                    A product by <a href="index.html"><img src="avocado-logo-wordmark.png" alt="Avocado"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                if (rect.top < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                faqItems.forEach(i => i.classList.remove('open'));
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Firebase Analytics -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDtvPl1WNd3-mzdAo_HvOyKcN2KdJThY2E",
+        authDomain: "ezybiz-e06b6.firebaseapp.com",
+        projectId: "ezybiz-e06b6",
+        storageBucket: "ezybiz-e06b6.firebasestorage.app",
+        messagingSenderId: "344431214322",
+        appId: "1:344431214322:web:e517e19d3cc2245412da6b",
+        measurementId: "G-6YES9LPFKD"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <title>Delete Account | EzyBiz</title>
+    <meta name="description" content="Request deletion of your EzyBiz account and associated data.">
+    <link rel="icon" type="image/png" href="ezybizlogo2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-elevated: #f1f5f9;
+            --bg-navy: #0f172a;
+            --bg-navy-light: #1e293b;
+
+            --ezybiz-blue: #0047FF;
+            --ezybiz-blue-light: #3b82f6;
+            --ezybiz-blue-dark: #0033cc;
+
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-tertiary: #94a3b8;
+            --text-light: #ffffff;
+
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 30px rgba(0, 71, 255, 0.3);
+
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--ezybiz-blue); color: white; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: var(--text-primary);
+            text-wrap: balance;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section { padding: 4rem 0; position: relative; }
+        .content-block { max-width: 800px; margin: 0 auto; }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1.5rem 0;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--bg-elevated);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+
+        .logo {
+            display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-primary);
+        }
+        .logo img { height: 40px; }
+
+        .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: var(--transition-fast); position: relative;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--ezybiz-blue); transition: var(--transition-fast); border-radius: 2px;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--ezybiz-blue); color: white !important; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; transition: var(--transition-fast) !important; text-decoration: none !important;
+        }
+        .nav-cta:hover { background: var(--ezybiz-blue-dark); transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+        .nav-cta::after { display: none !important; }
+
+        /* HERO */
+        .hero {
+            min-height: 40vh;
+            display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 8rem;
+            background: var(--ezybiz-blue);
+            color: white; text-align: center;
+        }
+        .hero-bg { position: absolute; inset: 0; overflow: hidden; }
+        .hero-orb {
+            position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.3; animation: floatOrb 20s infinite ease-in-out;
+        }
+        .hero-orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, #60a5fa 0%, transparent 70%); top: -200px; right: -100px; }
+        .hero-orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, #0ea5e9 0%, transparent 70%); bottom: -100px; left: -100px; opacity: 0.2; animation-delay: -5s; }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .hero-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: white; }
+        .hero-subtitle { font-size: 1.125rem; color: rgba(255, 255, 255, 0.8); }
+
+        /* POLICY CONTENT */
+        .policy-content {
+            padding: 4rem 0;
+        }
+        .policy-content h2 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+        }
+        .policy-content h2:first-of-type {
+            margin-top: 0;
+        }
+        .policy-content h3 {
+            font-size: 1.125rem;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+        .policy-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .policy-content ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+        }
+        .policy-content ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+        .policy-content a {
+            color: var(--ezybiz-blue);
+            text-decoration: none;
+        }
+        .policy-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* DELETE REQUEST FORM */
+        .delete-form {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        .delete-form h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--bg-elevated);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--ezybiz-blue);
+            box-shadow: 0 0 0 3px rgba(0, 71, 255, 0.1);
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background: #dc2626;
+            color: white;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        .submit-btn:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+        .submit-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success-message {
+            background: #dcfce7;
+            border: 1px solid #86efac;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .success-message h3 {
+            color: #166534;
+            margin-bottom: 0.5rem;
+        }
+        .success-message p {
+            color: #15803d;
+            margin: 0;
+        }
+        .success-message .checkmark {
+            width: 64px;
+            height: 64px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .success-message .checkmark svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .error-message {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: #991b1b;
+            display: none;
+        }
+
+        .hidden { display: none; }
+
+        .warning-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box p {
+            color: #991b1b;
+            margin: 0;
+        }
+
+        .info-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .info-box p {
+            color: #1e40af;
+            margin: 0;
+        }
+
+        .related-links {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+        .related-links h4 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .related-links ul {
+            margin: 0;
+            list-style: none;
+        }
+        .related-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-navy);
+            padding: 2rem 0;
+            color: white;
+        }
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-logo img {
+            height: 32px;
+        }
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: var(--transition-fast);
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+        }
+        .footer-avocado {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .footer-avocado img {
+            height: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .policy-content { padding: 2rem 0; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .delete-form { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="nav-inner">
+                <a href="ezybiz.html" class="logo">
+                    <img src="ezybizlogo2.png" alt="EzyBiz">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="ezybiz.html#features">Features</a></li>
+                    <li><a href="ezybiz.html#pricing">Pricing</a></li>
+                    <li><a href="ezybiz.html#faq">FAQ</a></li>
+                    <li><a href="ezybiz-guide.html">User Guide</a></li>
+                </ul>
+                <a href="ezybiz.html#download" class="nav-cta">Download App</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+        </div>
+        <div class="container hero-content">
+            <h1>Delete Your Account</h1>
+            <p class="hero-subtitle">Request deletion of your EzyBiz account and associated data</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="policy-content">
+        <div class="container content-block">
+
+            <h2>Account Deletion Request</h2>
+            <p>We respect your right to control your personal data. You can request deletion of your EzyBiz account and all associated data at any time.</p>
+
+            <div class="warning-box">
+                <p><strong>Important:</strong> Account deletion is permanent and cannot be undone. All your data will be permanently removed from our systems.</p>
+            </div>
+
+            <h2>What Data Will Be Deleted</h2>
+            <p>When you delete your account, the following data will be permanently removed:</p>
+            <ul>
+                <li><strong>Account Information:</strong> Your email address, name, and authentication data</li>
+                <li><strong>Phone Number:</strong> Your personal phone number and your assigned EzyBiz business number</li>
+                <li><strong>Business Configuration:</strong> Business name, knowledge base, AI agent settings, and operating hours</li>
+                <li><strong>Call Data:</strong> All call recordings, transcripts, call history, and metadata</li>
+                <li><strong>Messages:</strong> All SMS messages sent and received through your EzyBiz number</li>
+                <li><strong>Contacts:</strong> All business contacts and associated notes</li>
+                <li><strong>Subscription Data:</strong> Your subscription status and payment history references</li>
+            </ul>
+
+            <div class="info-box">
+                <p><strong>Note:</strong> Some anonymised, aggregated data may be retained for analytics and service improvement purposes, but this data cannot be linked back to you.</p>
+            </div>
+
+            <h2>Deletion Timeline</h2>
+            <p>Once your deletion request is processed:</p>
+            <ul>
+                <li>Your account will be deactivated immediately</li>
+                <li>Your EzyBiz phone number will be released and no longer functional</li>
+                <li>All personal data will be deleted within 30 days</li>
+                <li>Backup copies will be purged within 90 days</li>
+            </ul>
+
+            <h2>Before You Delete</h2>
+            <p>Please consider the following before requesting account deletion:</p>
+            <ul>
+                <li>Cancel any active subscriptions to avoid future charges</li>
+                <li>Export any call recordings or data you wish to keep</li>
+                <li>Update any marketing materials that reference your EzyBiz number</li>
+                <li>Inform your customers of your new contact number</li>
+            </ul>
+
+            <h2>How to Request Deletion</h2>
+
+            <h3>Option 1: Delete from the App</h3>
+            <p>You can delete your account directly from the EzyBiz app:</p>
+            <ul>
+                <li>Open the EzyBiz app</li>
+                <li>Go to Settings</li>
+                <li>Scroll to the bottom and tap "Delete Account"</li>
+                <li>Confirm your deletion request</li>
+            </ul>
+
+            <h3>Option 2: Email Request</h3>
+            <p>Alternatively, you can request deletion by emailing us at <a href="mailto:hello@avocadodigital.com.au">hello@avocadodigital.com.au</a> with:</p>
+            <ul>
+                <li>Subject line: "EzyBiz Account Deletion Request"</li>
+                <li>The email address associated with your EzyBiz account</li>
+                <li>Confirmation that you want your account and all data permanently deleted</li>
+            </ul>
+
+            <div class="delete-form" id="deleteFormContainer">
+                <div id="formSection">
+                    <h3>Submit Deletion Request</h3>
+                    <p style="margin-bottom: 1.5rem;">Fill out this form and we'll process your account deletion request.</p>
+                    <div id="errorMessage" class="error-message"></div>
+                    <form id="deleteRequestForm">
+                        <div class="form-group">
+                            <label for="email">Email Address (associated with your EzyBiz account)</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="reason">Reason for leaving (optional)</label>
+                            <textarea id="reason" name="reason" placeholder="Help us improve by sharing why you're deleting your account..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">Submit Deletion Request</button>
+                    </form>
+                </div>
+                <div id="successSection" class="success-message hidden">
+                    <div class="checkmark">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <h3>Request Submitted</h3>
+                    <p>We've received your account deletion request. You'll receive a confirmation email shortly, and your account will be deleted within 30 days.</p>
+                </div>
+            </div>
+
+            <h2>Questions?</h2>
+            <p>If you have any questions about account deletion or need assistance, please contact us:</p>
+            <p>
+                <strong>Avocado Pty Ltd</strong><br>
+                ACN: 652 199 687<br>
+                Email: <a href="mailto:hello@avocadodigital.com.au">hello@avocadodigital.com.au</a><br>
+                Website: <a href="https://avocadodigital.com.au">avocadodigital.com.au</a>
+            </p>
+
+            <div class="related-links">
+                <h4>Related Documents</h4>
+                <ul>
+                    <li><a href="ezybiz-privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="ezybiz-terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="ezybiz-acceptable-use.html">Acceptable Use Policy</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="ezybiz.html" class="footer-logo">
+                    <img src="ezybizlogo2.png" alt="EzyBiz">
+                </a>
+                <ul class="footer-links">
+                    <li><a href="ezybiz.html#features">Features</a></li>
+                    <li><a href="ezybiz.html#pricing">Pricing</a></li>
+                    <li><a href="ezybiz.html#faq">FAQ</a></li>
+                    <li><a href="ezybiz-guide.html">User Guide</a></li>
+                    <li><a href="ezybiz-privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="ezybiz-terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="ezybiz-acceptable-use.html">Acceptable Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 Avocado Pty Ltd. All rights reserved.</p>
+                <div class="footer-avocado">
+                    A product by <a href="index.html"><img src="avocado-logo-wordmark.png" alt="Avocado"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDcCJYSB550cqryQmZpZkt0zpo9ImHCrC8",
+            authDomain: "ezybiz-e06b6.firebaseapp.com",
+            projectId: "ezybiz-e06b6",
+            storageBucket: "ezybiz-e06b6.firebasestorage.app",
+            messagingSenderId: "344431214322",
+            appId: "1:344431214322:web:ezybiz-delete"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const form = document.getElementById('deleteRequestForm');
+        const formSection = document.getElementById('formSection');
+        const successSection = document.getElementById('successSection');
+        const errorMessage = document.getElementById('errorMessage');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const reason = document.getElementById('reason').value.trim();
+
+            // Reset error state
+            errorMessage.style.display = 'none';
+            errorMessage.textContent = '';
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            try {
+                await addDoc(collection(db, 'deletion_requests'), {
+                    email: email,
+                    reason: reason || null,
+                    status: 'pending',
+                    createdAt: serverTimestamp()
+                });
+
+                // Show success message
+                formSection.classList.add('hidden');
+                successSection.classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Error submitting deletion request:', error);
+                errorMessage.textContent = 'Something went wrong. Please try again or email us directly at hello@avocadodigital.com.au';
+                errorMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Deletion Request';
+            }
+        });
+    </script>
+
+</body>
+</html>
