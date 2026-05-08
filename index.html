@@ -1496,6 +1496,13 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            background: transparent;
+        }
+
+        .reel-video.is-ready {
+            opacity: 1;
         }
 
         .reel-top {
@@ -3176,7 +3183,7 @@
                                 <div class="iphone-frame">
                                     <div class="iphone-screen">
                                         <div class="reel-preview reel-preview-4">
-                                            <video class="reel-video" src="socialreels-reel-2.mp4" autoplay muted loop playsinline preload="auto" data-reel-offset="0"></video>
+                                            <video class="reel-video" muted loop playsinline preload="none" data-src="socialreels-reel-2.mp4" data-reel-offset="0"></video>
                                             <div class="reel-sparkle">
                                                 <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z"/></svg>
                                                 AI
@@ -3191,7 +3198,7 @@
                                 <div class="iphone-frame">
                                     <div class="iphone-screen">
                                         <div class="reel-preview reel-preview-2">
-                                            <video class="reel-video" src="socialreels-reel-3.mp4" autoplay muted loop playsinline preload="auto" data-reel-offset="1.5"></video>
+                                            <video class="reel-video" muted loop playsinline preload="none" data-src="socialreels-reel-3.mp4" data-reel-offset="1.5"></video>
                                             <div class="reel-sparkle">
                                                 <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z"/></svg>
                                                 AI
@@ -3206,7 +3213,7 @@
                                 <div class="iphone-frame">
                                     <div class="iphone-screen">
                                         <div class="reel-preview reel-preview-1">
-                                            <video class="reel-video" src="socialreels-reel.mp4" autoplay muted loop playsinline preload="auto" data-reel-offset="3"></video>
+                                            <video class="reel-video" muted loop playsinline preload="none" data-src="socialreels-reel.mp4" data-reel-offset="3"></video>
                                             <div class="reel-sparkle">
                                                 <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z"/></svg>
                                                 AI
@@ -3221,7 +3228,7 @@
                                 <div class="iphone-frame">
                                     <div class="iphone-screen">
                                         <div class="reel-preview reel-preview-3">
-                                            <video class="reel-video" src="socialreels-reel-2.mp4" autoplay muted loop playsinline preload="auto" data-reel-offset="4.5"></video>
+                                            <video class="reel-video" muted loop playsinline preload="none" data-src="socialreels-reel-2.mp4" data-reel-offset="4.5"></video>
                                             <div class="reel-sparkle">
                                                 <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z"/></svg>
                                                 AI
@@ -3236,7 +3243,7 @@
                                 <div class="iphone-frame">
                                     <div class="iphone-screen">
                                         <div class="reel-preview reel-preview-5">
-                                            <video class="reel-video" src="socialreels-reel-3.mp4" autoplay muted loop playsinline preload="auto" data-reel-offset="6"></video>
+                                            <video class="reel-video" muted loop playsinline preload="none" data-src="socialreels-reel-3.mp4" data-reel-offset="6"></video>
                                             <div class="reel-sparkle">
                                                 <svg viewBox="0 0 24 24"><path d="M12 2l2.39 7.36H22l-6.19 4.5L18.2 21 12 16.5 5.8 21l2.39-7.14L2 9.36h7.61z"/></svg>
                                                 AI
@@ -3898,16 +3905,50 @@
             }
         })();
 
-        /* Stagger SocialReels phone-stack videos so same-source clips don't sync */
-        document.querySelectorAll('.reel-video[data-reel-offset]').forEach((video) => {
-            const offset = parseFloat(video.dataset.reelOffset) || 0;
-            const apply = () => {
-                if (!isFinite(video.duration) || video.duration === 0) return;
-                try { video.currentTime = offset % video.duration; } catch (_) {}
+        /* Lazy-load SocialReels phone-stack videos so they don't impact initial page load.
+           Videos are armed (src set + play started) only when the section is near the viewport. */
+        (() => {
+            const container = document.querySelector('.socialreels-container');
+            if (!container) return;
+            const videos = container.querySelectorAll('.reel-video[data-src]');
+            if (!videos.length) return;
+
+            let armed = false;
+            const arm = () => {
+                if (armed) return;
+                armed = true;
+                videos.forEach((video) => {
+                    const offset = parseFloat(video.dataset.reelOffset) || 0;
+                    video.addEventListener('loadedmetadata', () => {
+                        if (isFinite(video.duration) && video.duration > 0) {
+                            try { video.currentTime = offset % video.duration; } catch (_) {}
+                        }
+                    }, { once: true });
+                    video.addEventListener('canplay', () => video.classList.add('is-ready'), { once: true });
+                    video.src = video.dataset.src;
+                    const tryPlay = () => {
+                        const p = video.play();
+                        if (p && typeof p.catch === 'function') p.catch(() => {});
+                    };
+                    tryPlay();
+                });
             };
-            if (video.readyState >= 1) apply();
-            else video.addEventListener('loadedmetadata', apply, { once: true });
-        });
+
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    for (const entry of entries) {
+                        if (entry.isIntersecting) {
+                            arm();
+                            io.disconnect();
+                            break;
+                        }
+                    }
+                }, { rootMargin: '400px 0px' });
+                io.observe(container);
+            } else {
+                arm();
+            }
+        })();
     </script>
 </body>
 </html>
