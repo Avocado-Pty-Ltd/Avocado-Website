@@ -540,6 +540,7 @@
   .site-header { grid-template-columns: 1fr auto; }
   .site-header .nav-l { display: none; }
   .site-header .nav-r { gap: 12px; }
+  .site-header .nav-r .ulink { display: none; }
   .hero-a .hero-split { grid-template-columns: 1fr; }
   .hero-os-split { grid-template-columns: 1fr; }
   .hero-os-grid { grid-template-columns: 1fr; }
