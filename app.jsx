@@ -436,9 +436,9 @@ function Products({ direction }) {
 /* ---------- IN MOTION (media wall) ---------- */
 function InMotion({ direction }) {
   const reels = [
-    { src:'socialreels-reel.mp4',   tag:'SR-014', label:'Field service — :14' },
-    { src:'socialreels-reel-2.mp4', tag:'SR-022', label:'Trades launch — :09' },
-    { src:'socialreels-reel-3.mp4', tag:'SR-031', label:'Hospitality — :12' },
+    { src:'socialreels-reel-4.mp4', tag:'SR-040', label:'Recent drop — :15' },
+    { src:'socialreels-reel-5.mp4', tag:'SR-050', label:'Recent drop — :36' },
+    { src:'socialreels-reel-6.mp4', tag:'SR-060', label:'Recent drop — :28' },
   ];
   const stills = [
     { src:'workflow-solutions.jpeg',  tag:'IMG-204', label:'Workflow, on-site' },
