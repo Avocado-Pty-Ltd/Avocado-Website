@@ -183,8 +183,8 @@
 .hc-tile video, .hc-tile img {
   width:100%; height:100%; object-fit: cover;
   transition: transform 1.4s ease;
-  -webkit-mask-image: radial-gradient(farthest-corner at 50% 50%, #000 20%, transparent 80%);
-          mask-image: radial-gradient(farthest-corner at 50% 50%, #000 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(farthest-corner at 50% 50%, #000 85%, transparent 100%);
+          mask-image: radial-gradient(farthest-corner at 50% 50%, #000 85%, transparent 100%);
 }
 .hc-tile:hover video, .hc-tile:hover img { transform: scale(1.05); }
 .hc-cap {
