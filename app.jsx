@@ -25,7 +25,7 @@ function AvocadoWordmark({ height = 22 }) {
   );
 }
 
-/* ---------- Clickable video (click to toggle sound) ---------- */
+/* ---------- Clickable video (click/tap to toggle sound) ---------- */
 function ClickableVideo({ className, ...rest }) {
   const ref = useRef(null);
   const [muted, setMuted] = useState(true);
@@ -42,32 +42,64 @@ function ClickableVideo({ className, ...rest }) {
     return () => document.removeEventListener('avocado-video-unmute', onOtherUnmute);
   }, []);
 
-  const handleClick = () => {
+  // Overlay button captures the tap so it works reliably on iOS, where
+  // <video> elements don't always fire click. We also call play() inside
+  // the gesture so iOS actually starts the audio after unmuting.
+  const handleToggle = () => {
     const v = ref.current;
     if (!v) return;
     if (v.muted) {
       v.muted = false;
       setMuted(false);
       document.dispatchEvent(new CustomEvent('avocado-video-unmute', { detail: v }));
+      const p = v.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => {
+          v.muted = true;
+          setMuted(true);
+          v.play().catch(() => {});
+        });
+      }
     } else {
       v.muted = true;
       setMuted(true);
     }
   };
 
+  const stateClass = muted ? 'is-muted' : 'is-unmuted';
+
   return (
-    <video
-      ref={ref}
-      className={`clickable-video${muted ? ' is-muted' : ' is-unmuted'}${className ? ' ' + className : ''}`}
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="metadata"
-      onClick={handleClick}
-      title={muted ? 'Click to unmute' : 'Click to mute'}
-      {...rest}
-    />
+    <>
+      <video
+        ref={ref}
+        className={`clickable-video ${stateClass}${className ? ' ' + className : ''}`}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        {...rest}
+      />
+      <button
+        type="button"
+        className={`video-sound-toggle ${stateClass}`}
+        aria-label={muted ? 'Unmute video' : 'Mute video'}
+        aria-pressed={!muted}
+        onClick={handleToggle}
+      >
+        <span className="video-sound-pill" aria-hidden="true">
+          {muted ? (
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <path d="M3 10v4h4l5 4V6L7 10H3zm13.59 2L19 9.59 17.41 8 15 10.41 12.59 8 11 9.59 13.41 12 11 14.41 12.59 16 15 13.59 17.41 16 19 14.41z"/>
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <path d="M3 10v4h4l5 4V6L7 10H3zm10.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          )}
+        </span>
+      </button>
+    </>
   );
 }
 
