@@ -174,10 +174,19 @@
 }
 .hc-tile {
   position: relative; overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--bg-2);
+  background: transparent;
 }
-.hc-tile video, .hc-tile img { width:100%; height:100%; object-fit: cover; transition: transform 1.4s ease; }
+/* Feather the inner media so the tile blends into the page background instead
+   of cutting hard rectangles. The radial mask is sized to the tile (100%) and
+   stays fully opaque through 55% of the radius before fading to transparent
+   at the edge — corners (~70% of the radius) end up partly transparent and
+   the dark hero-bg-video shows through. */
+.hc-tile video, .hc-tile img {
+  width:100%; height:100%; object-fit: cover;
+  transition: transform 1.4s ease;
+  -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, #000 55%, transparent 100%);
+          mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, #000 55%, transparent 100%);
+}
 .hc-tile:hover video, .hc-tile:hover img { transform: scale(1.05); }
 .hc-cap {
   position: absolute; left: 10px; bottom: 10px;
