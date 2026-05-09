@@ -71,6 +71,35 @@ function ClickableVideo({ className, ...rest }) {
   );
 }
 
+/* ---------- Keep autoplay videos running after tab/system resume ---------- */
+function useKeepVideosPlaying() {
+  useEffect(() => {
+    const resumeAll = () => {
+      document.querySelectorAll('video').forEach((v) => {
+        if (!v.paused) return;
+        const p = v.play();
+        if (p && typeof p.catch === 'function') {
+          p.catch(() => {
+            v.muted = true;
+            v.play().catch(() => {});
+          });
+        }
+      });
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible') resumeAll();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener('pageshow', resumeAll);
+    window.addEventListener('focus', resumeAll);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('pageshow', resumeAll);
+      window.removeEventListener('focus', resumeAll);
+    };
+  }, []);
+}
+
 /* ---------- Reveal hook ---------- */
 function useReveal() {
   useEffect(() => {
@@ -822,6 +851,7 @@ function App() {
   const openAudit = () => setAuditOpen(true);
   const closeAudit = () => setAuditOpen(false);
   useReveal();
+  useKeepVideosPlaying();
 
   const palette = t.direction === 'a' ? t.palette_a : t.palette_b;
   const directionAttr = t.direction;
