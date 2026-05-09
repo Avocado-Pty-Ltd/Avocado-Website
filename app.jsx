@@ -25,6 +25,113 @@ function AvocadoWordmark({ height = 22 }) {
   );
 }
 
+/* ---------- Clickable video (click/tap to toggle sound) ---------- */
+function ClickableVideo({ className, ...rest }) {
+  const ref = useRef(null);
+  const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    const onOtherUnmute = (e) => {
+      const v = ref.current;
+      if (v && e.detail !== v && !v.muted) {
+        v.muted = true;
+        setMuted(true);
+      }
+    };
+    document.addEventListener('avocado-video-unmute', onOtherUnmute);
+    return () => document.removeEventListener('avocado-video-unmute', onOtherUnmute);
+  }, []);
+
+  // Overlay button captures the tap so it works reliably on iOS, where
+  // <video> elements don't always fire click. We also call play() inside
+  // the gesture so iOS actually starts the audio after unmuting.
+  const handleToggle = () => {
+    const v = ref.current;
+    if (!v) return;
+    if (v.muted) {
+      v.muted = false;
+      setMuted(false);
+      document.dispatchEvent(new CustomEvent('avocado-video-unmute', { detail: v }));
+      const p = v.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => {
+          v.muted = true;
+          setMuted(true);
+          v.play().catch(() => {});
+        });
+      }
+    } else {
+      v.muted = true;
+      setMuted(true);
+    }
+  };
+
+  const stateClass = muted ? 'is-muted' : 'is-unmuted';
+
+  return (
+    <>
+      <video
+        ref={ref}
+        className={`clickable-video ${stateClass}${className ? ' ' + className : ''}`}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        {...rest}
+      />
+      <button
+        type="button"
+        className={`video-sound-toggle ${stateClass}`}
+        aria-label={muted ? 'Unmute video' : 'Mute video'}
+        aria-pressed={!muted}
+        onClick={handleToggle}
+      >
+        <span className="video-sound-pill" aria-hidden="true">
+          {muted ? (
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <path d="M3 10v4h4l5 4V6L7 10H3zm13.59 2L19 9.59 17.41 8 15 10.41 12.59 8 11 9.59 13.41 12 11 14.41 12.59 16 15 13.59 17.41 16 19 14.41z"/>
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <path d="M3 10v4h4l5 4V6L7 10H3zm10.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          )}
+        </span>
+      </button>
+    </>
+  );
+}
+
+/* ---------- Keep autoplay videos running after tab/system resume ---------- */
+function useKeepVideosPlaying() {
+  useEffect(() => {
+    const resumeAll = () => {
+      document.querySelectorAll('video').forEach((v) => {
+        if (!v.paused) return;
+        const p = v.play();
+        if (p && typeof p.catch === 'function') {
+          p.catch(() => {
+            v.muted = true;
+            v.play().catch(() => {});
+          });
+        }
+      });
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === 'visible') resumeAll();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener('pageshow', resumeAll);
+    window.addEventListener('focus', resumeAll);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('pageshow', resumeAll);
+      window.removeEventListener('focus', resumeAll);
+    };
+  }, []);
+}
+
 /* ---------- Reveal hook ---------- */
 function useReveal() {
   useEffect(() => {
@@ -144,7 +251,7 @@ function HeroStudio({ layout, onAuditOpen }) {
           <aside className="hero-split-right">
             <div className="hero-collage">
               <figure className="hc-tile hc-tile-1">
-                <video src="socialreels-reel-2.mp4" autoPlay loop muted playsInline preload="metadata"/>
+                <ClickableVideo src="socialreels-reel-2.mp4"/>
                 <span className="hc-cap">SR-022</span>
               </figure>
               <figure className="hc-tile">
@@ -152,7 +259,7 @@ function HeroStudio({ layout, onAuditOpen }) {
                 <span className="hc-cap">EZ-001</span>
               </figure>
               <figure className="hc-tile">
-                <video src="socialreels-reel-3.mp4" autoPlay loop muted playsInline preload="metadata"/>
+                <ClickableVideo src="socialreels-reel-3.mp4"/>
                 <span className="hc-cap">SR-031</span>
               </figure>
             </div>
@@ -247,7 +354,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div className="os-media-grid">
               <div className="os-media-cell os-cell-tall">
-                <video src="socialreels-reel-2.mp4" autoPlay loop muted playsInline preload="metadata"/>
+                <ClickableVideo src="socialreels-reel-2.mp4"/>
                 <span className="os-cell-tag">SR-022</span>
               </div>
               <div className="os-media-cell">
@@ -398,7 +505,7 @@ function Products({ direction }) {
           <article className={`product reveal product-${i}`} key={p.name}>
             <div className={`product-frame ${p.icon ? 'product-frame-icon' : ''}`} style={p.icon ? {background: p.iconBg} : null}>
               {p.video ? (
-                <video src={p.video} autoPlay loop muted playsInline preload="metadata"/>
+                <ClickableVideo src={p.video}/>
               ) : p.image ? (
                 <img src={p.image} alt={`${p.name}`} className={p.icon ? 'product-icon' : ''}/>
               ) : (
@@ -462,7 +569,7 @@ function InMotion({ direction }) {
       <div className="reel-strip">
         {reels.map((r) => (
           <figure className="reel-card reveal" key={r.tag}>
-            <video src={r.src} autoPlay loop muted playsInline preload="metadata"/>
+            <ClickableVideo src={r.src}/>
             <figcaption>
               <span className="meta">{r.tag}</span>
               <span>{r.label}</span>
@@ -776,6 +883,7 @@ function App() {
   const openAudit = () => setAuditOpen(true);
   const closeAudit = () => setAuditOpen(false);
   useReveal();
+  useKeepVideosPlaying();
 
   const palette = t.direction === 'a' ? t.palette_a : t.palette_b;
   const directionAttr = t.direction;
