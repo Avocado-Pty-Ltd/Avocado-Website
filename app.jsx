@@ -25,6 +25,52 @@ function AvocadoWordmark({ height = 22 }) {
   );
 }
 
+/* ---------- Clickable video (click to toggle sound) ---------- */
+function ClickableVideo({ className, ...rest }) {
+  const ref = useRef(null);
+  const [muted, setMuted] = useState(true);
+
+  useEffect(() => {
+    const onOtherUnmute = (e) => {
+      const v = ref.current;
+      if (v && e.detail !== v && !v.muted) {
+        v.muted = true;
+        setMuted(true);
+      }
+    };
+    document.addEventListener('avocado-video-unmute', onOtherUnmute);
+    return () => document.removeEventListener('avocado-video-unmute', onOtherUnmute);
+  }, []);
+
+  const handleClick = () => {
+    const v = ref.current;
+    if (!v) return;
+    if (v.muted) {
+      v.muted = false;
+      setMuted(false);
+      document.dispatchEvent(new CustomEvent('avocado-video-unmute', { detail: v }));
+    } else {
+      v.muted = true;
+      setMuted(true);
+    }
+  };
+
+  return (
+    <video
+      ref={ref}
+      className={`clickable-video${muted ? ' is-muted' : ' is-unmuted'}${className ? ' ' + className : ''}`}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      onClick={handleClick}
+      title={muted ? 'Click to unmute' : 'Click to mute'}
+      {...rest}
+    />
+  );
+}
+
 /* ---------- Reveal hook ---------- */
 function useReveal() {
   useEffect(() => {
@@ -144,7 +190,7 @@ function HeroStudio({ layout, onAuditOpen }) {
           <aside className="hero-split-right">
             <div className="hero-collage">
               <figure className="hc-tile hc-tile-1">
-                <video src="socialreels-reel-2.mp4" autoPlay loop muted playsInline preload="metadata"/>
+                <ClickableVideo src="socialreels-reel-2.mp4"/>
                 <span className="hc-cap">SR-022</span>
               </figure>
               <figure className="hc-tile">
@@ -152,7 +198,7 @@ function HeroStudio({ layout, onAuditOpen }) {
                 <span className="hc-cap">EZ-001</span>
               </figure>
               <figure className="hc-tile">
-                <video src="socialreels-reel-3.mp4" autoPlay loop muted playsInline preload="metadata"/>
+                <ClickableVideo src="socialreels-reel-3.mp4"/>
                 <span className="hc-cap">SR-031</span>
               </figure>
             </div>
@@ -247,7 +293,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div className="os-media-grid">
               <div className="os-media-cell os-cell-tall">
-                <video src="socialreels-reel-2.mp4" autoPlay loop muted playsInline preload="metadata"/>
+                <ClickableVideo src="socialreels-reel-2.mp4"/>
                 <span className="os-cell-tag">SR-022</span>
               </div>
               <div className="os-media-cell">
@@ -398,7 +444,7 @@ function Products({ direction }) {
           <article className={`product reveal product-${i}`} key={p.name}>
             <div className={`product-frame ${p.icon ? 'product-frame-icon' : ''}`} style={p.icon ? {background: p.iconBg} : null}>
               {p.video ? (
-                <video src={p.video} autoPlay loop muted playsInline preload="metadata"/>
+                <ClickableVideo src={p.video}/>
               ) : p.image ? (
                 <img src={p.image} alt={`${p.name}`} className={p.icon ? 'product-icon' : ''}/>
               ) : (
@@ -462,7 +508,7 @@ function InMotion({ direction }) {
       <div className="reel-strip">
         {reels.map((r) => (
           <figure className="reel-card reveal" key={r.tag}>
-            <video src={r.src} autoPlay loop muted playsInline preload="metadata"/>
+            <ClickableVideo src={r.src}/>
             <figcaption>
               <span className="meta">{r.tag}</span>
               <span>{r.label}</span>

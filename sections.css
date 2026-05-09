@@ -774,3 +774,9 @@
   .hero-centered-media { grid-template-columns: 1fr; aspect-ratio: auto; }
   .hero-centered-media > * { aspect-ratio: 16/9; }
 }
+
+/* =========================================================================
+   CLICKABLE VIDEO — click to toggle sound
+   ========================================================================= */
+.clickable-video { cursor: pointer; }
+
