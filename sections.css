@@ -174,9 +174,11 @@
 }
 .hc-tile {
   position: relative; overflow: hidden;
-  border: 1px solid var(--line);
   background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
 }
+[data-direction="b"] .hc-tile { border-radius: 8px; }
 .hc-tile video, .hc-tile img { width:100%; height:100%; object-fit: cover; transition: transform 1.4s ease; }
 .hc-tile:hover video, .hc-tile:hover img { transform: scale(1.05); }
 .hc-cap {
