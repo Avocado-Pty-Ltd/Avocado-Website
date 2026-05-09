@@ -3,8 +3,8 @@ const { useState, useEffect, useRef, useMemo } = React;
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "direction": "a",
-  "palette_a": "ivory-forest",
-  "palette_b": "paper-green",
+  "palette_a": "onyx-gold",
+  "palette_b": "carbon-volt",
   "typography": "serif-sans",
   "heroLayout": "split",
   "density": "regular",
@@ -13,7 +13,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 }/*EDITMODE-END*/;
 
 /* ---------- Avocado wordmark ---------- */
-// Rendered as a CSS mask so it adopts --logo-color per direction.
+// Rendered as a CSS mask so it adopts --logo-color per direction/palette.
 function AvocadoWordmark({ height = 22 }) {
   return (
     <span
@@ -61,29 +61,38 @@ function Header({ direction, onAuditOpen }) {
 }
 
 /* ---------- HERO ---------- */
-function Hero({ direction, layout }) {
-  if (direction === 'a') return <HeroStudio layout={layout}/>;
-  return <HeroOS layout={layout}/>;
+function Hero({ direction, layout, onAuditOpen }) {
+  if (direction === 'a') return <HeroStudio layout={layout} onAuditOpen={onAuditOpen}/>;
+  return <HeroOS layout={layout} onAuditOpen={onAuditOpen}/>;
 }
 
-function HeroStudio({ layout }) {
+function HeroStudio({ layout, onAuditOpen }) {
   return (
     <section className={`hero hero-a layout-${layout}`}>
-      <div className="hero-meta">
+      <div className="hero-bg-video" aria-hidden="true">
+        <video src="socialreels-reel.mp4" autoPlay loop muted playsInline preload="metadata"/>
+        <div className="hero-bg-veil"/>
+      </div>
+      <div className="hero-meta-row">
         <div><span className="meta">Established 2021 in Melbourne</span></div>
-        <div><span className="meta">Vol. 07 — Autumn '26</span></div>
+        <div><span className="live-pill"><span className="dot-live"/> 3 products in market</span></div>
       </div>
 
       {layout === 'centered' ? (
-        <div className="hero-headline-centered">
+        <div className="hero-centered">
           <p className="eyebrow">Avocado Digital — A small software studio</p>
           <h1 className="hero-display">
             We build <em className="serif-italic">quietly useful</em><br/>
             software for businesses<br/>
             with <em className="serif-italic">specific&nbsp;problems.</em>
           </h1>
+          <p className="hero-lede">
+            Bespoke software, curated technology and strategy for Australian small business — plus three products of our own: SocialReels, EzyBiz and CallConcierge.
+          </p>
           <div className="hero-actions">
-            <a className="btn" href="#contact">Begin a project <span className="arrow">→</span></a>
+            <button type="button" className="btn btn-accent" onClick={onAuditOpen}>
+              Book a free tech audit <span className="arrow">→</span>
+            </button>
             <a className="ulink" href="#work">See selected work</a>
           </div>
         </div>
@@ -95,21 +104,20 @@ function HeroStudio({ layout }) {
             with care for <em className="serif-italic">small&nbsp;teams.</em>
           </h1>
           <div className="hero-fb-meta">
-            <div className="col-rule">
-              <span className="eyebrow">Index</span>
-              <ul className="hero-index">
-                <li><span className="num">A.01</span> Workflow Solutions</li>
-                <li><span className="num">A.02</span> Curated Tech</li>
-                <li><span className="num">A.03</span> Strategy Consulting</li>
-                <li><span className="num">B.01</span> SocialReels</li>
-                <li><span className="num">B.02</span> EzyBiz</li>
-                <li><span className="num">B.03</span> CallConcierge</li>
-              </ul>
+            <div>
+              <span className="meta">Index</span>
+              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · B.01 SocialReels · B.02 EzyBiz · B.03 CallConcierge</p>
             </div>
-            <div className="col-rule">
-              <span className="eyebrow">Latest</span>
-              <p style={{marginTop:8, color:'var(--ink-2)'}}>
-                EzyBiz ships new automations for tradespeople and field-service teams. <a className="ulink" href="ezybiz.html">Read note</a>
+            <div>
+              <span className="meta">Latest</span>
+              <p>SocialReels in private beta. EzyBiz ships new automations for trades. CallConcierge expanding to legal &amp; medical.</p>
+            </div>
+            <div>
+              <span className="meta">Begin</span>
+              <p>
+                <a className="ulink" href="#" onClick={(e) => { e.preventDefault(); onAuditOpen(); }}>
+                  Book a free tech audit →
+                </a>
               </p>
             </div>
           </div>
@@ -123,23 +131,30 @@ function HeroStudio({ layout }) {
               and built for the way<br/>
               your business <em className="serif-italic">actually&nbsp;works.</em>
             </h1>
+            <p className="hero-lede">
+              Bespoke software, curated technology and strategy for Australian small business — plus three products of our own.
+            </p>
             <div className="hero-actions">
-              <a className="btn" href="#contact">Begin a project <span className="arrow">→</span></a>
+              <button type="button" className="btn btn-accent" onClick={onAuditOpen}>
+                Book a free tech audit <span className="arrow">→</span>
+              </button>
               <a className="ulink" href="#work">See selected work</a>
             </div>
           </div>
           <aside className="hero-split-right">
-            <div className="hero-card">
-              <span className="meta">Currently</span>
-              <p className="hero-card-text">
-                Building tools for Australian small business — bookings, billing, calls, content. Three products in market, several engagements live.
-              </p>
-              <hr className="thinrule" style={{margin:'24px 0'}}/>
-              <ul className="hero-stats">
-                <li><span className="num">3</span><span>Products in market</span></li>
-                <li><span className="num">AU&nbsp;wide</span><span>Australian SMB focus</span></li>
-                <li><span className="num">07</span><span>Years in practice</span></li>
-              </ul>
+            <div className="hero-collage">
+              <figure className="hc-tile hc-tile-1">
+                <video src="socialreels-reel-2.mp4" autoPlay loop muted playsInline preload="metadata"/>
+                <span className="hc-cap">SR-022</span>
+              </figure>
+              <figure className="hc-tile">
+                <img src="ezybiz-app-home.jpeg" alt="EzyBiz on iPhone"/>
+                <span className="hc-cap">EZ-001</span>
+              </figure>
+              <figure className="hc-tile">
+                <video src="socialreels-reel-3.mp4" autoPlay loop muted playsInline preload="metadata"/>
+                <span className="hc-cap">SR-031</span>
+              </figure>
             </div>
           </aside>
         </div>
@@ -149,12 +164,12 @@ function HeroStudio({ layout }) {
         <div className="hero-marquee-track">
           {Array.from({length:2}).map((_,i)=>(
             <div className="hero-marquee-row" key={i}>
-              <span>Bespoke software</span><span>·</span>
-              <span>Workflow automation</span><span>·</span>
-              <span>IT strategy</span><span>·</span>
-              <span>Custom integrations</span><span>·</span>
-              <span>Industry tooling</span><span>·</span>
-              <span>SMB operations</span><span>·</span>
+              <span>Bespoke software</span><span className="dot">·</span>
+              <span>Workflow automation</span><span className="dot">·</span>
+              <span>IT strategy</span><span className="dot">·</span>
+              <span>Custom integrations</span><span className="dot">·</span>
+              <span>Industry tooling</span><span className="dot">·</span>
+              <span>SMB operations</span><span className="dot">·</span>
             </div>
           ))}
         </div>
@@ -163,33 +178,37 @@ function HeroStudio({ layout }) {
   );
 }
 
-function HeroOS({ layout }) {
+function HeroOS({ layout, onAuditOpen }) {
   return (
     <section className={`hero hero-b layout-${layout}`}>
-      <div className="hero-os-meta">
+      <div className="hero-bg-video" aria-hidden="true">
+        <video src="socialreels-reel.mp4" autoPlay loop muted playsInline preload="metadata"/>
+        <div className="hero-bg-veil"/>
+      </div>
+      <div className="hero-meta-row">
         <span className="meta">[01] STUDIO</span>
         <span className="meta">MEL ↔ AU</span>
         <span className="meta">{new Date().getUTCFullYear()} / NOW SHIPPING</span>
       </div>
       {layout === 'centered' ? (
-        <div className="hero-os-centered">
+        <div className="hero-centered">
           <h1 className="hero-display">
             Software for the<br/>operating layer of<br/>small business.
           </h1>
-          <p className="hero-os-lede">
+          <p className="hero-lede">
             Avocado Digital is a Melbourne-based studio building precise, durable tools for Australian SMBs — products, integrations, and operating systems.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-accent" href="#contact">Start a project →</a>
+            <button type="button" className="btn btn-accent" onClick={onAuditOpen}>Book a free tech audit →</button>
             <a className="ulink" href="#products">Browse products</a>
           </div>
         </div>
       ) : layout === 'fullbleed' ? (
-        <div className="hero-os-fullbleed">
+        <div className="hero-fullbleed">
           <h1 className="hero-display hero-display-xl">
             The operating<br/>layer for small<br/>business.<span className="dot">.</span>
           </h1>
-          <div className="hero-os-grid">
+          <div className="hero-fb-meta">
             <div>
               <span className="meta">/ studio</span>
               <p>Three products in market. A handful of bespoke engagements at any one time. Quiet, considered, durable.</p>
@@ -210,11 +229,11 @@ function HeroOS({ layout }) {
             <h1 className="hero-display">
               Software for the<br/>operating layer<br/>of small business.
             </h1>
-            <p className="hero-os-lede">
-              Avocado Digital is an Australian studio. We build precise, durable tools — products, integrations, automations — for SMBs.
+            <p className="hero-lede">
+              Avocado Digital is a Melbourne studio. We build precise, durable tools — products, integrations, automations — for Australian SMBs.
             </p>
             <div className="hero-actions">
-              <a className="btn btn-accent" href="#contact">Start a project →</a>
+              <button type="button" className="btn btn-accent" onClick={onAuditOpen}>Book a free tech audit →</button>
               <a className="ulink" href="#work">Browse work</a>
             </div>
           </div>
@@ -224,7 +243,21 @@ function HeroOS({ layout }) {
               <div><span className="meta">Scope</span><b>Products &amp; engagements</b></div>
               <div><span className="meta">Sectors</span><b>Trades, services, retail, SMB</b></div>
               <div><span className="meta">Region</span><b>Australia &amp; NZ</b></div>
-              <div><span className="meta">Live</span><b className="live"><span className="dot-live"/>3 products in market</b></div>
+              <div className="live-row"><span className="meta">Live</span><b>3 products in market</b></div>
+            </div>
+            <div className="os-media-grid">
+              <div className="os-media-cell os-cell-tall">
+                <video src="socialreels-reel-2.mp4" autoPlay loop muted playsInline preload="metadata"/>
+                <span className="os-cell-tag">SR-022</span>
+              </div>
+              <div className="os-media-cell">
+                <img src="ezybiz-app-home.jpeg" alt="EzyBiz home"/>
+                <span className="os-cell-tag">EZ-001</span>
+              </div>
+              <div className="os-media-cell">
+                <img src="curated-tech.jpeg" alt="Curated tech"/>
+                <span className="os-cell-tag">CT-077</span>
+              </div>
             </div>
           </div>
         </div>
@@ -241,6 +274,7 @@ const SERVICES = [
     eyebrow: 'Bespoke software',
     body: 'We design and build internal tools that fit the way your business actually runs — bookings, dispatch, inventory, finance. Replacing spreadsheets, not multiplying them.',
     deliverables: ['Discovery & mapping', 'Custom web apps', 'Integration & migration', 'Ongoing care'],
+    media: 'workflow-solutions.jpeg',
     href: 'workflow-solutions.html',
   },
   {
@@ -249,6 +283,7 @@ const SERVICES = [
     eyebrow: 'Right-sized stacks',
     body: 'A considered tech selection for owners who don\'t want a CIO. We assemble, configure, and maintain a stack that matches your size and ambition — and stays out of your way.',
     deliverables: ['Stack audit', 'Vendor selection', 'Implementation', 'Quarterly reviews'],
+    media: 'curated-tech.jpeg',
     href: 'curated-tech.html',
   },
   {
@@ -257,6 +292,7 @@ const SERVICES = [
     eyebrow: 'Operating advice',
     body: 'Half-day to half-year engagements helping owners decide what to build, what to buy, and what to leave alone. Plain English, written deliverables, no theatre.',
     deliverables: ['Strategy intensives', 'Roadmap shaping', 'Pre-mortems', 'Fractional CTO'],
+    media: 'strategy-consulting.jpeg',
     href: 'strategy-consulting.html',
   },
 ];
@@ -284,6 +320,9 @@ function Services({ direction }) {
             <div className="service-num">
               <span className="num">{direction === 'a' ? s.n : s.code}</span>
             </div>
+            <div className="service-media">
+              {s.media && <img src={s.media} alt={s.title}/>}
+            </div>
             <div className="service-body">
               <span className="eyebrow service-eyebrow">{s.eyebrow}</span>
               <h3 className="service-title">{s.title}</h3>
@@ -294,9 +333,7 @@ function Services({ direction }) {
               <ul>
                 {s.deliverables.map((d) => <li key={d}>{d}</li>)}
               </ul>
-            </div>
-            <div className="service-action">
-              <a className="ulink" href={s.href}>Read more <span className="arrow">→</span></a>
+              <a className="ulink service-link" href={s.href}>Read more <span className="arrow">→</span></a>
             </div>
           </article>
         ))}
@@ -396,6 +433,59 @@ function Products({ direction }) {
   );
 }
 
+/* ---------- IN MOTION (media wall) ---------- */
+function InMotion({ direction }) {
+  const reels = [
+    { src:'socialreels-reel.mp4',   tag:'SR-014', label:'Field service — :14' },
+    { src:'socialreels-reel-2.mp4', tag:'SR-022', label:'Trades launch — :09' },
+    { src:'socialreels-reel-3.mp4', tag:'SR-031', label:'Hospitality — :12' },
+  ];
+  const stills = [
+    { src:'workflow-solutions.jpeg',  tag:'IMG-204', label:'Workflow, on-site' },
+    { src:'strategy-consulting.jpeg', tag:'IMG-118', label:'Strategy room' },
+    { src:'curated-tech.jpeg',        tag:'IMG-077', label:'Curated stack' },
+  ];
+  return (
+    <section className={`section in-motion dir-${direction}`}>
+      <header className="section-head">
+        <span className="eyebrow">{direction === 'a' ? '— F. In motion' : '/ in motion'}</span>
+        <div>
+          <h2 className="section-title">
+            {direction === 'a'
+              ? <>Where the marketing meets<br/>the <em className="serif-italic">machinery.</em></>
+              : <>Where marketing meets the machinery.</>}
+          </h2>
+          <p className="section-lede">A small wall of recent output — brand films from SocialReels, fieldwork from active engagements, and stills from the studio. The work has to look like the work.</p>
+        </div>
+      </header>
+
+      <div className="reel-strip">
+        {reels.map((r) => (
+          <figure className="reel-card reveal" key={r.tag}>
+            <video src={r.src} autoPlay loop muted playsInline preload="metadata"/>
+            <figcaption>
+              <span className="meta">{r.tag}</span>
+              <span>{r.label}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div className="still-grid">
+        {stills.map((s) => (
+          <figure className="still-card reveal" key={s.tag}>
+            <img src={s.src} alt={s.label}/>
+            <figcaption>
+              <span className="meta">{s.tag}</span>
+              <span>{s.label}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ---------- APPROACH / Manifesto ---------- */
 function Approach({ direction }) {
   const items = [
@@ -470,6 +560,20 @@ function Contact({ direction, onAuditOpen }) {
           <a className="ulink" href="mailto:hello@avocadodigital.com.au">hello@avocadodigital.com.au</a>
           <a className="ulink" href="tel:+61363588887">03 6358 8887</a>
         </div>
+        <div className="contact-foot">
+          <div>
+            <span className="meta">Email</span>
+            <b>hello@avocadodigital.com.au</b>
+          </div>
+          <div>
+            <span className="meta">Phone</span>
+            <b>03 6358 8887</b>
+          </div>
+          <div>
+            <span className="meta">Region</span>
+            <b>Australia &amp; NZ</b>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -488,7 +592,7 @@ const TECH_STACK_OPTIONS = [
 ];
 
 function AuditModal({ open, onClose }) {
-  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+  const [status, setStatus] = useState('idle');
   const [form, setForm] = useState({ email: '', business_size: '', tech_stack: [], manual_tasks: '', tech_budget: '' });
 
   useEffect(() => {
@@ -628,7 +732,7 @@ function Footer({ direction }) {
           <AvocadoWordmark height={direction === 'b' ? 18 : 26}/>
           <p className="meta" style={{marginTop:18}}>
             Avocado Pty Ltd<br/>
-            Australia
+            Established 2021 · Melbourne, AU
           </p>
         </div>
         <div>
@@ -680,13 +784,14 @@ function App() {
     const all = {
       services: <Services direction={t.direction} key="services"/>,
       products: <Products direction={t.direction} key="products"/>,
+      motion:   <InMotion direction={t.direction} key="motion"/>,
       approach: <Approach direction={t.direction} key="approach"/>,
       sectors:  <Sectors direction={t.direction} key="sectors"/>,
     };
     const orders = {
-      'services-first': ['services', 'products', 'approach', 'sectors'],
-      'products-first': ['products', 'services', 'sectors', 'approach'],
-      'manifesto-first': ['approach', 'services', 'products', 'sectors'],
+      'services-first':  ['services', 'products', 'motion', 'approach', 'sectors'],
+      'products-first':  ['products', 'motion', 'services', 'sectors', 'approach'],
+      'manifesto-first': ['approach', 'services', 'products', 'motion', 'sectors'],
     };
     return (orders[t.sectionOrder] || orders['services-first']).map((k) => all[k]);
   }, [t.direction, t.sectionOrder]);
@@ -702,7 +807,7 @@ function App() {
     >
       <Header direction={t.direction} onAuditOpen={openAudit}/>
       <main>
-        <Hero direction={t.direction} layout={t.heroLayout}/>
+        <Hero direction={t.direction} layout={t.heroLayout} onAuditOpen={openAudit}/>
         {sections}
         <Contact direction={t.direction} onAuditOpen={openAudit}/>
       </main>
@@ -722,9 +827,9 @@ function App() {
           <TweakSelect
             value={t.palette_a}
             options={[
-              {value:'ivory-forest', label:'Ivory + Forest'},
-              {value:'cream-clay', label:'Cream + Clay'},
-              {value:'paper-ink',  label:'Paper + Ink'},
+              {value:'onyx-gold', label:'Onyx + Gold'},
+              {value:'ink-rose',  label:'Ink + Rose'},
+              {value:'onyx-bone', label:'Onyx + Bone'},
             ]}
             onChange={(v) => setTweak('palette_a', v)}
           />
@@ -732,9 +837,9 @@ function App() {
           <TweakSelect
             value={t.palette_b}
             options={[
-              {value:'paper-green',   label:'Paper + Avocado'},
-              {value:'bone-graphite', label:'Bone + Graphite'},
-              {value:'midnight',      label:'Midnight + Avocado'},
+              {value:'carbon-volt', label:'Carbon + Volt'},
+              {value:'ink-cyan',    label:'Ink + Cyan'},
+              {value:'ink-amber',   label:'Ink + Amber'},
             ]}
             onChange={(v) => setTweak('palette_b', v)}
           />
@@ -744,7 +849,7 @@ function App() {
         <TweakSelect
           value={t.typography}
           options={[
-            {value:'serif-sans', label:'Instrument Serif + Manrope'},
+            {value:'serif-sans', label:'Cormorant + Manrope'},
             {value:'sans-mono',  label:'Geist + Geist Mono'},
             {value:'serif-mono', label:'Serif + JetBrains Mono'},
           ]}
