@@ -248,22 +248,6 @@ function HeroStudio({ layout, onAuditOpen }) {
               <a className="ulink" href="#work">See selected work</a>
             </div>
           </div>
-          <aside className="hero-split-right">
-            <div className="hero-collage">
-              <figure className="hc-tile hc-tile-1">
-                <ClickableVideo src="socialreels-reel-2.mp4"/>
-                <span className="hc-cap">SR-022</span>
-              </figure>
-              <figure className="hc-tile">
-                <img src="ezybiz-app-home.jpeg" alt="EzyBiz on iPhone"/>
-                <span className="hc-cap">EZ-001</span>
-              </figure>
-              <figure className="hc-tile">
-                <ClickableVideo src="socialreels-reel-3.mp4"/>
-                <span className="hc-cap">SR-031</span>
-              </figure>
-            </div>
-          </aside>
         </div>
       )}
 
@@ -545,7 +529,7 @@ function InMotion({ direction }) {
   const reels = [
     { src:'socialreels-reel-4.mp4', tag:'SR-040', label:'Recent drop — :15' },
     { src:'socialreels-reel-5.mp4', tag:'SR-050', label:'Recent drop — :36' },
-    { src:'socialreels-reel-6.mp4', tag:'SR-060', label:'Recent drop — :28' },
+    { src:'socialreels-reel-2.mp4', tag:'SR-022', label:'Recent drop' },
   ];
   const stills = [
     { src:'workflow-solutions.jpeg',  tag:'IMG-204', label:'Workflow, on-site' },
