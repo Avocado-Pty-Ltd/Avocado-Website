@@ -531,11 +531,6 @@ function InMotion({ direction }) {
     { src:'socialreels-reel-5.mp4', tag:'SR-050', label:'Recent drop — :36' },
     { src:'socialreels-reel-2.mp4', tag:'SR-022', label:'Recent drop' },
   ];
-  const stills = [
-    { src:'workflow-solutions.jpeg',  tag:'IMG-204', label:'Workflow, on-site' },
-    { src:'strategy-consulting.jpeg', tag:'IMG-118', label:'Strategy room' },
-    { src:'curated-tech.jpeg',        tag:'IMG-077', label:'Curated stack' },
-  ];
   return (
     <section className={`section in-motion dir-${direction}`}>
       <header className="section-head">
@@ -557,18 +552,6 @@ function InMotion({ direction }) {
             <figcaption>
               <span className="meta">{r.tag}</span>
               <span>{r.label}</span>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-
-      <div className="still-grid">
-        {stills.map((s) => (
-          <figure className="still-card reveal" key={s.tag}>
-            <img src={s.src} alt={s.label}/>
-            <figcaption>
-              <span className="meta">{s.tag}</span>
-              <span>{s.label}</span>
             </figcaption>
           </figure>
         ))}
