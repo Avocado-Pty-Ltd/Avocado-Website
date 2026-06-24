@@ -217,7 +217,7 @@ function HeroStudio({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz adding new automations for consultants &amp; professionals. CallConcierge expanding to legal &amp; medical.</p>
+              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge expanding to legal &amp; medical.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -306,7 +306,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz with new automations for consultants &amp; professionals. CallConcierge expanding to legal &amp; medical.</p>
+              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge expanding to legal &amp; medical.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -448,12 +448,12 @@ const PRODUCTS = [
   {
     n: '02', code: 'B.02',
     name: 'EzyBiz',
-    one: 'Operating system for consultants & professionals.',
-    body: 'A complete back-office for consultants, business owners, and independent professionals — quoting, scheduling, invoicing, GST, virtual reception. Built in Australia for Australian businesses.',
+    one: 'Run a sharp business. Live a big life.',
+    body: 'A dedicated business number for consultants, business owners, and independent professionals — with conversational voicemail, in-call appointment booking, smart SMS replies, and automatic contact history. On the clock when you are; off when you\'re not.',
     tags: ['iOS', 'Android', 'Web', 'AU & NZ'],
     stat: { v: 'AU & NZ', l: 'Available now' },
     image: 'ezybiz-app-home.jpeg',
-    href: 'ezybiz.html',
+    href: 'https://ezybiz.app', external: true,
   },
   {
     n: '03', code: 'B.03',
@@ -821,7 +821,7 @@ function Footer({ direction }) {
           <span className="eyebrow">Products</span>
           <ul>
             <li><a className="ulink" href="https://socialreels.ai" target="_blank" rel="noopener">SocialReels</a></li>
-            <li><a className="ulink" href="ezybiz.html">EzyBiz</a></li>
+            <li><a className="ulink" href="https://ezybiz.app" target="_blank" rel="noopener">EzyBiz</a></li>
             <li><a className="ulink" href="callconcierge.html">CallConcierge</a></li>
           </ul>
         </div>
