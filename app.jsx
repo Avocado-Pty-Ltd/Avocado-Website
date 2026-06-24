@@ -449,7 +449,7 @@ const PRODUCTS = [
     n: '02', code: 'B.02',
     name: 'EzyBiz',
     one: 'Run a sharp business. Live a big life.',
-    body: 'A dedicated business number for consultants, business owners, and independent professionals — with conversational voicemail, in-call appointment booking, smart SMS replies, and automatic contact history. On the clock when you are; off when you\'re not.',
+    body: 'A dedicated business number for consultants, business owners, and independent professionals — with conversational voicemail, in-call appointment booking, smart SMS replies, and automatic contact history. On the clock, it works with you. Off the clock, it keeps your business running.',
     tags: ['iOS', 'Android', 'Web', 'AU & NZ'],
     stat: { v: 'AU & NZ', l: 'Available now' },
     image: 'ezybiz-app-home.jpeg',
