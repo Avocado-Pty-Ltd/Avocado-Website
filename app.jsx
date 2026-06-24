@@ -217,7 +217,7 @@ function HeroStudio({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz adding new automations for trades. CallConcierge expanding to legal &amp; medical.</p>
+              <p>SocialReels in private beta. EzyBiz adding new automations for consultants &amp; professionals. CallConcierge expanding to legal &amp; medical.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -306,7 +306,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz with new automations for trades. CallConcierge expanding to legal &amp; medical.</p>
+              <p>SocialReels in private beta. EzyBiz with new automations for consultants &amp; professionals. CallConcierge expanding to legal &amp; medical.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -448,8 +448,8 @@ const PRODUCTS = [
   {
     n: '02', code: 'B.02',
     name: 'EzyBiz',
-    one: 'Operating system for trades & services.',
-    body: 'A complete back-office for plumbers, sparkies, and small contractors — quoting, scheduling, invoicing, GST, virtual reception. Built in Australia for Australian businesses.',
+    one: 'Operating system for consultants & professionals.',
+    body: 'A complete back-office for consultants, business owners, and independent professionals — quoting, scheduling, invoicing, GST, virtual reception. Built in Australia for Australian businesses.',
     tags: ['iOS', 'Android', 'Web', 'AU & NZ'],
     stat: { v: 'AU & NZ', l: 'Available now' },
     image: 'ezybiz-app-home.jpeg',
