@@ -217,7 +217,7 @@ function HeroStudio({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz ships new automations for trades. CallConcierge expanding to legal &amp; medical.</p>
+              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge expanding to legal &amp; medical.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -287,7 +287,7 @@ function HeroOS({ layout, onAuditOpen }) {
             Software for the<br/>operating layer of<br/>small business.
           </h1>
           <p className="hero-lede">
-            Avocado Digital is a Melbourne-based studio building precise, durable tools for Australian SMBs — products, integrations, and operating systems.
+            Avocado Digital is a Melbourne studio building precise, durable tools for Australian SMBs — products, integrations, and automations.
           </p>
           <div className="hero-actions">
             <button type="button" className="btn btn-accent" onClick={onAuditOpen}>Book a free tech audit →</button>
@@ -306,7 +306,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz with new automations for trades. CallConcierge expanding to legal &amp; medical.</p>
+              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge expanding to legal &amp; medical.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -438,7 +438,7 @@ const PRODUCTS = [
   {
     n: '01', code: 'B.01',
     name: 'SocialReels',
-    one: 'Short-form video, made tractable.',
+    one: 'Short-form video, without the production circus.',
     body: 'A weekly drop of platform-ready short-form video for SMB owners who don\'t have time to be content creators. Briefs in, reels out.',
     tags: ['Beta', 'Reels', 'Content ops'],
     stat: { v: '03 / wk', l: 'Reels per business' },
@@ -448,17 +448,17 @@ const PRODUCTS = [
   {
     n: '02', code: 'B.02',
     name: 'EzyBiz',
-    one: 'Operating system for trades & services.',
-    body: 'A complete back-office for plumbers, sparkies, and small contractors — quoting, scheduling, invoicing, GST, virtual reception. Built in Australia for Australian businesses.',
+    one: 'Run a sharp business. Live a big life.',
+    body: 'A dedicated business number for consultants, business owners, and independent professionals — with conversational voicemail, in-call appointment booking, smart SMS replies, and automatic contact history. On the clock, it works with you. Off the clock, it keeps your business running.',
     tags: ['iOS', 'Android', 'Web', 'AU & NZ'],
     stat: { v: 'AU & NZ', l: 'Available now' },
     image: 'ezybiz-app-home.jpeg',
-    href: 'ezybiz.html',
+    href: 'https://ezybiz.app', external: true,
   },
   {
     n: '03', code: 'B.03',
     name: 'CallConcierge',
-    one: 'Premium answering for discerning practices.',
+    one: 'Premium phone answering for high-touch practices.',
     body: 'A white-glove inbound call service for clinics, boutique law firms, and high-touch services. Hand-trained agents, transparent transcripts, your tone.',
     tags: ['Concierge', 'Inbound', 'Premium'],
     stat: { v: '< 8s', l: 'Avg. pickup time' },
@@ -480,7 +480,7 @@ function Products({ direction }) {
           )}
         </h2>
         <p className="section-lede">
-          We don't operate a portfolio for its own sake. Each product was a problem we kept seeing in client work, until building it ourselves was the only honest answer.
+          We don't run a portfolio for its own sake. Each product was a problem we kept seeing in client work, until building it ourselves was the only honest answer.
         </p>
       </header>
 
@@ -531,15 +531,10 @@ function InMotion({ direction }) {
     { src:'socialreels-reel-5.mp4', tag:'SR-050', label:'Recent drop — :36' },
     { src:'socialreels-reel-2.mp4', tag:'SR-022', label:'Recent drop' },
   ];
-  const stills = [
-    { src:'workflow-solutions.jpeg',  tag:'IMG-204', label:'Workflow, on-site' },
-    { src:'strategy-consulting.jpeg', tag:'IMG-118', label:'Strategy room' },
-    { src:'curated-tech.jpeg',        tag:'IMG-077', label:'Curated stack' },
-  ];
   return (
     <section className={`section in-motion dir-${direction}`}>
       <header className="section-head">
-        <span className="eyebrow">{direction === 'a' ? '— F. In motion' : '/ in motion'}</span>
+        <span className="eyebrow">{direction === 'a' ? '— C. In motion' : '/ in motion'}</span>
         <div>
           <h2 className="section-title">
             {direction === 'a'
@@ -561,18 +556,6 @@ function InMotion({ direction }) {
           </figure>
         ))}
       </div>
-
-      <div className="still-grid">
-        {stills.map((s) => (
-          <figure className="still-card reveal" key={s.tag}>
-            <img src={s.src} alt={s.label}/>
-            <figcaption>
-              <span className="meta">{s.tag}</span>
-              <span>{s.label}</span>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
     </section>
   );
 }
@@ -588,7 +571,7 @@ function Approach({ direction }) {
   return (
     <section id="approach" className={`section approach dir-${direction}`}>
       <header className="section-head">
-        <span className="eyebrow">{direction === 'a' ? '— C. Approach' : '/ approach'}</span>
+        <span className="eyebrow">{direction === 'a' ? '— D. Approach' : '/ approach'}</span>
         <h2 className="section-title">
           {direction === 'a' ? <>Four <em className="serif-italic">small commitments</em><br/>that shape the work.</>
             : <>Four small commitments that shape the work.</>}
@@ -613,7 +596,7 @@ function Sectors({ direction }) {
   return (
     <section id="sectors" className={`section sectors dir-${direction}`}>
       <header className="section-head">
-        <span className="eyebrow">{direction === 'a' ? '— D. Sectors' : '/ sectors we know'}</span>
+        <span className="eyebrow">{direction === 'a' ? '— E. Sectors' : '/ sectors we know'}</span>
         <h2 className="section-title">
           {direction === 'a' ? <>Where we tend to <em className="serif-italic">be useful.</em></>
             : <>Where we tend to be useful.</>}
@@ -633,7 +616,7 @@ function Contact({ direction, onAuditOpen }) {
   return (
     <section id="contact" className={`section contact dir-${direction}`}>
       <div className="contact-inner">
-        <span className="eyebrow">{direction === 'a' ? '— E. Begin' : '/ begin'}</span>
+        <span className="eyebrow">{direction === 'a' ? '— F. Begin' : '/ begin'}</span>
         <h2 className="contact-title">
           {direction === 'a' ? (
             <>Book your <em className="serif-italic">free tech audit.</em></>
@@ -838,7 +821,7 @@ function Footer({ direction }) {
           <span className="eyebrow">Products</span>
           <ul>
             <li><a className="ulink" href="https://socialreels.ai" target="_blank" rel="noopener">SocialReels</a></li>
-            <li><a className="ulink" href="ezybiz.html">EzyBiz</a></li>
+            <li><a className="ulink" href="https://ezybiz.app" target="_blank" rel="noopener">EzyBiz</a></li>
             <li><a className="ulink" href="callconcierge.html">CallConcierge</a></li>
           </ul>
         </div>
