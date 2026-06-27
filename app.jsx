@@ -217,7 +217,7 @@ function HeroStudio({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge expanding to legal &amp; medical.</p>
+              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge bringing custom office phone systems and live Australian answering.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -306,7 +306,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge expanding to legal &amp; medical.</p>
+              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge bringing custom office phone systems and live Australian answering.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -458,10 +458,10 @@ const PRODUCTS = [
   {
     n: '03', code: 'B.03',
     name: 'CallConcierge',
-    one: 'Premium phone answering for high-touch practices.',
-    body: 'A white-glove inbound call service for clinics, boutique law firms, and high-touch services. Hand-trained agents, transparent transcripts, your tone.',
-    tags: ['Concierge', 'Inbound', 'Premium'],
-    stat: { v: '< 8s', l: 'Avg. pickup time' },
+    one: 'A complete, custom phone system for your office.',
+    body: 'Our bespoke business phone solution for offices, built on the EzyBiz platform. Custom integrations, bespoke hardware, and live Australian answering — so every call to your business is handled your way, by a team in your time zone.',
+    tags: ['Offices', 'Bespoke hardware', 'Live AU answering'],
+    stat: { v: '100% AU', l: 'Live answering team' },
     image: 'callconcierge-app-icon.png', icon: true, iconBg: '#0a0f1a',
     href: 'callconcierge.html',
   },
