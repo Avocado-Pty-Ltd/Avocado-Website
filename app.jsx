@@ -541,7 +541,7 @@ function InMotion({ direction }) {
               ? <>Where the marketing meets<br/>the <em className="serif-italic">machinery.</em></>
               : <>Where marketing meets the machinery.</>}
           </h2>
-          <p className="section-lede">A small wall of recent output — brand films from SocialReels, fieldwork from active engagements, and stills from the studio. The work has to look like the work.</p>
+          <p className="section-lede">A small wall of recent output — brand films from SocialReels, fieldwork from active engagements, and stills from the studio.</p>
         </div>
       </header>
 
