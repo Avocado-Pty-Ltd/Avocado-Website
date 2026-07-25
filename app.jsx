@@ -176,10 +176,6 @@ function Hero({ direction, layout, onAuditOpen }) {
 function HeroStudio({ layout, onAuditOpen }) {
   return (
     <section className={`hero hero-a layout-${layout}`}>
-      <div className="hero-bg-video" aria-hidden="true">
-        <video src="socialreels-reel.mp4" autoPlay loop muted playsInline preload="metadata"/>
-        <div className="hero-bg-veil"/>
-      </div>
       <div className="hero-meta-row">
         <div><span className="meta">Established 2021 in Melbourne</span></div>
         <div><span className="live-pill"><span className="dot-live"/> 4 products in market</span></div>
@@ -272,10 +268,6 @@ function HeroStudio({ layout, onAuditOpen }) {
 function HeroOS({ layout, onAuditOpen }) {
   return (
     <section className={`hero hero-b layout-${layout}`}>
-      <div className="hero-bg-video" aria-hidden="true">
-        <video src="socialreels-reel.mp4" autoPlay loop muted playsInline preload="metadata"/>
-        <div className="hero-bg-veil"/>
-      </div>
       <div className="hero-meta-row">
         <span className="meta">[01] STUDIO</span>
         <span className="meta">MEL ↔ AU</span>
