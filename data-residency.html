@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Firebase Analytics -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDtvPl1WNd3-mzdAo_HvOyKcN2KdJThY2E",
+        authDomain: "ezybiz-e06b6.firebaseapp.com",
+        projectId: "ezybiz-e06b6",
+        storageBucket: "ezybiz-e06b6.firebasestorage.app",
+        messagingSenderId: "344431214322",
+        appId: "1:344431214322:web:e517e19d3cc2245412da6b",
+        measurementId: "G-6YES9LPFKD"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <title>Data Residency | Avocado Pty Ltd</title>
+    <meta name="description" content="Where Avocado Pty Ltd stores and processes customer data across SocialReels, EzyBiz, CallConcierge, Claudette, and bespoke engagements. Australian residency by default.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="subpage.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="nav-inner">
+                <a href="index.html" class="logo">
+                    <img src="avocado-logo-wordmark.svg" alt="Avocado" height="40">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#why-us">Why Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <a href="index.html#contact" class="nav-cta">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+        </div>
+        <div class="container hero-content">
+            <h1>Data Residency</h1>
+            <p class="hero-subtitle">Where your data lives, who touches it, and the safeguards that keep it on Australian soil</p>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
+    <section class="policy-content">
+        <div class="container content-block">
+            <p class="last-updated">Last Updated: July 2026</p>
+
+            <h2>1. Introduction</h2>
+            <p>Avocado Pty Ltd (ACN 652 199 687) builds and operates software for Australian small and mid-sized businesses. This statement explains where your data is stored, which subprocessors we rely on, and the safeguards we apply when data has to move across a border. It applies to all four of our products (SocialReels, EzyBiz, CallConcierge, and Claudette) as well as data we handle inside bespoke engagements.</p>
+            <p>"Customer Data" in this document means data that you or your end users upload to, generate in, or send through our Services.</p>
+
+            <h2>2. Primary Storage Region</h2>
+            <p>Our default primary region for Customer Data is Australia. Where a suitable Australian region is offered by our infrastructure providers, we use it:</p>
+            <ul>
+                <li><strong>Google Cloud Platform:</strong> australia-southeast1 (Sydney) as primary, with australia-southeast2 (Melbourne) available for failover</li>
+                <li><strong>Firebase services:</strong> Firestore and Cloud Storage buckets are provisioned in the nam5/asia multi-region equivalents only where an Australian single-region option is not available for the service; otherwise we default to Australian regions</li>
+                <li><strong>Object storage:</strong> Sydney-region buckets with Australian-only replication policies applied</li>
+            </ul>
+            <p>Where a service does not yet offer an Australian region, we document that fact against the relevant subprocessor in section 4 and apply the safeguards described in section 5.</p>
+
+            <h2>3. Replication and Backups</h2>
+            <p>Backups and disaster-recovery replicas are kept inside Australia by default:</p>
+            <ul>
+                <li>Daily database snapshots stored in australia-southeast1 with a 35-day retention window</li>
+                <li>Cross-zone replication within the Sydney region for high availability</li>
+                <li>Optional cross-region replication to australia-southeast2 (Melbourne) for disaster recovery, never leaving Australia</li>
+                <li>Encrypted, immutable weekly archives retained for 12 months</li>
+            </ul>
+            <p>All backups are encrypted at rest using AES-256 and are subject to the same access controls as the primary data.</p>
+
+            <h2>4. Subprocessors and Cross-Border Processing</h2>
+            <p>A small number of subprocessors sit outside Australia. We keep this list current and publish material changes to it before they take effect:</p>
+            <ul>
+                <li><strong>Google Cloud / Firebase (AU):</strong> Primary infrastructure, hosted in Australian regions</li>
+                <li><strong>Firebase Authentication:</strong> Identity metadata may transit through Google's global control plane; user credentials and tokens are stored in Australian regions</li>
+                <li><strong>Sentry / crash reporting (US or EU region depending on plan):</strong> Aggregated crash and performance telemetry with PII stripped at the SDK</li>
+                <li><strong>Stripe (AU entity, US processing):</strong> Payment tokens for subscription billing; card data never touches Avocado systems</li>
+                <li><strong>Email transactional provider (US region):</strong> Transactional email delivery; message body and recipient address only</li>
+                <li><strong>LLM inference endpoints (US region, used only by SocialReels):</strong> Short-lived processing for video captioning and script generation, described further in section 8</li>
+            </ul>
+
+            <h2>5. Safeguards for Cross-Border Transfers</h2>
+            <p>Where Customer Data does leave Australia, we apply layered safeguards:</p>
+            <ul>
+                <li><strong>Contractual:</strong> Standard Contractual Clauses (SCCs) and a Data Processing Agreement (DPA) with every non-Australian subprocessor</li>
+                <li><strong>Technical:</strong> TLS 1.2+ in transit, AES-256 at rest, and minimum-necessary data included in the request</li>
+                <li><strong>Operational:</strong> Data minimisation and short retention windows on any offshore endpoint</li>
+                <li><strong>Legal:</strong> Assessment against the Australian Privacy Principles (particularly APP 8) and, where applicable, GDPR Chapter V</li>
+            </ul>
+
+            <h2>6. Access Controls and Encryption</h2>
+            <p>Regardless of where data is stored, we apply the following controls:</p>
+            <ul>
+                <li>Role-based access with least-privilege defaults; production access is scoped to a small on-call group</li>
+                <li>Mandatory multi-factor authentication for all Avocado staff and contractors</li>
+                <li>All administrative actions on production infrastructure are logged and retained for 12 months</li>
+                <li>Data encrypted in transit (TLS 1.2+) and at rest (AES-256)</li>
+                <li>Customer-scoped encryption keys managed via Google Cloud KMS in australia-southeast1</li>
+            </ul>
+
+            <h2>7. Incident Notification</h2>
+            <p>If we become aware of an eligible data breach affecting your Customer Data, we will:</p>
+            <ul>
+                <li>Notify you without undue delay and, in any event, within 72 hours of confirmation</li>
+                <li>Provide the information you need to meet your own notification obligations under the Notifiable Data Breaches scheme (Part IIIC of the Privacy Act 1988) or equivalent laws</li>
+                <li>Notify the Office of the Australian Information Commissioner (OAIC) where required by law</li>
+                <li>Give you regular updates as our investigation progresses and share a written post-incident report on request</li>
+            </ul>
+
+            <h2>8. Per-Product Notes</h2>
+
+            <h3>8.1 CallConcierge</h3>
+            <p>Call recordings, transcripts, and message logs are stored exclusively on Australian infrastructure (Google Cloud australia-southeast1). Real-time speech-to-text runs on Australian-region endpoints. Recordings are retained for 90 days by default and can be shortened on request. No CallConcierge audio leaves Australia.</p>
+
+            <h3>8.2 SocialReels</h3>
+            <p>Video assets, project files, and account data are stored in Australia. Certain AI-assisted features (caption generation, script suggestions, thumbnail concepts) call third-party LLM inference endpoints hosted in the United States. When these features are used, only the text prompt and any user-selected metadata are sent — never the underlying video file — and the request is retained by the inference provider for no longer than 30 days under a zero-training contractual commitment.</p>
+
+            <h3>8.3 EzyBiz</h3>
+            <p>All contact records, job data, invoices, and attachments live in Australia (Firebase Firestore + Cloud Storage in australia-southeast1). Push notifications transit Firebase Cloud Messaging, which is a global service; the notification payload does not include personal information beyond what the recipient device needs to open the app.</p>
+
+            <h3>8.4 Claudette</h3>
+            <p>Claudette is a self-hosted product that runs inside your own environment. Avocado does not receive, store, or process any of your data through Claudette. Optional anonymous telemetry (feature-usage counts, version information) can be enabled in the app settings; if enabled, that telemetry is sent to Australian endpoints. If disabled, no data leaves your infrastructure.</p>
+
+            <h2>9. Bespoke Engagements</h2>
+            <p>For bespoke software builds, data residency is agreed in the Statement of Work. Our default recommendation is to deploy the client's workloads into an Australian region of Google Cloud or AWS (ap-southeast-2 / Sydney). Where a client's own systems or regulatory obligations dictate a different region, we document that explicitly, adjust our safeguards, and reflect the change in the DPA that accompanies the engagement.</p>
+
+            <h2>10. Right to Request an Audit</h2>
+            <p>Customers on an active subscription or engagement may, no more than once every 12 months and on 30 days' written notice, request:</p>
+            <ul>
+                <li>A written response to a reasonable security and residency questionnaire</li>
+                <li>Copies of relevant third-party audit reports (e.g. our subprocessors' SOC 2 or ISO 27001 summaries) where we are permitted to share them</li>
+                <li>An on-site or video-conference audit walkthrough at the customer's cost where reasonably necessary and where a written response is insufficient</li>
+            </ul>
+            <p>We will work with you in good faith to accommodate these requests without disrupting our operations or the confidentiality of other customers' data.</p>
+
+            <h2>11. Changes to This Statement</h2>
+            <p>We update this statement when our infrastructure, subprocessors, or regulatory obligations change. Material changes are announced by updating the "Last Updated" date above and, for customers on paid plans, by email notification at least 30 days before the change takes effect where practical.</p>
+
+            <h2>12. Contact Us</h2>
+            <p>For questions about data residency, to request an audit, or to raise a concern about how your data is handled, please contact us:</p>
+            <p>
+                <strong>Avocado Pty Ltd</strong><br>
+                ACN 652 199 687<br>
+                Email: <a href="mailto:hello@avocadodigital.com.au">hello@avocadodigital.com.au</a><br>
+                Website: <a href="https://avocadodigital.com.au">avocadodigital.com.au</a>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+                        <img src="avocado-logo-wordmark.svg" alt="Avocado" height="40">
+                    </a>
+                    <p style="color: var(--text-tertiary); font-size: 0.9rem; max-width: 300px; line-height: 1.7;">Helping Australian small businesses grow smarter with technology solutions that actually work.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="strategy-consulting.html">Strategy Consulting</a></li>
+                        <li><a href="workflow-solutions.html">Workflow Solutions</a></li>
+                        <li><a href="curated-tech.html">Curated Tech Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="callconcierge.html">CallConcierge</a></li>
+                        <li><a href="index.html#products">Business Templates</a></li>
+                        <li><a href="index.html#products">Growth Guides</a></li>
+                        <li><a href="index.html#products">Video Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#why-us">About Us</a></li>
+                        <li><a href="index.html#testimonials">Client Stories</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-size: 0.875rem; color: var(--text-tertiary);">&copy; 2026 Avocado Pty Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="audit-modal.js" defer></script>
+</body>
+</html>

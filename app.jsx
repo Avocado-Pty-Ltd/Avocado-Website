@@ -835,6 +835,8 @@ function Footer({ direction }) {
             <li><a className="ulink" href="#sectors">Sectors</a></li>
             <li><a className="ulink" href="#contact">Contact</a></li>
             <li><a className="ulink" href="privacy-policy.html">Privacy</a></li>
+            <li><a className="ulink" href="terms-of-service.html">Terms</a></li>
+            <li><a className="ulink" href="data-residency.html">Data residency</a></li>
           </ul>
         </div>
       </div>
