@@ -230,8 +230,7 @@ function HeroStudio({ layout, onAuditOpen }) {
           <div className="hero-split-left">
             <p className="eyebrow">Avocado Digital — A software &amp; strategy studio</p>
             <h1 className="hero-display">
-              Software, <em className="serif-italic">studied</em><br/>
-              and built for the way<br/>
+              Software, built for the way<br/>
               your business <em className="serif-italic">actually&nbsp;works.</em>
             </h1>
             <p className="hero-lede">
