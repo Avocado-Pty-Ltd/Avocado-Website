@@ -593,7 +593,7 @@ function Approach({ direction }) {
 
 /* ---------- CLIENTS / SECTORS strip ---------- */
 function Sectors({ direction }) {
-  const list = ['Plumbing', 'Electrical', 'Allied health', 'Boutique law', 'Hospitality', 'Veterinary', 'Property mgmt.', 'Independent retail'];
+  const list = ['Lawyers', 'IT consultants', 'Small business owners', 'Allied health', 'Independent retail', 'Veterinary', 'Hospitality'];
   return (
     <section id="sectors" className={`section sectors dir-${direction}`}>
       <header className="section-head">
