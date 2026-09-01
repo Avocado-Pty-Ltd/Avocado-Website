@@ -190,7 +190,7 @@ function HeroStudio({ layout, onAuditOpen }) {
             with <em className="serif-italic">specific&nbsp;problems.</em>
           </h1>
           <p className="hero-lede">
-            Bespoke software, curated technology and strategy for Australian small business — plus four products of our own: SocialReels, EzyBiz, CallConcierge and Claudette.
+            Bespoke software, curated technology and strategy for Australian small business — plus four products of our own: SocialReels, EzyBiz, Call Concierge and Claudette.
           </p>
           <div className="hero-actions">
             <button type="button" className="btn btn-accent" onClick={onAuditOpen}>
@@ -209,11 +209,11 @@ function HeroStudio({ layout, onAuditOpen }) {
           <div className="hero-fb-meta">
             <div>
               <span className="meta">Index</span>
-              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · B.01 SocialReels · B.02 EzyBiz · B.03 CallConcierge · B.04 Claudette</p>
+              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · B.01 SocialReels · B.02 EzyBiz · B.03 Call Concierge · B.04 Claudette</p>
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge bringing custom office phone systems and live Australian answering. Claudette open-sourced on GitHub.</p>
+              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -297,7 +297,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. CallConcierge bringing custom office phone systems and live Australian answering. Claudette open-sourced on GitHub.</p>
+              <p>SocialReels in private beta. EzyBiz rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -448,11 +448,11 @@ const PRODUCTS = [
   },
   {
     n: '03', code: 'B.03',
-    name: 'CallConcierge',
-    one: 'A complete, custom phone system for your office.',
-    body: 'Our bespoke business phone solution for offices, built on the EzyBiz platform. Custom integrations, bespoke hardware, and live Australian answering — so every call to your business is handled your way, by a team in your time zone.',
-    tags: ['Offices', 'Bespoke hardware', 'Live AU answering'],
-    stat: { v: '100% AU', l: 'Live answering team' },
+    name: 'Call Concierge',
+    one: 'Live Australian new-client intake for law firms.',
+    body: 'A premium managed intake service, connected to EzyBiz. A dedicated 1300 number for new-client enquiries, a live Australian team working from the firm’s approved script, and every enquiry written into the firm’s CRM or practice management system. We capture and update — the firm decides.',
+    tags: ['Australian law firms', 'Live AU intake', 'CRM/PMS records'],
+    stat: { v: '100% AU', l: 'Live intake team' },
     image: 'callconcierge-app-icon.png', icon: true, iconBg: '#0a0f1a',
     href: 'callconcierge.html',
   },
@@ -823,7 +823,7 @@ function Footer({ direction }) {
           <ul>
             <li><a className="ulink" href="https://socialreels.ai" target="_blank" rel="noopener">SocialReels</a></li>
             <li><a className="ulink" href="https://ezybiz.app" target="_blank" rel="noopener">EzyBiz</a></li>
-            <li><a className="ulink" href="callconcierge.html">CallConcierge</a></li>
+            <li><a className="ulink" href="callconcierge.html">Call Concierge</a></li>
             <li><a className="ulink" href="https://github.com/Avocado-Pty-Ltd/Claudette" target="_blank" rel="noopener">Claudette</a></li>
           </ul>
         </div>
