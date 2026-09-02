@@ -1,0 +1,67 @@
+/* ============================================================
+   AVOCADO POLISH B — "Quiet Grotesk"
+   Onyx + gold kept; display moves to a restrained grotesk.
+   Load AFTER tokens.css and sections.css.
+   ============================================================ */
+:root {
+  --display: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --display-italic: normal;
+  --display-weight: 600;
+  --display-tracking: -0.028em;
+  --label-tracking: 0.14em;
+  --fs-display: clamp(34px, 4.2vw, 64px);
+  --fs-h1: clamp(27px, 3vw, 44px);
+  --fs-h2: clamp(20px, 1.9vw, 29px);
+  --fs-h3: clamp(17px, 1.4vw, 21px);
+  --pad-section: clamp(52px, 6.5vw, 100px);
+  --radius-2: 6px;
+}
+h1, h2, h3, h4, h5, h6 { line-height: 1.08; }
+.hero { padding-top: clamp(26px, 3vw, 44px); }
+.hero-meta-row { padding-bottom: clamp(26px, 3.5vw, 44px); }
+.hero-display { line-height: 1.08; }
+.hero-display em, .section-title em, .contact-title em, .hc-stat em, .audit-modal-title em { font-style: normal; }
+.hero-display-xl { font-size: clamp(42px, 6vw, 100px); line-height: 1.02; }
+.hero-lede { font-size: clamp(15px, 1.05vw, 17px); max-width: 52ch; margin-top: 18px; }
+.hero-actions { margin-top: 26px; gap: 18px; }
+.hero-split { padding-bottom: clamp(40px, 5.5vw, 80px); }
+.hero-marquee { padding-block: 12px; margin-top: clamp(14px, 2vw, 24px); }
+.hero-marquee-row span { font-family: var(--mono); font-style: normal; font-size: clamp(11px, 0.9vw, 13px); letter-spacing: 0.18em; text-transform: uppercase; }
+.hero-marquee-track { animation-duration: 52s; }
+.btn { padding: 12px 20px; font-size: 12px; letter-spacing: 0.05em; }
+.site-header .header-cta { font-size: 11px; padding: 8px 15px; }
+.section-head { padding-bottom: clamp(26px, 3vw, 48px); }
+.section-title { line-height: 1.1; }
+.section-lede { font-size: clamp(14.5px, 1vw, 16px); }
+.service { padding: clamp(22px, 2.6vw, 38px) 0; }
+.service-title { font-size: clamp(19px, 1.8vw, 26px); }
+.service-text { font-size: 14.5px; margin-top: 12px; }
+.metric-v { font-style: normal; font-size: clamp(30px, 3vw, 48px); letter-spacing: -0.03em; }
+.product-name { font-size: clamp(20px, 1.8vw, 28px); }
+.product-one { font-size: clamp(14.5px, 1vw, 16px); }
+.product-one em { font-style: normal; }
+.stat-v { font-style: normal; font-family: var(--mono); font-size: 20px; }
+.product:hover { transform: translateY(-2px); }
+.sectors-list li { font-family: var(--body); font-style: normal; font-weight: 500; letter-spacing: -0.015em; font-size: clamp(15px, 1.3vw, 19px); padding: clamp(16px, 1.8vw, 26px) clamp(8px, 1vw, 16px); }
+.manifesto-item { padding: clamp(22px, 2.6vw, 40px); gap: 13px; }
+.testimonial blockquote { font-size: clamp(20px, 2.2vw, 32px); letter-spacing: -0.02em; }
+.contact-title { font-size: clamp(30px, 4vw, 62px); margin-block: 14px 18px; }
+.contact-lede { font-size: 15.5px; }
+.audit-modal-title { font-size: clamp(26px, 3vw, 38px); }
+.hc-stat { font-size: clamp(34px, 3.8vw, 54px); }
+.reel-card figcaption span:last-child { font-family: var(--body); font-style: normal; font-weight: 500; font-size: 14px; }
+/* motion */
+.reveal { transform: translateY(10px); transition: opacity .4s cubic-bezier(.2,.7,.2,1), transform .4s cubic-bezier(.2,.7,.2,1); }
+.dot-live { animation-duration: 2.4s; }
+:where(a, button):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+@media (max-width: 600px) {
+  :root { --fs-display: clamp(27px, 7.4vw, 34px); --fs-h1: clamp(24px, 6.4vw, 30px); --pad-section: 44px; }
+  .contact-title { font-size: clamp(27px, 8vw, 36px); }
+}
+
+/* service illustrations: smaller, line-art treatment */
+.service { grid-template-columns: 64px 250px minmax(0, 1.4fr) minmax(0, 0.9fr); align-items: center; }
+.service-media { max-width: 240px; justify-self: start; width: 100%; }
+.service-media img { object-fit: contain; padding: 8px; filter: none; }
+.service:hover .service-media img { transform: scale(1.03); filter: none; }
+@media (max-width: 980px) { .service { grid-template-columns: 1fr; } .service-media { max-width: 220px; } }

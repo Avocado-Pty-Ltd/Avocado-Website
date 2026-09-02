@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Firebase Analytics -->
@@ -21,14 +20,16 @@
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
-    <title>A premium all-Australian customer intake management service for your boutique law firm | Call Concierge by EzyBiz</title>
+
+    
+    <title>A white-glove all-Australian customer intake management service for your boutique law firm | Call Concierge</title>
     <meta name="description" content="Call Concierge is a live Australian new-client intake service for solo and boutique law firms. A dedicated 1300 enquiry number, a real Australian team on your firm-approved script, and every enquiry written straight into your CRM or practice management system.">
-    <meta property="og:title" content="A premium all-Australian customer intake management service for your boutique law firm">
+    <meta property="og:title" content="A white-glove all-Australian customer intake management service for your boutique law firm">
     <meta property="og:description" content="A dedicated 1300 new-enquiry number, a live Australian intake team on your firm-approved script, and structured records created in your PMS. We capture and update. Your firm decides.">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/svg+xml" href="callconcierge-favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -819,8 +820,54 @@
             html { scroll-behavior: auto; }
         }
     </style>
+
+    <style>
+    /* ============ POLISH A — "Refined Counsel" (override layer) ============ */
+    :root {
+      --shadow-lg: 0 8px 28px rgba(12, 28, 40, 0.10);
+      --shadow-xl: 0 16px 44px rgba(12, 28, 40, 0.13);
+    }
+    h1, h2, h3, h4 { letter-spacing: -0.01em; line-height: 1.18; }
+    .hero { padding: 9.5rem 0 5rem; }
+    .hero h1 { font-size: clamp(2rem, 3.4vw, 2.75rem); margin-bottom: 1.15rem; }
+    .hero-lede { font-size: 1rem; line-height: 1.7; margin-bottom: 1.75rem; }
+    .hero-points li { font-size: 0.92rem; margin-bottom: 0.6rem; }
+    .hero-eyebrow { margin-bottom: 1.4rem; font-size: 0.7rem; }
+    .logo img { height: 46px; }
+    header.scrolled .logo img { height: 40px; }
+    .nav-links a { font-size: 0.85rem; }
+    .btn { font-size: 0.9rem; padding: 0.75rem 1.5rem; }
+    .section-pad { padding: 5rem 0; }
+    .section-header { margin-bottom: 3rem; }
+    .section-title { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+    .section-subtitle { font-size: 0.98rem; }
+    .trust-stat-value { font-size: 1.55rem; }
+    .flow-node h3 { font-size: 1.1rem; }
+    .flow-outcome h3 { font-size: 1.2rem; }
+    .included-card h3 { font-size: 1.18rem; }
+    .crm h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+    .price-name { font-size: 1.35rem; }
+    .price-amount { font-size: 2.4rem; }
+    .boundary-statement { font-size: clamp(1.5rem, 2.6vw, 1.95rem); }
+    .step-num { font-size: 1.9rem; }
+    .step-card h3 { font-size: 1.12rem; }
+    .faq-question h3 { font-size: 1.02rem; }
+    .final-cta h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+    .final-cta p { font-size: 0.98rem; }
+    .custom-band h3 { font-size: 1.25rem; }
+    .schedule-head h3 { font-size: 1.15rem; }
+    .reveal { transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .included-card:hover, .price-card:hover { transform: translateY(-2px); }
+    :where(a, button):focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 3px; }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.75rem; }
+      .section-title { font-size: 1.5rem; }
+      .section-pad { padding: 3.5rem 0; }
+    }
+    </style>
 </head>
 <body>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -849,8 +896,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <span class="hero-eyebrow">Call Concierge by EzyBiz</span>
-                    <h1>A premium <em>all-Australian</em> customer intake management service for your boutique law firm.</h1>
+                    <h1>A white-glove <em>all-Australian</em> customer intake management service for your boutique law firm.</h1>
                     <p class="hero-lede">A premium live intake service for Australian solo and boutique law firms. Your firm receives a dedicated 1300 number for new enquiries only. We answer it, follow your approved intake script, and create a structured enquiry record in your CRM or practice management system before you've finished the meeting you were in.</p>
                     <ul class="hero-points">
                         <li>A dedicated 1300 number for new-client enquiries only</li>
@@ -865,15 +911,15 @@
                     </div>
                     <div class="hero-trust">
                         <span class="hero-trust-item">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             Answered in Australia, never offshore
                         </span>
                         <span class="hero-trust-item">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             Built and supported in Melbourne
                         </span>
                         <span class="hero-trust-item">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             No legal advice, ever
                         </span>
                     </div>
@@ -882,7 +928,7 @@
                     <div class="intake-card">
                         <div class="intake-card-head">
                             <div class="intake-card-line">
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                                 <span class="intake-card-number">1300 · New enquiries</span>
                             </div>
                             <span class="intake-card-tag">Live intake</span>
@@ -899,7 +945,7 @@
                             </dl>
                         </div>
                         <div class="intake-card-foot">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             Enquiry record created in your PMS · follow-up task assigned
                         </div>
                     </div>
@@ -966,12 +1012,12 @@
             </div>
 
             <div class="flow-bypass reveal">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M4 12h15"/></svg>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M4 12h15"></path></svg>
                 <span><strong>Existing clients bypass all of this.</strong> They keep calling your ordinary direct business number and reach your team as they always have. Call Concierge only ever touches the new-enquiry line.</span>
             </div>
 
             <div class="flow-outcome reveal">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                 <div>
                     <h3>Then a solicitor decides</h3>
                     <p>Conflict clearance, whether the firm will act, and every question of legal substance stay entirely with your firm. We capture and update. Your firm decides.</p>
@@ -990,32 +1036,32 @@
             </div>
             <div class="included-grid">
                 <div class="included-card reveal">
-                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
+                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
                     <h3>Dedicated 1300 number</h3>
                     <p>One Australian 1300 number for your new-enquiry channel — used on Google, your website, directories and advertising, so enquiry volume and source are finally measurable.</p>
                 </div>
                 <div class="included-card reveal reveal-delay-1">
-                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
                     <h3>Live Australian answering</h3>
                     <p>A real person, based in Australia, answering during your agreed service window. No offshore call centre, no queue, no automated menu standing between a prospective client and your firm.</p>
                 </div>
                 <div class="included-card reveal reveal-delay-2">
-                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
                     <h3>Firm-specific greeting and script</h3>
                     <p>Your approved greeting, practice areas, exclusions, the information fields you want captured, and the escalation pathway. Nothing is improvised on your firm's behalf.</p>
                 </div>
                 <div class="included-card reveal reveal-delay-3">
-                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg></div>
+                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path></svg></div>
                     <h3>Standard CRM/PMS entry</h3>
                     <p>Create or update the record, add the structured call note, set category and source, assign the nominated owner and trigger the approved follow-up task. This is the part generic services do not do.</p>
                 </div>
                 <div class="included-card reveal reveal-delay-4">
-                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></div>
+                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg></div>
                     <h3>EzyBiz handover and escalation</h3>
                     <p>Immediate structured notification to your nominated contacts, plus your approved handling instructions for urgent calls. Escalation is on reasonable efforts under a procedure you sign off.</p>
                 </div>
                 <div class="included-card reveal reveal-delay-5">
-                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+                    <div class="included-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
                     <h3>Monthly intake reporting</h3>
                     <p>Call volume, answer rate, intake category, source where known, plan usage and the outcomes you report back to us. You can finally see what the new-enquiry channel is worth.</p>
                 </div>
@@ -1032,11 +1078,11 @@
                     <h2>Most answering services hand you a message. We hand you a record.</h2>
                     <p class="crm-lede">A message in an inbox is still work waiting to be done. By the time you read this month's messages, someone has to re-key them, categorise them, chase them and wonder which ones were lost. Call Concierge closes that loop on the call itself.</p>
                     <ul class="crm-list">
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Enquiries land in the system your firm already runs on</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Every enquiry categorised and attributed to a source</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Opposing-party details captured and marked for your conflict check</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> A named owner and a follow-up task, so nothing sits unclaimed</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Least-privilege access: only the functions and records intake requires</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Enquiries land in the system your firm already runs on</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Every enquiry categorised and attributed to a source</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Opposing-party details captured and marked for your conflict check</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> A named owner and a follow-up task, so nothing sits unclaimed</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Least-privilege access: only the functions and records intake requires</li>
                     </ul>
                 </div>
                 <div class="crm-panel reveal reveal-delay-2">
@@ -1095,14 +1141,14 @@
                         <div class="price-headline-sub">then $15 per additional intake + GST</div>
                     </div>
                     <ul class="price-features">
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Dedicated 1300 new-enquiry number</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Live Australian answering in your service window</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Firm-approved greeting and intake script</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Standard CRM/PMS entry on every intake</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> EzyBiz handover and escalation configuration</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Monthly intake reporting</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> One EzyBiz Business Line seat included</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Founding price locked for 12 months while active</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Dedicated 1300 new-enquiry number</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Live Australian answering in your service window</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Firm-approved greeting and intake script</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Standard CRM/PMS entry on every intake</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> EzyBiz handover and escalation configuration</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Monthly intake reporting</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> One EzyBiz Business Line seat included</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Founding price locked for 12 months while active</li>
                     </ul>
                     <a href="#enquire" class="btn btn-primary price-cta">Book a discovery call</a>
                 </div>
@@ -1117,11 +1163,11 @@
                         <div class="price-headline-sub">then $12 per additional intake + GST</div>
                     </div>
                     <ul class="price-features">
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Everything in Founding Intake</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Double the included intake allowance</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Better effective rate — $18.75 per included intake</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Multiple practice areas in one script</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Routing to several nominated intake owners</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Everything in Founding Intake</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Double the included intake allowance</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Better effective rate — $18.75 per included intake</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Multiple practice areas in one script</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Routing to several nominated intake owners</li>
                     </ul>
                     <a href="#enquire" class="btn btn-outline price-cta">Talk to us</a>
                 </div>
@@ -1136,11 +1182,11 @@
                         <div class="price-headline-sub">then $10 per additional intake + GST</div>
                     </div>
                     <ul class="price-features">
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Everything in Growth Intake</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Best effective rate — $16.67 per included intake</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Priority escalation handling</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Extended reporting on source and category</li>
-                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Quarterly script and workflow review</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Everything in Growth Intake</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Best effective rate — $16.67 per included intake</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Priority escalation handling</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Extended reporting on source and category</li>
+                        <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Quarterly script and workflow review</li>
                     </ul>
                     <a href="#enquire" class="btn btn-outline price-cta">Talk to us</a>
                 </div>
@@ -1205,21 +1251,21 @@
                     <div class="boundary-col does">
                         <h4>What Call Concierge does</h4>
                         <ul>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Answers your new-enquiry line as a real Australian person</li>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Follows the greeting, questions and exclusions your firm approved</li>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Records the enquiry in your CRM or PMS with a structured note</li>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Captures opposing-party details and marks them "conflict check required"</li>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Escalates on reasonable efforts under your agreed procedure</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Answers your new-enquiry line as a real Australian person</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Follows the greeting, questions and exclusions your firm approved</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Records the enquiry in your CRM or PMS with a structured note</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Captures opposing-party details and marks them "conflict check required"</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Escalates on reasonable efforts under your agreed procedure</li>
                         </ul>
                     </div>
                     <div class="boundary-col does-not">
                         <h4>What Call Concierge never does</h4>
                         <ul>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg> Give legal advice or any legal assessment of a matter</li>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg> Clear conflicts — that decision is your firm's alone</li>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg> Create a solicitor-client relationship or accept a retainer</li>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg> Quote costs, guarantee an appointment or promise the firm will act</li>
-                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg> Operate as an emergency service — genuine emergencies go to 000</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg> Give legal advice or any legal assessment of a matter</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg> Clear conflicts — that decision is your firm's alone</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg> Create a solicitor-client relationship or accept a retainer</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg> Quote costs, guarantee an appointment or promise the firm will act</li>
+                            <li><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg> Operate as an emergency service — genuine emergencies go to 000</li>
                         </ul>
                     </div>
                 </div>
@@ -1272,7 +1318,7 @@
                 <div class="faq-item reveal">
                     <button class="faq-question">
                         <h3>Does Call Concierge answer all of our calls?</h3>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </button>
                     <div class="faq-answer"><div class="faq-answer-inner">
                         <p>No, and that is deliberate. We answer one line: the dedicated 1300 number you use for new-client enquiries. Existing clients keep calling your ordinary direct business number and reach your team exactly as they do today. Keeping the two channels separate is what makes the intake data meaningful — and it keeps your existing client relationships entirely in your hands.</p>
@@ -1281,7 +1327,7 @@
                 <div class="faq-item reveal">
                     <button class="faq-question">
                         <h3>Is the team offshore?</h3>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </button>
                     <div class="faq-answer"><div class="faq-answer-inner">
                         <p>No. Every Call Concierge intake is handled by an Australian-based team member during your agreed service window. The service is built and supported by Avocado Pty Ltd in Melbourne. This is the single most common complaint we hear about generic answering services, and it is the thing we will not compromise on.</p>
@@ -1290,7 +1336,7 @@
                 <div class="faq-item reveal">
                     <button class="faq-question">
                         <h3>Which practice management systems do you work with?</h3>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </button>
                     <div class="faq-answer"><div class="faq-answer-inner">
                         <p>We work with the CRM or practice management system your firm already uses, through a permissioned workflow scoped during setup. Because the integration path differs by system, we confirm exactly what is possible for yours during discovery rather than promising a generic connection — and if a system cannot be updated safely, we will tell you before you sign anything.</p>
@@ -1299,7 +1345,7 @@
                 <div class="faq-item reveal">
                     <button class="faq-question">
                         <h3>What counts as one CRM-ready intake?</h3>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </button>
                     <div class="faq-answer"><div class="faq-answer-inner">
                         <p>A completed live new-enquiry call plus the standard update to your CRM or practice management system: the record created or updated, the structured note written, category and source set, an owner assigned and the follow-up task raised. A standard intake runs to about ten active handling minutes — roughly seven minutes on the call and three in your system. Calls that run materially longer move to the time-based rate or a custom quote.</p>
@@ -1308,7 +1354,7 @@
                 <div class="faq-item reveal">
                     <button class="faq-question">
                         <h3>What happens if we go over our included intakes?</h3>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </button>
                     <div class="faq-answer"><div class="faq-answer-inner">
                         <p>Nothing stops. Additional intakes are handled at your plan's published rate — $15, $12 or $10 plus GST — and we will flag it in reporting well before it becomes a surprise. If your volume settles above your allowance, moving up a plan is almost always cheaper than paying excess, and we will say so rather than let the overage run.</p>
@@ -1317,7 +1363,7 @@
                 <div class="faq-item reveal">
                     <button class="faq-question">
                         <h3>Can you clear conflicts or tell a caller whether we can help?</h3>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </button>
                     <div class="faq-answer"><div class="faq-answer-inner">
                         <p>No. We capture opposing-party information and mark the record "conflict check required" so your firm can run the check properly. We do not give legal advice, assess a matter, quote costs, guarantee an appointment or say whether your firm will act. Those are solicitors' decisions, and our script is written so our team never strays into them.</p>
@@ -1326,7 +1372,7 @@
                 <div class="faq-item reveal">
                     <button class="faq-question">
                         <h3>Do you cover after hours and weekends?</h3>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </button>
                     <div class="faq-answer"><div class="faq-answer-inner">
                         <p>We answer during an agreed service window, set with you at setup. We would rather commit to a window we genuinely staff with Australian people than advertise unlimited 24/7 cover we cannot honour. Extended and weekend coverage is available — it is quoted, because it is rostered.</p>
@@ -1335,7 +1381,7 @@
                 <div class="faq-item reveal">
                     <button class="faq-question">
                         <h3>How does this relate to EzyBiz?</h3>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </button>
                     <div class="faq-answer"><div class="faq-answer-inner">
                         <p>EzyBiz is the business phone and communications app. Call Concierge is the premium managed intake service that sits on top of it — the live Australian team, the firm-approved script and the practice-system work. Handover to your nominated contacts runs through EzyBiz, and the Founding Intake plan includes an EzyBiz Business Line seat. Existing EzyBiz customers can add Call Concierge to what they already have.</p>
@@ -1344,7 +1390,7 @@
                 <div class="faq-item reveal">
                     <button class="faq-question">
                         <h3>What is the commitment, and what does setup cost?</h3>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </button>
                     <div class="faq-answer"><div class="faq-answer-inner">
                         <p>Three months initially, charged monthly in advance, then month to month with 30 days' notice. Three months is not a lock-in tactic — it is the time it takes to place the number, refine the script and produce reporting worth reading. Setup is $1,500 plus GST as standard, waived entirely for the first six founding firms in exchange for a three-month term and honest feedback while we design the service.</p>
@@ -1365,7 +1411,7 @@
                     <a href="tel:+61363588887" class="btn btn-ghost">+61 3 6358 8887</a>
                 </div>
                 <span class="cohort-note">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:15px;height:15px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:15px;height:15px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     Founding cohort open now
                 </span>
                 <div class="developed-by">
@@ -1395,7 +1441,7 @@
                 </ul>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2026 Avocado Pty Ltd · ABN 81 652 199 687. All rights reserved.</p>
+                <p class="footer-copyright">© 2026 Avocado Pty Ltd · ABN 81 652 199 687. All rights reserved.</p>
                 <div class="footer-avocado">
                     A product by <a href="index.html"><img src="avocado-logo-wordmark.png" alt="Avocado"></a>
                 </div>
@@ -1451,11 +1497,12 @@
                     const target = document.querySelector(href);
                     if (target) {
                         e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 76, behavior: 'smooth' });
                     }
                 }
             });
         });
     </script>
-</body>
-</html>
+
+
+</body></html>

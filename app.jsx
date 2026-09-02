@@ -333,11 +333,11 @@ function HeroOS({ layout, onAuditOpen }) {
                 <span className="os-cell-tag">SR-022</span>
               </div>
               <div className="os-media-cell">
-                <img src="ezybiz-app-home.jpeg" alt="EzyBiz home"/>
+                <img src="ezybiz-app-home-framed.png" alt="EzyBiz home"/>
                 <span className="os-cell-tag">EZ-001</span>
               </div>
               <div className="os-media-cell">
-                <img src="curated-tech.jpeg" alt="Curated tech"/>
+                <img src={'curated-tech.jpeg'} alt="Curated tech"/>
                 <span className="os-cell-tag">CT-077</span>
               </div>
             </div>
@@ -356,7 +356,7 @@ const SERVICES = [
     eyebrow: 'Bespoke software',
     body: 'We design and build internal tools that fit the way your business actually runs — bookings, dispatch, inventory, finance. Replacing spreadsheets, not multiplying them.',
     deliverables: ['Discovery & mapping', 'Custom web apps', 'Integration & migration', 'Ongoing care'],
-    media: 'workflow-solutions.jpeg',
+    media: 'illus-workflow.svg',
     href: 'workflow-solutions.html',
   },
   {
@@ -365,7 +365,7 @@ const SERVICES = [
     eyebrow: 'Right-sized stacks',
     body: 'A considered tech selection for owners who don\'t want a CIO. We assemble, configure, and maintain a stack that matches your size and ambition — and stays out of your way.',
     deliverables: ['Stack audit', 'Vendor selection', 'Implementation', 'Quarterly reviews'],
-    media: 'curated-tech.jpeg',
+    media: 'illus-curated-tech.svg',
     href: 'curated-tech.html',
   },
   {
@@ -374,7 +374,7 @@ const SERVICES = [
     eyebrow: 'Operating advice',
     body: 'Half-day to half-year engagements helping owners decide what to build, what to buy, and what to leave alone. Plain English, written deliverables, no theatre.',
     deliverables: ['Strategy intensives', 'Roadmap shaping', 'Pre-mortems', 'Fractional CTO'],
-    media: 'strategy-consulting.jpeg',
+    media: 'illus-strategy.svg',
     href: 'strategy-consulting.html',
   },
 ];
@@ -443,7 +443,7 @@ const PRODUCTS = [
     body: 'A dedicated business number for consultants, business owners, and independent professionals — with conversational voicemail, in-call appointment booking, smart SMS replies, and automatic contact history. On the clock, it works with you. Off the clock, it keeps your business running.',
     tags: ['iOS', 'Android', 'Web', 'AU & NZ'],
     stat: { v: 'AU & NZ', l: 'Available now' },
-    image: 'ezybiz-app-home.jpeg',
+    image: 'ezybiz-app-home-framed.png',
     href: 'https://ezybiz.app', external: true,
   },
   {
