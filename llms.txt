@@ -10,7 +10,7 @@ Key facts:
 
 ## Products
 
-- [EzyBiz](https://ezybiz.ai/): Australian business phone service — a dedicated business number with an AI answering service, call screening, message taking and appointment booking. Also mirrored at https://avocadodigital.com.au/ezybiz — see https://ezybiz.ai/llms.txt for full details.
+- [EzyBiz](https://ezybiz.ai/): the ultimate business phone for legal professionals — a dedicated business number with an Australian AI answering service (call screening, message taking, appointment booking) and every call filed to the right matter in Smokeball or Clio. Also mirrored at https://avocadodigital.com.au/ezybiz — see https://ezybiz.ai/llms.txt for full details.
 - [Call Concierge](https://callconcierge.com.au): live Australian new-client intake for law firms, connected to EzyBiz.
 - [SocialReels](https://socialreels.ai): short-form video for small business (private beta).
 

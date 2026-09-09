@@ -323,7 +323,7 @@ function HeroOS({ layout, onAuditOpen }) {
             <div className="os-spec">
               <div><span className="meta">Discipline</span><b>Software · Strategy · Ops</b></div>
               <div><span className="meta">Scope</span><b>Products &amp; engagements</b></div>
-              <div><span className="meta">Sectors</span><b>Trades, services, retail, SMB</b></div>
+              <div><span className="meta">Sectors</span><b>Legal, professional services, SMB</b></div>
               <div><span className="meta">Region</span><b>Australia &amp; NZ</b></div>
               <div className="live-row"><span className="meta">Live</span><b>4 products in market</b></div>
             </div>
@@ -439,12 +439,12 @@ const PRODUCTS = [
   {
     n: '02', code: 'B.02',
     name: 'EzyBiz',
-    one: 'Run a sharp business. Live a big life.',
-    body: 'A dedicated business number for consultants, business owners, and independent professionals — with conversational voicemail, in-call appointment booking, smart SMS replies, and automatic contact history. On the clock, it works with you. Off the clock, it keeps your business running.',
-    tags: ['iOS', 'Android', 'Web', 'AU & NZ'],
-    stat: { v: 'AU & NZ', l: 'Available now' },
+    one: 'The ultimate business phone for legal professionals.',
+    body: 'A dedicated business number for law firms, solo practitioners and small legal teams — with a realistic Australian answering service that screens calls, takes messages and books appointments, a written record of every conversation, and calls filed to the right matter in Smokeball or Clio. All from the phone you already carry.',
+    tags: ['Legal professionals', 'Smokeball & Clio', 'iOS · Android'],
+    stat: { v: 'AU', l: 'Available now' },
     image: 'ezybiz-app-home-framed.png',
-    href: 'https://ezybiz.app', external: true,
+    href: 'ezybiz.html',
   },
   {
     n: '03', code: 'B.03',
@@ -822,7 +822,7 @@ function Footer({ direction }) {
           <span className="eyebrow">Products</span>
           <ul>
             <li><a className="ulink" href="https://socialreels.ai" target="_blank" rel="noopener">SocialReels</a></li>
-            <li><a className="ulink" href="https://ezybiz.app" target="_blank" rel="noopener">EzyBiz</a></li>
+            <li><a className="ulink" href="ezybiz.html">EzyBiz</a></li>
             <li><a className="ulink" href="callconcierge.html">Call Concierge</a></li>
             <li><a className="ulink" href="https://github.com/Avocado-Pty-Ltd/Claudette" target="_blank" rel="noopener">Claudette</a></li>
           </ul>
