@@ -1,0 +1,69 @@
+# avocadodigital.com.au — Netlify configuration
+#
+# /ezybiz is a LIVE PROXY of https://ezybiz.ai/ (status 200 = rewrite, not
+# redirect): every request under /ezybiz/ is fetched from ezybiz.ai on the
+# fly, so the page can never drift from the EzyBiz site and nothing is
+# duplicated in this repo. Netlify normalises trailing slashes when
+# matching redirect rules, so the splat rule below can serve the homepage
+# at bare /ezybiz too — where its relative asset URLs would resolve against
+# the wrong base. The EzyBiz homepage handles that itself: a one-line
+# script at the top of its <head> (see index.html in the Ezybiz-Website
+# repo) redirects any extensionless slashless path to the slashed form
+# before assets are fetched. Its canonical tag points at ezybiz.ai, which
+# keeps search signals consolidated on the .ai domain.
+#
+# Rule order matters: Netlify treats `from = "/ezybiz"` as matching BOTH
+# /ezybiz and /ezybiz/, so the bare-path 301 below must come AFTER the splat
+# rule (the Ezybiz-Website repo's netlify.toml documents the infinite loop
+# the other order causes). The 301 is best-effort slash normalisation; the
+# page no longer breaks when it doesn't fire.
+
+[[redirects]]
+  from = "/ezybiz/*"
+  to = "https://ezybiz.ai/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/ezybiz"
+  to = "/ezybiz/"
+  status = 301
+  force = true
+
+# Legacy EzyBiz URLs on this domain — the old mirror page and the retired
+# tradie-era landing pages — all land on the proxied EzyBiz page.
+
+[[redirects]]
+  from = "/ezybiz.html"
+  to = "/ezybiz/"
+  status = 301
+
+[[redirects]]
+  from = "/ezybiz-plumbers.html"
+  to = "/ezybiz/"
+  status = 301
+
+[[redirects]]
+  from = "/ezybiz-plumbers"
+  to = "/ezybiz/"
+  status = 301
+
+[[redirects]]
+  from = "/ezybiz-electricians.html"
+  to = "/ezybiz/"
+  status = 301
+
+[[redirects]]
+  from = "/ezybiz-electricians"
+  to = "/ezybiz/"
+  status = 301
+
+[[redirects]]
+  from = "/beta.html"
+  to = "/ezybiz/"
+  status = 301
+
+[[redirects]]
+  from = "/beta"
+  to = "/ezybiz/"
+  status = 301
