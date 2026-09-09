@@ -1,6 +1,6 @@
 # Avocado Digital
 
-> Avocado Digital (Avocado Pty Ltd) is a small Australian software and strategy studio, established 2021 in Melbourne, building durable tools for small and medium businesses — bespoke software, curated technology and strategy consulting, plus three products of its own: EzyBiz, Call Concierge and SocialReels.
+> Avocado Digital (Avocado Pty Ltd) is a small Australian software and strategy studio, established 2021 in Melbourne, building durable tools for small and medium businesses — bespoke software, curated technology and strategy consulting, plus four products of its own: EzyBiz, Call Concierge, SocialReels and Claudette.
 
 Key facts:
 
@@ -13,6 +13,7 @@ Key facts:
 - [EzyBiz](https://ezybiz.ai/): the ultimate business phone for legal professionals — a dedicated business number with an Australian AI answering service (call screening, message taking, appointment booking) and every call filed to the right matter in Smokeball or Clio. Also mirrored at https://avocadodigital.com.au/ezybiz — see https://ezybiz.ai/llms.txt for full details.
 - [Call Concierge](https://callconcierge.com.au): live Australian new-client intake for law firms, connected to EzyBiz.
 - [SocialReels](https://socialreels.ai): short-form video for small business (private beta).
+- [Claudette](https://github.com/Avocado-Pty-Ltd/Claudette): an open-source, voice-based IDE that turns speech into a working codebase (MIT licence, on GitHub).
 
 ## Services
 
