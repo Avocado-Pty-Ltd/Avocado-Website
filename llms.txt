@@ -1,0 +1,27 @@
+# Avocado Digital
+
+> Avocado Digital (Avocado Pty Ltd) is a small Australian software and strategy studio, established 2021 in Melbourne, building durable tools for small and medium businesses — bespoke software, curated technology and strategy consulting, plus three products of its own: EzyBiz, Call Concierge and SocialReels.
+
+Key facts:
+
+- Services: Workflow Solutions (bespoke software and workflow automation), Curated Technology (pragmatic tool selection and integration), Strategy Consulting (strategy intensives, roadmap shaping, pre-mortems, fractional CTO).
+- Legal entity: Avocado Pty Ltd, ACN 652 199 687, ABN 81 652 199 687.
+- Contact: hello@avocadodigital.com.au · Reception +61 3 6358 8887
+
+## Products
+
+- [EzyBiz](https://ezybiz.ai/): Australian business phone service — a dedicated business number with an AI answering service, call screening, message taking and appointment booking. Also mirrored at https://avocadodigital.com.au/ezybiz — see https://ezybiz.ai/llms.txt for full details.
+- [Call Concierge](https://callconcierge.com.au): live Australian new-client intake for law firms, connected to EzyBiz.
+- [SocialReels](https://socialreels.ai): short-form video for small business (private beta).
+
+## Services
+
+- [Workflow Solutions](https://avocadodigital.com.au/workflow-solutions.html): bespoke software and workflow automation
+- [Curated Technology](https://avocadodigital.com.au/curated-tech.html): tool selection and integration
+- [Strategy Consulting](https://avocadodigital.com.au/strategy-consulting.html): strategy intensives, roadmaps, fractional CTO
+
+## Legal
+
+- [Privacy policy](https://avocadodigital.com.au/privacy-policy.html)
+- [Terms of service](https://avocadodigital.com.au/terms-of-service.html)
+- [Data residency](https://avocadodigital.com.au/data-residency.html)
