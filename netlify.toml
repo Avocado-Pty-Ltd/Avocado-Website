@@ -3,18 +3,20 @@
 # /ezybiz is a LIVE PROXY of https://ezybiz.ai/ (status 200 = rewrite, not
 # redirect): every request under /ezybiz/ is fetched from ezybiz.ai on the
 # fly, so the page can never drift from the EzyBiz site and nothing is
-# duplicated in this repo. The proxied pages' relative links and assets
-# (assets/…, compare-vxt.html, …) resolve under /ezybiz/ and are proxied by
-# the same splat rule; their canonical tags point at ezybiz.ai, which keeps
-# search signals consolidated on the .ai domain.
+# duplicated in this repo. The EzyBiz homepage references its assets,
+# fonts, iframe and internal links by ABSOLUTE https://ezybiz.ai/... URLs
+# (a deliberate choice in the Ezybiz-Website repo), so it renders fully at
+# /ezybiz and /ezybiz/ alike — Netlify normalises trailing slashes when
+# matching redirect rules, so the splat rule below can serve the homepage
+# at either form and the page must not depend on its own path. Canonical
+# tags point at ezybiz.ai, which keeps search signals consolidated on the
+# .ai domain.
 #
 # Rule order matters: Netlify treats `from = "/ezybiz"` as matching BOTH
 # /ezybiz and /ezybiz/, so the bare-path 301 below must come AFTER the splat
-# rule — /ezybiz/ then hits the proxy first and never reaches the 301 (the
-# Ezybiz-Website repo's netlify.toml documents the infinite loop that
-# ordering avoids). The bare /ezybiz itself can't be proxied directly:
-# without the trailing slash the page's relative URLs would resolve against
-# the site root and 404.
+# rule (the Ezybiz-Website repo's netlify.toml documents the infinite loop
+# the other order causes). The 301 is best-effort slash normalisation; the
+# page no longer breaks when it doesn't fire.
 
 [[redirects]]
   from = "/ezybiz/*"
