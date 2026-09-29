@@ -12,8 +12,8 @@ Bespoke software, curated technology and strategy for Australian small business 
 
 ## Products
 
-- **[EzyBiz](https://ezybizlex.com.au)** — the ultimate business phone for legal professionals: an AI answering service on a dedicated number, with matter filing to Smokeball and Clio
-- **[Call Concierge](https://callconcierge.com.au)** — live Australian new-client intake for law firms, connected to EzyBiz
+- **[EzyBiz LEX](https://ezybizlex.com.au)** — the ultimate business phone for legal professionals: an AI answering service on a dedicated number, with matter filing to Smokeball and Clio
+- **[Call Concierge](https://callconcierge.com.au)** — live Australian new-client intake for law firms, connected to EzyBiz LEX
 - **[SocialReels](https://socialreels.ai)** — short-form video for small business (private beta)
 
 ## About the studio
