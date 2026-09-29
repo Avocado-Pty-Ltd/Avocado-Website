@@ -10,7 +10,7 @@ Key facts:
 
 ## Products
 
-- [EzyBiz](https://ezybiz.ai/): the ultimate business phone for legal professionals — a dedicated business number with an Australian AI answering service (call screening, message taking, appointment booking) and every call filed to the right matter in Smokeball or Clio. Also mirrored at https://avocadodigital.com.au/ezybiz — see https://ezybiz.ai/llms.txt for full details.
+- [EzyBiz](https://ezybizlex.com.au/): the ultimate business phone for legal professionals — a dedicated business number with an Australian AI answering service (call screening, message taking, appointment booking) and every call filed to the right matter in Smokeball or Clio. Legal pages: https://ezybizlex.com.au/terms/, https://ezybizlex.com.au/privacy/, https://ezybizlex.com.au/acceptable-use/, https://ezybizlex.com.au/data-residency/.
 - [Call Concierge](https://callconcierge.com.au): live Australian new-client intake for law firms, connected to EzyBiz.
 - [SocialReels](https://socialreels.ai): short-form video for small business (private beta).
 - [Claudette](https://github.com/Avocado-Pty-Ltd/Claudette): an open-source, voice-based IDE that turns speech into a working codebase (MIT licence, on GitHub).
