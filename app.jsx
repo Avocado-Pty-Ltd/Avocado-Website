@@ -355,7 +355,7 @@ const SERVICES = [
     title: 'Workflow Solutions',
     eyebrow: 'Bespoke software',
     body: 'We design and build internal tools that fit the way your business actually runs — bookings, dispatch, inventory, finance. Replacing spreadsheets, not multiplying them.',
-    deliverables: ['Discovery & mapping', 'Custom web apps', 'Integration & migration', 'Ongoing care'],
+    deliverables: ['Discovery & mapping', 'Custom web, iOS & Android apps', 'Integration & migration', 'Ongoing care'],
     media: 'illus-workflow.svg',
     href: 'workflow-solutions.html',
   },
