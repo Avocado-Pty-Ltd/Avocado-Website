@@ -2,7 +2,7 @@
 
 A small Australian software & strategy studio building durable tools for SMBs.
 
-Bespoke software, curated technology and strategy for Australian small business — plus three products of our own.
+Bespoke software, curated technology and strategy for Australian small business — plus several products of our own.
 
 ## What we do
 
@@ -15,6 +15,7 @@ Bespoke software, curated technology and strategy for Australian small business 
 - **[EzyBiz LEX](https://ezybizlex.com.au)** — the ultimate business phone for legal professionals: an AI answering service on a dedicated number, with matter filing to Smokeball and Clio
 - **[Call Concierge](https://callconcierge.com.au)** — live Australian new-client intake for law firms, connected to EzyBiz LEX
 - **[SocialReels](https://socialreels.ai)** — short-form video for small business (private beta)
+- **[Legal SEO](https://avocadodigital.com.au/legal-seo.html)** — search visibility for Victorian law firms, measured on signed matters (`legal-seo.html`)
 
 ## About the studio
 
