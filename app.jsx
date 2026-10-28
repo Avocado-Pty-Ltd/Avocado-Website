@@ -209,11 +209,11 @@ function HeroStudio({ layout, onAuditOpen }) {
           <div className="hero-fb-meta">
             <div>
               <span className="meta">Index</span>
-              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · B.01 SocialReels · B.02 EzyBiz LEX · B.03 Call Concierge · B.04 Claudette</p>
+              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · A.04 Legal SEO · B.01 SocialReels · B.02 EzyBiz LEX · B.03 Call Concierge · B.04 Claudette</p>
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub.</p>
+              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Legal SEO now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -297,7 +297,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub.</p>
+              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Legal SEO now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -377,6 +377,15 @@ const SERVICES = [
     media: 'illus-strategy.svg',
     href: 'strategy-consulting.html',
   },
+  {
+    n: '04', code: 'A.04',
+    title: 'Legal SEO',
+    eyebrow: 'Search for law firms',
+    body: 'Search visibility for Australian law firms: Google Business Profile and map pack work suburb by suburb, practice-area pages checked by a lawyer before they go live, and intake wired to EzyBiz LEX and Call Concierge. Measured on signed matters, not traffic.',
+    deliverables: ['Search audit', 'Business Profile & map pack', 'Practice-area pages', 'Signed-matter reporting'],
+    media: 'legal-seo-card.svg',
+    href: 'legal-seo.html',
+  },
 ];
 
 function Services({ direction }) {
@@ -386,9 +395,9 @@ function Services({ direction }) {
         <span className="eyebrow">{direction === 'a' ? '— A. Services' : '/ services'}</span>
         <h2 className="section-title">
           {direction === 'a' ? (
-            <>Three ways we work<br/>with <em className="serif-italic">small teams.</em></>
+            <>Four ways we work<br/>with <em className="serif-italic">small teams.</em></>
           ) : (
-            <>Three ways we work with small&nbsp;teams.</>
+            <>Four ways we work with small&nbsp;teams.</>
           )}
         </h2>
         <p className="section-lede">
@@ -816,6 +825,7 @@ function Footer({ direction }) {
             <li><a className="ulink" href="workflow-solutions.html">Workflow Solutions</a></li>
             <li><a className="ulink" href="curated-tech.html">Curated Technology</a></li>
             <li><a className="ulink" href="strategy-consulting.html">Strategy</a></li>
+            <li><a className="ulink" href="legal-seo.html">Legal SEO</a></li>
           </ul>
         </div>
         <div>

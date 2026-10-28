@@ -2,13 +2,14 @@
 
 A small Australian software & strategy studio building durable tools for SMBs.
 
-Bespoke software, curated technology and strategy for Australian small business — plus three products of our own.
+Bespoke software, curated technology and strategy for Australian small business — plus several products of our own.
 
 ## What we do
 
 - **Workflow Solutions** — bespoke software and workflow automation
 - **Curated Technology** — pragmatic tool selection and integration
 - **Strategy Consulting** — strategy intensives, roadmap shaping, pre-mortems, fractional CTO
+- **[Legal SEO](https://avocadodigital.com.au/legal-seo.html)** — search visibility for Australian law firms, measured on signed matters (`legal-seo.html`)
 
 ## Products
 

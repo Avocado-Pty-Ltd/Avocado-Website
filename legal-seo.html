@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Firebase Analytics -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDtvPl1WNd3-mzdAo_HvOyKcN2KdJThY2E",
+      authDomain: "ezybiz-e06b6.firebaseapp.com",
+      projectId: "ezybiz-e06b6",
+      storageBucket: "ezybiz-e06b6.firebasestorage.app",
+      messagingSenderId: "344431214322",
+      appId: "1:344431214322:web:e517e19d3cc2245412da6b",
+      measurementId: "G-6YES9LPFKD"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+  <title>Legal SEO for Australian Law Firms | Avocado Digital</title>
+  <meta name="description" content="Legal SEO for Australian law firms: hyper-local Google Business Profile work, practice-area pillar pages, compliance-checked content and intake that turns searches into signed matters. From Avocado Digital, Melbourne." />
+  <link rel="canonical" href="https://avocadodigital.com.au/legal-seo.html" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Legal SEO for Australian Law Firms | Avocado Digital" />
+  <meta property="og:description" content="Be the firm Australians find first. Search visibility, built and measured on signed matters, not traffic." />
+  <meta property="og:url" content="https://avocadodigital.com.au/legal-seo.html" />
+  <meta property="og:locale" content="en_AU" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="sections.css" />
+  <link rel="stylesheet" href="polish.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Legal SEO for Australian law firms",
+    "serviceType": "Search engine optimisation for law firms",
+    "areaServed": { "@type": "Country", "name": "Australia" },
+    "provider": {
+      "@type": "Organization",
+      "name": "Avocado Digital",
+      "legalName": "Avocado Pty Ltd",
+      "url": "https://avocadodigital.com.au/",
+      "email": "hello@avocadodigital.com.au",
+      "telephone": "+61 3 6358 8887",
+      "address": { "@type": "PostalAddress", "addressLocality": "Melbourne", "addressRegion": "VIC", "addressCountry": "AU" }
+    },
+    "audience": { "@type": "BusinessAudience", "audienceType": "Law firms and legal practitioners in Australia" }
+  }
+  </script>
+
+  <style>
+    /* =====================================================================
+       LEGAL SEO — page styles. Built on tokens.css / sections.css /
+       polish.css (onyx + champagne gold). Everything here is prefixed
+       ls- so it can't leak into the homepage.
+       ===================================================================== */
+    main { display: block; }
+    .ls-wrap { max-width: 1320px; margin-inline: auto; }
+    .ls-gold { color: var(--accent); }
+    .ls-muted { color: var(--ink-2); }
+    .ls-small { font-size: 13.5px; color: var(--ink-3); line-height: 1.6; }
+
+    /* ---------- HERO ---------- */
+    .ls-hero { padding: clamp(26px, 3vw, 44px) var(--pad-edge) clamp(48px, 6vw, 90px); position: relative; overflow: hidden; }
+    .ls-hero::after {
+      content: ''; position: absolute; inset: auto -20% -40% 30%; height: 70%;
+      background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 14%, transparent), transparent);
+      pointer-events: none; z-index: 0; filter: blur(20px);
+    }
+    .ls-hero > * { position: relative; z-index: 1; }
+    .ls-hero-grid {
+      display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      gap: clamp(32px, 5vw, 72px); align-items: center;
+    }
+    .ls-hero h1 { font-size: clamp(34px, 4.4vw, 68px); line-height: 1.05; max-width: 15ch; }
+    .ls-hero h1 em { font-style: normal; color: var(--accent); }
+    .ls-crumb { display: flex; gap: 10px; align-items: center; margin-bottom: 22px; flex-wrap: wrap; }
+    .ls-crumb a { color: var(--ink-3); }
+    .ls-crumb a:hover { color: var(--accent); }
+    .ls-hero-points { list-style: none; display: grid; gap: 10px; margin-top: 26px; }
+    .ls-hero-points li { display: flex; gap: 12px; align-items: baseline; color: var(--ink-2); font-size: 15px; }
+    .ls-hero-points li::before { content: ''; flex: none; width: 14px; height: 1px; background: var(--accent); transform: translateY(-4px); }
+
+    /* SERP simulator */
+    .ls-serp {
+      position: relative; border: 1px solid var(--line-2); border-radius: 10px;
+      background: linear-gradient(180deg, var(--paper-hi), var(--paper));
+      box-shadow: var(--shadow-soft); padding: 18px; overflow: hidden;
+    }
+    .ls-serp-top { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .ls-dots { display: flex; gap: 6px; }
+    .ls-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line-2); display: block; }
+    .ls-search {
+      flex: 1; display: flex; align-items: center; gap: 10px; min-width: 0;
+      border: 1px solid var(--line-2); border-radius: 999px; padding: 9px 14px; background: var(--bg);
+      font-size: 14px; color: var(--ink);
+    }
+    .ls-search svg { flex: none; width: 15px; height: 15px; stroke: var(--ink-3); }
+    .ls-query { white-space: nowrap; overflow: hidden; text-overflow: clip; }
+    .ls-caret { display: inline-block; width: 1px; height: 1.1em; background: var(--accent); vertical-align: -0.2em; margin-left: 1px; animation: ls-blink 1s steps(1) infinite; }
+    @keyframes ls-blink { 50% { opacity: 0; } }
+
+    .ls-aio {
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+      background: color-mix(in srgb, var(--accent) 5%, transparent);
+      border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;
+    }
+    .ls-aio-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 9px; }
+    .ls-aio-head .meta { color: var(--accent); }
+    .ls-bar { height: 7px; border-radius: 4px; background: color-mix(in srgb, var(--ink) 9%, transparent); margin-top: 7px; position: relative; overflow: hidden; }
+    .ls-bar::after { content: ''; position: absolute; inset: 0; transform: translateX(-100%);
+      background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 35%, transparent), transparent);
+      animation: ls-sheen 2.6s ease-in-out infinite; }
+    @keyframes ls-sheen { to { transform: translateX(100%); } }
+    .ls-aio-cite { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+    .ls-aio-cite span { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; padding: 3px 7px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink-3); transition: all var(--motion); }
+    .ls-aio-cite span.on { border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+
+    .ls-pack { display: grid; grid-template-columns: 112px 1fr; gap: 12px; margin-bottom: 12px; }
+    .ls-map {
+      position: relative; border-radius: 8px; border: 1px solid var(--line);
+      background:
+        linear-gradient(color-mix(in srgb, var(--ink) 4%, transparent) 1px, transparent 1px) 0 0/16px 16px,
+        linear-gradient(90deg, color-mix(in srgb, var(--ink) 4%, transparent) 1px, transparent 1px) 0 0/16px 16px,
+        var(--bg);
+      min-height: 150px; overflow: hidden;
+    }
+    .ls-map path { stroke: color-mix(in srgb, var(--ink) 14%, transparent); }
+    .ls-pin { position: absolute; width: 12px; height: 12px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--ink-3); transition: all var(--motion); }
+    .ls-pin.you { background: var(--accent); box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); animation: ls-ping 2s ease-out infinite; }
+    @keyframes ls-ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent); } 80%,100% { box-shadow: 0 0 0 14px transparent; } }
+    .ls-results { list-style: none; display: grid; gap: 7px; position: relative; }
+    .ls-result {
+      display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; align-items: center;
+      padding: 9px 11px; border-radius: 7px; border: 1px solid var(--line); background: var(--bg);
+      transition: transform .7s cubic-bezier(.2,.7,.2,1), border-color .5s, background .5s;
+      font-size: 13px;
+    }
+    .ls-result b { font-weight: 600; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ls-result small { color: var(--ink-3); font-size: 11.5px; display: block; }
+    .ls-result .rk { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+    .ls-result .st { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: .04em; }
+    .ls-result.you { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, var(--bg)); }
+    .ls-result.you b { color: var(--accent); }
+    .ls-result.you .st { color: var(--accent); }
+    .ls-serp-foot { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+    .ls-call { display: inline-flex; gap: 8px; align-items: center; font-family: var(--mono); font-size: 11px; color: var(--ink-2); letter-spacing: .06em; text-transform: uppercase; }
+    .ls-call .dot-live { width: 6px; height: 6px; }
+
+    /* ---------- METRICS ---------- */
+    .ls-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .ls-metric { padding: clamp(22px, 2.6vw, 38px) clamp(16px, 2vw, 30px); border-right: 1px solid var(--line); }
+    .ls-metric:last-child { border-right: 0; }
+    .ls-metric .v { font-family: var(--display); font-weight: 600; letter-spacing: -0.03em; font-size: clamp(32px, 3.4vw, 54px); line-height: 1; color: var(--ink); }
+    .ls-metric .v em { font-style: normal; color: var(--accent); }
+    .ls-metric p { color: var(--ink-2); font-size: 13.5px; margin-top: 10px; max-width: 32ch; line-height: 1.5; }
+    .ls-metric .src { display: block; margin-top: 10px; }
+
+    /* ---------- COMPARE ---------- */
+    .ls-compare { display: grid; grid-template-columns: 180px 1fr 1fr; border: 1px solid var(--line); }
+    .ls-compare > div { padding: 18px 20px; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.5; }
+    .ls-compare > div:nth-last-child(-n+3) { border-bottom: 0; }
+    .ls-compare .h { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+    .ls-compare .h.gold { color: var(--accent); }
+    .ls-compare .dim { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+    .ls-compare .old { color: var(--ink-3); border-right: 1px solid var(--line); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--ink-3) 40%, transparent); }
+    .ls-compare .new { color: var(--ink); background: color-mix(in srgb, var(--accent) 4%, transparent); }
+    .ls-compare .dim { border-right: 1px solid var(--line); }
+
+    /* ---------- SHIFT CARDS (research) ---------- */
+    .ls-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .ls-card { background: var(--bg); padding: clamp(22px, 2.4vw, 34px); display: flex; flex-direction: column; gap: 12px; transition: background var(--motion-fast); }
+    .ls-card:hover { background: var(--paper); }
+    .ls-card h3 { font-size: clamp(17px, 1.4vw, 21px); line-height: 1.25; }
+    .ls-card p { color: var(--ink-2); font-size: 14.5px; line-height: 1.6; }
+    .ls-card .so { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--ink); line-height: 1.55; }
+    .ls-card .so b { color: var(--accent); font-weight: 600; }
+
+    /* ---------- PIPELINE (mind map) ---------- */
+    .ls-pipe { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; position: relative; }
+    .ls-stage { position: relative; padding: 0 clamp(14px, 1.6vw, 24px) 0 0; }
+    .ls-stage-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .ls-node {
+      flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+      border: 1px solid var(--line-2); font-family: var(--mono); font-size: 12px; color: var(--ink-2);
+      background: var(--bg); position: relative; z-index: 2; transition: all var(--motion);
+    }
+    .ls-stage.active .ls-node { border-color: var(--accent); color: var(--accent-ink); background: var(--accent); box-shadow: var(--glow-accent); }
+    .ls-track { position: absolute; top: 22px; left: 22px; right: 0; height: 1px; background: var(--line-2); z-index: 1; }
+    .ls-track i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
+    .ls-stage.done .ls-track i { transform: scaleX(1); }
+    .ls-stage:last-child .ls-track { display: none; }
+    .ls-stage h3 { font-size: 18px; margin-bottom: 8px; }
+    .ls-stage > p { color: var(--ink-2); font-size: 14px; line-height: 1.55; margin-bottom: 14px; }
+    .ls-leaves { list-style: none; display: grid; gap: 8px; }
+    .ls-leaves li {
+      font-size: 13px; line-height: 1.45; padding: 9px 11px; border: 1px solid var(--line); border-left: 2px solid var(--line-2);
+      background: var(--paper); color: var(--ink-2); transition: border-color var(--motion), color var(--motion);
+    }
+    .ls-leaves li b { color: var(--ink); font-weight: 600; }
+    .ls-stage.active .ls-leaves li { border-left-color: var(--accent); color: var(--ink); }
+    .ls-rule {
+      margin-top: clamp(28px, 3vw, 44px); display: grid; grid-template-columns: auto 1fr; gap: clamp(18px, 3vw, 44px); align-items: center;
+      border: 1px solid var(--line); padding: clamp(18px, 2vw, 28px); background: var(--paper);
+    }
+    .ls-overlap { display: flex; gap: 5px; }
+    .ls-overlap i { width: 16px; height: 34px; border-radius: 3px; border: 1px solid var(--line-2); display: block; transition: background .4s, border-color .4s; }
+    .ls-overlap i.on { background: var(--accent); border-color: var(--accent); }
+    .ls-rule p { color: var(--ink-2); font-size: 14.5px; }
+    .ls-rule p b { color: var(--ink); }
+
+    /* ---------- HUB & SPOKE ---------- */
+    .ls-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+    .ls-hub svg { width: 100%; height: auto; overflow: visible; }
+    .ls-hub .spoke { stroke: var(--line-2); stroke-width: 1.2; fill: none; }
+    .ls-hub .flow { stroke: var(--accent); stroke-width: 1.6; fill: none; stroke-dasharray: 4 10; animation: ls-flow 1.6s linear infinite; opacity: .9; }
+    @keyframes ls-flow { to { stroke-dashoffset: -28; } }
+    .ls-hub .box { fill: var(--paper); stroke: var(--line-2); }
+    .ls-hub .box.hub { fill: color-mix(in srgb, var(--accent) 12%, var(--paper)); stroke: var(--accent); }
+    .ls-hub text { font-family: var(--mono); font-size: 11px; fill: var(--ink-2); letter-spacing: .02em; }
+    .ls-hub text.t { font-family: var(--body); font-size: 13px; font-weight: 600; fill: var(--ink); letter-spacing: 0; }
+    .ls-hub text.hub-t { fill: var(--accent); }
+    .ls-steps { list-style: none; display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .ls-steps li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .ls-steps h3 { font-size: 17px; margin-bottom: 6px; }
+    .ls-steps p { color: var(--ink-2); font-size: 14.5px; line-height: 1.6; }
+
+    /* ---------- MONEY PAGE ANATOMY ---------- */
+    .ls-anatomy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 380px) minmax(0, 1fr); gap: clamp(16px, 2.4vw, 36px); align-items: center; }
+    .ls-browser { border: 1px solid var(--line-2); border-radius: 10px; background: var(--paper); padding: 12px; box-shadow: var(--shadow-soft); }
+    .ls-browser .bar { display: flex; gap: 6px; align-items: center; padding: 2px 4px 12px; }
+    .ls-browser .bar i { width: 7px; height: 7px; border-radius: 50%; background: var(--line-2); display: block; }
+    .ls-browser .bar span { margin-left: 8px; font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ls-block {
+      border: 1px dashed var(--line-2); border-radius: 6px; padding: 14px 12px; margin-top: 8px; text-align: center;
+      font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+      transition: all var(--motion); cursor: default;
+    }
+    .ls-block.on { border-style: solid; border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+    .ls-notes { display: grid; gap: 14px; }
+    .ls-note { border: 1px solid var(--line); padding: 16px 18px; background: var(--bg); transition: border-color var(--motion), background var(--motion); }
+    .ls-note .meta { display: block; margin-bottom: 6px; }
+    .ls-note p { font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+    .ls-note.on { border-color: var(--accent); background: var(--paper); }
+    .ls-note.on .meta { color: var(--accent); }
+
+    /* ---------- PROTOCOL ---------- */
+    .ls-protocol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); counter-reset: p; }
+    .ls-proto { border: 1px solid var(--line); background: var(--paper); padding: clamp(18px, 2vw, 26px); display: flex; flex-direction: column; gap: 10px; position: relative; }
+    .ls-proto.human { border-color: var(--accent); background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--accent) 6%, transparent) 0 8px, transparent 8px 16px), var(--paper); }
+    .ls-proto h3 { font-size: 17px; line-height: 1.25; }
+    .ls-proto p { font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+    .ls-proto .tag { align-self: flex-start; }
+    .ls-proto.human .tag { border-color: var(--accent); color: var(--accent); }
+    .ls-banner {
+      margin-top: clamp(22px, 2.6vw, 36px); text-align: center; padding: clamp(18px, 2vw, 26px);
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      font-size: clamp(18px, 1.8vw, 26px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.3;
+    }
+    .ls-banner em { font-style: normal; color: var(--accent); }
+
+    /* ---------- AUTHORITY ---------- */
+    .ls-auth { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 48px); }
+    .ls-auth h3 { font-size: 19px; margin-bottom: 14px; }
+    .ls-list { list-style: none; display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .ls-list li { padding: 14px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 22px 1fr; gap: 10px; font-size: 14.5px; color: var(--ink-2); line-height: 1.55; }
+    .ls-list li b { color: var(--ink); font-weight: 600; }
+    .ls-list li::before { content: '→'; color: var(--accent); font-family: var(--mono); font-size: 13px; }
+    .ls-list li.x::before { content: '×'; color: var(--ink-3); }
+    .ls-velocity { margin-top: 22px; border: 1px solid var(--line); padding: 18px; background: var(--paper); }
+    .ls-velocity-row { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 12px; margin-top: 10px; }
+    .ls-velocity-row .meta { font-size: 10.5px; }
+    .ls-weeks { display: grid; grid-template-columns: repeat(26, 1fr); gap: 3px; height: 30px; align-items: end; }
+    .ls-weeks i { display: block; background: var(--line-2); border-radius: 1px; height: 0; transition: height .5s cubic-bezier(.2,.7,.2,1); }
+    .ls-weeks.steady i { background: var(--accent); }
+
+    /* ---------- FUNNEL ---------- */
+    .ls-funnels { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2vw, 32px); }
+    .ls-funnel { border: 1px solid var(--line); background: var(--paper); padding: clamp(18px, 2vw, 28px); }
+    .ls-funnel.sealed { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+    .ls-funnel svg { width: 100%; height: auto; max-height: 230px; display: block; margin: 8px auto 14px; }
+    .ls-funnel .shape { fill: none; stroke: var(--line-2); stroke-width: 1.4; }
+    .ls-funnel.sealed .shape { stroke: var(--accent); }
+    .ls-funnel .drop { fill: var(--ink-3); }
+    .ls-funnel.sealed .drop { fill: var(--accent); }
+    .ls-funnel h3 { font-size: 18px; margin-bottom: 4px; }
+    .ls-funnel .res { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; margin-top: 14px; color: var(--ink-3); }
+    .ls-funnel.sealed .res { color: var(--accent); }
+    .ls-funnel ul { list-style: none; display: grid; gap: 8px; font-size: 14px; color: var(--ink-2); }
+    .ls-funnel ul li { display: flex; gap: 10px; }
+    .ls-funnel ul li::before { content: '—'; color: var(--ink-3); }
+    .ls-funnel.sealed ul li::before { color: var(--accent); }
+    .ls-intake-cta { margin-top: clamp(22px, 2.6vw, 36px); display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; border: 1px solid var(--line); padding: clamp(18px, 2vw, 26px); }
+    .ls-intake-cta p { color: var(--ink-2); font-size: 15px; max-width: 70ch; }
+    .ls-intake-cta p b { color: var(--ink); }
+
+    /* ---------- KPI + ROLLING ---------- */
+    .ls-kpi { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(16px, 2vw, 28px); }
+    .ls-panel { border: 1px solid var(--line); background: var(--paper); padding: clamp(18px, 2vw, 28px); }
+    .ls-panel .meta { display: block; margin-bottom: 14px; }
+    .ls-kpi-list { list-style: none; display: grid; gap: 0; }
+    .ls-kpi-list li { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .ls-kpi-list li:last-child { border-bottom: 0; }
+    .ls-kpi-list li span:last-child { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+    .ls-kpi-list li.sec { color: var(--ink-3); }
+    .ls-kpi-list li.sec span:last-child { color: var(--ink-3); }
+    .ls-chart { display: flex; align-items: end; gap: 6px; height: 150px; margin-top: 6px; padding-bottom: 4px; border-bottom: 1px solid var(--line); }
+    .ls-chart i { flex: 1; display: block; background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 35%, transparent)); border-radius: 2px 2px 0 0; height: 0; transition: height .9s cubic-bezier(.2,.7,.2,1); }
+    .ls-chart-x { display: flex; justify-content: space-between; margin-top: 8px; }
+
+    .ls-roll { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; margin-top: 8px; }
+    .ls-roll::before { content: ''; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: var(--line-2); }
+    .ls-roll .fill { position: absolute; left: 0; top: 7px; height: 1px; background: var(--accent); width: 0; transition: width 2.4s cubic-bezier(.2,.7,.2,1); }
+    .ls-month { position: relative; padding-right: 14px; }
+    .ls-month::before { content: ''; display: block; width: 15px; height: 15px; border-radius: 50%; border: 1px solid var(--line-2); background: var(--bg); margin-bottom: 16px; position: relative; z-index: 1; transition: all .4s; }
+    .ls-month.on::before { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow-accent); }
+    .ls-month .meta { display: block; margin-bottom: 6px; }
+    .ls-month h3 { font-size: 16px; margin-bottom: 6px; }
+    .ls-month p { font-size: 13.5px; color: var(--ink-2); line-height: 1.55; }
+
+    /* ---------- PACKAGES ---------- */
+    .ls-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); align-items: stretch; }
+    .ls-tier { border: 1px solid var(--line); background: linear-gradient(180deg, var(--paper) 0%, var(--bg) 100%); padding: clamp(22px, 2.4vw, 32px); display: flex; flex-direction: column; gap: 16px; transition: transform var(--motion-fast), border-color var(--motion-fast), box-shadow var(--motion-fast); }
+    .ls-tier:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--glow-accent); }
+    .ls-tier.feature { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); }
+    .ls-tier-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+    .ls-tier h3 { font-size: clamp(21px, 1.9vw, 28px); }
+    .ls-tier .for { color: var(--ink-2); font-size: 14.5px; line-height: 1.55; }
+    .ls-tier .lbl { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; display: block; }
+    .ls-tier ul { list-style: none; display: grid; gap: 8px; }
+    .ls-tier ul li { font-size: 14px; color: var(--ink-2); line-height: 1.5; display: grid; grid-template-columns: 16px 1fr; gap: 8px; }
+    .ls-tier ul li::before { content: '+'; color: var(--accent); font-family: var(--mono); }
+    .ls-tier ul.req li::before { content: '!'; color: var(--ink-3); }
+    .ls-tier .foot { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .ls-pricing-note { margin-top: clamp(22px, 2.6vw, 36px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .ls-pricing-note > div { background: var(--bg); padding: 20px 22px; }
+    .ls-pricing-note h3 { font-size: 16px; margin-bottom: 6px; }
+    .ls-pricing-note p { font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+
+    /* ---------- ACTIVATION ---------- */
+    .ls-path { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); position: relative; }
+    .ls-phase { border-top: 2px solid var(--line-2); padding-top: 20px; position: relative; }
+    .ls-phase::after { content: ''; position: absolute; left: 0; top: -2px; height: 2px; width: 0; background: var(--accent); transition: width 1s cubic-bezier(.2,.7,.2,1); }
+    .ls-phase.in::after { width: 100%; }
+    .ls-phase:nth-child(2)::after { transition-delay: .5s; }
+    .ls-phase:nth-child(3)::after { transition-delay: 1s; }
+    .ls-phase .meta { color: var(--accent); display: block; margin-bottom: 8px; }
+    .ls-phase h3 { font-size: 19px; margin-bottom: 10px; }
+    .ls-phase ul { list-style: none; display: grid; gap: 7px; }
+    .ls-phase li { font-size: 14px; color: var(--ink-2); line-height: 1.5; padding-left: 14px; position: relative; }
+    .ls-phase li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 1px; background: var(--accent); }
+
+    /* ---------- COMPLIANCE ---------- */
+    .ls-comply { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(24px, 4vw, 64px); border: 1px solid var(--line); padding: clamp(22px, 3vw, 44px); background: var(--paper); }
+    .ls-comply h2 { font-size: var(--fs-h2); }
+    .ls-comply p.ls-small { margin-top: 14px; }
+
+    /* ---------- FAQ ---------- */
+    .ls-faq { border-top: 1px solid var(--line); }
+    .ls-faq details { border-bottom: 1px solid var(--line); }
+    .ls-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 18px; padding: 20px 0; font-weight: 600; font-size: clamp(15.5px, 1.2vw, 18px); letter-spacing: -0.01em; }
+    .ls-faq summary::-webkit-details-marker { display: none; }
+    .ls-faq summary::after { content: '+'; font-family: var(--mono); color: var(--accent); font-weight: 400; transition: transform var(--motion-fast); }
+    .ls-faq details[open] summary::after { transform: rotate(45deg); }
+    .ls-faq details p { color: var(--ink-2); font-size: 15px; line-height: 1.65; padding: 0 0 22px; max-width: 78ch; }
+
+    /* ---------- FILM (Motion export drop-in) ---------- */
+    .ls-film { display: none; }
+    .ls-film.ready { display: block; }
+    .ls-film video { width: 100%; height: auto; border: 1px solid var(--line); background: var(--bg-2); }
+
+    /* ---------- SOURCES ---------- */
+    .ls-sources { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 32px; }
+    .ls-sources li { font-size: 13px; color: var(--ink-3); line-height: 1.5; }
+    .ls-sources a { color: var(--ink-2); }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1080px) {
+      .ls-pipe { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
+      .ls-stage:nth-child(2) .ls-track { display: none; }
+      .ls-protocol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .ls-anatomy { grid-template-columns: 1fr; }
+      .ls-anatomy .ls-browser { max-width: 420px; margin-inline: auto; width: 100%; order: -1; }
+      .ls-notes { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      .ls-hero-grid, .ls-split, .ls-kpi, .ls-comply, .ls-auth { grid-template-columns: 1fr; }
+      .ls-metrics { grid-template-columns: 1fr 1fr; }
+      .ls-metric:nth-child(2) { border-right: 0; }
+      .ls-metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .ls-cards, .ls-tiers, .ls-path, .ls-pricing-note { grid-template-columns: 1fr; }
+      .ls-roll { grid-template-columns: 1fr; gap: 18px; }
+      .ls-roll::before, .ls-roll .fill { display: none; }
+      .ls-month { display: grid; grid-template-columns: 26px 1fr; column-gap: 12px; }
+      .ls-month::before { grid-row: span 3; margin: 2px 0 0; }
+      .ls-sources { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .ls-compare { grid-template-columns: 1fr; }
+      .ls-compare > div { border-right: 0 !important; }
+      .ls-compare .h:first-child { display: none; }
+      .ls-compare .h { display: none; }
+      .ls-compare .dim { background: var(--bg-2); padding-block: 10px; }
+      .ls-compare .old::before { content: 'Generic: '; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; display: inline-block; margin-right: 4px; }
+      .ls-compare .new::before { content: 'Legal SEO: '; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-right: 4px; }
+      .ls-compare > div:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+      .ls-compare > div:last-child { border-bottom: 0; }
+      .ls-pipe, .ls-protocol, .ls-notes, .ls-funnels { grid-template-columns: 1fr; }
+      .ls-track { display: none; }
+      .ls-pack { grid-template-columns: 1fr; }
+      .ls-map { min-height: 96px; }
+      .ls-rule { grid-template-columns: 1fr; }
+      .ls-metrics { grid-template-columns: 1fr; }
+      .ls-metric { border-right: 0 !important; border-bottom: 1px solid var(--line); }
+      .ls-metric:last-child { border-bottom: 0; }
+      .ls-velocity-row { grid-template-columns: 1fr; gap: 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ls-caret, .ls-bar::after, .ls-pin.you, .ls-hub .flow, .dot-live { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      * { transition-duration: 0s !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header (mirrors the homepage header) ===== -->
+  <header class="site-header">
+    <nav class="nav-l" aria-label="Primary">
+      <a href="index.html#work" class="ulink">Work</a>
+      <a href="index.html#products" class="ulink">Products</a>
+      <a href="index.html#approach" class="ulink">Approach</a>
+    </nav>
+    <a href="index.html" class="brand-logo" aria-label="Avocado home">
+      <span class="brand-mark" role="img" aria-label="Avocado" style="height:22px;width:141px"></span>
+    </a>
+    <nav class="nav-r" aria-label="Secondary">
+      <a href="#packages" class="ulink">Packages</a>
+      <a href="#contact" class="ulink">Contact</a>
+      <a class="header-cta" href="#contact">Free search audit →</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="ls-hero">
+      <div class="hero-meta-row">
+        <div class="ls-crumb">
+          <a class="meta" href="index.html#work">Services</a><span class="meta">/</span><span class="meta" style="color:var(--ink-2)">A.04 Legal SEO</span>
+        </div>
+        <div><span class="live-pill"><span class="dot-live"></span> Now onboarding firms Australia-wide</span></div>
+      </div>
+
+      <div class="ls-hero-grid">
+        <div>
+          <p class="eyebrow">Legal SEO — Built for Australian law firms</p>
+          <h1 style="margin-top:16px">Be the firm Australians find <em>first</em> — and the one that <em>answers.</em></h1>
+          <p class="hero-lede">Someone in Parramatta has just been served with an AVO. Someone in Geelong has a TAC claim knocked back. They search, they skim an AI answer, they call whoever looks local, credible and awake. We build the search presence, the pages and the intake that make that firm yours — measured on signed matters, not traffic.</p>
+          <ul class="ls-hero-points">
+            <li>Google Business Profile and map pack work, suburb by suburb</li>
+            <li>Practice-area pages written for people in distress, checked by a lawyer before they go live</li>
+            <li>Intake wired to EzyBiz LEX and Call Concierge, so no enquiry goes to voicemail</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="#contact">Book a free search audit <span class="arrow">→</span></a>
+            <a class="ulink" href="#packages">See the three packages</a>
+          </div>
+        </div>
+
+        <!-- Animated search result simulator -->
+        <div class="ls-serp" aria-label="Animated illustration: a search results page where your firm rises to the top of the local map pack" role="img">
+          <div class="ls-serp-top">
+            <div class="ls-dots"><i></i><i></i><i></i></div>
+            <div class="ls-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <span class="ls-query" id="lsQuery">family lawyer parramatta</span><span class="ls-caret"></span>
+            </div>
+          </div>
+
+          <div class="ls-aio">
+            <div class="ls-aio-head"><span class="meta">✦ AI Overview</span><span class="meta">Sources</span></div>
+            <div class="ls-bar" style="width:96%"></div>
+            <div class="ls-bar" style="width:88%"></div>
+            <div class="ls-bar" style="width:62%"></div>
+            <div class="ls-aio-cite"><span>fcfcoa.gov.au</span><span class="on" id="lsCite">your-firm.com.au</span><span>legalaid.nsw.gov.au</span></div>
+          </div>
+
+          <div class="ls-pack">
+            <div class="ls-map" aria-hidden="true">
+              <svg viewBox="0 0 112 150" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path d="M0 40 C 30 52, 60 30, 112 46" fill="none"/><path d="M38 0 C 44 60, 30 100, 52 150" fill="none"/><path d="M0 108 C 40 96, 70 120, 112 104" fill="none"/></svg>
+              <span class="ls-pin" style="left:22%;top:26%"></span>
+              <span class="ls-pin" style="left:68%;top:62%"></span>
+              <span class="ls-pin you" style="left:48%;top:44%"></span>
+            </div>
+            <ol class="ls-results" id="lsResults">
+              <li class="ls-result" data-k="a"><span class="rk">1</span><span><b>Statewide Legal Group</b><small>12 km · Open 24 hrs</small></span><span class="st">★ 4.6</span></li>
+              <li class="ls-result" data-k="b"><span class="rk">2</span><span><b>Harbour &amp; Co Lawyers</b><small>8 km · Closes 5 pm</small></span><span class="st">★ 4.4</span></li>
+              <li class="ls-result you" data-k="you"><span class="rk">3</span><span><b>Your Firm — Family Lawyers</b><small>1.2 km · Answering now</small></span><span class="st">★ 4.9</span></li>
+            </ol>
+          </div>
+
+          <div class="ls-serp-foot">
+            <span class="ls-call"><span class="dot-live"></span> <span id="lsCall">Call answered in 2 rings</span></span>
+            <span class="meta">Illustrative · fictional firms</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Metrics ribbon ===== -->
+    <section class="ls-wrap" style="padding-inline:var(--pad-edge)">
+      <div class="ls-metrics">
+        <div class="ls-metric reveal">
+          <div class="v"><span data-count="58">58</span><em>%</em></div>
+          <p>fewer clicks for the #1 organic result when an AI Overview sits above it.</p>
+          <span class="meta src">Ahrefs · Feb 2026</span>
+        </div>
+        <div class="ls-metric reveal">
+          <div class="v"><span data-count="79">79</span><em>%</em></div>
+          <p>of people looking for a lawyer expect a reply within 24 hours.</p>
+          <span class="meta src">Clio Legal Trends</span>
+        </div>
+        <div class="ls-metric reveal">
+          <div class="v"><span data-count="8">8</span></div>
+          <p>states and territories, each with its own courts, terms and advertising rules. We write for yours.</p>
+          <span class="meta src">States &amp; territories</span>
+        </div>
+        <div class="ls-metric reveal">
+          <div class="v"><span data-count="1">1</span><em>/wk</em></div>
+          <p>genuine Google review, every week, beats thirty in a month and then silence.</p>
+          <span class="meta src">Review-velocity target</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Why standard local SEO fails ===== -->
+    <section class="section" id="why">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 01. The problem</span></div>
+          <div>
+            <h2 class="section-title">Generic local SEO was built for plumbers.<br/><em>Law is a different search.</em></h2>
+            <p class="section-lede" style="margin-top:16px">Google treats legal pages as "Your Money or Your Life" content — results that can affect someone's rights, money or safety — and holds them to a higher bar of trust. A $500-a-month blog package doesn't clear it. Here's the gap.</p>
+          </div>
+        </header>
+        <div class="ls-compare reveal" role="table" aria-label="Standard local SEO compared with legal SEO">
+          <div class="h" role="columnheader">Dimension</div>
+          <div class="h" role="columnheader">Standard local SEO</div>
+          <div class="h gold" role="columnheader">Legal SEO, done properly</div>
+
+          <div class="dim" role="rowheader">Intent</div>
+          <div class="old">Informational, low urgency</div>
+          <div class="new">Distress-driven: a charge, a separation, an injury, a deadline</div>
+
+          <div class="dim" role="rowheader">Content</div>
+          <div class="old">500-word service pages and "5 tips" blogs</div>
+          <div class="new">3,000+ word practice pillars with your state's law, courts and costs, plus focused sub-pages</div>
+
+          <div class="dim" role="rowheader">Locations</div>
+          <div class="old">The same page with the suburb swapped</div>
+          <div class="new">Real local proof: the courts you appear at, where to park, who you've helped nearby</div>
+
+          <div class="dim" role="rowheader">Conversion</div>
+          <div class="old">A contact form answered tomorrow</div>
+          <div class="new">Benefit-led titles, lawyer photos, video, and a phone answered tonight</div>
+
+          <div class="dim" role="rowheader">Risk</div>
+          <div class="old">Unchecked AI copy</div>
+          <div class="new">Every statute, time limit and claim checked by a practitioner before publishing</div>
+
+          <div class="dim" role="rowheader">Success</div>
+          <div class="old">"Traffic is up 200%"</div>
+          <div class="new">Qualified calls, consultations booked, matters signed</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== What changed (own research) ===== -->
+    <section class="section" id="shift">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 02. What changed in 2025–26</span></div>
+          <div>
+            <h2 class="section-title">Search moved under your feet.<br/><em>Here's what it means for an Australian firm.</em></h2>
+          </div>
+        </header>
+        <div class="ls-cards">
+          <article class="ls-card reveal">
+            <span class="meta">AI Overviews &amp; AI Mode</span>
+            <h3>Answers now appear before the links.</h3>
+            <p>AI Overviews reached Australia in late 2024 and Google rolled out AI Mode here in October 2025. Ahrefs' February 2026 study found the top organic result gets 58% fewer clicks when an Overview is present.</p>
+            <p class="so"><b>So:</b> we write passages an AI can quote — a direct one-to-two sentence answer under every question heading — and we chase the clicks AI can't satisfy: "near me", "call now", "book a consult".</p>
+          </article>
+          <article class="ls-card reveal">
+            <span class="meta">Map pack</span>
+            <h3>Local relevance beats national muscle.</h3>
+            <p>For "lawyer + suburb" searches, proximity and genuine local signals carry enormous weight. A boutique firm with a strong Google Business Profile and steady reviews can out-rank a national brand with ten times the backlinks.</p>
+            <p class="so"><b>So:</b> we treat each office's Business Profile as a product — correct primary category, services, hours, photos, Q&amp;A — and run a review program that never gates or incentivises.</p>
+          </article>
+          <article class="ls-card reveal">
+            <span class="meta">Structured data</span>
+            <h3>Your own star ratings won't show.</h3>
+            <p>Since 2019 Google has ignored "self-serving" review markup on a business's own site — so the review-schema stars many agencies still sell won't appear for your firm.</p>
+            <p class="so"><b>So:</b> we use <code style="font-family:var(--mono);font-size:12.5px">LegalService</code> and <code style="font-family:var(--mono);font-size:12.5px">Person</code> markup that ties lawyers, offices and practice areas together, and put review effort where it counts: Google itself.</p>
+          </article>
+          <article class="ls-card reveal">
+            <span class="meta">Page experience</span>
+            <h3>Most distress searches happen on a phone.</h3>
+            <p>Interaction to Next Paint (INP) replaced First Input Delay as a Core Web Vital in March 2024. A slow, heavy practice page loses the reader before the phone number loads.</p>
+            <p class="so"><b>So:</b> compressed images, lean templates, a sticky tap-to-call bar, and a sub-two-second mobile load target on every money page.</p>
+          </article>
+          <article class="ls-card reveal">
+            <span class="meta">Digital PR</span>
+            <h3>HARO isn't the shortcut it was.</h3>
+            <p>Connectively (formerly HARO) shut down in December 2024; the relaunched HARO is now flooded with AI-written pitches. Journalist-quote link building needs local channels.</p>
+            <p class="so"><b>So:</b> we pitch your lawyers as commentators through Australian channels such as SourceBottle and directly to local and regional press, where a link carries local weight.</p>
+          </article>
+          <article class="ls-card reveal">
+            <span class="meta">Conduct rules</span>
+            <h3>Marketing is regulated speech.</h3>
+            <p>Rule 36 of the Australian Solicitors' Conduct Rules bans false or misleading advertising and "accredited specialist" claims without your state law society's accreditation. NSW, Queensland and the Northern Territory also restrict personal injury advertising, and the Australian Consumer Law applies everywhere.</p>
+            <p class="so"><b>So:</b> no superlatives, no guaranteed outcomes, consent on every testimonial, and a practitioner sign-off step built into our publishing workflow.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Research pipeline (mind map, reskinned) ===== -->
+    <section class="section" id="research">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 03. Keyword research</span></div>
+          <div>
+            <h2 class="section-title">From 400,000 raw searches<br/>to <em>one clear site map.</em></h2>
+            <p class="section-lede" style="margin-top:16px">People in trouble don't type tidy keywords. They type "can my ex stop me seeing the kids" and "lawyer for drink driving Ringwood first offence". Our pipeline turns that noise into the exact pages your firm needs.</p>
+          </div>
+        </header>
+
+        <div class="ls-pipe" id="lsPipe">
+          <div class="ls-stage" data-i="0">
+            <div class="ls-track"><i></i></div>
+            <div class="ls-stage-head"><span class="ls-node">01</span><span class="meta">Extract</span></div>
+            <h3>Raw data extraction</h3>
+            <p>Pull every query that could matter.</p>
+            <ul class="ls-leaves">
+              <li><b>Competitor scrape</b> — the top three local firms' pages and ranking terms</li>
+              <li><b>Your history</b> — Search Console queries from your current site</li>
+              <li><b>Matching terms</b> — broad seed exports, e.g. "lawyer" + "bail"</li>
+            </ul>
+          </div>
+          <div class="ls-stage" data-i="1">
+            <div class="ls-track"><i></i></div>
+            <div class="ls-stage-head"><span class="ls-node">02</span><span class="meta">Clean</span></div>
+            <h3>Tokenise &amp; clean</h3>
+            <p>Break queries into single words and count them.</p>
+            <ul class="ls-leaves">
+              <li><b>Frequency analysis</b> — surfaces the words people pair with "lawyer": bail, licence, custody, TAC</li>
+              <li><b>Exclude rules</b> — strip TV shows, other states and cities you don't serve</li>
+              <li><b>Persistent lists</b> — exclusions reused across every export</li>
+            </ul>
+          </div>
+          <div class="ls-stage" data-i="2">
+            <div class="ls-track"><i></i></div>
+            <div class="ls-stage-head"><span class="ls-node">03</span><span class="meta">Cluster</span></div>
+            <h3>SERP-overlap clustering</h3>
+            <p>Let Google tell us which searches share an intent.</p>
+            <ul class="ls-leaves">
+              <li><b>Bulk comparison</b> — check the top-10 results for every keyword pair</li>
+              <li><b>Merge</b> — high overlap means one page</li>
+              <li><b>Separate</b> — low overlap means distinct pages</li>
+            </ul>
+          </div>
+          <div class="ls-stage" data-i="3">
+            <div class="ls-track"><i></i></div>
+            <div class="ls-stage-head"><span class="ls-node">04</span><span class="meta">Build</span></div>
+            <h3>Site architecture</h3>
+            <p>Prioritise by case value, then deploy.</p>
+            <ul class="ls-leaves">
+              <li><b>Prioritise &amp; filter</b> — rank clusters by matter value and intent</li>
+              <li><b>Core money pages</b> — one pillar per practice area and catchment</li>
+              <li><b>Sub-branches</b> — focused pages linked back to the pillar</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ls-rule reveal">
+          <div class="ls-overlap" id="lsOverlap" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p><b>The 6-of-10 rule.</b> Compare the top ten results for "bail lawyer Melbourne" and "bail application lawyer Melbourne". If six or more URLs appear in both, Google sees one intent — target both on a single page. If few overlap, build two. No cannibalisation, no thin duplicates.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Hub & spoke ===== -->
+    <section class="section" id="architecture">
+      <div class="ls-wrap ls-split">
+        <div class="ls-hub reveal">
+          <svg viewBox="0 0 520 420" role="img" aria-label="Diagram: a family law pillar page at the centre, linked to five sub-pages that pass authority back to it">
+            <!-- spokes -->
+            <path class="spoke" d="M260 210 L90 70"/><path class="flow" d="M90 70 L260 210"/>
+            <path class="spoke" d="M260 210 L430 70"/><path class="flow" d="M430 70 L260 210"/>
+            <path class="spoke" d="M260 210 L470 250"/><path class="flow" d="M470 250 L260 210"/>
+            <path class="spoke" d="M260 210 L380 370"/><path class="flow" d="M380 370 L260 210"/>
+            <path class="spoke" d="M260 210 L120 360"/><path class="flow" d="M120 360 L260 210"/>
+            <!-- hub -->
+            <rect class="box hub" x="150" y="172" width="220" height="76" rx="6"/>
+            <text class="t hub-t" x="260" y="203" text-anchor="middle">Family Lawyer Dandenong</text>
+            <text x="260" y="224" text-anchor="middle">/family-lawyer-dandenong/</text>
+            <!-- leaves -->
+            <rect class="box" x="10" y="42" width="160" height="54" rx="5"/>
+            <text class="t" x="90" y="66" text-anchor="middle">Property settlement</text><text x="90" y="84" text-anchor="middle">/property-settlement/</text>
+            <rect class="box" x="350" y="42" width="160" height="54" rx="5"/>
+            <text class="t" x="430" y="66" text-anchor="middle">Parenting orders</text><text x="430" y="84" text-anchor="middle">/parenting-orders/</text>
+            <rect class="box" x="364" y="222" width="156" height="56" rx="5"/>
+            <text class="t" x="442" y="246" text-anchor="middle">Intervention orders</text><text x="442" y="264" text-anchor="middle">/intervention-orders/</text>
+            <rect class="box" x="300" y="342" width="160" height="54" rx="5"/>
+            <text class="t" x="380" y="366" text-anchor="middle">Divorce application</text><text x="380" y="384" text-anchor="middle">/divorce/</text>
+            <rect class="box" x="30" y="332" width="180" height="54" rx="5"/>
+            <text class="t" x="120" y="356" text-anchor="middle">Court guide: Dandenong</text><text x="120" y="374" text-anchor="middle">/fcfcoa-dandenong-guide/</text>
+          </svg>
+          <p class="meta" style="text-align:center;margin-top:10px">Authority flows up · links flow down and across</p>
+        </div>
+        <div>
+          <span class="eyebrow">— 04. Site architecture</span>
+          <h2 class="section-title" style="margin:14px 0 18px">One pillar per practice and place.<br/><em>Everything else feeds it.</em></h2>
+          <ol class="ls-steps">
+            <li class="reveal"><span class="num">01</span><div><h3>The core money page</h3><p>One deep page for the commercial search — "family lawyer Dandenong" — that answers the real questions, shows the real people, and makes calling easy.</p></div></li>
+            <li class="reveal"><span class="num">02</span><div><h3>Granular sub-pages</h3><p>Lower-volume, high-intent topics each get their own page. Individually small; together they prove to Google you cover the whole subject.</p></div></li>
+            <li class="reveal"><span class="num">03</span><div><h3>Reciprocal linking</h3><p>Sub-pages link up to the pillar, the pillar links down, siblings link across. Any authority a sub-page earns flows into the page that wins the work.</p></div></li>
+            <li class="reveal"><span class="num">04</span><div><h3>Compact pages for precise searches</h3><p>Short, transactional pages for ultra-specific queries — a single charge, a single court — where a 400-word answer and a phone number are exactly right.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Money page anatomy ===== -->
+    <section class="section" id="anatomy">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 05. The money page</span></div>
+          <div>
+            <h2 class="section-title">Five blocks that turn a visit<br/>into a <em>phone call.</em></h2>
+          </div>
+        </header>
+        <div class="ls-anatomy" id="lsAnatomy">
+          <div class="ls-notes">
+            <div class="ls-note" data-b="0"><span class="meta">01 · Header / H1</span><p>Service + suburb, matched to the search: "Criminal Lawyer Frankston". Intent confirmed in one glance.</p></div>
+            <div class="ls-note" data-b="2"><span class="meta">03 · Local proof</span><p>"We appear at Frankston Magistrates' Court every week." Courts, registries, parking, local resources — signals a template can't fake.</p></div>
+            <div class="ls-note" data-b="4"><span class="meta">05 · Actionable footer</span><p>Embedded map, exact address, hours, and a costs page that sets expectations and filters out poor-fit enquiries.</p></div>
+          </div>
+          <div class="ls-browser" aria-hidden="true">
+            <div class="bar"><i></i><i></i><i></i><span>yourfirm.com.au/criminal-lawyer-frankston/</span></div>
+            <div class="ls-block" data-b="0">Header / H1</div>
+            <div class="ls-block" data-b="1">Trust signals</div>
+            <div class="ls-block" data-b="2">Local proof</div>
+            <div class="ls-block" data-b="3">Plain-English FAQs</div>
+            <div class="ls-block" data-b="4">Actionable footer</div>
+          </div>
+          <div class="ls-notes">
+            <div class="ls-note" data-b="1"><span class="meta">02 · Trust signals</span><p>Real lawyer photos, a visible phone number and consented video testimonials above the fold. In YMYL, trust has to be instant.</p></div>
+            <div class="ls-note" data-b="3"><span class="meta">04 · Plain-English FAQs</span><p>Written in the client's words — "Will I lose my licence for a first drink-driving offence?" — not "Penalties under the Road Safety Act".</p></div>
+            <div class="ls-note" style="border-style:dashed"><span class="meta">Title tag</span><p>"Criminal Lawyer Frankston | Smith Legal" becomes "Criminal Lawyer Frankston | After-Hours Advice". Same rank, more clicks.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AI + human protocol ===== -->
+    <section class="section" id="content">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 06. Content protocol</span></div>
+          <div>
+            <h2 class="section-title">AI drafts fast.<br/><em>A lawyer signs off.</em></h2>
+            <p class="section-lede" style="margin-top:16px">Deep pages used to take weeks. We build them from a verified knowledge base of your firm — case results, bios, reviews, local references — then nothing publishes until a practitioner has checked it.</p>
+          </div>
+        </header>
+        <div class="ls-protocol">
+          <div class="ls-proto reveal"><span class="tag">Step 1 · AI</span><h3>Knowledge base</h3><p>Site map, practitioner bios, consented case outcomes, Google reviews and the legislation and court pages that matter in your state — one structured source of truth.</p></div>
+          <div class="ls-proto reveal"><span class="tag">Step 2 · AI</span><h3>Multi-prompt drafting</h3><p>Outline built for passage ranking, then your firm's facts, then the full draft in clear, empathetic language. Fast — and the riskiest stage, so it never publishes alone.</p></div>
+          <div class="ls-proto human reveal"><span class="tag">Step 3 · Human</span><h3>Practitioner compliance edit</h3><p>Every statute, time limit and court reference verified. No "best", no guarantees, no specialist claims without law society accreditation. Signed off by your lawyer.</p></div>
+          <div class="ls-proto reveal"><span class="tag">Step 4 · Publish</span><h3>Publish, mark up, request indexing</h3><p>LegalService and Person schema, internal links to the pillar, the URL resubmitted in Search Console, and the page added to the refresh calendar.</p></div>
+        </div>
+        <p class="ls-banner reveal">AI provides the <em>velocity</em>. Your lawyers provide the <em>safety</em>.<br/> In legal search you can't have one without the other.</p>
+      </div>
+    </section>
+
+    <!-- ===== Hyper-local authority ===== -->
+    <section class="section" id="local">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 07. Local authority</span></div>
+          <div>
+            <h2 class="section-title">Win the map pack with signals<br/><em>Google can verify.</em></h2>
+          </div>
+        </header>
+        <div class="ls-auth">
+          <div class="reveal">
+            <h3>Google Business Profile</h3>
+            <ul class="ls-list">
+              <li><span><b>The most specific primary category</b> for your main practice area, not just "Lawyer", with secondary categories for the rest</span></li>
+              <li><span><b>Identical name, address and phone</b> across your site, Google and every directory</span></li>
+              <li><span><b>Services, hours, photos and Q&amp;A</b> kept current, office by office</span></li>
+              <li><span><b>Location pages</b> with an embedded map, hours and LegalService markup</span></li>
+              <li class="x"><span><b>No keyword-stuffed names.</b> Your Profile name must match your real-world name. If you want "Family Lawyers" in it, that's a business-name decision, not an SEO trick.</span></li>
+            </ul>
+            <div class="ls-velocity" id="lsVelocity">
+              <span class="meta">Review velocity · 26 weeks</span>
+              <div class="ls-velocity-row"><span class="meta">Burst</span><div class="ls-weeks" data-pattern="burst"></div></div>
+              <div class="ls-velocity-row"><span class="meta" style="color:var(--accent)">Steady</span><div class="ls-weeks steady" data-pattern="steady"></div></div>
+              <p class="ls-small" style="margin-top:12px">A request sent after every closed matter, to every client — never only the happy ones, and never for a reward.</p>
+            </div>
+          </div>
+          <div class="reveal">
+            <h3>Hyper-local links &amp; mentions</h3>
+            <ul class="ls-list">
+              <li><span><b>Community sponsorship</b> — the local footy or netball club, a school fete, a charity fun run. A link from your own catchment outweighs a high-authority link from nowhere.</span></li>
+              <li><span><b>Local business directories</b> — your chamber of commerce and council business listings.</span></li>
+              <li><span><b>Legal directories</b> — reputable Australian platforms such as LawConnect and LawTap, and professional association member listings.</span></li>
+              <li><span><b>Earned media</b> — your lawyers quoted in local and regional press and via Australian journalist-request services such as SourceBottle.</span></li>
+              <li><span><b>Community legal content</b> — plain-English guides other local sites want to link to: "What to bring to your first court date at Ringwood".</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Intake funnel ===== -->
+    <section class="section" id="intake">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 08. Intake</span></div>
+          <div>
+            <h2 class="section-title">In a distress-driven market, clients hire<br/>the first lawyer <em>who answers.</em></h2>
+            <p class="section-lede" style="margin-top:16px">Ranking first is wasted if the phone rings out at 9 pm on a Sunday. Intake is the last mile of SEO — so it's a prerequisite of every package, not an upsell.</p>
+          </div>
+        </header>
+        <div class="ls-funnels">
+          <div class="ls-funnel reveal">
+            <span class="meta">The leaky funnel</span>
+            <svg viewBox="0 0 300 220" aria-hidden="true" id="lsLeaky">
+              <path class="shape" d="M30 20 H270 L180 130 V200 H120 V130 Z" stroke-dasharray="7 6"/>
+              <g class="drops"></g>
+            </svg>
+            <h3>Standard firm</h3>
+            <ul><li>After-hours calls go to voicemail</li><li>Web forms answered the next business day</li><li>Pages written in legal jargon</li></ul>
+            <p class="res">Result: SEO budget leaks away</p>
+          </div>
+          <div class="ls-funnel sealed reveal">
+            <span class="meta" style="color:var(--accent)">The sealed funnel</span>
+            <svg viewBox="0 0 300 220" aria-hidden="true" id="lsSealed">
+              <path class="shape" d="M30 20 H270 L180 130 V200 H120 V130 Z"/>
+              <g class="drops"></g>
+            </svg>
+            <h3>Avocado-wired firm</h3>
+            <ul><li>Every call answered, day or night</li><li>Each call and form tracked to its source page</li><li>FAQs that reassure before the first conversation</li></ul>
+            <p class="res">Result: searches become signed matters</p>
+          </div>
+        </div>
+        <div class="ls-intake-cta reveal">
+          <p><b>We already build the intake.</b> <a class="ulink" href="https://ezybizlex.com.au/" target="_blank" rel="noopener">EzyBiz LEX</a> gives your firm an Australian AI answering service that files every call to the right matter in Smokeball or Clio. <a class="ulink" href="callconcierge.html">Call Concierge</a> adds a live Australian team for new-client enquiries. Legal SEO plugs straight into both.</p>
+          <a class="btn btn-ghost" href="callconcierge.html">See Call Concierge <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KPIs + rolling content ===== -->
+    <section class="section" id="measure">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 09. Measurement &amp; momentum</span></div>
+          <div>
+            <h2 class="section-title">Measure conversations, not clicks.<br/><em>Then keep the pages alive.</em></h2>
+          </div>
+        </header>
+        <div class="ls-kpi">
+          <div class="ls-panel reveal">
+            <span class="meta">The KPIs we report on</span>
+            <ul class="ls-kpi-list">
+              <li><span>Qualified phone calls, by source page</span><span>Primary</span></li>
+              <li><span>Consultation requests &amp; form enquiries</span><span>Primary</span></li>
+              <li><span>Matters opened from organic search</span><span>Primary</span></li>
+              <li><span>Map pack calls, direction requests &amp; reviews per week</span><span>Leading</span></li>
+              <li class="sec"><span>Organic traffic &amp; rankings</span><span>Secondary</span></li>
+            </ul>
+          </div>
+          <div class="ls-panel reveal">
+            <span class="meta">Map pack calls · illustrative trend</span>
+            <div class="ls-chart" id="lsChart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="ls-chart-x"><span class="meta">Month 1</span><span class="meta">Month 12</span></div>
+            <p class="ls-small" style="margin-top:14px">Illustrative only. Real reporting comes from call tracking, Search Console and your Business Profile — never from a vanity dashboard.</p>
+          </div>
+        </div>
+
+        <div class="ls-panel reveal" style="margin-top:clamp(16px,2vw,28px)">
+          <span class="meta">The rolling content calendar · one pillar page</span>
+          <div class="ls-roll" id="lsRoll">
+            <span class="fill"></span>
+            <div class="ls-month"><span class="meta">Month 1</span><h3>Text baseline</h3><p>The core 3,000-word page goes live so Google can index it.</p></div>
+            <div class="ls-month"><span class="meta">Month 2</span><h3>Sub-pages</h3><p>Granular charge, claim or matter pages, linked to the pillar.</p></div>
+            <div class="ls-month"><span class="meta">Month 3</span><h3>Local integration</h3><p>Court guides, hospital and support-service links, directions.</p></div>
+            <div class="ls-month"><span class="meta">Month 4</span><h3>Data &amp; statistics</h3><p>State figures from public sources — crash data, court lists, timelines.</p></div>
+            <div class="ls-month"><span class="meta">Month 5+</span><h3>Multimedia &amp; refresh</h3><p>Infographics, video, schema — then a full refresh every 3–4 months.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Packages ===== -->
+    <section class="section" id="packages">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 10. Packages</span></div>
+          <div>
+            <h2 class="section-title">Three retainers, matched to your<br/>market — <em>not your budget.</em></h2>
+            <p class="section-lede" style="margin-top:16px">We place firms by practice area, catchment and intake capacity. As a rule of thumb, a catchment needs roughly 250,000 people before high-intent search volume supports an aggressive campaign — so a Ballarat or Toowoomba practice usually starts at Foundations, while Geelong, Newcastle and the capital-city growth corridors can support more.</p>
+          </div>
+        </header>
+        <div class="ls-tiers">
+          <article class="ls-tier reveal">
+            <div class="ls-tier-top"><span class="num">Tier 01</span><span class="tag">Solo &amp; boutique</span></div>
+            <h3>Local Foundations</h3>
+            <p class="for">Own one suburb or regional centre. Ideal for wills &amp; estates, conveyancing, business and smaller family practices.</p>
+            <div><span class="lbl">Includes</span>
+              <ul>
+                <li>Technical audit and clean-up</li>
+                <li>Google Business Profile rebuild and monthly posts</li>
+                <li>Name, address and phone alignment across key directories</li>
+                <li>One to two practice money pages</li>
+                <li>Automated, compliant review requests</li>
+                <li>LegalService schema and monthly call report</li>
+              </ul>
+            </div>
+            <div><span class="lbl">You'll need</span>
+              <ul class="req"><li>Admin access to your Business Profile</li><li>Calls answered in business hours; forms within 60 minutes</li></ul>
+            </div>
+            <div class="foot"><span class="meta">Priced after audit</span><a class="ulink" href="#contact">Start here <span class="arrow">→</span></a></div>
+          </article>
+
+          <article class="ls-tier feature reveal">
+            <div class="ls-tier-top"><span class="num">Tier 02</span><span class="tag" style="border-color:var(--accent);color:var(--accent)">Most firms</span></div>
+            <h3>Practice Growth</h3>
+            <p class="for">Win a metro corridor across one or two practice areas. Built for 2–10 lawyer firms in family, criminal, traffic and employment law.</p>
+            <div><span class="lbl">Everything in Foundations, plus</span>
+              <ul>
+                <li>Full tokenised keyword research and SERP-overlap clustering</li>
+                <li>3,000+ word pillar pages with sub-service clusters</li>
+                <li>Monthly rolling content and quarterly refreshes</li>
+                <li>Local link building and directory program</li>
+                <li>Call and form tracking by page, tied to matters</li>
+              </ul>
+            </div>
+            <div><span class="lbl">You'll need</span>
+              <ul class="req"><li>24/7 intake — EzyBiz LEX or Call Concierge, or your own</li><li>A practitioner to sign off content</li></ul>
+            </div>
+            <div class="foot"><span class="meta">Priced after audit</span><a class="ulink" href="#contact">Talk to us <span class="arrow">→</span></a></div>
+          </article>
+
+          <article class="ls-tier reveal">
+            <div class="ls-tier-top"><span class="num">Tier 03</span><span class="tag">High-stakes</span></div>
+            <h3>Market Leadership</h3>
+            <p class="for">Compete in the capital cities' toughest searches — personal injury, transport accident and workers' compensation claims, multi-office firms taking on national brands.</p>
+            <div><span class="lbl">Everything in Growth, plus</span>
+              <ul>
+                <li>AI-assisted content engine with practitioner compliance review</li>
+                <li>Fortnightly page updates across priority pillars</li>
+                <li>Consented video testimonials, formatted for pages and Google</li>
+                <li>Community sponsorships and digital PR</li>
+                <li>Multi-location Business Profiles and AI-answer optimisation</li>
+              </ul>
+            </div>
+            <div><span class="lbl">You'll need</span>
+              <ul class="req"><li>A dedicated intake team or Call Concierge</li><li>A compliance checkpoint for all published material</li></ul>
+            </div>
+            <div class="foot"><span class="meta">Priced after audit</span><a class="ulink" href="#contact">Book a strategy call <span class="arrow">→</span></a></div>
+          </article>
+        </div>
+
+        <div class="ls-pricing-note">
+          <div class="reveal"><h3>Priced on case value</h3><p>A single serious injury matter can be worth more than a year's retainer; an estates practice runs on volume. We quote from what a signed matter is worth to you.</p></div>
+          <div class="reveal"><h3>A clear monthly fee. You own everything.</h3><p>A defined build phase, then one monthly fee. You own the site, the content, the Profile and every account we set up.</p></div>
+          <div class="reveal"><h3>Readiness before spend</h3><p>If your intake isn't ready, we'll say so first — and fix that before we spend a dollar of yours on traffic.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Activation path ===== -->
+    <section class="section" id="path">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 11. How we start</span></div>
+          <div><h2 class="section-title">Scale isn't guesswork.<br/><em>It's an engineered path.</em></h2></div>
+        </header>
+        <div class="ls-path" id="lsPath">
+          <div class="ls-phase"><span class="meta">Days 1–14</span><h3>Diagnostic audit</h3><ul><li>Who answers the phone after hours? How fast are forms returned?</li><li>Technical, content and Business Profile audit against your top three local competitors</li><li>Tier recommendation based on capacity, not budget</li></ul></div>
+          <div class="ls-phase"><span class="meta">Days 15–45</span><h3>Foundation build</h3><ul><li>Business Profile secured, categorised and cleaned up</li><li>First money pages (service + suburb) live</li><li>Call tracking and reporting dashboards in place</li></ul></div>
+          <div class="ls-phase"><span class="meta">Month 2 onward</span><h3>Growth engine</h3><ul><li>Rolling content calendar and keyword clustering</li><li>Review program and local authority building</li><li>Monthly reporting on calls, consultations and matters</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Compliance ===== -->
+    <section class="section" id="compliance">
+      <div class="ls-wrap ls-comply reveal">
+        <div>
+          <span class="eyebrow">— Compliance by design</span>
+          <h2 style="margin-top:14px">Built around the rules<br/><em class="ls-gold" style="font-style:normal">Australian lawyers work under.</em></h2>
+        </div>
+        <div>
+          <ul class="ls-list">
+            <li><span><b>ASCR rule 36.</b> Nothing false, misleading, deceptive or offensive — so no "best lawyer in Sydney" and no implied guarantees.</span></li>
+            <li><span><b>Specialist claims.</b> "Accredited specialist" appears only where a lawyer holds accreditation from their state law society or institute.</span></li>
+            <li><span><b>Personal injury.</b> In NSW, Queensland and the Northern Territory, personal injury pages follow the state limits on advertising those services.</span></li>
+            <li><span><b>Australian Consumer Law.</b> Testimonials are genuine, current and consented; "no win, no fee" terms are explained in full.</span></li>
+            <li><span><b>Client confidentiality.</b> Case results are de-identified unless the client has given written consent.</span></li>
+            <li><span><b>Your sign-off.</b> Your firm remains responsible for its advertising, so a practitioner approves every page before it goes live.</span></li>
+          </ul>
+          <p class="ls-small">This is how we work, not legal advice. Your firm should confirm its own obligations with its state's legal services regulator or law society.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Film (shows only once legal-seo-film.mp4 is added to the repo) ===== -->
+    <section class="section ls-film" id="film">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— In motion</span></div>
+          <div><h2 class="section-title">Legal SEO in <em>thirty seconds.</em></h2></div>
+        </header>
+        <video id="lsFilm" src="legal-seo-film.mp4" muted playsinline controls preload="metadata"></video>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="ls-wrap">
+        <header class="section-head">
+          <div><span class="eyebrow">— 12. Questions</span></div>
+          <div><h2 class="section-title">What law firms <em>ask us first.</em></h2></div>
+        </header>
+        <div class="ls-faq">
+          <details><summary>How long until we see results?</summary><p>Business Profile and technical fixes often move map-pack visibility within the first two to three months. Competitive practice pages typically take six to twelve months to reach and hold page one, depending on your catchment and competitors. We report on calls and enquiries from month one so you can see the trend, not just the rankings.</p></details>
+          <details><summary>Do you guarantee a #1 ranking?</summary><p>No — and you should be wary of anyone who does. Google controls the rankings. We commit to the work, the process and transparent reporting on the outcomes that matter: qualified calls, consultations and signed matters.</p></details>
+          <details><summary>Is AI-written content safe for a law firm?</summary><p>Only with a human in the loop. We use AI to draft from a verified knowledge base of your firm, then every statute, time limit and claim is checked and a practitioner signs off. Unchecked AI content risks wrong law, misleading advertising and quality penalties from Google.</p></details>
+          <details><summary>We're a regional firm. Is this worth it?</summary><p>Usually, yes — at the right tier. Smaller catchments rarely justify an aggressive content campaign, but they're often the easiest map packs to win. Local Foundations is built for exactly that: owning your town's "lawyer near me" searches.</p></details>
+          <details><summary>Can we put "Family Lawyers" in our Google Business Profile name?</summary><p>Only if it's part of your real-world business name. Adding keywords that aren't in your name breaks Google's guidelines and can get a Profile suspended. If a descriptive name genuinely suits your practice, that's a business-name decision to make properly first — then Google follows.</p></details>
+          <details><summary>Do we have to use EzyBiz LEX or Call Concierge?</summary><p>No. Growth and Leadership need reliable 24/7 intake, but it can be your own team or another provider. Our products are simply the fastest way to get there, and they connect to Smokeball and Clio.</p></details>
+          <details><summary>Who owns the website and content?</summary><p>You do. The site, the pages, the Business Profile, the tracking numbers and the reporting accounts are set up in your firm's name. If you leave, everything stays with you.</p></details>
+          <details><summary>What does the free search audit include?</summary><p>A 30-minute call, then a written summary: how you show up today for your key practice-and-suburb searches, how your Business Profile compares with your top three local competitors, your intake readiness, and which tier (if any) we'd recommend.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section contact">
+      <div class="contact-inner">
+        <span class="eyebrow">— Begin</span>
+        <h2 class="contact-title">Book your <em class="serif-italic">free search audit.</em></h2>
+        <p class="contact-lede">Tell us your practice areas and the suburbs you want to own. We'll show you where you stand against your three closest competitors — and be honest if SEO isn't your best next step.</p>
+        <div class="contact-actions">
+          <a class="btn btn-accent" href="mailto:hello@avocadodigital.com.au?subject=Legal%20SEO%20search%20audit&amp;body=Firm%20name%3A%0APractice%20areas%3A%0ASuburbs%20%2F%20regions%3A%0AWebsite%3A%0A">Email us for an audit <span class="arrow">→</span></a>
+          <a class="ulink" href="mailto:hello@avocadodigital.com.au">hello@avocadodigital.com.au</a>
+          <a class="ulink" href="tel:+61363588887">03 6358 8887</a>
+        </div>
+        <div class="contact-foot">
+          <div><span class="meta">Email</span><b>hello@avocadodigital.com.au</b></div>
+          <div><span class="meta">Phone</span><b>03 6358 8887</b></div>
+          <div><span class="meta">Region</span><b>Australia-wide</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Sources ===== -->
+    <section class="section" id="sources" style="padding-block:clamp(36px,4vw,56px)">
+      <div class="ls-wrap">
+        <span class="meta" style="display:block;margin-bottom:14px">Sources</span>
+        <ul class="ls-sources">
+          <li>Ahrefs, <a class="ulink" href="https://ahrefs.com/blog/ai-overviews-reduce-clicks-update" target="_blank" rel="noopener">"AI Overviews Reduce Clicks by 58%"</a>, February 2026</li>
+          <li>AdNews, <a class="ulink" href="https://www.adnews.com.au/news/google-rolls-out-ai-mode-in-australia" target="_blank" rel="noopener">"Google rolls out AI Mode in Australia"</a>, October 2025</li>
+          <li>Clio, <a class="ulink" href="https://www.clio.com/about/press/clios-legal-trends-report-reveals-law-firms-struggle-to-respond-to-client-inquiries/" target="_blank" rel="noopener">Legal Trends Report on client responsiveness</a></li>
+          <li>Google Search Central, <a class="ulink" href="https://developers.google.com/search/blog/2019/09/making-review-rich-results-more-helpful" target="_blank" rel="noopener">"Making review rich results more helpful"</a>, 2019</li>
+          <li>Google Search Central, <a class="ulink" href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">SEO Starter Guide</a></li>
+          <li>Queensland Law Society, <a class="ulink" href="https://www.qls.com.au/Guides/Australian-Solicitors-Conduct-Rules/Law-practice-management/Advertising" target="_blank" rel="noopener">ASCR rule 36 — Advertising</a></li>
+          <li>Queensland Law Society, <a class="ulink" href="https://www.qls.com.au/practising-law-in-qld/ethics/australian-solicitors-conduct-rules/rules-resources/what-are-the-rules-about-advertising-as-a-specialist-or-expert" target="_blank" rel="noopener">Advertising as a "specialist" or "expert"</a></li>
+          <li>Law Society of NSW, <a class="ulink" href="https://www.lawsociety.com.au/practising-law-in-NSW/ethics-and-compliance/regulatory-compliance/advertising-legal-services" target="_blank" rel="noopener">Advertising legal services</a></li>
+          <li>Victoria Legal Aid, <a class="ulink" href="https://legalaid.vic.gov.au/accredited-specialisation" target="_blank" rel="noopener">Accredited specialisation (LIV)</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer (mirrors the homepage footer) ===== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-mark" role="img" aria-label="Avocado" style="height:26px;width:167px"></span>
+        <p class="meta" style="margin-top:18px">Avocado Pty Ltd<br/>Established 2021 · Melbourne, AU</p>
+      </div>
+      <div>
+        <span class="eyebrow">Practice</span>
+        <ul>
+          <li><a class="ulink" href="workflow-solutions.html">Workflow Solutions</a></li>
+          <li><a class="ulink" href="curated-tech.html">Curated Technology</a></li>
+          <li><a class="ulink" href="strategy-consulting.html">Strategy</a></li>
+          <li><a class="ulink" href="legal-seo.html">Legal SEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="eyebrow">Products</span>
+        <ul>
+          <li><a class="ulink" href="https://socialreels.ai" target="_blank" rel="noopener">SocialReels</a></li>
+          <li><a class="ulink" href="https://ezybizlex.com.au/" target="_blank" rel="noopener">EzyBiz LEX</a></li>
+          <li><a class="ulink" href="callconcierge.html">Call Concierge</a></li>
+          <li><a class="ulink" href="https://github.com/Avocado-Pty-Ltd/Claudette" target="_blank" rel="noopener">Claudette</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="eyebrow">Studio</span>
+        <ul>
+          <li><a class="ulink" href="index.html#approach">Approach</a></li>
+          <li><a class="ulink" href="index.html#sectors">Sectors</a></li>
+          <li><a class="ulink" href="#contact">Contact</a></li>
+          <li><a class="ulink" href="privacy-policy.html">Privacy</a></li>
+          <li><a class="ulink" href="terms-of-service.html">Terms</a></li>
+          <li><a class="ulink" href="data-residency.html">Data residency</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-foot">
+      <span class="meta">© <span id="lsYear">2026</span> Avocado Pty Ltd · ACN 652 199 687 · ABN 81 652 199 687</span>
+      <span class="meta">Made in Australia</span>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('lsYear').textContent = new Date().getFullYear();
+
+    /* ---------- reveal on scroll ---------- */
+    function onView(els, cb, threshold) {
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { cb(el); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { cb(e.target); io.unobserve(e.target); } });
+      }, { threshold: threshold || 0.15 });
+      els.forEach(function (el) { io.observe(el); });
+    }
+    var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+    onView($$('.reveal'), function (el) { el.classList.add('in'); }, 0.12);
+
+    /* ---------- count-up metrics ---------- */
+    onView($$('[data-count]'), function (el) {
+      var end = parseFloat(el.getAttribute('data-count')), dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+      if (reduce) { el.textContent = end.toFixed(dec); return; }
+      var t0 = null, dur = 1400;
+      function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = (end * e).toFixed(dec);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      el.textContent = (0).toFixed(dec);
+      requestAnimationFrame(step);
+    }, 0.6);
+
+    /* ---------- hero SERP simulator ---------- */
+    (function () {
+      var q = document.getElementById('lsQuery'), list = document.getElementById('lsResults');
+      var call = document.getElementById('lsCall'), cite = document.getElementById('lsCite');
+      var scenes = [
+        { q: 'family lawyer parramatta', you: 'Your Firm — Family Lawyers', d: '1.2 km · Answering now' },
+        { q: 'tac claim lawyer geelong', you: 'Your Firm — Injury Lawyers', d: '0.8 km · Answering now' },
+        { q: 'drink driving lawyer joondalup', you: 'Your Firm — Criminal Lawyers', d: '2.1 km · Open late' },
+        { q: 'wills and estates lawyer toowoomba', you: 'Your Firm — Estate Lawyers', d: '0.5 km · Answering now' }
+      ];
+      var calls = ['Call answered in 2 rings', 'Enquiry logged to Clio', 'Consult booked for 9:30 am', 'Call answered in 3 rings'];
+      var i = 0;
+      function order(keys) {
+        var items = {}; $$('.ls-result', list).forEach(function (li) { items[li.getAttribute('data-k')] = li; });
+        var first = {}; keys.forEach(function (k) { first[k] = items[k].getBoundingClientRect().top; });
+        keys.forEach(function (k, idx) { list.appendChild(items[k]); items[k].querySelector('.rk').textContent = idx + 1; });
+        if (reduce) return;
+        keys.forEach(function (k) {
+          var dy = first[k] - items[k].getBoundingClientRect().top;
+          items[k].style.transition = 'none'; items[k].style.transform = 'translateY(' + dy + 'px)';
+          void items[k].offsetHeight;
+          items[k].style.transition = ''; items[k].style.transform = '';
+        });
+      }
+      function type(text, done) {
+        if (reduce) { q.textContent = text; done(); return; }
+        var n = 0; q.textContent = '';
+        (function tick() { n++; q.textContent = text.slice(0, n); if (n < text.length) setTimeout(tick, 42 + Math.random() * 40); else done(); })();
+      }
+      function run() {
+        var s = scenes[i % scenes.length];
+        var you = list.querySelector('[data-k="you"]');
+        cite.classList.remove('on');
+        order(['a', 'b', 'you']);
+        type(s.q, function () {
+          you.querySelector('b').textContent = s.you; you.querySelector('small').textContent = s.d;
+          setTimeout(function () { order(['you', 'a', 'b']); cite.classList.add('on'); call.textContent = calls[i % calls.length]; }, 700);
+          setTimeout(function () { i++; run(); }, 4200);
+        });
+      }
+      var started = false;
+      onView([document.querySelector('.ls-serp')], function () { if (!started) { started = true; setTimeout(run, 500); } }, 0.3);
+    })();
+
+    /* ---------- pipeline stage sweep ---------- */
+    (function () {
+      var stages = $$('#lsPipe .ls-stage'), k = 0, timer;
+      function stepStage() {
+        stages.forEach(function (s, idx) { s.classList.toggle('active', idx === k); s.classList.toggle('done', idx < k); });
+        k = (k + 1) % (stages.length + 1);
+        if (k === 0) stages.forEach(function (s) { s.classList.remove('done'); });
+      }
+      onView([document.getElementById('lsPipe')], function () {
+        if (reduce) { stages.forEach(function (s) { s.classList.add('active'); }); return; }
+        stepStage(); timer = setInterval(stepStage, 1800);
+      }, 0.3);
+      var bars = $$('#lsOverlap i'), n = 0;
+      onView([document.getElementById('lsOverlap')], function () {
+        if (reduce) { bars.slice(0, 6).forEach(function (b) { b.classList.add('on'); }); return; }
+        setInterval(function () {
+          n = (n + 1) % 11;
+          bars.forEach(function (b, idx) { b.classList.toggle('on', idx < Math.min(n, 6)); });
+        }, 380);
+      }, 0.5);
+    })();
+
+    /* ---------- money page anatomy highlight ---------- */
+    (function () {
+      var root = document.getElementById('lsAnatomy'), b = 0, auto = true;
+      function show(n) {
+        $$('.ls-block', root).forEach(function (el) { el.classList.toggle('on', +el.getAttribute('data-b') === n); });
+        $$('.ls-note[data-b]', root).forEach(function (el) { el.classList.toggle('on', +el.getAttribute('data-b') === n); });
+      }
+      $$('[data-b]', root).forEach(function (el) {
+        el.addEventListener('mouseenter', function () { auto = false; show(+el.getAttribute('data-b')); });
+        el.addEventListener('mouseleave', function () { auto = true; });
+      });
+      onView([root], function () {
+        show(0);
+        if (reduce) return;
+        setInterval(function () { if (!auto) return; b = (b + 1) % 5; show(b); }, 2200);
+      }, 0.3);
+    })();
+
+    /* ---------- review velocity bars ---------- */
+    (function () {
+      var rows = $$('#lsVelocity .ls-weeks');
+      var burst = [0,0,100,90,70,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      var steady = [];
+      for (var w = 0; w < 26; w++) steady.push(30 + ((w * 37) % 5) * 4);
+      rows.forEach(function (r) {
+        var data = r.getAttribute('data-pattern') === 'burst' ? burst : steady;
+        data.forEach(function () { r.appendChild(document.createElement('i')); });
+      });
+      onView([document.getElementById('lsVelocity')], function () {
+        rows.forEach(function (r) {
+          var data = r.getAttribute('data-pattern') === 'burst' ? burst : steady;
+          $$('i', r).forEach(function (bar, idx) {
+            setTimeout(function () { bar.style.height = Math.max(data[idx], 4) + '%'; }, reduce ? 0 : idx * 45);
+          });
+        });
+      }, 0.4);
+    })();
+
+    /* ---------- funnel droplets ---------- */
+    (function () {
+      var NS = 'http://www.w3.org/2000/svg';
+      function setup(id, leaky) {
+        var svg = document.getElementById(id), g = svg.querySelector('.drops'), drops = [];
+        for (var d = 0; d < 14; d++) {
+          var c = document.createElementNS(NS, 'circle'); c.setAttribute('r', 3.2); c.setAttribute('class', 'drop'); g.appendChild(c);
+          drops.push({ el: c, off: d / 14, x: 50 + Math.random() * 200, leak: leaky && d % 3 !== 0, dir: d % 2 ? 1 : -1 });
+        }
+        function pos(p, dr) {
+          // p: 0..1 down the funnel. Returns x,y (and leak path for leaky drops)
+          var y, x;
+          if (p < 0.55) {
+            var pp = p / 0.55; y = 20 + pp * 110;
+            var half = 120 - pp * 90; x = 150 + (dr.x - 150) / 120 * half;
+            if (dr.leak && pp > 0.45) { var lp = (pp - 0.45) / 0.55; x = (dr.dir > 0 ? 150 + half : 150 - half) + dr.dir * lp * 60; y = 20 + 0.45 * 110 + lp * 90; }
+          } else {
+            if (dr.leak) return null;
+            var q = (p - 0.55) / 0.45; y = 130 + q * 80; x = 150 + (dr.x - 150) * 0.12;
+          }
+          return [x, y];
+        }
+        var t0 = performance.now();
+        function frame(t) {
+          var base = ((t - t0) / 3600) % 1;
+          drops.forEach(function (dr) {
+            var p = (base + dr.off) % 1, xy = pos(p, dr);
+            if (!xy) { dr.el.setAttribute('opacity', 0); return; }
+            dr.el.setAttribute('cx', xy[0].toFixed(1)); dr.el.setAttribute('cy', xy[1].toFixed(1));
+            dr.el.setAttribute('opacity', (dr.leak && p > 0.3) ? Math.max(0, 1 - (p - 0.3) * 3) : (p > 0.9 ? (1 - p) * 10 : 1));
+          });
+          requestAnimationFrame(frame);
+        }
+        if (reduce) { drops.forEach(function (dr) { var xy = pos(dr.off * 0.5, dr); dr.el.setAttribute('cx', xy[0]); dr.el.setAttribute('cy', xy[1]); }); return; }
+        onView([svg], function () { requestAnimationFrame(frame); }, 0.2);
+      }
+      setup('lsLeaky', true); setup('lsSealed', false);
+    })();
+
+    /* ---------- KPI chart + rolling timeline + activation path ---------- */
+    (function () {
+      var heights = [14, 18, 22, 21, 30, 36, 41, 47, 55, 62, 72, 84];
+      onView([document.getElementById('lsChart')], function () {
+        $$('#lsChart i').forEach(function (b, idx) { setTimeout(function () { b.style.height = heights[idx] + '%'; }, reduce ? 0 : idx * 90); });
+      }, 0.4);
+      onView([document.getElementById('lsRoll')], function (root) {
+        root.querySelector('.fill').style.width = '100%';
+        $$('.ls-month', root).forEach(function (m, idx) { setTimeout(function () { m.classList.add('on'); }, reduce ? 0 : 200 + idx * 480); });
+      }, 0.4);
+      onView($$('#lsPath .ls-phase'), function (el) { el.classList.add('in'); }, 0.4);
+    })();
+
+    /* ---------- film: show only if the exported MP4 is present ---------- */
+    (function () {
+      var v = document.getElementById('lsFilm'), sec = document.getElementById('film');
+      v.addEventListener('loadedmetadata', function () { sec.classList.add('ready'); });
+      v.addEventListener('error', function () { sec.parentNode && sec.parentNode.removeChild(sec); });
+    })();
+  })();
+  </script>
+</body>
+</html>
