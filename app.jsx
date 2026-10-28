@@ -178,7 +178,7 @@ function HeroStudio({ layout, onAuditOpen }) {
     <section className={`hero hero-a layout-${layout}`}>
       <div className="hero-meta-row">
         <div><span className="meta">Established 2021 in Melbourne</span></div>
-        <div><span className="live-pill"><span className="dot-live"/> 5 products in market</span></div>
+        <div><span className="live-pill"><span className="dot-live"/> 4 products in market</span></div>
       </div>
 
       {layout === 'centered' ? (
@@ -190,7 +190,7 @@ function HeroStudio({ layout, onAuditOpen }) {
             with <em className="serif-italic">specific&nbsp;problems.</em>
           </h1>
           <p className="hero-lede">
-            Bespoke software, curated technology and strategy for Australian small business — plus five products of our own: SocialReels, EzyBiz LEX, Call Concierge, Claudette and Legal SEO.
+            Bespoke software, curated technology and strategy for Australian small business — plus four products of our own: SocialReels, EzyBiz LEX, Call Concierge and Claudette.
           </p>
           <div className="hero-actions">
             <button type="button" className="btn btn-accent" onClick={onAuditOpen}>
@@ -209,11 +209,11 @@ function HeroStudio({ layout, onAuditOpen }) {
           <div className="hero-fb-meta">
             <div>
               <span className="meta">Index</span>
-              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · B.01 SocialReels · B.02 EzyBiz LEX · B.03 Call Concierge · B.04 Claudette · B.05 Legal SEO</p>
+              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · A.04 Legal SEO · B.01 SocialReels · B.02 EzyBiz LEX · B.03 Call Concierge · B.04 Claudette</p>
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Legal SEO now onboarding Victorian law firms.</p>
+              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Legal SEO now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -234,7 +234,7 @@ function HeroStudio({ layout, onAuditOpen }) {
               your business <em className="serif-italic">actually&nbsp;works.</em>
             </h1>
             <p className="hero-lede">
-              Bespoke software, curated technology and strategy for Australian small business — plus five products of our own.
+              Bespoke software, curated technology and strategy for Australian small business — plus four products of our own.
             </p>
             <div className="hero-actions">
               <button type="button" className="btn btn-accent" onClick={onAuditOpen}>
@@ -293,11 +293,11 @@ function HeroOS({ layout, onAuditOpen }) {
           <div className="hero-fb-meta">
             <div>
               <span className="meta">/ studio</span>
-              <p>Five products in market. A handful of bespoke engagements at any one time. Quiet, considered, durable.</p>
+              <p>Four products in market. A handful of bespoke engagements at any one time. Quiet, considered, durable.</p>
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Legal SEO now onboarding Victorian law firms.</p>
+              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Legal SEO now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -325,7 +325,7 @@ function HeroOS({ layout, onAuditOpen }) {
               <div><span className="meta">Scope</span><b>Products &amp; engagements</b></div>
               <div><span className="meta">Sectors</span><b>Legal, professional services, SMB</b></div>
               <div><span className="meta">Region</span><b>Australia &amp; NZ</b></div>
-              <div className="live-row"><span className="meta">Live</span><b>5 products in market</b></div>
+              <div className="live-row"><span className="meta">Live</span><b>4 products in market</b></div>
             </div>
             <div className="os-media-grid">
               <div className="os-media-cell os-cell-tall">
@@ -377,6 +377,15 @@ const SERVICES = [
     media: 'illus-strategy.svg',
     href: 'strategy-consulting.html',
   },
+  {
+    n: '04', code: 'A.04',
+    title: 'Legal SEO',
+    eyebrow: 'Search for law firms',
+    body: 'Search visibility for Australian law firms: Google Business Profile and map pack work suburb by suburb, practice-area pages checked by a lawyer before they go live, and intake wired to EzyBiz LEX and Call Concierge. Measured on signed matters, not traffic.',
+    deliverables: ['Search audit', 'Business Profile & map pack', 'Practice-area pages', 'Signed-matter reporting'],
+    media: 'legal-seo-card.svg',
+    href: 'legal-seo.html',
+  },
 ];
 
 function Services({ direction }) {
@@ -386,9 +395,9 @@ function Services({ direction }) {
         <span className="eyebrow">{direction === 'a' ? '— A. Services' : '/ services'}</span>
         <h2 className="section-title">
           {direction === 'a' ? (
-            <>Three ways we work<br/>with <em className="serif-italic">small teams.</em></>
+            <>Four ways we work<br/>with <em className="serif-italic">small teams.</em></>
           ) : (
-            <>Three ways we work with small&nbsp;teams.</>
+            <>Four ways we work with small&nbsp;teams.</>
           )}
         </h2>
         <p className="section-lede">
@@ -466,16 +475,6 @@ const PRODUCTS = [
     image: 'claudette-preview.png',
     href: 'https://github.com/Avocado-Pty-Ltd/Claudette', external: true,
   },
-  {
-    n: '05', code: 'B.05',
-    name: 'Legal SEO',
-    one: 'Be the firm Victorians find first.',
-    body: 'Search visibility for Victorian law firms: Google Business Profile and map pack work suburb by suburb, practice-area pages checked by a lawyer before they go live, and intake wired to EzyBiz LEX and Call Concierge. Measured on signed matters, not traffic.',
-    tags: ['Victorian law firms', 'Local SEO', 'Signed-matter ROI'],
-    stat: { v: 'VIC', l: 'Now onboarding' },
-    image: 'legal-seo-card.svg',
-    href: 'legal-seo.html',
-  },
 ];
 
 function Products({ direction }) {
@@ -485,9 +484,9 @@ function Products({ direction }) {
         <span className="eyebrow">{direction === 'a' ? '— B. Products' : '/ products'}</span>
         <h2 className="section-title">
           {direction === 'a' ? (
-            <>Five products,<br/>each <em className="serif-italic">built for one thing.</em></>
+            <>Four products,<br/>each <em className="serif-italic">built for one thing.</em></>
           ) : (
-            <>Five products, each built for one thing.</>
+            <>Four products, each built for one thing.</>
           )}
         </h2>
         <p className="section-lede">
@@ -826,6 +825,7 @@ function Footer({ direction }) {
             <li><a className="ulink" href="workflow-solutions.html">Workflow Solutions</a></li>
             <li><a className="ulink" href="curated-tech.html">Curated Technology</a></li>
             <li><a className="ulink" href="strategy-consulting.html">Strategy</a></li>
+            <li><a className="ulink" href="legal-seo.html">Legal SEO</a></li>
           </ul>
         </div>
         <div>
@@ -835,7 +835,6 @@ function Footer({ direction }) {
             <li><a className="ulink" href="https://ezybizlex.com.au/" target="_blank" rel="noopener">EzyBiz LEX</a></li>
             <li><a className="ulink" href="callconcierge.html">Call Concierge</a></li>
             <li><a className="ulink" href="https://github.com/Avocado-Pty-Ltd/Claudette" target="_blank" rel="noopener">Claudette</a></li>
-            <li><a className="ulink" href="legal-seo.html">Legal SEO</a></li>
           </ul>
         </div>
         <div>

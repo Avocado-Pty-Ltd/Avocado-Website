@@ -9,13 +9,13 @@ Bespoke software, curated technology and strategy for Australian small business 
 - **Workflow Solutions** — bespoke software and workflow automation
 - **Curated Technology** — pragmatic tool selection and integration
 - **Strategy Consulting** — strategy intensives, roadmap shaping, pre-mortems, fractional CTO
+- **[Legal SEO](https://avocadodigital.com.au/legal-seo.html)** — search visibility for Australian law firms, measured on signed matters (`legal-seo.html`)
 
 ## Products
 
 - **[EzyBiz LEX](https://ezybizlex.com.au)** — the ultimate business phone for legal professionals: an AI answering service on a dedicated number, with matter filing to Smokeball and Clio
 - **[Call Concierge](https://callconcierge.com.au)** — live Australian new-client intake for law firms, connected to EzyBiz LEX
 - **[SocialReels](https://socialreels.ai)** — short-form video for small business (private beta)
-- **[Legal SEO](https://avocadodigital.com.au/legal-seo.html)** — search visibility for Victorian law firms, measured on signed matters (`legal-seo.html`)
 
 ## About the studio
 
