@@ -149,3 +149,19 @@
   to = "https://ezybizlex.com.au/"
   status = 301
   force = true
+
+# Legal SEO was repositioned as Law Firm Intake (intake analytics and
+# improvement for law firms). The old page 301s to the new one so existing
+# links and search listings carry over.
+
+[[redirects]]
+  from = "/legal-seo.html"
+  to = "/law-firm-intake.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/legal-seo"
+  to = "/law-firm-intake.html"
+  status = 301
+  force = true

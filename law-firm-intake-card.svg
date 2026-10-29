@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none" role="img" aria-label="Law Firm Intake: enquiries by source, with the share that became matters highlighted">
+  <rect width="400" height="500" fill="#100e0b"/>
+  <g stroke="rgba(200,169,110,0.07)" stroke-width="1">
+    <path d="M0 60H400M0 120H400M0 180H400M0 240H400M0 300H400M0 360H400M0 420H400M0 480H400"/>
+    <path d="M40 0V500M100 0V500M160 0V500M220 0V500M280 0V500M340 0V500"/>
+  </g>
+  <!-- headline ratio: enquiries ring with matters arc -->
+  <circle cx="200" cy="150" r="70" stroke="rgba(200,169,110,0.22)" stroke-width="10"/>
+  <path d="M200 80 A70 70 0 0 1 266.6 128.4" stroke="#C8A96E" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="200" cy="150" r="46" stroke="rgba(200,169,110,0.12)" stroke-width="1"/>
+  <path d="M182 150 H218" stroke="#C8A96E" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="200" y="140" fill="#C8A96E" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle" letter-spacing="1">MATTERS</text>
+  <text x="200" y="168" fill="rgba(200,169,110,0.55)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle" letter-spacing="1">LEADS</text>
+  <!-- rows: lead volume (faint) with the matter share (gold) -->
+  <g font-family="JetBrains Mono, monospace" font-size="11">
+    <text x="48" y="282" fill="rgba(200,169,110,0.6)">SEO</text>
+    <rect x="130" y="272" width="222" height="12" rx="2" fill="rgba(200,169,110,0.16)"/>
+    <rect x="130" y="272" width="60" height="12" rx="2" fill="#C8A96E"/>
+    <text x="48" y="322" fill="rgba(200,169,110,0.6)">PROFILE</text>
+    <rect x="130" y="312" width="184" height="12" rx="2" fill="rgba(200,169,110,0.16)"/>
+    <rect x="130" y="312" width="54" height="12" rx="2" fill="#C8A96E"/>
+    <text x="48" y="362" fill="rgba(200,169,110,0.6)">ADS</text>
+    <rect x="130" y="352" width="144" height="12" rx="2" fill="rgba(200,169,110,0.16)"/>
+    <rect x="130" y="352" width="26" height="12" rx="2" fill="#C8A96E"/>
+    <text x="48" y="402" fill="rgba(200,169,110,0.6)">REFERRAL</text>
+    <rect x="130" y="392" width="118" height="12" rx="2" fill="rgba(200,169,110,0.16)"/>
+    <rect x="130" y="392" width="59" height="12" rx="2" fill="#C8A96E"/>
+    <text x="48" y="442" fill="rgba(200,169,110,0.6)">DIRECTORY</text>
+    <rect x="130" y="432" width="66" height="12" rx="2" fill="rgba(200,169,110,0.16)"/>
+    <rect x="130" y="432" width="14" height="12" rx="2" fill="#C8A96E"/>
+  </g>
+</svg>
