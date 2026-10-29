@@ -209,11 +209,11 @@ function HeroStudio({ layout, onAuditOpen }) {
           <div className="hero-fb-meta">
             <div>
               <span className="meta">Index</span>
-              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · A.04 Legal SEO · B.01 SocialReels · B.02 EzyBiz LEX · B.03 Call Concierge · B.04 Claudette</p>
+              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · A.04 Law Firm Intake · B.01 SocialReels · B.02 EzyBiz LEX · B.03 Call Concierge · B.04 Claudette</p>
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Legal SEO now onboarding law firms Australia-wide.</p>
+              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Law Firm Intake now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -297,7 +297,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Legal SEO now onboarding law firms Australia-wide.</p>
+              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Law Firm Intake now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -379,12 +379,12 @@ const SERVICES = [
   },
   {
     n: '04', code: 'A.04',
-    title: 'Legal SEO',
-    eyebrow: 'Search for law firms',
-    body: 'Search visibility for Australian law firms: Google Business Profile and map pack work suburb by suburb, practice-area pages checked by a lawyer before they go live, and intake wired to EzyBiz LEX and Call Concierge. Measured on signed matters, not traffic.',
-    deliverables: ['Search audit', 'Business Profile & map pack', 'Practice-area pages', 'Signed-matter reporting'],
-    media: 'legal-seo-card.svg',
-    href: 'legal-seo.html',
+    title: 'Law Firm Intake',
+    eyebrow: 'Intake for law firms',
+    body: 'Intake analytics and improvement for Australian law firms, measured on one number: leads to matter, the share of genuine enquiries that become opened matters. We break it down by source, contact method and response, then fix where enquiries leak. Search is one way to grow it, not the product.',
+    deliverables: ['Leads-to-matter dashboard', 'Response & missed-call analysis', 'Intake fixes & source tracking', 'Cost-per-matter reporting'],
+    media: 'law-firm-intake-card.svg',
+    href: 'law-firm-intake.html',
   },
 ];
 
@@ -825,7 +825,7 @@ function Footer({ direction }) {
             <li><a className="ulink" href="workflow-solutions.html">Workflow Solutions</a></li>
             <li><a className="ulink" href="curated-tech.html">Curated Technology</a></li>
             <li><a className="ulink" href="strategy-consulting.html">Strategy</a></li>
-            <li><a className="ulink" href="legal-seo.html">Legal SEO</a></li>
+            <li><a className="ulink" href="law-firm-intake.html">Law Firm Intake</a></li>
           </ul>
         </div>
         <div>

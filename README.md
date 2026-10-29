@@ -9,7 +9,7 @@ Bespoke software, curated technology and strategy for Australian small business 
 - **Workflow Solutions** — bespoke software and workflow automation
 - **Curated Technology** — pragmatic tool selection and integration
 - **Strategy Consulting** — strategy intensives, roadmap shaping, pre-mortems, fractional CTO
-- **[Legal SEO](https://avocadodigital.com.au/legal-seo.html)** — search visibility for Australian law firms, measured on signed matters (`legal-seo.html`)
+- **[Law Firm Intake](https://avocadodigital.com.au/law-firm-intake.html)**: intake analytics and improvement for Australian law firms, measured on leads to matter, the share of genuine enquiries that become opened matters (`law-firm-intake.html`; `/legal-seo.html` 301s here)
 
 ## Products
 
