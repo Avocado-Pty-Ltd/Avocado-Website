@@ -209,11 +209,11 @@ function HeroStudio({ layout, onAuditOpen }) {
           <div className="hero-fb-meta">
             <div>
               <span className="meta">Index</span>
-              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · A.04 Law Firm Intake · B.01 SocialReels · B.02 EzyBiz LEX · B.03 Call Concierge · B.04 Claudette</p>
+              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · A.04 LEX Waypoint · B.01 SocialReels · B.02 EzyBiz LEX · B.03 Call Concierge · B.04 Claudette</p>
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Law Firm Intake now onboarding law firms Australia-wide.</p>
+              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. LEX Waypoint now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -297,7 +297,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. Law Firm Intake now onboarding law firms Australia-wide.</p>
+              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. LEX Waypoint now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -379,12 +379,12 @@ const SERVICES = [
   },
   {
     n: '04', code: 'A.04',
-    title: 'Law Firm Intake',
-    eyebrow: 'Intake for law firms',
-    body: 'Intake analytics and improvement for Australian law firms, measured on one number: leads to matter, the share of genuine enquiries that become opened matters. We break it down by source, contact method and response, then fix where enquiries leak. Search is one way to grow it, not the product.',
+    title: 'LEX Waypoint',
+    eyebrow: 'Leads to matter for law firms',
+    body: 'Know which calls become matters. Part of EzyBiz LEX, Waypoint follows every call, text and web enquiry to the matter it became in Smokeball or Clio, and shows where your matters come from, how fast you respond and what each channel costs per new client. Then we fix where enquiries leak.',
     deliverables: ['Leads-to-matter dashboard', 'Response & missed-call analysis', 'Intake fixes & source tracking', 'Cost-per-matter reporting'],
-    media: 'law-firm-intake-card.svg',
-    href: 'law-firm-intake.html',
+    media: 'lex-waypoint-card.svg',
+    href: 'lex-waypoint.html',
   },
 ];
 
@@ -825,7 +825,7 @@ function Footer({ direction }) {
             <li><a className="ulink" href="workflow-solutions.html">Workflow Solutions</a></li>
             <li><a className="ulink" href="curated-tech.html">Curated Technology</a></li>
             <li><a className="ulink" href="strategy-consulting.html">Strategy</a></li>
-            <li><a className="ulink" href="law-firm-intake.html">Law Firm Intake</a></li>
+            <li><a className="ulink" href="lex-waypoint.html">LEX Waypoint</a></li>
           </ul>
         </div>
         <div>
