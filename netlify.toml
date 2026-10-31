@@ -18,6 +18,26 @@
 # so this rule must stay first. The page links shared assets on the main
 # domain for that reason.
 
+# The LEX Waypoint console (LEX Desktop built with the Waypoint skin, see
+# scripts/build-admin-web.sh in the EzyBiz repo) is served from Firebase
+# Hosting under /app/, the same way ezybizlex.com.au/teams proxies to
+# /teams/. These two rules sit above the catch-all below. Both are 200s,
+# as on ezybizlex.com.au: a 301 from /app to /app/ loops, because Netlify
+# matches "/app" against "/app/" as well. The subdomain must be an
+# authorised domain in Firebase Auth for sign-in to work here.
+
+[[redirects]]
+  from = "https://lexwaypoint.avocadodigital.com.au/app"
+  to = "https://ezybiz-e06b6.web.app/app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://lexwaypoint.avocadodigital.com.au/app/*"
+  to = "https://ezybiz-e06b6.web.app/app/:splat"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "https://lexwaypoint.avocadodigital.com.au/*"
   to = "/waypoint/:splat"

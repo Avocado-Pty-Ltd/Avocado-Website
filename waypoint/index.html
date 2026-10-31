@@ -135,7 +135,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .nav { display: flex; align-items: center; gap: 30px; font-size: 14px; }
 .nav a:not(.btn) { color: var(--ink-2); text-decoration: none; transition: color 160ms var(--ease); }
 .nav a:not(.btn):hover { color: var(--ink); }
+.nav-cta { display: flex; gap: 8px; }
 @media (max-width: 860px) { .nav a:not(.btn) { display: none; } .brand span { display: none; } }
+@media (max-width: 400px) { .nav-cta .btn { padding: 0 13px; } .brand b { font-size: 21px; } }
 
 /* Hero */
 .hero { padding-block: clamp(32px, 4.5vw, 64px) 0; }
@@ -434,7 +436,10 @@ footer a { color: var(--on-night); }
       <a href="#how">How it works</a>
       <a href="#cost">Missed-call cost</a>
       <a href="#plans">Plans</a>
-      <a class="btn btn-sm" href="https://ezybizlex.com.au/book-my-demo/" target="_blank" rel="noopener">Book a demo</a>
+      <span class="nav-cta">
+        <a class="btn btn-sm btn-ghost" href="/app/">Log in</a>
+        <a class="btn btn-sm" href="https://ezybizlex.com.au/book-my-demo/" target="_blank" rel="noopener">Book a demo</a>
+      </span>
     </nav>
   </div>
 </header>
