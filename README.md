@@ -9,7 +9,7 @@ Bespoke software, curated technology and strategy for Australian small business 
 - **Workflow Solutions** — bespoke software and workflow automation
 - **Curated Technology** — pragmatic tool selection and integration
 - **Strategy Consulting** — strategy intensives, roadmap shaping, pre-mortems, fractional CTO
-- **[LEX Waypoint](https://avocadodigital.com.au/lex-waypoint.html)**: leads-to-matter analytics and intake improvement for Australian law firms, part of EzyBiz LEX, measured on leads to matter, the share of genuine enquiries that become opened matters (`lex-waypoint.html`; `/law-firm-intake.html` and `/legal-seo.html` 301s here)
+- **[LEX Waypoint](https://lexwaypoint.avocadodigital.com.au/)**: leads-to-matter analytics and intake improvement for Australian law firms, part of EzyBiz LEX, measured on leads to matter, the share of genuine enquiries that become opened matters (served from `waypoint/` on the lexwaypoint subdomain; `/lex-waypoint.html`, `/law-firm-intake.html` and `/legal-seo.html` 301 there)
 
 ## Products
 
