@@ -12,6 +12,18 @@
 # wins, and treats `from = "/ezybiz"` as matching BOTH /ezybiz and /ezybiz/.
 # The specific legal-page rules come first, then the catch-alls.
 
+# LEX Waypoint lives on its own subdomain, served from this site's /waypoint/
+# folder. The subdomain is a domain alias on this Netlify site (DNS: CNAME
+# lexwaypoint -> this site), and every path on it is rewritten into /waypoint/,
+# so this rule must stay first. The page links shared assets on the main
+# domain for that reason.
+
+[[redirects]]
+  from = "https://lexwaypoint.avocadodigital.com.au/*"
+  to = "/waypoint/:splat"
+  status = 200
+  force = true
+
 # App legal pages -> their ezybizlex.com.au equivalents. Both the .html and
 # extensionless forms are covered because Netlify's pretty URLs served both.
 
@@ -151,29 +163,42 @@
   force = true
 
 # Legal SEO was repositioned as Law Firm Intake, which was then renamed
-# LEX Waypoint (part of EzyBiz LEX). Both old pages 301 straight to the
-# current one, so existing links and search listings carry over in one hop.
+# LEX Waypoint (part of EzyBiz LEX) and moved to its own subdomain. Every old
+# page 301s straight there, so existing links and search listings carry over
+# in one hop.
+
+[[redirects]]
+  from = "/lex-waypoint.html"
+  to = "https://lexwaypoint.avocadodigital.com.au/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lex-waypoint"
+  to = "https://lexwaypoint.avocadodigital.com.au/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/law-firm-intake.html"
-  to = "/lex-waypoint.html"
+  to = "https://lexwaypoint.avocadodigital.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/law-firm-intake"
-  to = "/lex-waypoint.html"
+  to = "https://lexwaypoint.avocadodigital.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/legal-seo.html"
-  to = "/lex-waypoint.html"
+  to = "https://lexwaypoint.avocadodigital.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/legal-seo"
-  to = "/lex-waypoint.html"
+  to = "https://lexwaypoint.avocadodigital.com.au/"
   status = 301
   force = true

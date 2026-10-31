@@ -384,7 +384,7 @@ const SERVICES = [
     body: 'Know which calls become matters. Part of EzyBiz LEX, Waypoint follows every call, text and web enquiry to the matter it became in Smokeball or Clio, and shows where your matters come from, how fast you respond and what each channel costs per new client. Then we fix where enquiries leak.',
     deliverables: ['Leads-to-matter dashboard', 'Response & missed-call analysis', 'Intake fixes & source tracking', 'Cost-per-matter reporting'],
     media: 'lex-waypoint-card.svg',
-    href: 'lex-waypoint.html',
+    href: 'https://lexwaypoint.avocadodigital.com.au/',
   },
 ];
 
@@ -825,7 +825,7 @@ function Footer({ direction }) {
             <li><a className="ulink" href="workflow-solutions.html">Workflow Solutions</a></li>
             <li><a className="ulink" href="curated-tech.html">Curated Technology</a></li>
             <li><a className="ulink" href="strategy-consulting.html">Strategy</a></li>
-            <li><a className="ulink" href="lex-waypoint.html">LEX Waypoint</a></li>
+            <li><a className="ulink" href="https://lexwaypoint.avocadodigital.com.au/">LEX Waypoint</a></li>
           </ul>
         </div>
         <div>
