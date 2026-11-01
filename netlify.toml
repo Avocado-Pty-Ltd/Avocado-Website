@@ -26,6 +26,33 @@
 # matches "/app" against "/app/" as well. The subdomain must be an
 # authorised domain in Firebase Auth for sign-in to work here.
 
+# lexwaypoint.com.au (registered at GoDaddy) is LEX Waypoint's own domain, a domain alias on
+# this Netlify site like the subdomain below and served the same way. www goes to the apex.
+
+[[redirects]]
+  from = "https://www.lexwaypoint.com.au/*"
+  to = "https://lexwaypoint.com.au/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://lexwaypoint.com.au/app"
+  to = "https://ezybiz-e06b6.web.app/app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://lexwaypoint.com.au/app/*"
+  to = "https://ezybiz-e06b6.web.app/app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://lexwaypoint.com.au/*"
+  to = "/waypoint/:splat"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "https://lexwaypoint.avocadodigital.com.au/app"
   to = "https://ezybiz-e06b6.web.app/app/"
