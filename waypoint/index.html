@@ -44,7 +44,7 @@
   "name": "LEX Waypoint",
   "url": "https://lexwaypoint.com.au/",
   "serviceType": "Leads-to-matter analytics and intake improvement for law firms",
-  "description": "LEX Waypoint, part of EzyBiz LEX, follows every call, text and web enquiry to the matter it became in Smokeball or Clio, so Australian law firms see where matters come from and what each channel really costs per new client. Three plans: Waypoint Insight, Waypoint Growth and Waypoint Leadership, with Google Ads management as an add-on.",
+  "description": "LEX Waypoint, part of EzyBiz LEX, follows every call, text and web enquiry to the matter it became in Smokeball or Clio, so Australian law firms see where matters come from and what each channel really costs per new client. Three plans: Waypoint Insight, Waypoint Growth and Waypoint Leadership, with Google and ChatGPT Ads management as an add-on. The Avocado team runs the marketing: SEO, Google Business Profile, law directories and social media.",
   "areaServed": { "@type": "Country", "name": "Australia" },
   "provider": {
     "@type": "Organization",
@@ -413,7 +413,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: rotate(45deg) scale(
 .res-cta small { color: var(--on-buckram-3); font-size: 14px; }
 @media (max-width: 1000px) { .cost { grid-template-columns: 1fr; } .controls, .result { grid-column: 1; } .result { position: static; } }
 
-/* [5] Plans: three bound volumes */
+/* [6] Plans: three bound volumes */
 .shelf { display: grid; grid-template-columns: 120px repeat(3, minmax(0, 1fr)); gap: 0 clamp(16px, 2.4vw, 32px); }
 .vol { grid-row: 1; display: flex; align-items: flex-end; height: 260px; border-bottom: 2px solid var(--buckram); padding: 0 8px; }
 .vol:nth-of-type(1) { grid-column: 2; } .vol:nth-of-type(2) { grid-column: 3; } .vol:nth-of-type(3) { grid-column: 4; }
@@ -433,6 +433,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: rotate(45deg) scale(
 .plan .goal { font-family: var(--serif); font-size: 18px; line-height: 1.5; color: var(--ink); }
 .plan h4 { font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--muted); margin-top: 6px; }
 .plan li { position: relative; padding: 10px 0 10px 22px; border-top: 1px solid var(--hairline); font-size: 16px; line-height: 1.45; color: var(--ink-2); }
+.plan li .by { display: block; margin-top: 2px; font-size: 13px; font-weight: 700; color: var(--muted); }
 .plan li::before { content: ""; position: absolute; left: 2px; top: 18px; width: 8px; height: 8px; border: 1.5px solid var(--buckram); transform: rotate(45deg); }
 .plan.lit { }
 .plan.lit .badge { display: inline-block; justify-self: start; font-size: 13px; font-weight: 700; padding: 4px 10px; background: var(--headnote); }
@@ -447,7 +448,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: rotate(45deg) scale(
   .addon { grid-template-columns: 1fr; } .addon > div { grid-column: 1; grid-template-columns: 1fr; }
 }
 
-/* [6] Why */
+/* [7] Why */
 .why { display: grid; grid-template-columns: 120px minmax(0, 1fr) minmax(0, 1.2fr); gap: 32px clamp(32px, 5vw, 72px); }
 .changes { grid-column: 2; }
 .changes h3, .reasons h3 { font-size: 24px; margin-bottom: 14px; }
@@ -462,7 +463,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: rotate(45deg) scale(
 @media (max-width: 1000px) { .why { grid-template-columns: 1fr; } .changes, .reasons { grid-column: 1; } }
 @media (max-width: 600px) { .reasons dl { grid-template-columns: 1fr; } }
 
-/* [7] Questions */
+/* [8] Questions */
 .qs { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; }
 .qs-list { grid-column: 2; max-width: 880px; }
 .qs details { border-top: 1px solid var(--hairline); }
@@ -557,7 +558,7 @@ footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--
         <span class="line" style="--l:1"><span>let the data drive</span></span>
         <span class="line" style="--l:2"><span>your firm's growth.</span></span>
       </h1>
-      <p class="lede" data-rise style="--d:520ms">LEX Waypoint measures your SEO, ad spend and call analytics against the number of enquiries that turned into matters. So you can pull the right levers to grow.</p>
+      <p class="lede" data-rise style="--d:520ms">LEX Waypoint measures your SEO, ad spend and call analytics against the number of enquiries that turned into matters. Then the Avocado team pulls the right levers for you: SEO, Google and ChatGPT ads, your Business Profile, law directories and social.</p>
       <div class="hero-cta" data-rise style="--d:640ms">
         <a class="btn" href="book-my-demo/">Book a 15 minute demo <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="btn btn-ghost" href="/app/?demo=1&amp;tour=1">See a sample firm</a>
@@ -751,6 +752,26 @@ footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--
   </div>
 </section>
 
+<section class="band" id="managed" data-title="[4] We run the marketing">
+  <div class="wrap">
+    <div class="band-head">
+      <div class="band-n" aria-hidden="true">[4]</div>
+      <div>
+        <h2 data-rise>We run the marketing too.</h2>
+        <p class="band-lede" data-rise style="--d:120ms">Waypoint shows which channels bring in matters. The Avocado team then puts more into those and pulls back on the rest. One of your lawyers signs off anything before it goes live.</p>
+      </div>
+    </div>
+
+    <ol class="findings">
+      <li class="finding" data-rise><span class="n">[4.1]</span><div><h3>Search and SEO</h3><p>Pages built around your practice areas and suburbs, weekly rank tracking, and backlinks from relevant, reputable sites.</p></div><div class="pin"><b>III</b><span>Waypoint Leadership</span></div></li>
+      <li class="finding" data-rise><span class="n">[4.2]</span><div><h3>Google and ChatGPT ads</h3><p>Campaigns for the work you want more of, in ad accounts in your firm's name. Each one is judged on what it costs per matter, not per click.</p></div><div class="pin"><b>Add-on</b><span>with any plan</span></div></li>
+      <li class="finding" data-rise><span class="n">[4.3]</span><div><h3>Google Business Profile</h3><p>Regular posts to your profile. New reviews show up in EzyBiz LEX, so you can reply in a few taps.</p></div><div class="pin"><b>II</b><span>Waypoint Growth and up</span></div></li>
+      <li class="finding" data-rise><span class="n">[4.4]</span><div><h3>Law directories</h3><p>Your listings on LawConnect, LawTap and other law directories, set up and kept current. Every enquiry they send is followed to the matter.</p></div><div class="pin"><b>II</b><span>Waypoint Growth and up</span></div></li>
+      <li class="finding" data-rise><span class="n">[4.5]</span><div><h3>Social media</h3><p>Posts planned and published for you, to build trust with the clients you want.</p></div><div class="pin"><b>II</b><span>Waypoint Growth and up</span></div></li>
+    </ol>
+  </div>
+</section>
+
 <section class="scene" id="report" data-title="The monthly report" aria-labelledby="report-h">
   <div class="scene-pin">
     <div class="wrap scene-in">
@@ -825,10 +846,10 @@ footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--
   </div>
 </section>
 
-<section class="band" id="cost" data-title="[4] What a slow callback costs">
+<section class="band" id="cost" data-title="[5] What a slow callback costs">
   <div class="wrap">
     <div class="band-head">
-      <div class="band-n" aria-hidden="true">[4]</div>
+      <div class="band-n" aria-hidden="true">[5]</div>
       <div>
         <h2 data-rise>What a slow callback costs.</h2>
         <p class="band-lede" data-rise style="--d:120ms">A conservative estimate using the sample firm's conversion rates. In a demo we run the same sum on your own calls and matters.</p>
@@ -856,10 +877,10 @@ footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--
   </div>
 </section>
 
-<section class="band" id="plans" data-title="[5] Plans">
+<section class="band" id="plans" data-title="[6] Plans">
   <div class="wrap">
     <div class="band-head">
-      <div class="band-n" aria-hidden="true">[5]</div>
+      <div class="band-n" aria-hidden="true">[6]</div>
       <div>
         <h2 data-rise>Three plans. Each one adds to the one before.</h2>
         <p class="band-lede" data-rise style="--d:120ms">Start by measuring. Move up when the numbers say it's worth it. We recommend a plan after the demo, from your enquiry volume, practice areas and how your intake runs today.</p>
@@ -893,7 +914,9 @@ footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--
           <li>Intake fixes: missed-call text-back, agreed callback targets, and live cover with Call Concierge if you want it</li>
           <li>Better contact forms and contact paths</li>
           <li>A known source on every lead: tracking numbers, UTM and gclid capture</li>
-          <li>Google Business Profile management and review requests</li>
+          <li>Google Business Profile posts, with new reviews in EzyBiz LEX ready to reply to <span class="by">Run by the Avocado team</span></li>
+          <li>Listings on LawConnect, LawTap and other law directories <span class="by">Run by the Avocado team</span></li>
+          <li>Social media, planned and posted for you <span class="by">Run by the Avocado team</span></li>
           <li>Pages for your top practice areas, signed off by one of your lawyers</li>
         </ul>
       </article>
@@ -903,7 +926,7 @@ footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--
         <p class="goal">For firms that convert well and want more enquiries, across more practice areas or offices.</p>
         <h4>Everything in Growth, plus</h4>
         <ul>
-          <li>The full SEO programme built around your suburbs: local competitors, keyword research, new pages each month, weekly rank tracking and link outreach</li>
+          <li>The full SEO programme built around your suburbs: local competitors, keyword research, new pages each month, weekly rank tracking and backlinks <span class="by">Run by the Avocado team</span></li>
           <li>Multi-location support for firms with more than one office</li>
           <li>Cost-per-matter reporting by source</li>
         </ul>
@@ -912,17 +935,17 @@ footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--
 
     <div class="addon">
       <div data-rise>
-        <h3>Google Ads management</h3>
-        <p>An add-on with any plan, reported on the same cost-per-matter basis as everything else. Campaigns built around the practice areas you want more of, negative keywords that screen out work you don't do, and ad accounts in your firm's name. If ads aren't producing matters, the report will show it.</p>
+        <h3>Google and ChatGPT Ads management</h3>
+        <p>An add-on with any plan, reported on the same cost-per-matter basis as everything else. Campaigns on Google Search and in ChatGPT, built around the practice areas you want more of, screened to keep out work you don't do, with ad accounts in your firm's name. Run by the Avocado team. If ads aren't producing matters, the report will show it.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="band" id="why" data-title="[6] Why Waypoint">
+<section class="band" id="why" data-title="[7] Why Waypoint">
   <div class="wrap">
     <div class="band-head">
-      <div class="band-n" aria-hidden="true">[6]</div>
+      <div class="band-n" aria-hidden="true">[7]</div>
       <div>
         <h2 data-rise>Grow on purpose, not by luck.</h2>
         <p class="band-lede" data-rise style="--d:120ms">Built by Avocado in Australia, for Australian law firms.</p>
@@ -941,20 +964,20 @@ footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--
       <div class="reasons" data-rise style="--d:120ms">
         <h3>Why LEX Waypoint</h3>
         <dl>
-          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6Z"/><path d="M9 12h7M9 16h5"/></svg>Not another agency report</dt><dd>Every number comes from your own phone line and your own matters, not from clicks someone chose to show you. You can check any figure against the matter it came from.</dd></div>
+          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6Z"/><path d="M9 12h7M9 16h5"/></svg>An agency that answers to matters</dt><dd>We run your marketing, and every number comes from your own phone line and your own matters, not from clicks someone chose to show you. You can check any figure against the matter it came from.</dd></div>
           <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V3M15 7V3M7 7h10v4a5 5 0 0 1-10 0Z"/><path d="M12 16v5"/></svg>Works with Smokeball and Clio</dt><dd>The systems your firm already uses. Nothing new for your team to learn.</dd></div>
           <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your data stays inside LEX</dt><dd>Leads are worked out from your own calls, texts and matters.</dd></div>
-          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0ZM17 7l-3 7a3 3 0 0 0 6 0Z"/></svg>Your firm stays in control</dt><dd>A practitioner signs off every page before it can go live.</dd></div>
+          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0ZM17 7l-3 7a3 3 0 0 0 6 0Z"/></svg>Your firm stays in control</dt><dd>A practitioner signs off every page, post and ad before it can go live.</dd></div>
         </dl>
       </div>
     </div>
   </div>
 </section>
 
-<section class="band" id="questions" data-title="[7] Questions">
+<section class="band" id="questions" data-title="[8] Questions">
   <div class="wrap">
     <div class="band-head">
-      <div class="band-n" aria-hidden="true">[7]</div>
+      <div class="band-n" aria-hidden="true">[8]</div>
       <div>
         <h2 data-rise>What law firms ask us first.</h2>
         <p class="band-lede" data-rise style="--d:120ms">Anything else, ask us in the demo.</p>
@@ -968,7 +991,7 @@ footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--
         <details><summary><span class="n">Q4</span><span>Is this SEO under a new name?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">No. SEO is one way to grow leads to matter, and it's part of Waypoint Leadership. For many firms the faster gains are in what happens after someone gets in touch: answering calls, replying sooner, and not losing people before a matter opens. We measure that first.</p></details>
         <details><summary><span class="n">Q5</span><span>How do you keep our marketing within the conduct rules?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">Your firm is responsible for its advertising, so one of your lawyers signs off every page, profile post and ad before it goes live. Nothing false or misleading, no "best lawyer" claims, "specialist" only where a lawyer holds accreditation, and genuine, consented reviews. This is how we work, not legal advice.</p></details>
         <details><summary><span class="n">Q6</span><span>Do you guarantee more matters?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">No. Whether an enquiry becomes a matter depends on the person, the matter and your firm's decisions. We commit to accurate measurement, clear reporting on what changed, and doing the agreed fixes well.</p></details>
-        <details><summary><span class="n">Q7</span><span>Who owns the data and accounts?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">You do. Your data stays inside LEX, and tracking numbers, the Business Profile, ad accounts and pages are set up in your firm's name. If you leave, they stay with you.</p></details>
+        <details><summary><span class="n">Q7</span><span>Who owns the data and accounts?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">You do. Your data stays inside LEX, and tracking numbers, the Business Profile, directory listings, ad accounts and pages are set up in your firm's name. If you leave, they stay with you.</p></details>
       </div>
     </div>
   </div>
