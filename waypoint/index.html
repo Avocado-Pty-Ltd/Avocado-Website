@@ -106,7 +106,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .btn:hover::after { transform: none; }
 .btn svg { width: 16px; height: 16px; transition: transform .5s var(--ease); }
 .btn:hover svg { transform: translateX(3px); }
-.btn-sm { min-height: 40px; padding: 0 16px; font-size: 15px; }
+.btn-sm { min-height: 44px; padding: 0 16px; font-size: 15px; }
 .btn-ghost { background: transparent; color: var(--ink); border-color: var(--hairline-strong); }
 .btn-ghost::after { background: var(--surface-raised); }
 .btn-light { background: #fff; color: var(--buckram); border-color: #fff; }
@@ -118,7 +118,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .top { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,.92); -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid transparent; transition: border-color .4s; }
 .top.scrolled { border-bottom-color: var(--hairline); }
 .top-in { display: flex; align-items: center; gap: 24px; height: 72px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: var(--ink); white-space: nowrap; }
 .brand b { font-family: var(--serif); font-weight: 600; font-size: 21px; letter-spacing: .05em; font-variant-caps: all-small-caps; }
 .brand span { font-size: 14px; color: var(--muted); }
 .runhead { flex: 1; min-width: 0; display: flex; justify-content: center; }
@@ -500,6 +500,8 @@ input[type=range]:active::-webkit-slider-thumb { transform: rotate(45deg) scale(
 footer { padding: 40px 0 56px; font-size: 15px; color: var(--muted); }
 footer .wrap { display: grid; gap: 10px; }
 footer p:first-child { font-family: var(--serif); font-size: 17px; color: var(--ink-2); max-width: 46em; }
+footer p:last-child { display: flex; flex-wrap: wrap; align-items: center; column-gap: .5ch; }
+footer p:last-child a { display: inline-flex; align-items: center; min-height: 44px; }
 
 /* ─── Motion grammar: set, rule, count, stamp ─── */
 .js [data-set] .line > span { transform: translateY(105%); }
