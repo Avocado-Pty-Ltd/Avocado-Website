@@ -79,10 +79,9 @@ const PanelView = ({ p, m }: { p: Panel; m?: boolean }) => {
 
 export const Versus = ({ mobile }: { mobile?: boolean }) => {
   const frame = useCurrentFrame();
-  const fade = interpolate(frame, [312, 329], [1, 0], { extrapolateLeft: 'clamp' });
   return (
     <AbsoluteFill style={{ background: '#FFFFFF' }}>
-      <AbsoluteFill style={{ padding: 32, display: 'flex', flexDirection: mobile ? 'column' : 'row', gap: 24, alignItems: 'center', justifyContent: 'center', opacity: fade }}>
+      <AbsoluteFill style={{ padding: 32, display: 'flex', flexDirection: mobile ? 'column' : 'row', gap: 24, alignItems: 'center', justifyContent: 'center' }}>
         {PANELS.map((p) => <PanelView key={p.kind} p={p} m={mobile} />)}
       </AbsoluteFill>
     </AbsoluteFill>
