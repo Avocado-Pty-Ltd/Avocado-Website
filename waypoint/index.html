@@ -596,19 +596,17 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
 @media (prefers-reduced-motion: reduce) { .pipe .pn, .pipe .dot, .pipe li, .hub-core .orbit, .node::before { animation: none !important; } .pipe .dot, .node::before { display: none; } .pipe .pn { fill: var(--buckram); } }
 
 .chan { margin: 4px 18px 18px; border-top: 1px solid var(--hairline-strong); }
-.chan-row { display: grid; grid-template-columns: minmax(0, 1.5fr) .6fr .8fr 1.3fr; gap: 8px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--hairline); font-size: 14px; position: relative; }
+.chan-row { display: grid; grid-template-columns: minmax(0, 1.7fr) .7fr 1fr; gap: 8px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--hairline); font-size: 14px; position: relative; }
 .chan-row > span:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
 .chan-h { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 10px 0 8px; }
 .chan-row .nm { display: flex; align-items: center; gap: 10px; font-weight: 600; }
 .chan-row .nm i { width: 12px; height: 12px; border-radius: 50%; background: var(--c); flex: none; }
 .chan-row .ct { font-family: var(--serif); font-size: 20px; line-height: 1; }
 .chan-row .sp { color: var(--muted); }
-.chan-row .roi { color: var(--muted); transition: color .4s, opacity .6s; opacity: .5; }
-.chan.done .roi { opacity: 1; color: var(--ink); font-weight: 600; }
 .chan-row:not(.chan-h) { padding-bottom: 16px; }
 .chan-row:not(.chan-h)::after { content: ""; position: absolute; left: 22px; bottom: 6px; height: 3px; border-radius: 2px; width: calc(var(--w, 0) * 34%); background: var(--c); transition: width .3s linear; }
 .chan-note { padding-top: 10px; font-size: 13px; color: var(--muted); }
-@media (max-width: 480px) { .chan-row { grid-template-columns: minmax(0, 1.3fr) .5fr .7fr 1.2fr; font-size: 13px; gap: 4px; } }
+@media (max-width: 480px) { .chan-row { grid-template-columns: minmax(0, 1.4fr) .6fr .9fr; font-size: 13px; gap: 4px; } }
 
 .motion-btn { position: absolute; right: 0; top: 0; min-height: 32px; padding: 0 12px; font-size: 13px; z-index: 2; }
 .pipe { position: relative; } .hub { position: relative; padding-top: 44px; } .hub-btn { top: 0; }
@@ -626,14 +624,17 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   .versus .motion-btn { position: relative; top: auto; right: auto; bottom: auto; margin-top: 12px; }
 }
 /* Return column: highlight, and each non-zero return zooms before settling */
-.chan-row .roi { align-self: stretch; display: flex; align-items: center; justify-content: flex-end; margin: -9px -10px -16px 0; padding: 9px 10px 16px; transition: background .8s ease, color .4s, opacity .6s; transform-origin: 100% 50%; }
-.chan-h span:last-child { margin: -10px -10px -8px 0; padding: 10px 10px 8px; align-self: stretch; transition: color .6s, box-shadow .6s; }
-.chan.done .roi { background: linear-gradient(to left, rgba(201,162,74,.14), rgba(201,162,74,.03)); }
-.chan.done .chan-h span:last-child { color: var(--star-text); box-shadow: inset 0 2px 0 var(--star); }
-.chan.done .roi.pop { animation: zoomIn .9s cubic-bezier(.2,1.4,.4,1) both; animation-delay: var(--pd, 0ms); }
 @keyframes zoomIn { 0% { transform: scale(.4); opacity: 0; } 45% { transform: scale(1.4); opacity: 1; color: var(--star-text); } 100% { transform: scale(1); } }
-@media (prefers-reduced-motion: reduce) { .chan.done .roi.pop { animation: none; } }
 @media (min-width: 1101px) { .hero-page { align-items: start; } }
+
+/* Overall return: highlighted row, the figure zooms before it settles */
+.chan-roi { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 14px; padding: 16px 18px; border-top: 2px solid var(--star); background: linear-gradient(to right, rgba(201,162,74,.03), rgba(201,162,74,.14)); }
+.chan-roi .lbl { display: grid; font-weight: 600; font-size: 15px; } .chan-roi .lbl small { font-weight: 400; font-size: 13px; color: var(--muted); }
+.chan-roi .roi { display: flex; align-items: baseline; gap: 8px; font-size: 14px; color: var(--muted); opacity: .45; transform-origin: 100% 50%; transition: opacity .5s; }
+.chan-roi .roi b { font: 600 clamp(30px, 3.4vw, 40px)/1 var(--serif); color: var(--ink); }
+.chan.done .roi { opacity: 1; }
+.chan.done .roi.pop { animation: zoomIn .9s cubic-bezier(.2,1.4,.4,1) both; }
+@media (prefers-reduced-motion: reduce) { .chan.done .roi.pop { animation: none; } }
 </style>
 </head>
 <body>
@@ -687,15 +688,16 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <g id="dots"></g>
       </svg>
       <figcaption class="sr" id="ledger-cap">How LEX Waypoint counts a month: enquiries in, spam and existing clients out, genuine enquiries matched to the matters they became, coloured by source, with each source's matters and return on spend.</figcaption>
-      <div class="chan" id="chan" role="table" aria-label="Matters, spend and return by source">
-        <div class="chan-row chan-h" role="row"><span role="columnheader">Matters by source</span><span role="columnheader">Matters</span><span role="columnheader">Spend</span><span role="columnheader">Return</span></div>
-        <div class="chan-row" role="row" data-ch="0" style="--c:#5C8A2E"><span class="nm" role="rowheader"><i></i>SEO</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$3,150</span><span class="roi" role="cell">&mdash;</span></div>
-        <div class="chan-row" role="row" data-ch="1" style="--c:#2B1740"><span class="nm" role="rowheader"><i></i>Calls</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span><span class="roi" role="cell">&mdash;</span></div>
-        <div class="chan-row" role="row" data-ch="2" style="--c:#1F7A80"><span class="nm" role="rowheader"><i></i>Enquiries</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span><span class="roi" role="cell">&mdash;</span></div>
-        <div class="chan-row" role="row" data-ch="3" style="--c:#B5487A"><span class="nm" role="rowheader"><i></i>Social</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$600</span><span class="roi" role="cell">&mdash;</span></div>
-        <div class="chan-row" role="row" data-ch="4" style="--c:#C8662D"><span class="nm" role="rowheader"><i></i>Ads</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$3,102</span><span class="roi" role="cell">&mdash;</span></div>
-        <div class="chan-row" role="row" data-ch="5" style="--c:#8A8394"><span class="nm" role="rowheader"><i></i>Directory</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$3,680</span><span class="roi" role="cell">&mdash;</span></div>
-        <p class="chan-note" role="note">Matched by our inference engine. Return = matters &times; $4,500 average fee &divide; spend.</p>
+      <div class="chan" id="chan" role="table" aria-label="Matters and spend by source, with the overall return">
+        <div class="chan-row chan-h" role="row"><span role="columnheader">Matters by source</span><span role="columnheader">Matters</span><span role="columnheader">Spend</span></div>
+        <div class="chan-row" role="row" data-ch="0" style="--c:#5C8A2E"><span class="nm" role="rowheader"><i></i>SEO</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$15,800</span></div>
+        <div class="chan-row" role="row" data-ch="1" style="--c:#2B1740"><span class="nm" role="rowheader"><i></i>Calls</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span></div>
+        <div class="chan-row" role="row" data-ch="2" style="--c:#1F7A80"><span class="nm" role="rowheader"><i></i>Enquiries</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span></div>
+        <div class="chan-row" role="row" data-ch="3" style="--c:#B5487A"><span class="nm" role="rowheader"><i></i>Social</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$2,950</span></div>
+        <div class="chan-row" role="row" data-ch="4" style="--c:#C8662D"><span class="nm" role="rowheader"><i></i>Ads</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$20,100</span></div>
+        <div class="chan-row" role="row" data-ch="5" style="--c:#8A8394"><span class="nm" role="rowheader"><i></i>Directory</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$9,900</span></div>
+        <div class="chan-roi" role="row"><span class="lbl" role="rowheader">Overall return on investment<small>on $48,750 spend</small></span><span class="roi" id="roi-fig" role="cell"><b>&mdash;</b> per $1</span></div>
+        <p class="chan-note" role="note">Matched by our inference engine. Return = matters &times; $4,500 average fee &divide; total spend.</p>
       </div>
       <p class="sr" id="chan-sum" aria-live="polite"></p>
       <div class="ledger-foot">
@@ -1177,7 +1179,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   var GEN = 164, OUT = 0, MAT = 52, COLS = 21, CELL = 23, OX = 30, OY = 42, LCOLS = 4, LCELL = 20, LX = 414, LY = 52;
   var SRC = ['#5C8A2E', '#2B1740', '#1F7A80', '#B5487A', '#C8662D', '#8A8394'];
   var SRC_N = [46, 52, 30, 6, 22, 8];
-  var MAT_N = [15, 18, 9, 2, 6, 2], SPEND = [3150, 0, 0, 600, 3102, 3680], FEE = 4500;
+  var MAT_N = [15, 18, 9, 2, 6, 2], SPEND = [15800, 0, 0, 2950, 20100, 9900], FEE = 4500;
   var srcOf = []; SRC_N.forEach(function (n, s) { for (var i = 0; i < n; i++) srcOf.push(s); });
   for (var j = srcOf.length - 1; j > 0; j--) { var k = Math.floor(rnd() * (j + 1)); var tt = srcOf[j]; srcOf[j] = srcOf[k]; srcOf[k] = tt; }
   var idx = []; for (var a = 0; a < GEN; a++) idx.push(a);
@@ -1215,18 +1217,22 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     lg.textContent = GEN; lo.textContent = OUT; nsFig.textContent = MAT; north.classList.add('stamped'); tally(true);
   };
   var rows = [].slice.call(document.querySelectorAll('#chan .chan-row[data-ch]')), chan = $('chan');
+  var roiEl = $('roi-fig');
   var tally = function (done) {
-    var n = [0, 0, 0, 0, 0, 0];
+    var n = [0, 0, 0, 0, 0, 0], tot = 0, spent = 0;
     items.forEach(function (it) { if (it.kind === 'gen' && it.matter && it.shown) n[SRC.indexOf(it.src)]++; });
-    var pi = 0;
+    SPEND.forEach(function (v) { spent += v; });
     rows.forEach(function (r, i) {
-      var rc = r.querySelector('.roi'); rc.classList.remove('pop'); if (done && SPEND[i]) { void rc.offsetWidth; rc.style.setProperty('--pd', (pi++ * 160) + 'ms'); rc.classList.add('pop'); }
+      tot += n[i];
       r.querySelector('.ct').textContent = n[i];
-      r.querySelector('.roi').textContent = done ? (SPEND[i] ? '$' + (n[i] * FEE / SPEND[i]).toFixed(2) + ' per $1' : 'No cost') : '\u2014';
       r.style.setProperty('--w', (n[i] / 18).toFixed(3));
     });
+    var roi = '$' + (tot * FEE / spent).toFixed(2);
+    roiEl.classList.remove('pop');
+    roiEl.querySelector('b').textContent = done ? roi : '\u2014';
+    if (done) { void roiEl.offsetWidth; roiEl.classList.add('pop'); }
     chan.classList.toggle('done', !!done);
-    if (done) $('chan-sum').textContent = 'Matters by source: ' + ['SEO', 'Calls', 'Enquiries', 'Social', 'Ads', 'Directory'].map(function (nm, i) { return nm + ' ' + n[i] + (SPEND[i] ? ', $' + (n[i] * FEE / SPEND[i]).toFixed(2) + ' returned per $1' : ', no spend'); }).join('; ') + '.';
+    if (done) $('chan-sum').textContent = 'Matters by source: ' + ['SEO', 'Calls', 'Enquiries', 'Social', 'Ads', 'Directory'].map(function (nm, i) { return nm + ' ' + n[i]; }).join(', ') + '. Overall return on investment ' + roi + ' per dollar spent.';
   };
   var running = false;
   var play = function () {
