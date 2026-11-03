@@ -613,6 +613,29 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
 .motion-btn { position: absolute; right: 0; top: 0; min-height: 32px; padding: 0 12px; font-size: 13px; z-index: 2; }
 .pipe { position: relative; } .hub { position: relative; padding-top: 44px; } .hub-btn { top: 0; }
 .motion-off .pipe .pn, .motion-off .pipe .dot, .motion-off .pipe li, .motion-off .hub-core .orbit, .motion-off .node::before { animation-play-state: paused !important; }
+
+.versus { grid-column: 2 / -1; position: relative; margin: 0; }
+.versus video { display: block; width: 100%; height: auto; background: #fff; }
+.versus figcaption { margin-top: 14px; font-size: 14px; color: var(--muted); }
+.versus .motion-btn { top: auto; bottom: -6px; right: 0; }
+.versus-m { display: none; }
+@media (max-width: 1000px) { .versus { grid-column: 1; } }
+@media (max-width: 700px) {
+  .versus video, .versus .motion-btn { display: none; }
+  .versus-m { display: grid; gap: 12px; }
+  .versus-m li { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 20px; border: 1px solid var(--hairline); }
+  .versus-m li.w { background: var(--buckram); color: #fff; border-color: var(--buckram); }
+  .versus-m b { grid-column: 1 / -1; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); } .versus-m .w b { color: var(--star-on-b); }
+  .versus-m span { align-self: end; color: inherit; opacity: .8; } .versus-m em { font: 400 40px/1 var(--serif); font-style: normal; grid-row: 2 / 4; grid-column: 2; }
+}
+/* Return column: highlight, and each non-zero return zooms before settling */
+.chan-row .roi { align-self: stretch; display: flex; align-items: center; justify-content: flex-end; margin: -9px -10px -16px 0; padding: 9px 10px 16px; transition: background .8s ease, color .4s, opacity .6s; transform-origin: 100% 50%; }
+.chan-h span:last-child { margin: -10px -10px -8px 0; padding: 10px 10px 8px; align-self: stretch; transition: color .6s, box-shadow .6s; }
+.chan.done .roi { background: linear-gradient(to left, rgba(201,162,74,.14), rgba(201,162,74,.03)); }
+.chan.done .chan-h span:last-child { color: var(--star-text); box-shadow: inset 0 2px 0 var(--star); }
+.chan.done .roi.pop { animation: zoomIn .9s cubic-bezier(.2,1.4,.4,1) both; animation-delay: var(--pd, 0ms); }
+@keyframes zoomIn { 0% { transform: scale(.4); opacity: 0; } 45% { transform: scale(1.4); opacity: 1; color: var(--star-text); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .chan.done .roi.pop { animation: none; } }
 </style>
 </head>
 <body>
@@ -650,7 +673,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <span class="line accent" style="--l:1"><span>let the data drive</span></span>
         <span class="line accent" style="--l:2"><span>your firm's growth.</span></span>
       </h1>
-      <p class="lede" data-rise style="--d:520ms">Your SEO, ads and calls, measured in matters opened. Then the Avocado team pulls the right lever.</p>
+      <p class="lede" data-rise style="--d:520ms">LEX Waypoint measures your SEO, ad spend and call analytics against the number of enquiries that turned into matters. Then the Avocado team pulls the right levers for you: SEO, Google and ChatGPT ads, your Business Profile, law directories and social.</p>
       <div class="hero-cta" data-rise style="--d:640ms">
         <a class="btn" href="book-my-demo/">Book a 15 minute demo <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="btn btn-ghost" href="/app/?demo=1&amp;tour=1">See a sample firm</a>
@@ -709,18 +732,17 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
       <div class="fam-h">
         <h2 data-rise>Clicks aren't clients. Matters are.</h2>
       </div>
-      <div class="fam-copy">
-        <p data-rise>A report full of clicks. Not one line on which became a client.</p>
-        <p class="verdict" data-rise>That is driving blind.</p>
-      </div>
-      <div class="agency" id="agency" data-rise>
-        <div class="agency-head"><b>Monthly marketing report</b><span>From your agency</span></div>
-        <div class="agency-row" style="--i:0"><span class="k">Clicks</span><span class="v" data-count="12480">12,480</span><span class="d">▲ 18%</span></div>
-        <div class="agency-row" style="--i:1"><span class="k">Impressions</span><span class="v" data-count="384" data-suffix="k">384k</span><span class="d">▲ 22%</span></div>
-        <div class="agency-row" style="--i:2"><span class="k">Click-through rate</span><span class="v" data-count="3.2" data-dec="1" data-suffix="%">3.2%</span><span class="d">▲ 0.4</span></div>
-        <div class="agency-row" style="--i:3"><span class="k">Website sessions</span><span class="v" data-count="9106">9,106</span><span class="d">▲ 11%</span></div>
-        <div class="agency-q"><p>New matters from all of this</p><span class="qmark" aria-label="unknown">?</span></div>
-      </div>
+      <figure class="versus" data-rise>
+        <video id="versus-video" autoplay muted loop playsinline preload="metadata" poster="media/clicks-vs-matters.png" aria-describedby="versus-cap">
+          <source src="media/clicks-vs-matters.mp4" type="video/mp4">
+        </video>
+        <button class="btn btn-ghost motion-btn" type="button" aria-pressed="false" data-motion-toggle>Pause motion</button>
+        <ul class="versus-m" aria-hidden="true">
+          <li><b>Traditional marketing</b><span>12,480 clicks</span><em>6 matters</em></li>
+          <li class="w"><b>LEX Waypoint</b><span>4,200 clicks</span><em>31 matters</em></li>
+        </ul>
+        <figcaption id="versus-cap"><span class="sr">Traditional marketing brings 12,480 clicks and 6 matters, 0.05 per cent of clicks. LEX Waypoint brings 4,200 clicks and 31 matters, 0.74 per cent. </span>Fewer clicks. More matters. Illustrative sample firm.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1347,7 +1369,9 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   var tally = function (done) {
     var n = [0, 0, 0, 0, 0, 0];
     items.forEach(function (it) { if (it.kind === 'gen' && it.matter && it.shown) n[SRC.indexOf(it.src)]++; });
+    var pi = 0;
     rows.forEach(function (r, i) {
+      var rc = r.querySelector('.roi'); rc.classList.remove('pop'); if (done && SPEND[i]) { void rc.offsetWidth; rc.style.setProperty('--pd', (pi++ * 160) + 'ms'); rc.classList.add('pop'); }
       r.querySelector('.ct').textContent = n[i];
       r.querySelector('.roi').textContent = done ? (SPEND[i] ? '$' + (n[i] * FEE / SPEND[i]).toFixed(2) + ' per $1' : 'No cost') : '\u2014';
       r.style.setProperty('--w', (n[i] / 18).toFixed(3));
@@ -1435,6 +1459,22 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
       document.querySelectorAll('[data-motion-toggle]').forEach(function (x) { x.setAttribute('aria-pressed', off); x.textContent = off ? 'Play motion' : 'Pause motion'; });
     });
   });
+
+  // ── Remotion video: play in view, honour reduced motion and the pause control ──
+  var vid = $('versus-video');
+  if (vid) {
+    if (reduce) { vid.removeAttribute('autoplay'); vid.pause(); }
+    else if (hasIO) {
+      vid.pause();
+      new IntersectionObserver(function (es) {
+        if (document.documentElement.classList.contains('motion-off')) return;
+        if (es[0].isIntersecting) { var pr = vid.play(); if (pr && pr.catch) pr.catch(function () {}); } else vid.pause();
+      }, { threshold: 0.3 }).observe(vid);
+    }
+    document.querySelectorAll('[data-motion-toggle]').forEach(function (b) {
+      b.addEventListener('click', function () { if (document.documentElement.classList.contains('motion-off')) vid.pause(); else if (!reduce) vid.play().catch(function () {}); });
+    });
+  }
 })();
 </script>
 
