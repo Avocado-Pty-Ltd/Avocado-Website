@@ -9,12 +9,12 @@ Bespoke software, curated technology and strategy for Australian small business 
 - **Workflow Solutions** — bespoke software and workflow automation
 - **Curated Technology** — pragmatic tool selection and integration
 - **Strategy Consulting** — strategy intensives, roadmap shaping, pre-mortems, fractional CTO
-- **[LEX Waypoint](https://lexwaypoint.avocadodigital.com.au/)**: leads-to-matter analytics and intake improvement for Australian law firms, part of EzyBiz LEX, measured on leads to matter, the share of genuine enquiries that become opened matters (served from `waypoint/` on the lexwaypoint subdomain; `/lex-waypoint.html`, `/law-firm-intake.html` and `/legal-seo.html` 301 there)
+- **[LEX Waypoint](https://lexwaypoint.avocadodigital.com.au/)**: leads-to-matter analytics and intake improvement for Australian law firms, part of LEX Phone, measured on leads to matter, the share of genuine enquiries that become opened matters (served from `waypoint/` on the lexwaypoint subdomain; `/lex-waypoint.html`, `/law-firm-intake.html` and `/legal-seo.html` 301 there)
 
 ## Products
 
-- **[EzyBiz LEX](https://ezybizlex.com.au)** — the ultimate business phone for legal professionals: an AI answering service on a dedicated number, with matter filing to Smokeball and Clio
-- **[Call Concierge](https://callconcierge.com.au)** — live Australian new-client intake for law firms, connected to EzyBiz LEX
+- **[LEX Phone](https://ezybizlex.com.au)** — the ultimate business phone for legal professionals: an AI answering service on a dedicated number, with matter filing to Smokeball and Clio
+- **[Call Concierge](https://callconcierge.com.au)** — live Australian new-client intake for law firms, connected to LEX Phone
 - **[SocialReels](https://socialreels.ai)** — short-form video for small business (private beta)
 
 ## About the studio

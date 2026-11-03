@@ -190,7 +190,7 @@ function HeroStudio({ layout, onAuditOpen }) {
             with <em className="serif-italic">specific&nbsp;problems.</em>
           </h1>
           <p className="hero-lede">
-            Bespoke software, curated technology and strategy for Australian small business — plus four products of our own: SocialReels, EzyBiz LEX, Call Concierge and Claudette.
+            Bespoke software, curated technology and strategy for Australian small business — plus four products of our own: SocialReels, LEX Phone, Call Concierge and Claudette.
           </p>
           <div className="hero-actions">
             <button type="button" className="btn btn-accent" onClick={onAuditOpen}>
@@ -209,11 +209,11 @@ function HeroStudio({ layout, onAuditOpen }) {
           <div className="hero-fb-meta">
             <div>
               <span className="meta">Index</span>
-              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · A.04 LEX Waypoint · B.01 SocialReels · B.02 EzyBiz LEX · B.03 Call Concierge · B.04 Claudette</p>
+              <p>A.01 Workflow Solutions · A.02 Curated Tech · A.03 Strategy Consulting · A.04 LEX Waypoint · B.01 SocialReels · B.02 LEX Phone · B.03 Call Concierge · B.04 Claudette</p>
             </div>
             <div>
               <span className="meta">Latest</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. LEX Waypoint now onboarding law firms Australia-wide.</p>
+              <p>SocialReels in private beta. LEX Phone rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. LEX Waypoint now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">Begin</span>
@@ -297,7 +297,7 @@ function HeroOS({ layout, onAuditOpen }) {
             </div>
             <div>
               <span className="meta">/ now</span>
-              <p>SocialReels in private beta. EzyBiz LEX rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. LEX Waypoint now onboarding law firms Australia-wide.</p>
+              <p>SocialReels in private beta. LEX Phone rolling out Teams and smarter SMS replies. Call Concierge opening a founding cohort for live Australian legal intake. Claudette open-sourced on GitHub. LEX Waypoint now onboarding law firms Australia-wide.</p>
             </div>
             <div>
               <span className="meta">/ contact</span>
@@ -333,7 +333,7 @@ function HeroOS({ layout, onAuditOpen }) {
                 <span className="os-cell-tag">SR-022</span>
               </div>
               <div className="os-media-cell">
-                <img src="ezybiz-app-home-framed.png" alt="EzyBiz LEX home"/>
+                <img src="ezybiz-app-home-framed.png" alt="LEX Phone home"/>
                 <span className="os-cell-tag">EZ-001</span>
               </div>
               <div className="os-media-cell">
@@ -381,7 +381,7 @@ const SERVICES = [
     n: '04', code: 'A.04',
     title: 'LEX Waypoint',
     eyebrow: 'Leads to matter for law firms',
-    body: 'Know which calls become matters. Part of EzyBiz LEX, Waypoint follows every call, text and web enquiry to the matter it became in Smokeball or Clio, and shows where your matters come from, how fast you respond and what each channel costs per new client. Then we fix where enquiries leak.',
+    body: 'Know which calls become matters. Part of LEX Phone, Waypoint follows every call, text and web enquiry to the matter it became in Smokeball or Clio, and shows where your matters come from, how fast you respond and what each channel costs per new client. Then we fix where enquiries leak.',
     deliverables: ['Leads-to-matter dashboard', 'Response & missed-call analysis', 'Intake fixes & source tracking', 'Cost-per-matter reporting'],
     media: 'lex-waypoint-card.svg',
     href: 'https://lexwaypoint.avocadodigital.com.au/',
@@ -447,7 +447,7 @@ const PRODUCTS = [
   },
   {
     n: '02', code: 'B.02',
-    name: 'EzyBiz LEX',
+    name: 'LEX Phone',
     one: 'The ultimate business phone for legal professionals.',
     body: 'A dedicated business number for law firms, solo practitioners and small legal teams — with a realistic Australian answering service that screens calls, takes messages and books appointments, a written record of every conversation, and calls filed to the right matter in Smokeball or Clio. All from the phone you already carry.',
     tags: ['Legal professionals', 'Smokeball & Clio', 'iOS · Android'],
@@ -832,7 +832,7 @@ function Footer({ direction }) {
           <span className="eyebrow">Products</span>
           <ul>
             <li><a className="ulink" href="https://socialreels.ai" target="_blank" rel="noopener">SocialReels</a></li>
-            <li><a className="ulink" href="https://ezybizlex.com.au/" target="_blank" rel="noopener">EzyBiz LEX</a></li>
+            <li><a className="ulink" href="https://ezybizlex.com.au/" target="_blank" rel="noopener">LEX Phone</a></li>
             <li><a className="ulink" href="callconcierge.html">Call Concierge</a></li>
             <li><a className="ulink" href="https://github.com/Avocado-Pty-Ltd/Claudette" target="_blank" rel="noopener">Claudette</a></li>
           </ul>
