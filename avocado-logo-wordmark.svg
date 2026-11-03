@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 0 308 48" width="308" height="48" fill="#caa75c">
-<polygon points="4,44 44,44 24,3"></polygon>
-<polygon points="44,4 84,4 64,45"></polygon>
-<circle cx="110" cy="24" r="20"></circle>
-<path d="M172 4 H160 A20 20 0 0 0 160 44 H172 Z"></path>
-<polygon points="180,44 220,44 200,3"></polygon>
-<path d="M230 4 H242 A20 20 0 0 1 242 44 H230 Z"></path>
-<circle cx="292" cy="24" r="20"></circle>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 0 325.30 48" width="325" height="48" fill="#caa75c"><polygon points="4.00,44.00 48.00,44.00 32.29,4.00 19.71,4.00"/><polygon points="46.79,4.00 90.79,4.00 73.86,44.00 63.71,44.00"/><circle cx="114.90" cy="24" r="20"/><path d="M180.10 4H166.90A22.00 20 0 0 0 166.90 44H180.10Z"/><polygon points="190.10,44.00 234.10,44.00 218.38,4.00 205.81,4.00"/><path d="M244.10 4H257.30A22.00 20 0 0 1 257.30 44H244.10Z"/><circle cx="309.30" cy="24" r="20"/></svg>
