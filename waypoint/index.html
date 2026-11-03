@@ -690,14 +690,14 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
       <figcaption class="sr" id="ledger-cap">How LEX Waypoint counts a month: enquiries in, spam and existing clients out, genuine enquiries matched to the matters they became, coloured by source, with each source's matters and return on spend.</figcaption>
       <div class="chan" id="chan" role="table" aria-label="Matters and spend by source, with the overall return">
         <div class="chan-row chan-h" role="row"><span role="columnheader">Matters by source</span><span role="columnheader">Matters</span><span role="columnheader">Spend</span></div>
-        <div class="chan-row" role="row" data-ch="0" style="--c:#5C8A2E"><span class="nm" role="rowheader"><i></i>SEO</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$15,800</span></div>
+        <div class="chan-row" role="row" data-ch="0" style="--c:#5C8A2E"><span class="nm" role="rowheader"><i></i>SEO</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$6,000</span></div>
         <div class="chan-row" role="row" data-ch="1" style="--c:#2B1740"><span class="nm" role="rowheader"><i></i>Calls</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span></div>
         <div class="chan-row" role="row" data-ch="2" style="--c:#1F7A80"><span class="nm" role="rowheader"><i></i>Enquiries</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span></div>
-        <div class="chan-row" role="row" data-ch="3" style="--c:#B5487A"><span class="nm" role="rowheader"><i></i>Social</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$2,950</span></div>
-        <div class="chan-row" role="row" data-ch="4" style="--c:#C8662D"><span class="nm" role="rowheader"><i></i>Ads</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$20,100</span></div>
-        <div class="chan-row" role="row" data-ch="5" style="--c:#8A8394"><span class="nm" role="rowheader"><i></i>Directory</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$9,900</span></div>
-        <div class="chan-roi" role="row"><span class="lbl" role="rowheader">Overall return on investment<small>on $48,750 spend</small></span><span class="roi" id="roi-fig" role="cell"><b>&mdash;</b> per $1</span></div>
-        <p class="chan-note" role="note">Matched by our inference engine. Return = matters &times; $4,500 average fee &divide; total spend.</p>
+        <div class="chan-row" role="row" data-ch="3" style="--c:#B5487A"><span class="nm" role="rowheader"><i></i>Social</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$3,200</span></div>
+        <div class="chan-row" role="row" data-ch="4" style="--c:#C8662D"><span class="nm" role="rowheader"><i></i>Ads</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$14,000</span></div>
+        <div class="chan-row" role="row" data-ch="5" style="--c:#8A8394"><span class="nm" role="rowheader"><i></i>Directory</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$2,800</span></div>
+        <div class="chan-roi" role="row"><span class="lbl" role="rowheader">Overall return on investment<small>on $26,000 spend</small></span><span class="roi" id="roi-fig" role="cell"><b>&mdash;</b> per $1</span></div>
+        <p class="chan-note" role="note">Matched by our inference engine. Return = matters &times; $3,500 average fee &divide; total spend. Spend reflects typical Australian agency retainers and ad budgets.</p>
       </div>
       <p class="sr" id="chan-sum" aria-live="polite"></p>
       <div class="ledger-foot">
@@ -1179,7 +1179,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   var GEN = 164, OUT = 0, MAT = 52, COLS = 21, CELL = 23, OX = 30, OY = 42, LCOLS = 4, LCELL = 20, LX = 414, LY = 52;
   var SRC = ['#5C8A2E', '#2B1740', '#1F7A80', '#B5487A', '#C8662D', '#8A8394'];
   var SRC_N = [46, 52, 30, 6, 22, 8];
-  var MAT_N = [15, 18, 9, 2, 6, 2], SPEND = [15800, 0, 0, 2950, 20100, 9900], FEE = 4500;
+  var MAT_N = [15, 18, 9, 2, 6, 2], SPEND = [6000, 0, 0, 3200, 14000, 2800], FEE = 3500;
   var srcOf = []; SRC_N.forEach(function (n, s) { for (var i = 0; i < n; i++) srcOf.push(s); });
   for (var j = srcOf.length - 1; j > 0; j--) { var k = Math.floor(rnd() * (j + 1)); var tt = srcOf[j]; srcOf[j] = srcOf[k]; srcOf[k] = tt; }
   var idx = []; for (var a = 0; a < GEN; a++) idx.push(a);
