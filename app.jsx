@@ -448,7 +448,7 @@ const PRODUCTS = [
   {
     n: '02', code: 'B.02',
     name: 'LEX Phone',
-    one: 'The lawyer’s phone.',
+    one: 'The lawyer’s phone system.',
     body: 'A dedicated business number for law firms, solo practitioners and small legal teams — with a realistic Australian answering service that screens calls, takes messages and books appointments, a written record of every conversation, and calls filed to the right matter in Smokeball or Clio. All from the phone you already carry.',
     tags: ['Legal professionals', 'Smokeball & Clio', 'iOS · Android'],
     stat: { v: 'AU', l: 'Available now' },
