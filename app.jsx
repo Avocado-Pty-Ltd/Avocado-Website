@@ -453,7 +453,7 @@ const PRODUCTS = [
     tags: ['Legal professionals', 'Smokeball & Clio', 'iOS · Android'],
     stat: { v: 'AU', l: 'Available now' },
     image: 'ezybiz-app-home-framed.png',
-    href: 'https://ezybizlex.com.au/', external: true,
+    href: 'https://lexphone.com.au/', external: true,
   },
   {
     n: '03', code: 'B.03',
@@ -832,7 +832,7 @@ function Footer({ direction }) {
           <span className="eyebrow">Products</span>
           <ul>
             <li><a className="ulink" href="https://socialreels.ai" target="_blank" rel="noopener">SocialReels</a></li>
-            <li><a className="ulink" href="https://ezybizlex.com.au/" target="_blank" rel="noopener">LEX Phone</a></li>
+            <li><a className="ulink" href="https://lexphone.com.au/" target="_blank" rel="noopener">LEX Phone</a></li>
             <li><a className="ulink" href="callconcierge.html">Call Concierge</a></li>
             <li><a className="ulink" href="https://github.com/Avocado-Pty-Ltd/Claudette" target="_blank" rel="noopener">Claudette</a></li>
           </ul>
