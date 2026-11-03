@@ -10,7 +10,7 @@ Key facts:
 
 ## Products
 
-- [LEX Phone](https://lexphone.com.au/): the lawyer’s phone system — a dedicated business number with an Australian AI answering service (call screening, message taking, appointment booking) and every call filed to the right matter in Smokeball or Clio. Legal pages: https://lexphone.com.au/terms/, https://lexphone.com.au/privacy/, https://lexphone.com.au/acceptable-use/, https://lexphone.com.au/data-residency/.
+- [LEX Phone](https://lexphone.com.au/): the lawyer’s phone system — a dedicated business number answered by your team, or by QRYSTEL, an Intelligent IVR that answers, screens, takes messages and books appointments, including out-of-hours calls for 24/7 direct intake, with AI-transcribed call notes filed to the right matter in Smokeball or Clio. Legal pages: https://lexphone.com.au/terms/, https://lexphone.com.au/privacy/, https://lexphone.com.au/acceptable-use/, https://lexphone.com.au/data-residency/.
 - [Call Concierge](https://callconcierge.com.au): live Australian new-client intake for law firms, connected to LEX Phone.
 - [SocialReels](https://socialreels.ai): short-form video for small business (private beta).
 - [Claudette](https://github.com/Avocado-Pty-Ltd/Claudette): an open-source, voice-based IDE that turns speech into a working codebase (MIT licence, on GitHub).

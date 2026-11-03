@@ -449,7 +449,7 @@ const PRODUCTS = [
     n: '02', code: 'B.02',
     name: 'LEX Phone',
     one: 'The lawyer’s phone system.',
-    body: 'A dedicated business number for law firms, solo practitioners and small legal teams — with a realistic Australian answering service that screens calls, takes messages and books appointments, a written record of every conversation, and calls filed to the right matter in Smokeball or Clio. All from the phone you already carry.',
+    body: 'A dedicated business number for law firms, solo practitioners and small legal teams. Calls are answered by your team, or by QRYSTEL, our Intelligent IVR, which answers, screens, takes messages and books appointments in your firm’s name. It handles out-of-hours calls too, so you get 24/7 direct intake. Every call is transcribed with AI notes and filed to the right matter in Smokeball or Clio. All from the phone you already carry.',
     tags: ['Legal professionals', 'Smokeball & Clio', 'iOS · Android'],
     stat: { v: 'AU', l: 'Available now' },
     image: 'lex-phone-app-home.png',
