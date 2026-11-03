@@ -80,8 +80,10 @@ export const Versus = () => {
   const frame = useCurrentFrame();
   const fade = interpolate(frame, [312, 329], [1, 0], { extrapolateLeft: 'clamp' });
   return (
-    <AbsoluteFill style={{ background: '#FFFFFF', padding: 32, display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center', opacity: fade }}>
-      {PANELS.map((p) => <PanelView key={p.kind} p={p} />)}
+    <AbsoluteFill style={{ background: '#FFFFFF' }}>
+      <AbsoluteFill style={{ padding: 32, display: 'flex', flexDirection: 'row', gap: 24, alignItems: 'center', opacity: fade }}>
+        {PANELS.map((p) => <PanelView key={p.kind} p={p} />)}
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };

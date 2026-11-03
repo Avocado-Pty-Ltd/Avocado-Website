@@ -79,7 +79,8 @@ export const Levers = () => {
   const area = pts.length ? line + ` L${X(last).toFixed(1)},${CH} L0,${CH} Z` : '';
 
   return (
-    <AbsoluteFill style={{ background: '#fff', fontFamily: sans, opacity: fade }}>
+    <AbsoluteFill style={{ background: '#fff', fontFamily: sans }}>
+      <AbsoluteFill style={{ opacity: fade }}>
       <div style={{ position: 'absolute', left: 32, top: 32, width: 936, height: 756, border: '1px solid rgba(43,23,64,.16)', background: '#fff' }}>
         <div style={{ position: 'absolute', left: 48, top: 44, fontSize: 21, letterSpacing: '.12em', textTransform: 'uppercase', color: MUTED, fontWeight: 600 }}>Marketing levers</div>
         <div style={{ position: 'absolute', left: 48, top: 72, fontFamily: serif, fontSize: 0 }} />
@@ -103,6 +104,7 @@ export const Levers = () => {
           <span>Each lever pulled, measured against matters</span><span>Illustrative</span>
         </div>
       </div>
+      </AbsoluteFill>
     </AbsoluteFill>
   );
 };
