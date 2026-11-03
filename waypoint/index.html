@@ -142,10 +142,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero h1 { font-size: clamp(44px, 5.3vw, 86px); line-height: .98; letter-spacing: -.03em; }
 .hero h1 .line { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
 .hero h1 .line > span { display: block; }
+.hero h1 .line.accent { color: var(--star-text); }
 .lede { margin-top: 28px; max-width: 34em; font-family: var(--serif); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.55; color: var(--ink); }
 .hero-cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .catch { margin-top: 40px; padding: 12px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); font-family: var(--serif); font-size: 17px; line-height: 1.45; letter-spacing: .03em; font-variant-caps: all-small-caps; color: var(--ink-2); }
-.part { margin-top: 14px; font-size: 15px; color: var(--muted); }
 
 /* The ledger: enquiries in, matters out */
 .ledger { position: relative; margin: 0; border: 1px solid var(--hairline); background: #fff; }
@@ -561,8 +561,8 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     <div>
       <h1 data-set>
         <span class="line" style="--l:0"><span>Stop guessing,</span></span>
-        <span class="line" style="--l:1"><span>let the data drive</span></span>
-        <span class="line" style="--l:2"><span>your firm's growth.</span></span>
+        <span class="line accent" style="--l:1"><span>let the data drive</span></span>
+        <span class="line accent" style="--l:2"><span>your firm's growth.</span></span>
       </h1>
       <p class="lede" data-rise style="--d:520ms">LEX Waypoint measures your SEO, ad spend and call analytics against the number of enquiries that turned into matters. Then the Avocado team pulls the right levers for you: SEO, Google and ChatGPT ads, your Business Profile, law directories and social.</p>
       <div class="hero-cta" data-rise style="--d:640ms">
@@ -571,7 +571,6 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <a class="btn btn-text" href="#how">How it works</a>
       </div>
       <p class="catch" data-rise style="--d:760ms">Calls — texts — web forms — search — ads — counted in matters opened</p>
-      <p class="part" data-rise style="--d:820ms">Part of EzyBiz LEX, the lawyer's phone app that answers when you can't.</p>
     </div>
 
     <figure class="ledger" data-rise style="--d:300ms" aria-labelledby="ledger-cap">
@@ -1037,7 +1036,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
 
 <footer>
   <div class="wrap">
-    <p>LEX Waypoint, part of EzyBiz LEX. The lawyer's phone app. Answers when you can't, and sends AI call notes to the matter when you do.</p>
+    <p>LEX Waypoint Growth and Leadership connect to <a href="https://ezybizlex.com.au/">EzyBiz LEX</a>, the lawyer's phone app. Answers when you can't, and sends AI call notes to the matter when you do.</p>
     <p>© 2026 <a href="https://avocadodigital.com.au/">Avocado Pty Ltd</a> · ABN 81 652 199 687 · <a href="mailto:hello@avocadodigital.com.au">hello@avocadodigital.com.au</a> · <a href="https://avocadodigital.com.au/privacy-policy.html">Privacy</a> · <a href="https://avocadodigital.com.au/terms-of-service.html">Terms</a></p>
   </div>
 </footer>
