@@ -609,6 +609,10 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
 .chan-row:not(.chan-h)::after { content: ""; position: absolute; left: 22px; bottom: 6px; height: 3px; border-radius: 2px; width: calc(var(--w, 0) * 34%); background: var(--c); transition: width .3s linear; }
 .chan-note { padding-top: 10px; font-size: 13px; color: var(--muted); }
 @media (max-width: 480px) { .chan-row { grid-template-columns: minmax(0, 1.3fr) .5fr .7fr 1.2fr; font-size: 13px; gap: 4px; } }
+
+.motion-btn { position: absolute; right: 0; top: 0; min-height: 32px; padding: 0 12px; font-size: 13px; z-index: 2; }
+.pipe { position: relative; } .hub { position: relative; padding-top: 44px; } .hub-btn { top: 0; }
+.motion-off .pipe .pn, .motion-off .pipe .dot, .motion-off .pipe li, .motion-off .hub-core .orbit, .motion-off .node::before { animation-play-state: paused !important; }
 </style>
 </head>
 <body>
@@ -664,16 +668,17 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <g id="dots"></g>
       </svg>
       <figcaption class="sr" id="ledger-cap">How LEX Waypoint counts a quarter: enquiries in, spam and existing clients out, genuine enquiries matched to the matters they became, coloured by source, with each source's matters and return on spend.</figcaption>
-      <div class="chan" id="chan" aria-live="polite">
-        <div class="chan-row chan-h"><span>Matters by source</span><span>Matters</span><span>Spend</span><span>Return</span></div>
-        <div class="chan-row" data-ch="0" style="--c:#5C8A2E"><span class="nm"><i></i>SEO</span><span class="ct">0</span><span class="sp">$3,150</span><span class="roi">&mdash;</span></div>
-        <div class="chan-row" data-ch="1" style="--c:#2B1740"><span class="nm"><i></i>Calls</span><span class="ct">0</span><span class="sp">$0</span><span class="roi">&mdash;</span></div>
-        <div class="chan-row" data-ch="2" style="--c:#1F7A80"><span class="nm"><i></i>Enquiries</span><span class="ct">0</span><span class="sp">$0</span><span class="roi">&mdash;</span></div>
-        <div class="chan-row" data-ch="3" style="--c:#B5487A"><span class="nm"><i></i>Social</span><span class="ct">0</span><span class="sp">$600</span><span class="roi">&mdash;</span></div>
-        <div class="chan-row" data-ch="4" style="--c:#C8662D"><span class="nm"><i></i>Ads</span><span class="ct">0</span><span class="sp">$3,102</span><span class="roi">&mdash;</span></div>
-        <div class="chan-row" data-ch="5" style="--c:#8A8394"><span class="nm"><i></i>Directory</span><span class="ct">0</span><span class="sp">$3,680</span><span class="roi">&mdash;</span></div>
-        <p class="chan-note">Matched by our inference engine. Return = matters &times; $4,500 average fee &divide; spend.</p>
+      <div class="chan" id="chan" role="table" aria-label="Matters, spend and return by source">
+        <div class="chan-row chan-h" role="row"><span role="columnheader">Matters by source</span><span role="columnheader">Matters</span><span role="columnheader">Spend</span><span role="columnheader">Return</span></div>
+        <div class="chan-row" role="row" data-ch="0" style="--c:#5C8A2E"><span class="nm" role="rowheader"><i></i>SEO</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$3,150</span><span class="roi" role="cell">&mdash;</span></div>
+        <div class="chan-row" role="row" data-ch="1" style="--c:#2B1740"><span class="nm" role="rowheader"><i></i>Calls</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span><span class="roi" role="cell">&mdash;</span></div>
+        <div class="chan-row" role="row" data-ch="2" style="--c:#1F7A80"><span class="nm" role="rowheader"><i></i>Enquiries</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span><span class="roi" role="cell">&mdash;</span></div>
+        <div class="chan-row" role="row" data-ch="3" style="--c:#B5487A"><span class="nm" role="rowheader"><i></i>Social</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$600</span><span class="roi" role="cell">&mdash;</span></div>
+        <div class="chan-row" role="row" data-ch="4" style="--c:#C8662D"><span class="nm" role="rowheader"><i></i>Ads</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$3,102</span><span class="roi" role="cell">&mdash;</span></div>
+        <div class="chan-row" role="row" data-ch="5" style="--c:#8A8394"><span class="nm" role="rowheader"><i></i>Directory</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$3,680</span><span class="roi" role="cell">&mdash;</span></div>
+        <p class="chan-note" role="note">Matched by our inference engine. Return = matters &times; $4,500 average fee &divide; spend.</p>
       </div>
+      <p class="sr" id="chan-sum" aria-live="polite"></p>
       <div class="ledger-foot">
         <div class="north" id="north">
           <div class="north-name"><svg class="star-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.9 8.2 15.8 11.1 24 12C15.8 12.9 12.9 15.8 12 24C11.1 15.8 8.2 12.9 0 12C8.2 11.1 11.1 8.2 12 0Z" fill="#C9A24A"/></svg>North Star · matters opened</div>
@@ -769,6 +774,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     </div>
 
     <figure class="pipe" data-rise aria-label="The path of one enquiry: call, matter, source, rank, report.">
+      <button class="btn btn-ghost motion-btn" type="button" aria-pressed="false" data-motion-toggle>Pause motion</button>
       <svg viewBox="0 0 1000 40" aria-hidden="true">
         <line class="track" x1="100" y1="20" x2="900" y2="20"/>
         <line class="fill" x1="100" y1="20" x2="900" y2="20" pathLength="1"/>
@@ -883,6 +889,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     </div>
 
         <div class="hub">
+      <button class="btn btn-ghost motion-btn hub-btn" type="button" aria-pressed="false" data-motion-toggle>Pause motion</button>
       <ul class="hub-l">
         <li class="node" data-rise style="--d:0ms"><span class="tag">Leadership</span><h3>Search and SEO</h3><p>Pages for your suburbs, ranked weekly.</p></li>
         <li class="node" data-rise style="--d:90ms"><span class="tag">Add-on</span><h3>Google and ChatGPT ads</h3><p>Judged per matter, not per click.</p></li>
@@ -1364,6 +1371,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
       r.style.setProperty('--w', (n[i] / 18).toFixed(3));
     });
     chan.classList.toggle('done', !!done);
+    if (done) $('chan-sum').textContent = 'Matters by source: ' + ['SEO', 'Calls', 'Enquiries', 'Social', 'Ads', 'Directory'].map(function (nm, i) { return nm + ' ' + n[i] + (SPEND[i] ? ', $' + (n[i] * FEE / SPEND[i]).toFixed(2) + ' returned per $1' : ', no spend'); }).join('; ') + '.';
   };
   var running = false;
   var play = function () {
@@ -1437,6 +1445,14 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   };
   ['enq', 'fast', 'fee'].forEach(function (id) { $(id).addEventListener('input', calc); });
   calc();
+
+  // ── Pause control for looping diagrams (WCAG 2.2.2) ──
+  [].slice.call(document.querySelectorAll('[data-motion-toggle]')).forEach(function (b) {
+    b.addEventListener('click', function () {
+      var off = document.documentElement.classList.toggle('motion-off');
+      document.querySelectorAll('[data-motion-toggle]').forEach(function (x) { x.setAttribute('aria-pressed', off); x.textContent = off ? 'Play motion' : 'Pause motion'; });
+    });
+  });
 })();
 </script>
 
