@@ -636,6 +636,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
 .chan.done .roi.pop { animation: zoomIn .9s cubic-bezier(.2,1.4,.4,1) both; animation-delay: var(--pd, 0ms); }
 @keyframes zoomIn { 0% { transform: scale(.4); opacity: 0; } 45% { transform: scale(1.4); opacity: 1; color: var(--star-text); } 100% { transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) { .chan.done .roi.pop { animation: none; } }
+@media (min-width: 1001px) { #managed { padding-top: clamp(32px, 4vw, 56px); } #managed .band-head { margin-bottom: clamp(28px, 3.5vw, 48px); } }
 </style>
 </head>
 <body>
