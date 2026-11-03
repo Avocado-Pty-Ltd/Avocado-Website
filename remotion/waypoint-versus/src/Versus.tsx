@@ -28,7 +28,7 @@ const PanelView = ({ p, m }: { p: Panel; m?: boolean }) => {
   const rule = dark ? 'rgba(255,255,255,.18)' : 'rgba(43,23,64,.16)';
   const pal = dark ? DARK : LIGHT;
 
-  const enter = spring({ frame: frame - p.start, fps, config: { damping: 200 } });
+  const enter = 1;
   const cp = interpolate(frame, [p.start + 14, p.start + 100], [0, 1], { easing: out, extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const clicks = p.clicks * cp;
   const barW = (p.clicks / MAX_CLICKS) * cp;
