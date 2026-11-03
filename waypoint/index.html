@@ -527,6 +527,87 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .js [data-set] .line > span, .js [data-rise], .js [data-rule], .js .rules i, .js .north, .js .race-bar, .js [data-stagger]:not(.drawn) > *, .js .vol:not(.shelved) .book { opacity: 1 !important; transform: none !important; }
 }
+
+/* Motion diagrams: tiles, pipeline, hub */
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--hairline-strong); border-left: 1px solid var(--hairline); margin-top: clamp(40px, 5vw, 64px); }
+.tile { padding: 28px 28px 24px; border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); display: grid; align-content: start; }
+.tile .n { font-size: 15px; }
+.tile h3 { font: 400 16px/1.3 var(--sans); color: var(--muted); margin-top: 4px; }
+.tile .fig { font-family: var(--serif); font-size: clamp(42px, 4.6vw, 68px); line-height: 1; letter-spacing: -.025em; margin-top: 14px; }
+.tile .fig small { font: 400 15px/1 var(--sans); color: var(--muted); letter-spacing: 0; margin-left: 10px; }
+.spark { width: 100%; height: auto; margin-top: 18px; overflow: visible; }
+.spark path { fill: none; stroke: var(--c); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.spark .area { fill: var(--c); opacity: .07; stroke: none; }
+.spark circle { fill: var(--c); }
+.js .spark .ln { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.js .spark .area, .js .spark circle { opacity: 0; }
+.js .is-set .spark .ln { stroke-dashoffset: 0; transition: stroke-dashoffset 1.9s var(--ease) calc(var(--i) * 120ms + 350ms); }
+.js .is-set .spark .area { opacity: .07; transition: opacity 1.2s ease calc(var(--i) * 120ms + 1.2s); }
+.js .is-set .spark circle { opacity: 1; transition: opacity .4s ease calc(var(--i) * 120ms + 1.9s); }
+@media (max-width: 860px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .tiles { grid-template-columns: 1fr; } }
+
+.pipe { margin: 0 0 clamp(56px, 8vw, 104px); padding: 40px 0 8px; border-top: 1px solid var(--hairline-strong); }
+.pipe svg { width: 100%; height: auto; overflow: visible; }
+.pipe .track { stroke: var(--hairline-strong); stroke-width: 1; stroke-dasharray: 2 5; vector-effect: non-scaling-stroke; }
+.pipe .fill { stroke: var(--buckram); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.pipe .pn { fill: var(--ground); stroke: var(--buckram); stroke-width: 1.5; animation: pn 7s linear infinite; animation-delay: calc(var(--i) * 1.4s); transform-box: fill-box; transform-origin: center; }
+.pipe .dot { fill: var(--star); animation: travel 7s linear infinite; }
+.pipe ol { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 18px; text-align: center; }
+.pipe li { display: grid; gap: 2px; justify-items: center; animation: lab 7s linear infinite; animation-delay: calc(var(--i) * 1.4s); }
+.pipe li b { font: 600 22px/1.2 var(--serif); }
+.pipe li > span:last-child { font-size: 14px; color: var(--muted); }
+.pipe li .n { font-size: 14px; }
+@keyframes travel { 0% { transform: translateX(0); opacity: 0; } 3% { opacity: 1; } 80% { transform: translateX(800px); opacity: 1; } 88%, 100% { transform: translateX(800px); opacity: 0; } }
+@keyframes pn { 0% { fill: var(--star); transform: scale(1.5); } 12% { fill: var(--buckram); transform: scale(1); } 100% { fill: var(--buckram); transform: scale(1); } }
+@keyframes lab { 0%, 14% { color: var(--ink); } 15%, 100% { color: var(--ink-2); } }
+@media (max-width: 700px) { .pipe svg { display: none; } .pipe ol { grid-template-columns: 1fr; text-align: left; gap: 10px; } .pipe li { grid-template-columns: 28px auto 1fr; justify-items: start; align-items: baseline; gap: 10px; } }
+
+.hub { --g: clamp(16px, 3.4vw, 56px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 340px) minmax(0, 1fr); gap: 0 var(--g); align-items: center; }
+.hub-core { position: relative; aspect-ratio: 1; display: grid; place-items: center; text-align: center; }
+.hub-core svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hub-core .ring { fill: none; stroke: var(--hairline-strong); stroke-width: .6; }
+.hub-core .ring.d { stroke-dasharray: 1.5 3.5; }
+.hub-core .orbit { transform-origin: 100px 100px; animation: spin 36s linear infinite; }
+.hub-core .o2 { animation-duration: 24s; animation-direction: reverse; }
+.hub-core .o3 { animation-duration: 16s; }
+.hub-core .bead { fill: var(--star); } .hub-core .bead.s { fill: var(--buckram); }
+.hub-core p { position: relative; display: grid; gap: 4px; }
+.hub-core p span { font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.hub-core p b { font: 400 clamp(30px, 3.4vw, 46px)/1 var(--serif); letter-spacing: -.02em; }
+.hub ul { display: grid; }
+.node { position: relative; padding: 22px 0; border-top: 1px solid var(--hairline); }
+.node:last-child { border-bottom: 1px solid var(--hairline); }
+.hub-l .node { text-align: right; }
+.node .tag { display: block; font: 600 12px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase; color: var(--star-text); margin-bottom: 10px; }
+.node h3 { font-size: 24px; line-height: 1.2; }
+.node p { font-family: var(--serif); font-size: 17px; line-height: 1.5; color: var(--ink-2); margin-top: 4px; }
+.node::after { content: ""; position: absolute; top: 50%; width: var(--g); height: 1px; background: var(--hairline-strong); }
+.node::before { content: ""; position: absolute; top: calc(50% - 2.5px); width: 6px; height: 6px; border-radius: 50%; background: var(--star); z-index: 1; animation: pulseR 3.2s var(--ease) infinite; animation-delay: calc(var(--d, 0ms) + 400ms); }
+.hub-l .node::after { right: calc(var(--g) * -1); } .hub-l .node::before { right: calc(var(--g) * -1); animation-name: pulseR; }
+.hub-r .node::after { left: calc(var(--g) * -1); } .hub-r .node::before { left: calc(var(--g) * -1); animation-name: pulseL; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulseR { 0% { transform: translateX(0); opacity: 0; } 15% { opacity: 1; } 70%, 100% { transform: translateX(var(--g)); opacity: 0; } }
+@keyframes pulseL { 0% { transform: translateX(0); opacity: 0; } 15% { opacity: 1; } 70%, 100% { transform: translateX(calc(var(--g) * -1)); opacity: 0; } }
+@media (max-width: 900px) {
+  .hub { grid-template-columns: 1fr; } .hub-core { order: -1; max-width: 280px; margin: 0 auto 32px; width: 100%; }
+  .hub-l .node { text-align: left; } .hub-l, .hub-r { grid-column: 1; } .hub-r .node:first-child { border-top: 0; } .node::before, .node::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .pipe .pn, .pipe .dot, .pipe li, .hub-core .orbit, .node::before { animation: none !important; } .pipe .dot, .node::before { display: none; } .pipe .pn { fill: var(--buckram); } }
+
+.chan { margin: 4px 18px 18px; border-top: 1px solid var(--hairline-strong); }
+.chan-row { display: grid; grid-template-columns: minmax(0, 1.5fr) .6fr .8fr 1.3fr; gap: 8px; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--hairline); font-size: 14px; position: relative; }
+.chan-row > span:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.chan-h { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 10px 0 8px; }
+.chan-row .nm { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.chan-row .nm i { width: 12px; height: 12px; border-radius: 50%; background: var(--c); flex: none; }
+.chan-row .ct { font-family: var(--serif); font-size: 20px; line-height: 1; }
+.chan-row .sp { color: var(--muted); }
+.chan-row .roi { color: var(--muted); transition: color .4s, opacity .6s; opacity: .5; }
+.chan.done .roi { opacity: 1; color: var(--ink); font-weight: 600; }
+.chan-row:not(.chan-h)::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 2px; width: calc(var(--w, 0) * 100%); background: var(--c); transition: width .3s linear; }
+.chan-note { padding-top: 10px; font-size: 13px; color: var(--muted); }
+@media (max-width: 480px) { .chan-row { grid-template-columns: minmax(0, 1.3fr) .5fr .7fr 1.2fr; font-size: 13px; gap: 4px; } }
 </style>
 </head>
 <body>
@@ -564,7 +645,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <span class="line accent" style="--l:1"><span>let the data drive</span></span>
         <span class="line accent" style="--l:2"><span>your firm's growth.</span></span>
       </h1>
-      <p class="lede" data-rise style="--d:520ms">LEX Waypoint measures your SEO, ad spend and call analytics against the number of enquiries that turned into matters. Then the Avocado team pulls the right levers for you: SEO, Google and ChatGPT ads, your Business Profile, law directories and social.</p>
+      <p class="lede" data-rise style="--d:520ms">Your SEO, ads and calls, measured in matters opened. Then the Avocado team pulls the right lever.</p>
       <div class="hero-cta" data-rise style="--d:640ms">
         <a class="btn" href="book-my-demo/">Book a 15 minute demo <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="btn btn-ghost" href="/app/?demo=1&amp;tour=1">See a sample firm</a>
@@ -581,14 +662,24 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <line x1="392" y1="10" x2="392" y2="318" stroke="rgba(43,23,64,.16)"/>
         <g id="dots"></g>
       </svg>
-      <figcaption class="sr" id="ledger-cap">How LEX Waypoint counts a quarter: every enquiry in, spam and existing clients out, genuine enquiries matched to the matters they became.</figcaption>
+      <figcaption class="sr" id="ledger-cap">How LEX Waypoint counts a quarter: enquiries in, spam and existing clients out, genuine enquiries matched to the matters they became, coloured by source, with each source's matters and return on spend.</figcaption>
+      <div class="chan" id="chan" aria-live="polite">
+        <div class="chan-row chan-h"><span>Matters by source</span><span>Matters</span><span>Spend</span><span>Return</span></div>
+        <div class="chan-row" data-ch="0" style="--c:#5C8A2E"><span class="nm"><i></i>SEO</span><span class="ct">0</span><span class="sp">$3,150</span><span class="roi">&mdash;</span></div>
+        <div class="chan-row" data-ch="1" style="--c:#2B1740"><span class="nm"><i></i>Calls</span><span class="ct">0</span><span class="sp">None</span><span class="roi">&mdash;</span></div>
+        <div class="chan-row" data-ch="2" style="--c:#1F7A80"><span class="nm"><i></i>Enquiries</span><span class="ct">0</span><span class="sp">None</span><span class="roi">&mdash;</span></div>
+        <div class="chan-row" data-ch="3" style="--c:#B5487A"><span class="nm"><i></i>Social</span><span class="ct">0</span><span class="sp">$600</span><span class="roi">&mdash;</span></div>
+        <div class="chan-row" data-ch="4" style="--c:#C8662D"><span class="nm"><i></i>Ads</span><span class="ct">0</span><span class="sp">$3,102</span><span class="roi">&mdash;</span></div>
+        <div class="chan-row" data-ch="5" style="--c:#8A8394"><span class="nm"><i></i>Directory</span><span class="ct">0</span><span class="sp">$3,680</span><span class="roi">&mdash;</span></div>
+        <p class="chan-note">Matched by our inference engine. Return = matters &times; $4,500 average fee &divide; spend.</p>
+      </div>
       <div class="ledger-foot">
         <div class="north" id="north">
           <div class="north-name"><svg class="star-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C12.9 8.2 15.8 11.1 24 12C15.8 12.9 12.9 15.8 12 24C11.1 15.8 8.2 12.9 0 12C8.2 11.1 11.1 8.2 12 0Z" fill="#C9A24A"/></svg>North Star · matters opened</div>
           <div class="north-row"><span class="north-fig" id="ns-fig">52</span><span class="north-sub"><b>31.7%</b> leads to matter<br><span class="delta">▲ +4.1 pts</span> on last quarter</span></div>
         </div>
         <div class="ledger-legend" aria-hidden="true">
-          <span><i class="dot" style="background:var(--buckram)"></i>Became a matter</span>
+          <span><i class="dot" style="background:conic-gradient(#5C8A2E 0 25%,#B5487A 0 40%,#C8662D 0 60%,#1F7A80 0 80%,#2B1740 0)"></i>Became a matter</span>
           <span><i class="dot" style="background:#fff;border:1.5px solid #8A8394"></i>Not yet</span>
           <span><i class="dot" style="background:#D9D3E0"></i>Left out</span>
           <button class="btn btn-ghost replay" id="replay" type="button" hidden>Replay the quarter</button>
@@ -610,13 +701,11 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     <div class="fam">
       <div class="band-n" aria-hidden="true">[1]</div>
       <div class="fam-h">
-        <h2 data-rise>Clicks and impressions don't pay the rent. Matters do.</h2>
+        <h2 data-rise>Clicks aren't clients. Matters are.</h2>
       </div>
       <div class="fam-copy">
-        <p data-rise>You opened your own firm to practise law your way. Some weeks the phone rings off the hook. Other weeks it goes quiet, and you start doing the maths on rent, wages and how many more months you can carry it.</p>
-        <p data-rise>You are paying for a website, for Google Ads, maybe for an SEO agency. Someone sends you a report full of clicks and impressions. None of it tells you the one thing you need to know: did any of that turn into paying clients?</p>
-        <p data-rise>Meanwhile calls come in while you are in court or with a client. Some get a callback. Some slip through. You are never quite sure how many.</p>
-        <p class="verdict" data-rise>That is not a marketing problem. That is driving blind.</p>
+        <p data-rise>A report full of clicks. Not one line on which became a client.</p>
+        <p class="verdict" data-rise>That is driving blind.</p>
       </div>
       <div class="agency" id="agency" data-rise>
         <div class="agency-head"><b>Monthly marketing report</b><span>From your agency</span></div>
@@ -635,8 +724,8 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     <div class="band-head">
       <div class="band-n" aria-hidden="true">[2]</div>
       <div>
-        <h2 data-rise>The firms that grow measure one thing.</h2>
-        <p class="band-lede" data-rise style="--d:120ms">How many genuine enquiries become matters. Not likes. Not traffic. On Growth and Leadership, EzyBiz LEX sits on your phone line and connects to Smokeball or Clio, so Waypoint can follow a caller from the first ring to the matter being opened.</p>
+        <h2 data-rise>Measure one thing.</h2>
+        <p class="band-lede" data-rise style="--d:120ms">How many genuine enquiries become matters. EzyBiz LEX follows each caller from first ring to opened matter.</p>
       </div>
     </div>
 
@@ -647,18 +736,23 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
           <div class="race-row slow"><span class="k">Later</span><span class="race-track"><span class="race-bar" style="--w:36"></span></span><span class="v">18%</span></div>
         </div>
         <div class="speed-x"><b><span data-count="2.3" data-dec="1">2.3</span>×</b><span>more matters when you answer within the hour</span></div>
-        <p>Enquiries answered within the hour became matters more than twice as often. Waypoint shows you what a slow callback costs your firm.</p>
       </div>
     </div>
 
-    <ol class="findings">
-      <li class="finding" data-rise><span class="n">[2.1]</span><div><h3>Speed to answer</h3><p>How long it takes from someone reaching out to your firm getting back to them, and how many you answer within the hour.</p></div><div class="pin"><b>22 min</b><span>typical</span></div></li>
-      <li class="finding" data-rise><span class="n">[2.2]</span><div><h3>Missed calls</h3><p>Genuine calls not answered and with no response within 24 hours. Every one is a client who may have rung the next firm.</p></div><div class="pin"><b>3</b><span>this week</span></div></li>
-      <li class="finding" data-rise><span class="n">[2.3]</span><div><h3>Cost per lead and per matter</h3><p>What you spent on a channel, divided by the leads and the new matters it brought in.</p></div><div class="pin"><b>$412</b><span>a matter</span></div></li>
-      <li class="finding" data-rise><span class="n">[2.4]</span><div><h3>Return on spend</h3><p>Where you record fees from matters, the fees each channel produced for every dollar spent on it.</p></div><div class="pin"><b>$9.40</b><span>per $1</span></div></li>
-      <li class="finding" data-rise><span class="n">[2.5]</span><div><h3>By practice area and month</h3><p>Which kinds of work convert, and whether things are trending up or down.</p></div><div class="pin"><b>42%</b><span>family law</span></div></li>
-      <li class="finding" data-rise><span class="n">[2.6]</span><div><h3>Where leads came from</h3><p>SEO, Google Ads, referrals and more, side by side, with what each one cost per new client.</p></div><div class="pin"><b>$210</b><span>a matter from SEO</span></div></li>
-    </ol>
+        <ul class="tiles" data-rise>
+      <li class="tile" style="--i:0;--c:var(--up)"><span class="n">[2.1]</span><h3>Speed to answer</h3><div class="fig">22<small>min typical</small></div>
+        <svg class="spark" viewBox="0 0 200 44" aria-hidden="true"><path class="area" d="M0 10 C30 12 50 20 80 22 S130 30 160 34 S190 36 200 36 L200 44 L0 44Z"/><path class="ln" pathLength="1" d="M0 10 C30 12 50 20 80 22 S130 30 160 34 S190 36 200 36"/><circle cx="200" cy="36" r="3.2"/></svg></li>
+      <li class="tile" style="--i:1;--c:var(--down)"><span class="n">[2.2]</span><h3>Missed calls</h3><div class="fig">3<small>this week</small></div>
+        <svg class="spark" viewBox="0 0 200 44" aria-hidden="true"><path class="area" d="M0 30 C25 12 50 36 80 20 S130 28 150 14 S185 30 200 30 L200 44 L0 44Z"/><path class="ln" pathLength="1" d="M0 30 C25 12 50 36 80 20 S130 28 150 14 S185 30 200 30"/><circle cx="200" cy="30" r="3.2"/></svg></li>
+      <li class="tile" style="--i:2;--c:var(--buckram)"><span class="n">[2.3]</span><h3>Cost per matter</h3><div class="fig">$203<small>average</small></div>
+        <svg class="spark" viewBox="0 0 200 44" aria-hidden="true"><path class="area" d="M0 8 C30 10 60 14 90 20 S150 28 200 32 L200 44 L0 44Z"/><path class="ln" pathLength="1" d="M0 8 C30 10 60 14 90 20 S150 28 200 32"/><circle cx="200" cy="32" r="3.2"/></svg></li>
+      <li class="tile" style="--i:3;--c:var(--ch-seo)"><span class="n">[2.4]</span><h3>Return on spend</h3><div class="fig">$22.22<small>per $1</small></div>
+        <svg class="spark" viewBox="0 0 200 44" aria-hidden="true"><path class="area" d="M0 34 C40 32 70 26 100 22 S160 10 200 6 L200 44 L0 44Z"/><path class="ln" pathLength="1" d="M0 34 C40 32 70 26 100 22 S160 10 200 6"/><circle cx="200" cy="6" r="3.2"/></svg></li>
+      <li class="tile" style="--i:4;--c:var(--ch-enquiries)"><span class="n">[2.5]</span><h3>Family law</h3><div class="fig">42%<small>to matter</small></div>
+        <svg class="spark" viewBox="0 0 200 44" aria-hidden="true"><path class="area" d="M0 28 C30 26 60 30 90 20 S150 16 200 10 L200 44 L0 44Z"/><path class="ln" pathLength="1" d="M0 28 C30 26 60 30 90 20 S150 16 200 10"/><circle cx="200" cy="10" r="3.2"/></svg></li>
+      <li class="tile" style="--i:5;--c:var(--ch-seo)"><span class="n">[2.6]</span><h3>SEO</h3><div class="fig">$210<small>a matter</small></div>
+        <svg class="spark" viewBox="0 0 200 44" aria-hidden="true"><path class="area" d="M0 16 C40 20 70 14 100 24 S160 30 200 34 L200 44 L0 44Z"/><path class="ln" pathLength="1" d="M0 16 C40 20 70 14 100 24 S160 30 200 34"/><circle cx="200" cy="34" r="3.2"/></svg></li>
+    </ul>
     <p class="note">Figures from a sample firm. LEX Waypoint measures your own.</p>
   </div>
 </section>
@@ -668,24 +762,44 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     <div class="band-head">
       <div class="band-n" aria-hidden="true">[3]</div>
       <div>
-        <h2 data-rise>From the first ring to the monthly report.</h2>
-        <p class="band-lede" data-rise style="--d:120ms">Five steps, and the Avocado team does the set-up. You read the results and approve anything that goes on your website.</p>
+        <h2 data-rise>First ring to monthly report.</h2>
+        <p class="band-lede" data-rise style="--d:120ms">Five steps. We set it up. You read, and approve.</p>
       </div>
     </div>
 
+    <figure class="pipe" data-rise aria-label="The path of one enquiry: call, matter, source, rank, report.">
+      <svg viewBox="0 0 1000 40" aria-hidden="true">
+        <line class="track" x1="100" y1="20" x2="900" y2="20"/>
+        <line class="fill" x1="100" y1="20" x2="900" y2="20" pathLength="1"/>
+        <circle class="pn" style="--i:0" cx="100" cy="20" r="7"/>
+        <circle class="pn" style="--i:1" cx="300" cy="20" r="7"/>
+        <circle class="pn" style="--i:2" cx="500" cy="20" r="7"/>
+        <circle class="pn" style="--i:3" cx="700" cy="20" r="7"/>
+        <circle class="pn" style="--i:4" cx="900" cy="20" r="7"/>
+        <circle class="dot" cx="100" cy="20" r="4.5"/>
+      </svg>
+      <ol>
+        <li style="--i:0"><span class="n">1</span><b>Call</b><span>Captured</span></li>
+        <li style="--i:1"><span class="n">2</span><b>Matter</b><span>Matched</span></li>
+        <li style="--i:2"><span class="n">3</span><b>Source</b><span>Costed</span></li>
+        <li style="--i:3"><span class="n">4</span><b>Rank</b><span>Tracked</span></li>
+        <li style="--i:4"><span class="n">5</span><b>Report</b><span>Delivered</span></li>
+      </ol>
+    </figure>
+
     <div class="how">
       <nav class="steps" aria-label="The five steps" id="steps">
-        <a href="#step-1"><span class="n">1</span><b>Your phones, handled</b></a>
-        <a href="#step-2"><span class="n">2</span><b>Enquiries matched to matters</b></a>
-        <a href="#step-3"><span class="n">3</span><b>Where your leads came from</b></a>
-        <a href="#step-4"><span class="n">4</span><b>SEO built around your suburbs</b></a>
-        <a href="#step-5"><span class="n">5</span><b>One dashboard, one report</b></a>
+        <a href="#step-1"><span class="n">1</span><b>Calls captured</b></a>
+        <a href="#step-2"><span class="n">2</span><b>Matched to matters</b></a>
+        <a href="#step-3"><span class="n">3</span><b>Sources costed</b></a>
+        <a href="#step-4"><span class="n">4</span><b>Ranked locally</b></a>
+        <a href="#step-5"><span class="n">5</span><b>One report</b></a>
       </nav>
 
       <div class="pages">
         <article class="page" id="step-1">
-          <h3 data-rise><span class="n">1&nbsp;&nbsp;</span>Every enquiry captured, without a spreadsheet.</h3>
-          <p data-rise>EzyBiz LEX answers when you can't, and the AI call notes go to the matter in Smokeball or Clio. Calls and texts are logged automatically.</p>
+          <h3 data-rise><span class="n">1&nbsp;&nbsp;</span>Every enquiry captured.</h3>
+          <p data-rise>EzyBiz LEX answers when you can't and files the notes to the matter.</p>
           <div class="mock" data-stagger>
             <div class="mock-head" style="--i:0"><b>Incoming call · 0412 *** 018</b><span>Tue 9:47 am</span></div>
             <div class="mrow" style="--i:1"><span class="k">Answered by</span><span class="v">EzyBiz LEX, while you were in court</span></div>
@@ -697,8 +811,8 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         </article>
 
         <article class="page" id="step-2">
-          <h3 data-rise><span class="n">2&nbsp;&nbsp;</span>Each new matter traced back to the call or text that started it.</h3>
-          <p data-rise>Repeat calls from the same person within a week count as one enquiry. Spam and existing clients are left out, so you only see genuine new leads.</p>
+          <h3 data-rise><span class="n">2&nbsp;&nbsp;</span>Enquiries matched to matters.</h3>
+          <p data-rise>Matched by inference, and sharper every month. Repeats count once. Spam and existing clients are left out.</p>
           <div class="mock" data-stagger>
             <div class="mock-head" style="--i:0"><b>This week</b><span>2 genuine leads · 2 left out</span></div>
             <div class="lead m" style="--i:1"><i class="dot" style="background:var(--ch-calls)"></i><span class="t">Call · Sarah K.<small>Mon and Thu · counted once</small></span><span class="tag">Family law matter opened</span></div>
@@ -709,8 +823,8 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         </article>
 
         <article class="page" id="step-3">
-          <h3 data-rise><span class="n">3&nbsp;&nbsp;</span>Every source side by side, with what it cost.</h3>
-          <p data-rise>Bring in your enquiry log from your CRM or call tracking, and your monthly spend per channel. LEX Waypoint joins them to your calls and shows SEO, Google Ads, referrals and more.</p>
+          <h3 data-rise><span class="n">3&nbsp;&nbsp;</span>Sources, with their cost.</h3>
+          <p data-rise>Your spend, joined to your calls.</p>
           <div class="mock" data-stagger>
             <div class="mock-head" style="--i:0"><b>Cost a new matter, by source</b><span>This quarter</span></div>
             <div class="src" style="--i:1"><span class="nm"><i class="dot" style="background:var(--ch-seo)"></i>SEO</span><span class="src-bar"><i style="--w:11;--c:var(--ch-seo)"></i></span><span class="num">$210</span></div>
@@ -723,8 +837,8 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         </article>
 
         <article class="page" id="step-4">
-          <h3 data-rise><span class="n">4&nbsp;&nbsp;</span>Found by clients in the suburbs you actually serve.</h3>
-          <p data-rise>We scan your website, work out your practice areas and suburbs, and find the competitors you really compete with locally. Then we research the searches your clients use, track where you rank each week, find link opportunities and plan new pages. Nothing goes on your website until a practitioner at your firm has approved it.</p>
+          <h3 data-rise><span class="n">4&nbsp;&nbsp;</span>Found in your suburbs.</h3>
+          <p data-rise>Weekly rank tracking and new pages. Nothing goes live without your sign-off.</p>
           <div class="mock" data-stagger>
             <div class="mock-head" style="--i:0"><b>Google rank this week</b><span>Penrith, St Marys, Blacktown and 7 more</span></div>
             <div class="rank h" style="--i:1"><span>Search</span><span style="text-align:right">Was</span><span style="text-align:right">Now</span><span></span></div>
@@ -737,8 +851,8 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         </article>
 
         <article class="page" id="step-5">
-          <h3 data-rise><span class="n">5&nbsp;&nbsp;</span>Leads, rankings, pages and your report, updated as the work happens.</h3>
-          <p data-rise>On Growth and Leadership, LEX Waypoint lives inside EzyBiz LEX Desktop, in your browser. The Avocado team sets it up and runs the work. You read the results and approve.</p>
+          <h3 data-rise><span class="n">5&nbsp;&nbsp;</span>One dashboard. One report.</h3>
+          <p data-rise>Inside EzyBiz LEX Desktop. We run it. You approve.</p>
           <div class="mock" data-stagger>
             <div class="mini-kpis" style="--i:0">
               <div><span class="k">Leads to matter</span><span class="v">31.7%</span><small><span class="delta">▲ +4.1 pts</span></small></div>
@@ -762,18 +876,33 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     <div class="band-head">
       <div class="band-n" aria-hidden="true">[4]</div>
       <div>
-        <h2 data-rise>We run the marketing too.</h2>
-        <p class="band-lede" data-rise style="--d:120ms">Waypoint shows which channels bring in matters. The Avocado team then puts more into those and pulls back on the rest. One of your lawyers signs off anything before it goes live.</p>
+        <h2 data-rise>We run the marketing, too.</h2>
+        <p class="band-lede" data-rise style="--d:120ms">More into what brings matters. Less into the rest. A lawyer signs off first.</p>
       </div>
     </div>
 
-    <ol class="findings">
-      <li class="finding" data-rise><span class="n">[4.1]</span><div><h3>Search and SEO</h3><p>Pages built around your practice areas and suburbs, weekly rank tracking, and backlinks from relevant, reputable sites.</p></div><div class="pin"><b>III</b><span>Waypoint Leadership</span></div></li>
-      <li class="finding" data-rise><span class="n">[4.2]</span><div><h3>Google and ChatGPT ads</h3><p>Campaigns for the work you want more of, in ad accounts in your firm's name. Each one is judged on what it costs per matter, not per click.</p></div><div class="pin"><b>Add-on</b><span>with any plan</span></div></li>
-      <li class="finding" data-rise><span class="n">[4.3]</span><div><h3>Google Business Profile</h3><p>Regular posts to your profile. New reviews show up in EzyBiz LEX, so you can reply in a few taps.</p></div><div class="pin"><b>II</b><span>Waypoint Growth and up</span></div></li>
-      <li class="finding" data-rise><span class="n">[4.4]</span><div><h3>Law directories</h3><p>Your listings on LawConnect, LawTap and other law directories, set up and kept current. Every enquiry they send is followed to the matter.</p></div><div class="pin"><b>II</b><span>Waypoint Growth and up</span></div></li>
-      <li class="finding" data-rise><span class="n">[4.5]</span><div><h3>Social media</h3><p>Posts planned and published for you, to build trust with the clients you want.</p></div><div class="pin"><b>II</b><span>Waypoint Growth and up</span></div></li>
-    </ol>
+        <div class="hub">
+      <ul class="hub-l">
+        <li class="node" data-rise style="--d:0ms"><span class="tag">Leadership</span><h3>Search and SEO</h3><p>Pages for your suburbs, ranked weekly.</p></li>
+        <li class="node" data-rise style="--d:90ms"><span class="tag">Add-on</span><h3>Google and ChatGPT ads</h3><p>Judged per matter, not per click.</p></li>
+        <li class="node" data-rise style="--d:180ms"><span class="tag">Growth and up</span><h3>Business Profile</h3><p>Posts and reviews, handled.</p></li>
+      </ul>
+      <div class="hub-core" data-rise aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <circle class="ring" cx="100" cy="100" r="97"/>
+          <circle class="ring d" cx="100" cy="100" r="74"/>
+          <circle class="ring" cx="100" cy="100" r="51"/>
+          <g class="orbit o1"><circle class="bead" cx="100" cy="3" r="3.6"/></g>
+          <g class="orbit o2"><circle class="bead s" cx="100" cy="26" r="3"/></g>
+          <g class="orbit o3"><circle class="bead" cx="100" cy="49" r="2.6"/></g>
+        </svg>
+        <p><span>Judged on</span><b>Matters</b></p>
+      </div>
+      <ul class="hub-r">
+        <li class="node" data-rise style="--d:270ms"><span class="tag">Growth and up</span><h3>Law directories</h3><p>LawConnect, LawTap and more, followed to the matter.</p></li>
+        <li class="node" data-rise style="--d:360ms"><span class="tag">Growth and up</span><h3>Social</h3><p>Planned and posted for you.</p></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -781,14 +910,14 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   <div class="scene-pin">
     <div class="wrap scene-in">
       <div>
-        <h2 id="report-h">Every month, one report. Bound, numbered, and about matters.</h2>
+        <h2 id="report-h">One report a month. Bound, numbered, about matters.</h2>
         <ol class="scene-steps" id="scene-steps">
-          <li class="on"><span class="n">&nbsp;</span><span>The cover: your firm and your month.</span></li>
-          <li><span class="n">[1]</span><span>The North Star: matters opened, and the change.</span></li>
-          <li><span class="n">[2]</span><span>Where matters came from, and what each one cost.</span></li>
-          <li><span class="n">[3]</span><span>The next bearing: one move, with the money in it.</span></li>
+          <li class="on"><span class="n">&nbsp;</span><span>The cover.</span></li>
+          <li><span class="n">[1]</span><span>The North Star: matters opened.</span></li>
+          <li><span class="n">[2]</span><span>Where matters came from.</span></li>
+          <li><span class="n">[3]</span><span>The next bearing: one move.</span></li>
         </ol>
-        <p class="scene-cap" id="scene-cap" aria-hidden="true">The cover: your firm and your month.</p>
+        <p class="scene-cap" id="scene-cap" aria-hidden="true">The cover.</p>
       </div>
       <div class="book-stage" role="img" aria-label="A sample October report: cover, contents, the North Star of 19 matters opened, where those matters came from, and the next bearing: move $600 from the directory listing to Family Law search ads.">
         <div class="book3d" id="book3d" aria-hidden="true">
@@ -857,7 +986,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
       <div class="band-n" aria-hidden="true">[5]</div>
       <div>
         <h2 data-rise>What a slow callback costs.</h2>
-        <p class="band-lede" data-rise style="--d:120ms">A conservative estimate using the sample firm's conversion rates. In a demo we run the same sum on your own calls and matters.</p>
+        <p class="band-lede" data-rise style="--d:120ms">A conservative estimate from the sample firm's rates. In a demo, we run it on yours.</p>
       </div>
     </div>
     <div class="cost">
@@ -865,7 +994,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <div class="ctl"><label for="enq">Genuine new enquiries a month <output id="enqOut" for="enq">60</output></label><input type="range" id="enq" min="10" max="300" step="5" value="60"></div>
         <div class="ctl"><label for="fast">Answered within the hour today <output id="fastOut" for="fast">55%</output></label><input type="range" id="fast" min="10" max="100" step="5" value="55"></div>
         <div class="ctl"><label for="fee">Average fees per new matter <output id="feeOut" for="fee">$4,500</output></label><input type="range" id="fee" min="1000" max="20000" step="500" value="4500"></div>
-        <p class="assume">Assumes 42% of enquiries answered within the hour become matters and 18% of the rest do, and compares today with answering 90% within the hour.</p>
+        <p class="assume">Assumes 42% of enquiries answered within the hour become matters, 18% of the rest. Compared with 90% answered within the hour.</p>
       </div>
       <div class="result" aria-live="polite">
         <h3>Estimated fees missed each year</h3>
@@ -887,8 +1016,8 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     <div class="band-head">
       <div class="band-n" aria-hidden="true">[6]</div>
       <div>
-        <h2 data-rise>Three plans. Each one adds to the one before.</h2>
-        <p class="band-lede" data-rise style="--d:120ms">Start by measuring. Move up when the numbers say it's worth it. We recommend a plan after the demo, from your enquiry volume, practice areas and how your intake runs today.</p>
+        <h2 data-rise>Three plans. Each builds on the last.</h2>
+        <p class="band-lede" data-rise style="--d:120ms">Start by measuring. Move up when the numbers say so.</p>
       </div>
     </div>
 
@@ -902,35 +1031,31 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <h3>Waypoint Insight</h3>
         <p class="price">From <b>$1,500</b> a month</p>
         <span class="req">Works without EzyBiz LEX</span>
-        <p class="goal">Find out how your firm shows up in search, and where your website is losing enquiries, before you spend more on marketing.</p>
+        <p class="goal">See how you show up, and where enquiries leak.</p>
         <h4>Includes</h4>
         <ul>
-          <li>Monitoring of your search and local rankings</li>
-          <li>A website audit, with the fixes ranked by what matters most</li>
-          <li>AI search optimisation, so your firm is found when people ask ChatGPT and other AI tools</li>
-          <li>A monthly report naming the biggest gaps and what to fix</li>
+          <li>Search and local rank monitoring</li>
+          <li>Website audit, fixes ranked</li>
+          <li>AI search optimisation</li>
+          <li>A monthly report on the biggest gaps</li>
         </ul>
-        <p class="limit">Insight doesn't track enquiries to matters, so it can't report cost per matter or return on spend. That starts with Growth.</p>
+        <p class="limit">Doesn't trace enquiries to matters. That starts with Growth.</p>
       </article>
       <article class="plan lit" data-rise style="--d:120ms">
         <span class="n">II · Fix the leaks</span>
         <h3>Waypoint Growth</h3>
         <p class="price">From <b>$3,000</b> a month</p>
         <span class="req">Requires EzyBiz LEX, with 4 free connections</span>
-        <p class="goal">For firms whose report shows enquiries slipping away, and that want more of the local demand they're close to.</p>
+        <p class="goal">Stop enquiries slipping away.</p>
         <h4>Everything in Insight, plus</h4>
         <ul>
-          <li>Calls and texts from EzyBiz LEX matched to new matters in Smokeball or Clio</li>
-          <li>Your enquiry log from your CRM, call tracking and inboxes, with monthly spend per channel</li>
-          <li>Leads-to-matter dashboard by source and contact method, in EzyBiz LEX Desktop</li>
+          <li>Calls and texts matched to matters in Smokeball or Clio</li>
+          <li>Leads-to-matter dashboard, by source</li>
           <li>Response-time and missed-call analysis</li>
-          <li>Intake fixes: missed-call text-back, agreed callback targets, and live cover with Call Concierge if you want it</li>
-          <li>Better contact forms and contact paths</li>
-          <li>A known source on every lead: tracking numbers, UTM and gclid capture</li>
-          <li>Google Business Profile posts, with new reviews in EzyBiz LEX ready to reply to <span class="by">Run by the Avocado team</span></li>
-          <li>Listings on LawConnect, LawTap and other law directories <span class="by">Run by the Avocado team</span></li>
-          <li>Social media, planned and posted for you <span class="by">Run by the Avocado team</span></li>
-          <li>Website development, including new SEO pages for your top practice areas, built from the audit and signed off by one of your lawyers</li>
+          <li>Intake fixes: text-back, callback targets, live cover</li>
+          <li>Tracking numbers, UTM and gclid capture</li>
+          <li>Business Profile, directories and social <span class="by">Run by the Avocado team</span></li>
+          <li>New SEO pages, signed off by your lawyer</li>
         </ul>
       </article>
       <article class="plan" data-rise style="--d:240ms">
@@ -938,20 +1063,20 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <h3>Waypoint Leadership</h3>
         <p class="price">From <b>$4,500</b> a month</p>
         <span class="req">Requires EzyBiz LEX, with 8 free connections</span>
-        <p class="goal">For firms that convert well and want more enquiries, across more practice areas or offices.</p>
+        <p class="goal">More enquiries, across more areas or offices.</p>
         <h4>Everything in Growth, plus</h4>
         <ul>
-          <li>The full SEO programme built around your suburbs: local competitors, keyword research, new pages each month, weekly rank tracking and backlinks <span class="by">Run by the Avocado team</span></li>
-          <li>Multi-location support for firms with more than one office</li>
-          <li>Cost-per-matter reporting by source</li>
+          <li>The full local SEO programme <span class="by">Run by the Avocado team</span></li>
+          <li>Multi-office support</li>
+          <li>Cost per matter, by source</li>
         </ul>
       </article>
     </div>
 
     <div class="addon">
       <div data-rise>
-        <h3>Google and ChatGPT Ads management</h3>
-        <p>An add-on with any plan, reported on the same cost-per-matter basis as everything else. Campaigns on Google Search and in ChatGPT, built around the practice areas you want more of, screened to keep out work you don't do, with ad accounts in your firm's name. Run by the Avocado team. If ads aren't producing matters, the report will show it.</p>
+        <h3>Ads management</h3>
+        <p>Google and ChatGPT campaigns, an add-on to any plan. Judged on cost per matter, in ad accounts in your firm's name.</p>
       </div>
     </div>
   </div>
@@ -962,27 +1087,27 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     <div class="band-head">
       <div class="band-n" aria-hidden="true">[7]</div>
       <div>
-        <h2 data-rise>Grow on purpose, not by luck.</h2>
-        <p class="band-lede" data-rise style="--d:120ms">Built by Avocado in Australia, for Australian law firms.</p>
+        <h2 data-rise>Grow on purpose.</h2>
+        <p class="band-lede" data-rise style="--d:120ms">Built by Avocado, for Australian law firms.</p>
       </div>
     </div>
     <div class="why">
       <div class="changes" data-rise>
         <h3>What changes for you</h3>
         <ul>
-          <li>You know which marketing is working, and which to stop paying for.</li>
-          <li>You see every missed opportunity, instead of wondering.</li>
-          <li>You decide on hiring, spending and growth from real numbers.</li>
-          <li>You stop feeling like the business is running you.</li>
+          <li>Know which marketing works.</li>
+          <li>See every missed enquiry.</li>
+          <li>Decide from real numbers.</li>
+          <li>Stop being run by the business.</li>
         </ul>
       </div>
       <div class="reasons" data-rise style="--d:120ms">
         <h3>Why LEX Waypoint</h3>
         <dl>
-          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6Z"/><path d="M9 12h7M9 16h5"/></svg>An agency that answers to matters</dt><dd>We run your marketing, and every number comes from your own phone line and your own matters, not from clicks someone chose to show you. You can check any figure against the matter it came from.</dd></div>
-          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V3M15 7V3M7 7h10v4a5 5 0 0 1-10 0Z"/><path d="M12 16v5"/></svg>Works with Smokeball and Clio</dt><dd>The systems your firm already uses. Nothing new for your team to learn.</dd></div>
-          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your data stays inside LEX</dt><dd>Leads are worked out from your own calls, texts and matters.</dd></div>
-          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0ZM17 7l-3 7a3 3 0 0 0 6 0Z"/></svg>Your firm stays in control</dt><dd>A practitioner signs off every page, post and ad before it can go live.</dd></div>
+          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6Z"/><path d="M9 12h7M9 16h5"/></svg>An agency that answers to matters</dt><dd>Every number comes from your own calls and matters.</dd></div>
+          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V3M15 7V3M7 7h10v4a5 5 0 0 1-10 0Z"/><path d="M12 16v5"/></svg>Works with Smokeball and Clio</dt><dd>Nothing new for your team to learn.</dd></div>
+          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your data stays inside LEX</dt><dd>Worked out from your own calls, texts and matters.</dd></div>
+          <div><dt><svg viewBox="0 0 24 24" fill="none" stroke="#2B1740" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0ZM17 7l-3 7a3 3 0 0 0 6 0Z"/></svg>You stay in control</dt><dd>A practitioner signs off every page, post and ad.</dd></div>
         </dl>
       </div>
     </div>
@@ -994,20 +1119,20 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     <div class="band-head">
       <div class="band-n" aria-hidden="true">[8]</div>
       <div>
-        <h2 data-rise>What law firms ask us first.</h2>
-        <p class="band-lede" data-rise style="--d:120ms">Anything else, ask us in the demo.</p>
+        <h2 data-rise>Asked first.</h2>
+        <p class="band-lede" data-rise style="--d:120ms">The rest, in the demo.</p>
       </div>
     </div>
     <div class="qs">
       <div class="qs-list">
-        <details><summary><span class="n">Q1</span><span>What counts as a genuine enquiry?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">A new person asking about work your firm does. Spam, sales calls, wrong numbers, existing clients calling about a current matter and the same person calling twice in a week are left out. Requests for work you don't do are counted separately, because they show demand you might refer or one day take on. You agree the rules with us at the start, so the number means the same thing every month.</p></details>
-        <details><summary><span class="n">Q2</span><span>Do we need EzyBiz LEX?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">Only for Growth and Leadership. Waypoint Insight works without it, but can't match enquiries to matters. Growth and Leadership use EzyBiz LEX to capture every call and text and match it to a matter in Smokeball or Clio. Your existing phone numbers can be ported across, and support for third-party VoIP providers is coming. Call Concierge is optional, and Growth works with your own reception team too.</p></details>
-        <details><summary><span class="n">Q3</span><span>Where does the rest of the data come from?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">Web forms, inboxes, directory and Business Profile messages and your spend per channel come in from your CRM, call tracking or a monthly import. If the records are thin, the first job is putting the tracking in place so next month's figures are complete.</p></details>
-        <details><summary><span class="n">Q4</span><span>How do you match an enquiry to a matter?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">On Growth and Leadership, each call and text becomes a contact in EzyBiz LEX. When a matter is opened in Smokeball or Clio, that contact is attached to it, and we can see the connection. A web form usually carries the same name, phone number or email as the person's call, so we match those by inference. You can't browse the underlying records yet. We haven't ruled out a dashboard for that, but it isn't available today.</p></details>
-        <details><summary><span class="n">Q5</span><span>Is this SEO under a new name?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">No. SEO is one way to grow leads to matter, and it's part of Waypoint Leadership. For many firms the faster gains are in what happens after someone gets in touch: answering calls, replying sooner, and not losing people before a matter opens. We measure that first.</p></details>
-        <details><summary><span class="n">Q6</span><span>How do you keep our marketing within the conduct rules?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">Your firm is responsible for its advertising, so one of your lawyers signs off every page, profile post and ad before it goes live. Nothing false or misleading, no "best lawyer" claims, "specialist" only where a lawyer holds accreditation, and genuine, consented reviews. This is how we work, not legal advice.</p></details>
-        <details><summary><span class="n">Q7</span><span>Do you guarantee more matters?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">No. Whether an enquiry becomes a matter depends on the person, the matter and your firm's decisions. We commit to accurate measurement, clear reporting on what changed, and doing the agreed fixes well.</p></details>
-        <details><summary><span class="n">Q8</span><span>Who owns the data and accounts?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">You do. Your data stays inside LEX, and tracking numbers, the Business Profile, directory listings, ad accounts and pages are set up in your firm's name. If you leave, they stay with you.</p></details>
+        <details><summary><span class="n">Q1</span><span>What counts as a genuine enquiry?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">A new person asking about work you do. Spam, wrong numbers, existing clients and repeat callers within a week are left out. We agree the rules at the start.</p></details>
+        <details><summary><span class="n">Q2</span><span>Do we need EzyBiz LEX?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">Only for Growth and Leadership, which use it to match calls and texts to matters in Smokeball or Clio. Insight works without it. Your numbers can be ported across.</p></details>
+        <details><summary><span class="n">Q3</span><span>Where does the rest of the data come from?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">From your CRM, call tracking or a monthly import. If records are thin, we fix the tracking first.</p></details>
+        <details><summary><span class="n">Q4</span><span>How do you match an enquiry to a matter?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">Each call or text becomes a contact in EzyBiz LEX. When a matter opens in Smokeball or Clio, the contact is attached. Where the link isn't explicit, our inference engine matches by name, phone or email, and keeps improving.</p></details>
+        <details><summary><span class="n">Q5</span><span>Is this SEO under a new name?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">No. SEO is one lever. Often the faster gain is answering sooner, so we measure that first.</p></details>
+        <details><summary><span class="n">Q6</span><span>How do you keep our marketing within the conduct rules?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">A lawyer at your firm signs off every page, post and ad. No false claims, no &ldquo;best lawyer&rdquo;, &ldquo;specialist&rdquo; only with accreditation. This is how we work, not legal advice.</p></details>
+        <details><summary><span class="n">Q7</span><span>Do you guarantee more matters?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">No. We commit to accurate measurement, clear reporting and doing the agreed work well.</p></details>
+        <details><summary><span class="n">Q8</span><span>Who owns the data and accounts?</span><span class="pm" aria-hidden="true"></span></summary><p class="ans">You do. Tracking numbers, profiles, listings, ad accounts and pages are in your firm's name, and stay yours if you leave.</p></details>
       </div>
     </div>
   </div>
@@ -1017,14 +1142,14 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   <div class="rules t" data-rules><i></i><i></i></div>
   <div class="wrap">
     <div>
-      <h2 data-rise>See how you could grow your firm with Waypoint.</h2>
-      <p data-rise style="--d:120ms">A free 15 minute demo with the Avocado team.</p>
+      <h2 data-rise>See Waypoint on your firm.</h2>
+      <p data-rise style="--d:120ms">A free 15 minute demo.</p>
     </div>
     <div data-rise style="--d:200ms">
       <ul>
-        <li><span class="n">[1]</span><span>A walk through LEX Waypoint with a sample firm.</span></li>
-        <li><span class="n">[2]</span><span>What it would measure for your firm, from how your calls and matters flow today.</span></li>
-        <li><span class="n">[3]</span><span>Your questions, answered.</span></li>
+        <li><span class="n">[1]</span><span>A walk through, with a sample firm.</span></li>
+        <li><span class="n">[2]</span><span>What it would measure for you.</span></li>
+        <li><span class="n">[3]</span><span>Your questions.</span></li>
       </ul>
       <a class="btn btn-light" href="book-my-demo/">Book your demo <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
@@ -1036,7 +1161,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
 
 <footer>
   <div class="wrap">
-    <p>LEX Waypoint Growth and Leadership connect to <a href="https://ezybizlex.com.au/">EzyBiz LEX</a>, the lawyer's phone app. Answers when you can't, and sends AI call notes to the matter when you do.</p>
+    <p>Growth and Leadership connect to <a href="https://ezybizlex.com.au/">EzyBiz LEX</a>, the lawyer's phone app.</p>
     <p>© 2026 <a href="https://avocadodigital.com.au/">Avocado Pty Ltd</a> · ABN 81 652 199 687 · <a href="mailto:hello@avocadodigital.com.au">hello@avocadodigital.com.au</a> · <a href="https://avocadodigital.com.au/privacy-policy.html">Privacy</a> · <a href="https://avocadodigital.com.au/terms-of-service.html">Terms</a></p>
   </div>
 </footer>
@@ -1191,11 +1316,12 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   var GEN = 164, OUT = 46, MAT = 52, COLS = 14, CELL = 25, OX = 30, OY = 44, LCOLS = 4, LCELL = 20, LX = 414, LY = 52;
   var SRC = ['#5C8A2E', '#2B1740', '#1F7A80', '#B5487A', '#C8662D', '#8A8394'];
   var SRC_N = [46, 52, 30, 6, 22, 8];
+  var MAT_N = [15, 18, 9, 2, 6, 2], SPEND = [3150, 0, 0, 600, 3102, 3680], FEE = 4500;
   var srcOf = []; SRC_N.forEach(function (n, s) { for (var i = 0; i < n; i++) srcOf.push(s); });
   for (var j = srcOf.length - 1; j > 0; j--) { var k = Math.floor(rnd() * (j + 1)); var tt = srcOf[j]; srcOf[j] = srcOf[k]; srcOf[k] = tt; }
   var idx = []; for (var a = 0; a < GEN; a++) idx.push(a);
   for (var b = idx.length - 1; b > 0; b--) { var c2 = Math.floor(rnd() * (b + 1)); var t2 = idx[b]; idx[b] = idx[c2]; idx[c2] = t2; }
-  var isMatter = {}; idx.slice(0, MAT).forEach(function (n) { isMatter[n] = true; });
+  var isMatter = {}, quota = MAT_N.slice(); idx.forEach(function (n) { var s = srcOf[n]; if (quota[s] > 0) { quota[s]--; isMatter[n] = true; } });
   var items = [];
   var total = GEN + OUT, gi = 0, oi = 0;
   var kinds = []; for (var q = 0; q < total; q++) kinds.push(q % 5 === 4 && oi++ < OUT ? 'out' : 'gen');
@@ -1220,16 +1346,28 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     items.forEach(function (it) {
       it.el.setAttribute('cx', it.tx); it.el.setAttribute('cy', it.ty); it.el.setAttribute('opacity', 1);
       if (it.kind === 'gen') {
-        if (it.matter) { it.el.setAttribute('fill', '#2B1740'); it.el.setAttribute('r', 7); it.el.removeAttribute('stroke'); }
+        if (it.matter) { it.el.setAttribute('fill', it.src); it.el.setAttribute('r', 7); it.el.removeAttribute('stroke'); }
         else { it.el.setAttribute('fill', '#fff'); it.el.setAttribute('stroke', '#8A8394'); it.el.setAttribute('stroke-width', 1.5); it.el.setAttribute('r', 5.5); }
       }
     });
-    lg.textContent = GEN; lo.textContent = OUT; nsFig.textContent = MAT; north.classList.add('stamped');
+    items.forEach(function (it) { it.shown = true; });
+    lg.textContent = GEN; lo.textContent = OUT; nsFig.textContent = MAT; north.classList.add('stamped'); tally(true);
+  };
+  var rows = [].slice.call(document.querySelectorAll('#chan .chan-row[data-ch]')), chan = $('chan');
+  var tally = function (done) {
+    var n = [0, 0, 0, 0, 0, 0];
+    items.forEach(function (it) { if (it.kind === 'gen' && it.matter && it.shown) n[SRC.indexOf(it.src)]++; });
+    rows.forEach(function (r, i) {
+      r.querySelector('.ct').textContent = n[i];
+      r.querySelector('.roi').textContent = done ? (SPEND[i] ? '$' + (n[i] * FEE / SPEND[i]).toFixed(2) + ' per $1' : 'No spend') : '\u2014';
+      r.style.setProperty('--w', (n[i] / 18).toFixed(3));
+    });
+    chan.classList.toggle('done', !!done);
   };
   var running = false;
   var play = function () {
     if (running) return; running = true; replay.hidden = true;
-    north.classList.remove('stamped'); nsFig.textContent = '0';
+    north.classList.remove('stamped'); nsFig.textContent = '0'; items.forEach(function (it) { it.shown = false; }); tally(false);
     items.forEach(function (it) {
       it.el.setAttribute('cx', it.sx); it.el.setAttribute('cy', it.sy); it.el.setAttribute('opacity', 0);
       if (it.kind === 'gen') { it.el.setAttribute('fill', it.src); it.el.setAttribute('r', 6); it.el.removeAttribute('stroke'); }
@@ -1253,11 +1391,11 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
           if (it.kind !== 'gen') return;
           var my = it.gi / GEN;
           if (p >= my) {
-            if (it.matter) { it.el.setAttribute('fill', '#2B1740'); it.el.setAttribute('r', 7); shown++; }
+            if (it.matter) { it.el.setAttribute('fill', it.src); it.el.setAttribute('r', 7); shown++; it.shown = true; }
             else { it.el.setAttribute('fill', '#fff'); it.el.setAttribute('stroke', '#8A8394'); it.el.setAttribute('stroke-width', 1.5); it.el.setAttribute('r', 5.5); }
           }
         });
-        nsFig.textContent = shown;
+        nsFig.textContent = shown; tally(false);
         if (p >= 1) { finalState(); running = false; replay.hidden = false; return; }
       }
       requestAnimationFrame(f);
