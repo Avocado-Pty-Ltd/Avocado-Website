@@ -20,7 +20,7 @@ function AvocadoWordmark({ height = 22 }) {
       className="brand-mark"
       role="img"
       aria-label="Avocado"
-      style={{ height, width: (height * 325.3) / 48 }}
+      style={{ height, width: (height * 329.38) / 48 }}
     />
   );
 }
