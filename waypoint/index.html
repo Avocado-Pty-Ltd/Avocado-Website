@@ -616,17 +616,14 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
 
 .versus { grid-column: 2 / -1; position: relative; margin: 0; }
 .versus video { display: block; width: 100%; height: auto; background: #fff; }
+.versus video.vm { display: none; }
 .versus figcaption { margin-top: 14px; font-size: 14px; color: var(--muted); }
 .versus .motion-btn { top: auto; bottom: -6px; right: 0; }
-.versus-m { display: none; }
 @media (max-width: 1000px) { .versus { grid-column: 1; } }
 @media (max-width: 700px) {
-  .versus video, .versus .motion-btn { display: none; }
-  .versus-m { display: grid; gap: 12px; }
-  .versus-m li { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 20px; border: 1px solid var(--hairline); }
-  .versus-m li.w { background: var(--buckram); color: #fff; border-color: var(--buckram); }
-  .versus-m b { grid-column: 1 / -1; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); } .versus-m .w b { color: var(--star-on-b); }
-  .versus-m span { align-self: end; color: inherit; opacity: .8; } .versus-m em { font: 400 40px/1 var(--serif); font-style: normal; grid-row: 2 / 4; grid-column: 2; }
+  .versus video.vd { display: none; }
+  .versus video.vm { display: block; max-width: 520px; margin: 0 auto; }
+  .versus .motion-btn { position: static; margin-top: 12px; }
 }
 /* Return column: highlight, and each non-zero return zooms before settling */
 .chan-row .roi { align-self: stretch; display: flex; align-items: center; justify-content: flex-end; margin: -9px -10px -16px 0; padding: 9px 10px 16px; transition: background .8s ease, color .4s, opacity .6s; transform-origin: 100% 50%; }
@@ -734,14 +731,13 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <h2 data-rise>Clicks aren't clients. Matters are.</h2>
       </div>
       <figure class="versus" data-rise>
-        <video id="versus-video" autoplay muted loop playsinline preload="metadata" poster="media/clicks-vs-matters.png" aria-describedby="versus-cap">
+        <video class="vd" data-loop autoplay muted loop playsinline preload="metadata" poster="media/clicks-vs-matters.png" aria-describedby="versus-cap">
           <source src="media/clicks-vs-matters.mp4" type="video/mp4">
         </video>
+        <video class="vm" data-loop autoplay muted loop playsinline preload="none" poster="media/clicks-vs-matters-m.png" aria-describedby="versus-cap">
+          <source src="media/clicks-vs-matters-m.mp4" type="video/mp4">
+        </video>
         <button class="btn btn-ghost motion-btn" type="button" aria-pressed="false" data-motion-toggle>Pause motion</button>
-        <ul class="versus-m" aria-hidden="true">
-          <li><b>Traditional marketing</b><span>12,480 clicks</span><em>6 matters</em></li>
-          <li class="w"><b>LEX Waypoint</b><span>4,200 clicks</span><em>31 matters</em></li>
-        </ul>
         <figcaption id="versus-cap"><span class="sr">Traditional marketing brings 12,480 clicks and 6 matters, 0.05 per cent of clicks. LEX Waypoint brings 4,200 clicks and 31 matters, 0.74 per cent. </span>Fewer clicks. More matters. Illustrative sample firm.</figcaption>
       </figure>
     </div>
@@ -759,13 +755,13 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     </div>
 
         <figure class="versus levers" data-rise>
-      <video data-loop autoplay muted loop playsinline preload="metadata" poster="media/levers.png" aria-describedby="levers-cap">
+      <video class="vd" data-loop autoplay muted loop playsinline preload="metadata" poster="media/levers.png" aria-describedby="levers-cap">
         <source src="media/levers.mp4" type="video/mp4">
       </video>
+      <video class="vm" data-loop autoplay muted loop playsinline preload="none" poster="media/levers-m.png" aria-describedby="levers-cap">
+        <source src="media/levers-m.mp4" type="video/mp4">
+      </video>
       <button class="btn btn-ghost motion-btn" type="button" aria-pressed="false" data-motion-toggle>Pause motion</button>
-      <ul class="versus-m" aria-hidden="true">
-        <li class="w"><b>Return on spend</b><span>Levers pulled</span><em>$9.82 &rarr; $22.22</em></li>
-      </ul>
       <figcaption id="levers-cap"><span class="sr">Five levers are pulled in turn: directories down 50 per cent, search and SEO up 40, ads up 35, Business Profile up 20 and social up 15. Return on spend climbs from $9.82 to $22.22 per dollar. </span>Pull the levers that bring matters. Illustrative sample firm.</figcaption>
     </figure>
     </div>
@@ -1317,7 +1313,7 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   });
 
   // ── Remotion videos: play in view, honour reduced motion and the pause control ──
-  var vids = [].slice.call(document.querySelectorAll('video[data-loop], #versus-video'));
+  var vids = [].slice.call(document.querySelectorAll('video[data-loop]'));
   var motionOff = function () { return document.documentElement.classList.contains('motion-off'); };
   vids.forEach(function (vid) {
     if (reduce) { vid.removeAttribute('autoplay'); vid.pause(); }
