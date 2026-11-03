@@ -1,10 +1,10 @@
 # avocadodigital.com.au — Netlify configuration
 #
-# EzyBiz now lives at https://ezybizlex.com.au (the EzyBiz-Lex repo).
+# EzyBiz now lives at https://lexphone.com.au (the EzyBiz-Lex repo).
 # Everything EzyBiz-related that was ever served from this domain — the old
 # mirror/proxy at /ezybiz, the tradie-era landing pages, and the app's legal
 # pages (terms, privacy, acceptable use, user guide, account deletion) —
-# 301s to the matching page on ezybizlex.com.au so search engines and the
+# 301s to the matching page on lexphone.com.au so search engines and the
 # app-store listings consolidate on the new domain. Nothing EzyBiz is hosted
 # here any more.
 #
@@ -20,9 +20,9 @@
 
 # The LEX Waypoint console (LEX Desktop built with the Waypoint skin, see
 # scripts/build-admin-web.sh in the EzyBiz repo) is served from Firebase
-# Hosting under /app/, the same way ezybizlex.com.au/teams proxies to
+# Hosting under /app/, the same way lexphone.com.au/teams proxies to
 # /teams/. These two rules sit above the catch-all below. Both are 200s,
-# as on ezybizlex.com.au: a 301 from /app to /app/ loops, because Netlify
+# as on lexphone.com.au: a 301 from /app to /app/ loops, because Netlify
 # matches "/app" against "/app/" as well. The subdomain must be an
 # authorised domain in Firebase Auth for sign-in to work here.
 
@@ -71,82 +71,82 @@
   status = 200
   force = true
 
-# App legal pages -> their ezybizlex.com.au equivalents. Both the .html and
+# App legal pages -> their lexphone.com.au equivalents. Both the .html and
 # extensionless forms are covered because Netlify's pretty URLs served both.
 
 [[redirects]]
   from = "/ezybiz-terms-of-service.html"
-  to = "https://ezybizlex.com.au/terms/"
+  to = "https://lexphone.com.au/terms/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-terms-of-service"
-  to = "https://ezybizlex.com.au/terms/"
+  to = "https://lexphone.com.au/terms/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-privacy-policy.html"
-  to = "https://ezybizlex.com.au/privacy/"
+  to = "https://lexphone.com.au/privacy/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-privacy-policy"
-  to = "https://ezybizlex.com.au/privacy/"
+  to = "https://lexphone.com.au/privacy/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-acceptable-use.html"
-  to = "https://ezybizlex.com.au/acceptable-use/"
+  to = "https://lexphone.com.au/acceptable-use/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-acceptable-use"
-  to = "https://ezybizlex.com.au/acceptable-use/"
+  to = "https://lexphone.com.au/acceptable-use/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-data-residency.html"
-  to = "https://ezybizlex.com.au/data-residency/"
+  to = "https://lexphone.com.au/data-residency/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-data-residency"
-  to = "https://ezybizlex.com.au/data-residency/"
+  to = "https://lexphone.com.au/data-residency/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-guide.html"
-  to = "https://ezybizlex.com.au/user-guide/"
+  to = "https://lexphone.com.au/user-guide/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-guide"
-  to = "https://ezybizlex.com.au/user-guide/"
+  to = "https://lexphone.com.au/user-guide/"
   status = 301
   force = true
 
-# ezybizlex.com.au has no standalone account-deletion page; the support page
+# lexphone.com.au has no standalone account-deletion page; the support page
 # carries the "How do I delete my data?" FAQ, which is what the app-store
 # listings need this URL for.
 
 [[redirects]]
   from = "/ezybiz-delete-account.html"
-  to = "https://ezybizlex.com.au/support/"
+  to = "https://lexphone.com.au/support/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-delete-account"
-  to = "https://ezybizlex.com.au/support/"
+  to = "https://lexphone.com.au/support/"
   status = 301
   force = true
 
@@ -157,55 +157,55 @@
 
 [[redirects]]
   from = "/ezybiz/*"
-  to = "https://ezybizlex.com.au/"
+  to = "https://lexphone.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz"
-  to = "https://ezybizlex.com.au/"
+  to = "https://lexphone.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz.html"
-  to = "https://ezybizlex.com.au/"
+  to = "https://lexphone.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-plumbers.html"
-  to = "https://ezybizlex.com.au/"
+  to = "https://lexphone.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-plumbers"
-  to = "https://ezybizlex.com.au/"
+  to = "https://lexphone.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-electricians.html"
-  to = "https://ezybizlex.com.au/"
+  to = "https://lexphone.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/ezybiz-electricians"
-  to = "https://ezybizlex.com.au/"
+  to = "https://lexphone.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/beta.html"
-  to = "https://ezybizlex.com.au/"
+  to = "https://lexphone.com.au/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/beta"
-  to = "https://ezybizlex.com.au/"
+  to = "https://lexphone.com.au/"
   status = 301
   force = true
 
