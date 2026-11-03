@@ -635,6 +635,10 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
 .chan.done .roi { opacity: 1; }
 .chan.done .roi.pop { animation: zoomIn .9s cubic-bezier(.2,1.4,.4,1) both; }
 @media (prefers-reduced-motion: reduce) { .chan.done .roi.pop { animation: none; } }
+
+.src-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 14px 0 4px; border-top: 1px solid var(--hairline-strong); font-size: 14px; font-weight: 600; }
+.src-legend li { display: flex; align-items: center; gap: 8px; }
+.src-legend i { width: 12px; height: 12px; border-radius: 50%; background: var(--c); flex: none; }
 </style>
 </head>
 <body>
@@ -688,16 +692,10 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <g id="dots"></g>
       </svg>
       <figcaption class="sr" id="ledger-cap">How LEX Waypoint counts a month: enquiries in, spam and existing clients out, genuine enquiries matched to the matters they became, coloured by source, with each source's matters and return on spend.</figcaption>
-      <div class="chan" id="chan" role="table" aria-label="Matters and spend by source, with the overall return">
-        <div class="chan-row chan-h" role="row"><span role="columnheader">Matters by source</span><span role="columnheader">Matters</span><span role="columnheader">Spend</span></div>
-        <div class="chan-row" role="row" data-ch="0" style="--c:#5C8A2E"><span class="nm" role="rowheader"><i></i>SEO</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$6,000</span></div>
-        <div class="chan-row" role="row" data-ch="1" style="--c:#2B1740"><span class="nm" role="rowheader"><i></i>Calls</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span></div>
-        <div class="chan-row" role="row" data-ch="2" style="--c:#1F7A80"><span class="nm" role="rowheader"><i></i>Enquiries</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$0</span></div>
-        <div class="chan-row" role="row" data-ch="3" style="--c:#B5487A"><span class="nm" role="rowheader"><i></i>Social</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$3,200</span></div>
-        <div class="chan-row" role="row" data-ch="4" style="--c:#C8662D"><span class="nm" role="rowheader"><i></i>Ads</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$14,000</span></div>
-        <div class="chan-row" role="row" data-ch="5" style="--c:#8A8394"><span class="nm" role="rowheader"><i></i>Directory</span><span class="ct" role="cell">0</span><span class="sp" role="cell">$2,800</span></div>
-        <div class="chan-roi" role="row"><span class="lbl" role="rowheader">Overall return on investment<small>on $26,000 spend</small></span><span class="roi" id="roi-fig" role="cell"><b>&mdash;</b> per $1</span></div>
-        <p class="chan-note" role="note">Matched by our inference engine. Return = matters &times; $3,500 average fee &divide; total spend. Spend reflects typical Australian agency retainers and ad budgets.</p>
+      <div class="chan" id="chan" role="group" aria-label="Matters by source colour, and the overall return">
+        <ul class="src-legend" aria-label="Source colours"><li style="--c:#5C8A2E"><i></i>SEO</li><li style="--c:#2B1740"><i></i>Calls</li><li style="--c:#1F7A80"><i></i>Enquiries</li><li style="--c:#B5487A"><i></i>Social</li><li style="--c:#C8662D"><i></i>Ads</li><li style="--c:#8A8394"><i></i>Directory</li></ul>
+        <div class="chan-roi"><span class="lbl">Overall return on investment<small>on $26,000 spend</small></span><span class="roi" id="roi-fig"><b>&mdash;</b> per $1</span></div>
+        <p class="chan-note">Matched by our inference engine. Return = matters &times; $3,500 average fee &divide; total spend. Spend reflects typical Australian agency retainers and ad budgets.</p>
       </div>
       <p class="sr" id="chan-sum" aria-live="polite"></p>
       <div class="ledger-foot">
@@ -1216,23 +1214,18 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
     items.forEach(function (it) { it.shown = true; });
     lg.textContent = GEN; lo.textContent = OUT; nsFig.textContent = MAT; north.classList.add('stamped'); tally(true);
   };
-  var rows = [].slice.call(document.querySelectorAll('#chan .chan-row[data-ch]')), chan = $('chan');
+  var chan = $('chan');
   var roiEl = $('roi-fig');
   var tally = function (done) {
-    var n = [0, 0, 0, 0, 0, 0], tot = 0, spent = 0;
-    items.forEach(function (it) { if (it.kind === 'gen' && it.matter && it.shown) n[SRC.indexOf(it.src)]++; });
+    var tot = 0, spent = 0;
+    items.forEach(function (it) { if (it.kind === 'gen' && it.matter && it.shown) tot++; });
     SPEND.forEach(function (v) { spent += v; });
-    rows.forEach(function (r, i) {
-      tot += n[i];
-      r.querySelector('.ct').textContent = n[i];
-      r.style.setProperty('--w', (n[i] / 18).toFixed(3));
-    });
     var roi = '$' + (tot * FEE / spent).toFixed(2);
     roiEl.classList.remove('pop');
     roiEl.querySelector('b').textContent = done ? roi : '\u2014';
     if (done) { void roiEl.offsetWidth; roiEl.classList.add('pop'); }
     chan.classList.toggle('done', !!done);
-    if (done) $('chan-sum').textContent = 'Matters by source: ' + ['SEO', 'Calls', 'Enquiries', 'Social', 'Ads', 'Directory'].map(function (nm, i) { return nm + ' ' + n[i]; }).join(', ') + '. Overall return on investment ' + roi + ' per dollar spent.';
+    if (done) $('chan-sum').textContent = 'Overall return on investment ' + roi + ' per dollar spent.';
   };
   var running = false;
   var play = function () {
