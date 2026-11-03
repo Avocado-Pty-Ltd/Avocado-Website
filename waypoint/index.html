@@ -682,10 +682,8 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
 
     <figure class="ledger" data-rise style="--d:300ms" aria-labelledby="ledger-cap">
       <div class="ledger-head"><b>Enquiries this quarter</b><span>Sample firm</span></div>
-      <svg class="ledger-svg" id="ledger" viewBox="0 0 520 330" role="img" aria-label="210 enquiries arrive. 46 are left out as spam, existing clients or repeat callers. Of the 164 genuine enquiries, 52 became matters: 31.7 per cent.">
+      <svg class="ledger-svg" id="ledger" viewBox="0 0 520 232" role="img" aria-label="Of 164 genuine enquiries, 52 became matters: 31.7 per cent.">
         <text x="20" y="22">Genuine new enquiries <tspan id="lg-count" font-weight="700" fill="#2B1740">0</tspan></text>
-        <text x="408" y="22">Left out <tspan id="lo-count" font-weight="700" fill="#2B1740">0</tspan></text>
-        <line x1="392" y1="10" x2="392" y2="318" stroke="rgba(43,23,64,.16)"/>
         <g id="dots"></g>
       </svg>
       <figcaption class="sr" id="ledger-cap">How LEX Waypoint counts a quarter: enquiries in, spam and existing clients out, genuine enquiries matched to the matters they became, coloured by source, with each source's matters and return on spend.</figcaption>
@@ -708,7 +706,6 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
         <div class="ledger-legend" aria-hidden="true">
           <span><i class="dot" style="background:conic-gradient(#5C8A2E 0 25%,#B5487A 0 40%,#C8662D 0 60%,#1F7A80 0 80%,#2B1740 0)"></i>Became a matter</span>
           <span><i class="dot" style="background:#fff;border:1.5px solid #8A8394"></i>Not yet</span>
-          <span><i class="dot" style="background:#D9D3E0"></i>Left out</span>
           <button class="btn btn-ghost replay" id="replay" type="button" hidden>Replay the quarter</button>
         </div>
       </div>
@@ -1175,9 +1172,9 @@ footer p:last-child a { display: inline-flex; align-items: center; min-height: 4
   } else vols.forEach(function (v) { v.classList.add('shelved'); });
 
   // ── Hero ledger: enquiries in, the left-out set aside, matters opened ──
-  var NS = 'http://www.w3.org/2000/svg', g = $('dots'), north = $('north'), nsFig = $('ns-fig'), lg = $('lg-count'), lo = $('lo-count'), replay = $('replay');
+  var NS = 'http://www.w3.org/2000/svg', g = $('dots'), north = $('north'), nsFig = $('ns-fig'), lg = $('lg-count'), lo = $('lo-count') || {}, replay = $('replay');
   var seed = 11, rnd = function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
-  var GEN = 164, OUT = 46, MAT = 52, COLS = 14, CELL = 25, OX = 30, OY = 44, LCOLS = 4, LCELL = 20, LX = 414, LY = 52;
+  var GEN = 164, OUT = 0, MAT = 52, COLS = 21, CELL = 23, OX = 30, OY = 42, LCOLS = 4, LCELL = 20, LX = 414, LY = 52;
   var SRC = ['#5C8A2E', '#2B1740', '#1F7A80', '#B5487A', '#C8662D', '#8A8394'];
   var SRC_N = [46, 52, 30, 6, 22, 8];
   var MAT_N = [15, 18, 9, 2, 6, 2], SPEND = [3150, 0, 0, 600, 3102, 3680], FEE = 4500;
