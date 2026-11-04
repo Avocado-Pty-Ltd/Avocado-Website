@@ -333,7 +333,7 @@ function HeroOS({ layout, onAuditOpen }) {
                 <span className="os-cell-tag">SR-022</span>
               </div>
               <div className="os-media-cell">
-                <img src="ezybiz-app-home-framed.png" alt="LEX Phone home"/>
+                <img src="lex-phone-app-home.png" alt="LEX Phone home"/>
                 <span className="os-cell-tag">EZ-001</span>
               </div>
               <div className="os-media-cell">
@@ -448,18 +448,18 @@ const PRODUCTS = [
   {
     n: '02', code: 'B.02',
     name: 'LEX Phone',
-    one: 'The ultimate business phone for legal professionals.',
-    body: 'A dedicated business number for law firms, solo practitioners and small legal teams — with a realistic Australian answering service that screens calls, takes messages and books appointments, a written record of every conversation, and calls filed to the right matter in Smokeball or Clio. All from the phone you already carry.',
+    one: 'The lawyer’s phone system.',
+    body: 'A dedicated business number for law firms, solo practitioners and small legal teams. Calls are answered by your team, or by QRYSTEL, our Intelligent IVR, which answers, screens, takes messages and books appointments in your firm’s name. It handles out-of-hours calls too, so you get 24/7 direct intake. Every call is transcribed with AI notes and filed to the right matter in Smokeball or Clio. All from the phone you already carry.',
     tags: ['Legal professionals', 'Smokeball & Clio', 'iOS · Android'],
     stat: { v: 'AU', l: 'Available now' },
-    image: 'ezybiz-app-home-framed.png',
+    image: 'lex-phone-app-home.png',
     href: 'https://lexphone.com.au/', external: true,
   },
   {
     n: '03', code: 'B.03',
     name: 'Call Concierge',
     one: 'Live Australian new-client intake for law firms.',
-    body: 'A premium managed intake service, connected to EzyBiz. A dedicated 1300 number for new-client enquiries, a live Australian team working from the firm’s approved script, and every enquiry written into the firm’s CRM or practice management system. We capture and update — the firm decides.',
+    body: 'A premium managed intake service, connected to LEX Phone. A dedicated 1300 number for new-client enquiries, a live Australian team working from the firm’s approved script, and every enquiry written into the firm’s CRM or practice management system. We capture and update — the firm decides.',
     tags: ['Australian law firms', 'Live AU intake', 'CRM/PMS records'],
     stat: { v: '100% AU', l: 'Live intake team' },
     image: 'callconcierge-app-icon.png', icon: true, iconBg: '#0a0f1a',

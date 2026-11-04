@@ -13,7 +13,7 @@ Bespoke software, curated technology and strategy for Australian small business 
 
 ## Products
 
-- **[LEX Phone](https://lexphone.com.au)** — the ultimate business phone for legal professionals: an AI answering service on a dedicated number, with matter filing to Smokeball and Clio
+- **[LEX Phone](https://lexphone.com.au)** — the lawyer’s phone system: a dedicated number answered by your team or by QRYSTEL, an Intelligent IVR that handles out-of-hours calls for 24/7 direct intake, with AI-transcribed call notes and matter filing to Smokeball and Clio
 - **[Call Concierge](https://callconcierge.com.au)** — live Australian new-client intake for law firms, connected to LEX Phone
 - **[SocialReels](https://socialreels.ai)** — short-form video for small business (private beta)
 
