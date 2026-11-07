@@ -12,7 +12,7 @@ const DARK = ['#8BBF4E', '#E3C57E', '#4FB5BB', '#E07FAF', '#F08D4F'];
 type Panel = { kind: 'old' | 'new'; eyebrow: string; sub: string; clicks: number; matters: number; rate: string; rateLabel: string; start: number };
 const PANELS: Panel[] = [
   { kind: 'old', eyebrow: 'Traditional marketing', sub: 'Judged on clicks', clicks: 12480, matters: 6, rate: '0.05%', rateLabel: 'of clicks became a matter', start: 8 },
-  { kind: 'new', eyebrow: 'LEX Waypoint', sub: 'Judged on matters', clicks: 4200, matters: 31, rate: '0.74%', rateLabel: 'of clicks became a matter', start: 16 },
+  { kind: 'new', eyebrow: 'LEX Waypoint', sub: 'Judged on matters', clicks: 4200, matters: 16, rate: '0.38%', rateLabel: 'of clicks became a matter', start: 16 },
 ];
 const MAX_CLICKS = 12480;
 const out = Easing.out(Easing.cubic);
