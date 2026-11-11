@@ -137,7 +137,7 @@ footer { padding: 36px 0 48px; font-size: 14px; color: var(--muted); }
     <input type="hidden" name="mobile_normalised" id="mobile_normalised">
     <input type="hidden" name="slot_start_iso" id="slot_start_iso">
     <input type="hidden" name="slot_label" id="slot_label">
-    <input type="hidden" name="newsletter_opt_in" id="newsletter_opt_in" value="no">
+    <input type="hidden" name="newsletter_opt_in" id="newsletter_opt_in" value="yes">
     <input type="hidden" name="consent_text" id="consent_text">
     <input type="hidden" name="consent_timestamp" id="consent_timestamp">
 
@@ -189,7 +189,7 @@ footer { padding: 36px 0 48px; font-size: 14px; color: var(--muted); }
 
       <label class="f"><span>Anything we should know? <span class="opt">(optional)</span></span><textarea name="notes"></textarea></label>
 
-      <label class="optin"><input type="checkbox" id="optin"><span id="optin-text">Send me LEX Waypoint and legal-marketing insights by email. Unsubscribe any time.</span></label>
+      <label class="optin"><input type="checkbox" id="optin"><span id="optin-text">Tick this if you do not want valuable industry insights and news about our products by email. You can unsubscribe at any time.</span></label>
 
       <div style="display:grid;gap:10px">
         <button type="submit" class="btn" id="submit">Book my demo</button>
@@ -358,7 +358,7 @@ const AVAILABILITY = {
     if (bad) { (bad.focus ? bad : bad.querySelector('button')).focus(); return; }
 
     const scheduled = form.elements.choice.value === 'scheduled';
-    $('newsletter_opt_in').value = $('optin').checked ? 'yes' : 'no';
+    $('newsletter_opt_in').value = $('optin').checked ? 'no' : 'yes'; // the box is an opt-out: ticked means no emails
     $('consent_text').value = $('optin-text').textContent.trim();
     $('consent_timestamp').value = new Date().toISOString();
     $('slot_start_iso').value = scheduled ? selected.toISOString() : '';
