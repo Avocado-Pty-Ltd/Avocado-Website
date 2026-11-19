@@ -47,6 +47,33 @@
   status = 200
   force = true
 
+# /terms is the address sent in proposals: serve it directly, with or without
+# the trailing slash, so it never depends on a directory redirect.
+
+[[redirects]]
+  from = "https://lexwaypoint.com.au/terms"
+  to = "/waypoint/terms/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://lexwaypoint.com.au/terms/"
+  to = "/waypoint/terms/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://lexwaypoint.avocadodigital.com.au/terms"
+  to = "/waypoint/terms/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://lexwaypoint.avocadodigital.com.au/terms/"
+  to = "/waypoint/terms/index.html"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "https://lexwaypoint.com.au/*"
   to = "/waypoint/:splat"
